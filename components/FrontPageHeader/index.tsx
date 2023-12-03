@@ -97,11 +97,13 @@ export default function FrontPageHeader() {
       text: string;
       x: number;
       y: number;
+      backward: boolean;
 
-      constructor(text: string, x: number, y: number) {
+      constructor(text: string, x: number, y: number, backward: boolean = false) {
         this.text = text;
         this.x = x;
         this.y = y;
+        this.backward = backward;
       }
 
       draw(ctx: CanvasRenderingContext2D) {
@@ -114,15 +116,30 @@ export default function FrontPageHeader() {
         ctx.rotate((-45 * Math.PI) / 180);
         ctx.fillText(this.text, 0, 0);
 
-        this.x += MOVE_STEP;
-        this.y -= MOVE_STEP;
+        if (!this.backward) {
+          this.x += MOVE_STEP;
+          this.y -= MOVE_STEP;
 
-        if (this.y < 0) {
-          this.x = DEV_XSTART;
-          this.y = HEIGHT + calcTextWidth(this.text);
+          if (this.y < 0) {
+            this.x = DEV_XSTART;
+            this.y = HEIGHT + calcTextWidth(this.text);
 
-          // destroy this instance
-          // textInstances.splice(textInstances.indexOf(this), 1);
+            // destroy this instance
+            // textInstances.splice(textInstances.indexOf(this), 1);
+          }
+        }
+
+        if (this.backward) {
+          this.x -= MOVE_STEP;
+          this.y += MOVE_STEP;
+
+          if (this.y > HEIGHT + calcTextWidth(this.text)) {
+            this.x = DEV_XSTART + 560;
+            this.y = 0;
+
+            // destroy this instance
+            // textInstances.splice(textInstances.indexOf(this), 1);
+          }
         }
 
         ctx.restore();
@@ -130,7 +147,11 @@ export default function FrontPageHeader() {
     }
 
     const textInstances: ScrollingText[] = [];
+    // textInstances.push(new ScrollingText("Scrollable text!!!!!!!!!!!", DEV_XSTART, HEIGHT + calcTextWidth("Scrollable text!!!!!!!!!!!")));
+    // textInstances.push(new ScrollingText("backwards scrollable", DEV_XSTART + 50, 30, true));
+
     textInstances.push(new ScrollingText("Scrollable text!!!!!!!!!!!", DEV_XSTART, HEIGHT + calcTextWidth("Scrollable text!!!!!!!!!!!")));
+    textInstances.push(new ScrollingText("backwards scrollable", DEV_XSTART + 560, 20, true));
 
     const draw = (frameCount: number) => {
       console.log("CTX DEBUG", ctx.fillStyle, ctx.font);
