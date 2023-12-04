@@ -57,15 +57,16 @@ export default function FrontPageHeader() {
 
     const drawBg = () => {
       ctx.save();
-      ctx.fillStyle = "#ff3e3e";
+      ctx.fillStyle = "#444";
       ctx.fillRect(0, 0, WIDTH, HEIGHT);
       ctx.restore();
     };
 
-    const drawBar = (x: number, y: number) => {
+    const drawBar = (number: number, x: number, y: number) => {
       const calcedWidth = WIDTH < 1000 ? 1500 : WIDTH + Math.floor(WIDTH * 0.33);
       ctx.save();
-      ctx.fillStyle = "#26190f";
+
+      ctx.fillStyle = number % 2 === 0 ? "#0a0a0a" : "#050505";
 
       // set anchor point to bottom left
       ctx.translate(x, BAR_HEIGHT);
@@ -73,25 +74,12 @@ export default function FrontPageHeader() {
       ctx.rotate((-45 * Math.PI) / 180);
       ctx.fillRect(x, y, calcedWidth, BAR_HEIGHT);
 
-      ctx.fillStyle = "#fff";
-      ctx.font = FONT_SIZE + "px sans-serif";
-      // ctx.textAlign = "center";
-      ctx.textBaseline = "top";
-      ctx.fillText("Scrollable text - Scrollable text - Scrollable text - Scrollable text - Scrollable text - Scrollable text", x, y + BAR_HEIGHT / 2 - FONT_SIZE / 2);
-
       ctx.restore();
     };
 
     const calcTextWidth = (text: string) => {
-      console.log("CALCLING TEXT WIDTH", ctx.fillStyle, ctx.font);
-      const CALCED = Math.floor(ctx.measureText(text).width);
-
-      console.log("calcTextWidth", CALCED);
-
-      return CALCED;
+      return Math.floor(ctx.measureText(text).width);
     };
-
-    const DEV_XSTART = 0;
 
     class ScrollingText {
       text: string;
@@ -121,11 +109,8 @@ export default function FrontPageHeader() {
           this.y -= MOVE_STEP;
 
           if (this.y < 0) {
-            this.x = DEV_XSTART;
-            this.y = HEIGHT + calcTextWidth(this.text);
-
             // destroy this instance
-            // textInstances.splice(textInstances.indexOf(this), 1);
+            this.destroy();
           }
         }
 
@@ -134,38 +119,52 @@ export default function FrontPageHeader() {
           this.y += MOVE_STEP;
 
           if (this.y > HEIGHT + calcTextWidth(this.text)) {
-            this.x = DEV_XSTART + 560;
-            this.y = 0;
-
             // destroy this instance
-            // textInstances.splice(textInstances.indexOf(this), 1);
+            this.destroy();
           }
         }
 
         ctx.restore();
       }
+
+      destroy() {
+        textInstances.splice(textInstances.indexOf(this), 1);
+      }
     }
 
     const textInstances: ScrollingText[] = [];
-    // textInstances.push(new ScrollingText("Scrollable text!!!!!!!!!!!", DEV_XSTART, HEIGHT + calcTextWidth("Scrollable text!!!!!!!!!!!")));
-    // textInstances.push(new ScrollingText("backwards scrollable", DEV_XSTART + 50, 30, true));
 
-    textInstances.push(new ScrollingText("Scrollable text!!!!!!!!!!!", DEV_XSTART, HEIGHT + calcTextWidth("Scrollable text!!!!!!!!!!!")));
-    textInstances.push(new ScrollingText("backwards scrollable", DEV_XSTART + 560, 20, true));
+    // textInstances.push(new ScrollingText("Scrollable text!!!!!!!!!!!", DEV_XSTART, HEIGHT + calcTextWidth("Scrollable text!!!!!!!!!!!")));
+    // textInstances.push(new ScrollingText("backwards scrollable", DEV_XSTART + 560, 20, true));
+
+    // const createNewTextInstance = (text: string, x: number, y:number, backward: boolean =  false) => {
+    //   textInstances.push(new ScrollingText(text, x, y, backward));
+    // }
+
+    textInstances.push(new ScrollingText("Scrollable text!!!!!!!!!!!", 0, HEIGHT));
+    textInstances.push(new ScrollingText("backwards scrollable", 0 - calcTextWidth("backwards scrollable") + 50, HEIGHT + calcTextWidth("backwards scrollable") - 50));
+
+    // each bar is offset by this value (the 4 is error correction)
+    const DEV_OFFSET = Math.floor(Math.cos(45) * BAR_HEIGHT) + 4;
+
+    // bars start at this offset to make up for the empty space at the beginning due to the rotation
+    const BACK_OFFSET = -BAR_HEIGHT * 7;
 
     const draw = (frameCount: number) => {
-      console.log("CTX DEBUG", ctx.fillStyle, ctx.font);
-
+      // console.log(textInstances);
       // show frame count
       ctx.fillText(`${frameCount.toString()}`, WIDTH / 2, HEIGHT / 2);
 
-      const maxBars = Math.ceil(WIDTH / BAR_HEIGHT) + 1;
+      const widthMaxBars = Math.ceil(WIDTH / BAR_HEIGHT) + 1;
+      const maxBarsWithEmptySpace = widthMaxBars + Math.floor(widthMaxBars / 2);
 
-      // for (let i = 0; i < maxBars + Math.floor(maxBars / 2); i++) {
-      //   drawBar(ctx, 0, 0 - BAR_HEIGHT * 5 + BAR_HEIGHT * i);
-      // }
+      // bar limit has a few more bars due some empty space that happens on mobile
+      const maxBars = maxBarsWithEmptySpace + Math.floor(maxBarsWithEmptySpace / 2);
 
-      drawBar(0, HEIGHT + BAR_HEIGHT + Math.floor(BAR_HEIGHT / 2));
+      for (let i = 0; i < maxBars; i++) {
+        // y has some extra offset to make up for the empty space at the bottom
+        drawBar(i, BACK_OFFSET + DEV_OFFSET * i, Math.floor(BAR_HEIGHT * 2) + BACK_OFFSET + HEIGHT + DEV_OFFSET * i);
+      }
 
       textInstances.forEach((textInstance) => {
         textInstance.draw(ctx);
