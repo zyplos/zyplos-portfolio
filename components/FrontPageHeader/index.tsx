@@ -22,7 +22,7 @@ export default function FrontPageHeader() {
 
     const BAR_HEIGHT = 75;
     const FONT_SIZE = Math.floor(BAR_HEIGHT * 0.5);
-    const MOVE_STEP = 2;
+    const MOVE_STEP = 3;
 
     /*
       couple of quirks with this function:
@@ -34,6 +34,7 @@ export default function FrontPageHeader() {
     const setupCanvas = () => {
       ctx.fillStyle = "#ffd300";
       ctx.font = FONT_SIZE + "px sans-serif";
+      ctx.textBaseline = "middle";
     };
 
     const resizeCanvas = () => {
@@ -62,17 +63,49 @@ export default function FrontPageHeader() {
       ctx.restore();
     };
 
+    // const BAR_WIDTH = WIDTH < 1000 ? 1500 : WIDTH + Math.floor(WIDTH * 0.33);
+    const BAR_WIDTH = HEIGHT + Math.floor(HEIGHT * 0.7);
+    // const BAR_WIDTH = 200;
+
+    let DEV_XSTART = 0;
+    let DEV_YSTART = HEIGHT;
+
     const drawBar = (number: number, x: number, y: number) => {
       const calcedWidth = WIDTH < 1000 ? 1500 : WIDTH + Math.floor(WIDTH * 0.33);
       ctx.save();
 
-      ctx.fillStyle = number % 2 === 0 ? "#0a0a0a" : "#050505";
+      ctx.fillStyle = number % 2 === 0 ? "#ff3e3e" : "#ffd300";
+      // ctx.fillStyle = number % 2 === 0 ? "#0a0a0a" : "#050505";
 
       // set anchor point to bottom left
       ctx.translate(x, BAR_HEIGHT);
 
       ctx.rotate((-45 * Math.PI) / 180);
       ctx.fillRect(x, y, calcedWidth, BAR_HEIGHT);
+
+      // ===== TEXTDEV
+
+      ctx.save();
+
+      ctx.fillStyle = "#fff";
+      ctx.font = FONT_SIZE + "px sans-serif";
+
+      // ctx.textAlign = "center";
+      ctx.textBaseline = "top";
+      ctx.translate(DEV_XSTART, DEV_YSTART);
+      // ctx.rotate((-45 * Math.PI) / 180);
+      ctx.fillText("Scrollable text", 0, 0 + BAR_HEIGHT / 2 - FONT_SIZE / 2);
+
+      DEV_XSTART += MOVE_STEP;
+
+      if (DEV_YSTART < 0) {
+        DEV_XSTART = 0;
+        DEV_YSTART = HEIGHT;
+      }
+
+      ctx.restore();
+
+      // ===== TEXTDEV
 
       ctx.restore();
     };
@@ -90,7 +123,6 @@ export default function FrontPageHeader() {
 
     const TEXT_SPACER = 110;
     const SPACER_CHAR = " - ";
-    const TEXT_STARTER_ORIGIN = Math.floor(BAR_HEIGHT / 2) - FONT_SIZE;
 
     // textInstances.push(new ScrollingText("Scrollable text!!!!!!!!!!!" + SPACER_CHAR, TEXT_STARTER_ORIGIN, HEIGHT));
     // textInstances.push(
@@ -102,7 +134,7 @@ export default function FrontPageHeader() {
     // );
 
     // each bar is offset by this value (the 4 is error correction)
-    const DEV_OFFSET = Math.floor(Math.cos(45) * BAR_HEIGHT) + 4;
+    const BAR_OFFSET = Math.floor(Math.cos(45) * BAR_HEIGHT) + 4;
 
     // bars start at this offset to make up for the empty space at the beginning due to the rotation
     const X_ORIGIN = -BAR_HEIGHT * 7;
@@ -112,6 +144,162 @@ export default function FrontPageHeader() {
 
     // bar limit has a few more bars due some empty space that happens on mobile
     const MAX_BARS = maxBarsWithEmptySpace + Math.floor(maxBarsWithEmptySpace / 2);
+
+    const RANDOM_STRINGS = ["Scrollable text!!!!", "sample text", "shoutouts"];
+    // const RANDOM_STRINGS = ["sample text"];
+    // const RANDOM_STRINGS = ["WWW"];
+    const getRandomString = () => {
+      return RANDOM_STRINGS[Math.floor(Math.random() * RANDOM_STRINGS.length)];
+    };
+
+    class BarTextInstance {
+      text: string;
+      x: number;
+      y: number;
+      backward: boolean;
+      xOrigin: number;
+      yOrigin: number;
+      yCounter: number;
+
+      constructor(text: string, x: number, y: number, backward: boolean = false) {
+        let offsetX;
+
+        if (!backward) {
+          offsetX = x - calcTextWidth(text);
+        } else {
+          offsetX = x + calcTextWidth(text) + BAR_WIDTH;
+        }
+
+        this.text = text;
+        this.x = offsetX;
+        this.y = y;
+        this.backward = backward;
+        this.xOrigin = offsetX;
+        this.yOrigin = y;
+
+        this.yCounter = 0;
+      }
+
+      draw(ctx: CanvasRenderingContext2D) {
+        // ===== TEXTDEV
+
+        ctx.save();
+
+        ctx.fillStyle = "#fff";
+        ctx.font = FONT_SIZE + "px sans-serif";
+
+        // ctx.textAlign = "center";
+        ctx.textBaseline = "top";
+        ctx.translate(this.x, this.y);
+        // ctx.rotate((-45 * Math.PI) / 180);
+        ctx.fillText(this.text, 0, 0 + BAR_HEIGHT / 2 - FONT_SIZE / 2);
+
+        if (!this.backward) {
+          this.x += MOVE_STEP;
+          this.yCounter += MOVE_STEP;
+        } else {
+          this.x -= MOVE_STEP;
+          this.yCounter += MOVE_STEP;
+        }
+
+        // console.log("this.yCounter", this.yCounter);
+
+        ctx.restore();
+
+        // ===== TEXTDEV
+      }
+
+      destroyable() {
+        if (this.yCounter > BAR_WIDTH + calcTextWidth(this.text) * 2) {
+          return true;
+        }
+      }
+    }
+
+    class BarTextCombo {
+      number: number;
+      x: number;
+      y: number;
+
+      textInstances: BarTextInstance[] = [];
+
+      constructor(number: number, x: number, y: number) {
+        this.number = number;
+        this.x = x;
+        this.y = y;
+      }
+
+      drawBar(ctx: CanvasRenderingContext2D) {
+        ctx.save();
+
+        ctx.fillStyle = this.number % 2 === 0 ? "#ff3e3e" : "#ffd300";
+        // ctx.fillStyle = number % 2 === 0 ? "#0a0a0a" : "#050505";
+
+        // set anchor point to bottom left
+        ctx.translate(this.x, BAR_HEIGHT);
+
+        ctx.rotate((-45 * Math.PI) / 180);
+        ctx.fillRect(this.x, this.y, BAR_WIDTH, BAR_HEIGHT);
+
+        this.drawText(ctx);
+
+        ctx.restore();
+      }
+
+      textManager() {
+        if (this.textInstances.length === 0) {
+          const backward = this.number % 2 === 0 ? true : false;
+          // create new text instances for empty arrays
+          this.textInstances.push(new BarTextInstance(getRandomString(), this.x, this.y, backward));
+        }
+      }
+
+      drawText(ctx: CanvasRenderingContext2D) {
+        this.textInstances.forEach((textInstance, index) => {
+          textInstance.draw(ctx);
+
+          if (textInstance.destroyable()) {
+            this.textInstances.splice(index, 1);
+          }
+        });
+      }
+
+      draw(ctx: CanvasRenderingContext2D) {
+        this.drawBar(ctx);
+        this.textManager();
+      }
+    }
+
+    const DEV_BARINSTANCES: BarTextCombo[] = [];
+    // DEV_BARINSTANCES.push(new BarTextCombo(0, 0, HEIGHT));
+    // DEV_BARINSTANCES[0].textInstances.push(new BarTextInstance("wowow", 0, HEIGHT));
+
+    for (let i = 0; i < MAX_BARS; i++) {
+      // y has some extra offset to make up for the empty space at the bottom
+      const devXBar = X_ORIGIN + BAR_OFFSET * i;
+      const devYBar = Math.floor(BAR_HEIGHT * 2) + X_ORIGIN + HEIGHT + BAR_OFFSET * i;
+      // console.log("devXBar", devXBar, "devYBar", devYBar);
+      DEV_BARINSTANCES.push(new BarTextCombo(i, devXBar, devYBar));
+    }
+
+    const drawDev = (frameCount: number) => {
+      const i = 20;
+      // const devXBar = X_ORIGIN + BAR_OFFSET * i;
+      // const devYBar = Math.floor(BAR_HEIGHT * 2) + X_ORIGIN + HEIGHT + BAR_OFFSET * i;
+      // drawBar(0, 0, HEIGHT);
+
+      // const devBar = DEV_BARINSTANCES[0];
+      // devBar.draw(ctx);
+
+      DEV_BARINSTANCES.forEach((devBar, index) => {
+        // dont draw odd bars
+        // if (index % 2 !== 1) return;
+        devBar.draw(ctx);
+      });
+
+      // ctx.fillText(`X ${DEV_XSTART} | Y ${DEV_YSTART}`, WIDTH / 2, HEIGHT / 2);
+      // ctx.fillText(`insts ${devBar.textInstances.length} | X ${devBar.textInstances[0]?.x} | Y ${devBar.textInstances[0]?.yCounter}`, WIDTH / 2, HEIGHT / 2);
+    };
 
     type TextMap = ScrollingText[][];
     const TEXT_MAP: TextMap = [];
@@ -178,33 +366,36 @@ export default function FrontPageHeader() {
 
       for (let i = 0; i < MAX_BARS; i++) {
         // y has some extra offset to make up for the empty space at the bottom
-        const devXBar = X_ORIGIN + DEV_OFFSET * i;
-        const devYBar = Math.floor(BAR_HEIGHT * 2) + X_ORIGIN + HEIGHT + DEV_OFFSET * i;
+        const devXBar = X_ORIGIN + BAR_OFFSET * i;
+        const devYBar = Math.floor(BAR_HEIGHT * 2) + X_ORIGIN + HEIGHT + BAR_OFFSET * i;
         // console.log("devXBar", devXBar, "devYBar", devYBar);
-        drawBar(i, X_ORIGIN + DEV_OFFSET * i, Math.floor(BAR_HEIGHT * 2) + X_ORIGIN + HEIGHT + DEV_OFFSET * i);
+        drawBar(i, devXBar, devYBar);
       }
     };
 
-    // const RANDOM_STRINGS = ["Scrollable text!!!!", "sample text", "shoutouts"];
-    const RANDOM_STRINGS = ["WwwwWWWW", "auauuah", "sping!@"];
-    const getRandomString = () => {
-      return RANDOM_STRINGS[Math.floor(Math.random() * RANDOM_STRINGS.length)];
-    };
+    // const X_ORIGIN_TEXT = -BAR_HEIGHT * 7 - 13;
+    const X_ORIGIN_TEXT = 0;
+    console.log("X_ORIGIN_TEXT", X_ORIGIN_TEXT);
+
+    const TEXT_OFFSET = BAR_OFFSET + 10;
 
     console.log("TEXT INSTANCES", TEXT_MAP);
     const drawText = (frameCount: number) => {
       TEXT_MAP.forEach((barArray, i) => {
-        if (i !== 0) return;
+        // if (i > 20 || i < 10) return;
+        // if (![20].includes(i)) return;
         if (barArray.length === 0) {
           // create new text instances for empty arrays
-          const newString = getRandomString() + SPACER_CHAR;
-          const newCoords = DEV_OFFSET * i + HEIGHT + calcTextWidth(newString);
-          const devWorkingX = DEV_OFFSET * i - calcTextWidth(newString);
-          const devWorkingY = DEV_OFFSET * i + HEIGHT + calcTextWidth(newString);
-          console.log("devWorkingX", devWorkingX, "devWorkingY", devWorkingY);
-          console.log("newCoords", newCoords);
+          const newString = i + "|" + getRandomString() + SPACER_CHAR;
+          const devWorkingX = X_ORIGIN_TEXT + TEXT_OFFSET * i - calcTextWidth(newString);
+          const devWorkingY = 10 + X_ORIGIN_TEXT + TEXT_OFFSET * i + HEIGHT + calcTextWidth(newString);
+
+          const devXBar = X_ORIGIN + BAR_OFFSET * i;
+          const devYBar = Math.floor(BAR_HEIGHT * 2) + X_ORIGIN + HEIGHT + BAR_OFFSET * i;
+
+          console.log("X_ORIGIN_TEXT", X_ORIGIN_TEXT, "devWorkingX", devWorkingX, "devWorkingY", devWorkingY);
           TEXT_MAP[i].push(new ScrollingText(newString, devWorkingX, devWorkingY));
-          // TEXT_MAP[i].push(new ScrollingText(newString, newCoords, newCoords));
+          // TEXT_MAP[i].push(new ScrollingText(newString, devXBar, devYBar));
         } else {
           TEXT_MAP[i].forEach((textInstance, j) => {
             textInstance.draw(ctx);
@@ -220,8 +411,9 @@ export default function FrontPageHeader() {
     const render = () => {
       FRAME++;
       drawBg();
-      drawBars(FRAME);
-      drawText(FRAME);
+      // drawBars(FRAME);
+      // drawText(FRAME);
+      drawDev(FRAME);
       animationFrameId = window.requestAnimationFrame(render);
     };
     render();
