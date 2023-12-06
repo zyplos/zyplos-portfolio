@@ -152,7 +152,7 @@ export default function FrontPageHeader() {
     // const RANDOM_STRINGS = ["sample text"];
     // const RANDOM_STRINGS = ["WWW"];
     const getRandomString = () => {
-      return RANDOM_STRINGS[Math.floor(Math.random() * RANDOM_STRINGS.length)];
+      return RANDOM_STRINGS[Math.floor(Math.random() * RANDOM_STRINGS.length)] + SPACER_CHAR;
     };
 
     class BarTextInstance {
@@ -264,7 +264,7 @@ export default function FrontPageHeader() {
         if (this.textInstances.length === 0) {
           const backward = this.number % 2 === 0 ? true : false;
           // create new text instances for empty arrays
-          this.textInstances.push(new BarTextInstance(getRandomString(), this.x, this.y, backward));
+          // this.textInstances.push(new BarTextInstance(getRandomString(), this.x, this.y, backward));
           // reload page
           // window.location.reload();
         }
@@ -276,9 +276,16 @@ export default function FrontPageHeader() {
 
           if (textInstance.destroyable()) {
             this.textInstances.splice(index, 1);
-            // push new text instance
-            // const backward = this.number % 2 === 0 ? true : false;
-            // this.textInstances.push(new BarTextInstance(getRandomString(), this.x, this.y, backward, this.x, this.y));
+          }
+
+          // the last text instance is the first one in line
+          // when its yCounter reaches the width of the text then theres enough space for a new text instance
+          const lastTextInstance = this.textInstances[this.textInstances.length - 1];
+          if (!lastTextInstance) return;
+
+          if (lastTextInstance.yCounter > calcTextWidth(lastTextInstance.text)) {
+            const backward = this.number % 2 === 0 ? true : false;
+            this.textInstances.push(new BarTextInstance(getRandomString(), this.x, this.y, backward));
           }
         });
       }
@@ -293,7 +300,7 @@ export default function FrontPageHeader() {
     // DEV_BARINSTANCES.push(new BarTextCombo(0, 0, HEIGHT));
     // DEV_BARINSTANCES[0].textInstances.push(new BarTextInstance("wowow", 0, HEIGHT));
 
-    const DEV_BAR_ID = 16;
+    const DEV_BAR_ID = 6;
     for (let i = 0; i < MAX_BARS; i++) {
       // if (i !== DEV_BAR_ID) continue;
       const isBackward = i % 2 === 0 ? true : false;
@@ -314,7 +321,7 @@ export default function FrontPageHeader() {
 
       let currentWidthTaken = 0;
       let DEV_MAX_COUNTER = 0;
-      let currentString = DEV_MAX_COUNTER + "|" + getRandomString() + SPACER_CHAR;
+      let currentString = DEV_MAX_COUNTER + "|" + getRandomString();
       let BAR_WIDTH_EXTRA_SPACE = calcTextWidth(currentString);
       while (currentWidthTaken < BAR_WIDTH + BAR_WIDTH_EXTRA_SPACE) {
         DEV_MAX_COUNTER++;
@@ -323,11 +330,16 @@ export default function FrontPageHeader() {
         );
 
         // then a new string is selected and the offset is from the new string
-        currentString = DEV_MAX_COUNTER + "|" + getRandomString() + SPACER_CHAR;
+        currentString = DEV_MAX_COUNTER + "|" + getRandomString();
         const textWidth = calcTextWidth(currentString);
         currentWidthTaken += textWidth;
         BAR_WIDTH_EXTRA_SPACE = textWidth;
       }
+
+      // the first text instance is the first one in the bar
+      // but the text manager sees the last one as the first one
+      // so reverse the array so its ready for the text manager
+      newBar.textInstances.reverse();
 
       // create first text instances
       // if (!isBackward) {
