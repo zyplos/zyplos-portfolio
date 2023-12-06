@@ -1,9 +1,10 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./styles.module.scss";
 import { text } from "stream/consumers";
 
 export default function FrontPageHeader() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [DEV_CHANGER_SPEED, SET_DEV_CHANGER_SPEED] = useState(1);
 
   useEffect(() => {
     console.log("CANVASSTART======================================");
@@ -22,7 +23,8 @@ export default function FrontPageHeader() {
 
     const BAR_HEIGHT = 75;
     const FONT_SIZE = Math.floor(BAR_HEIGHT * 0.5);
-    const MOVE_STEP = 3;
+    // const MOVE_STEP = 2;
+    const MOVE_STEP = DEV_CHANGER_SPEED;
 
     /*
       couple of quirks with this function:
@@ -65,7 +67,7 @@ export default function FrontPageHeader() {
 
     // const BAR_WIDTH = WIDTH < 1000 ? 1500 : WIDTH + Math.floor(WIDTH * 0.33);
     const BAR_WIDTH = HEIGHT + Math.floor(HEIGHT * 0.7);
-    // const BAR_WIDTH = 200;
+    // const BAR_WIDTH = 400;
 
     let DEV_XSTART = 0;
     let DEV_YSTART = HEIGHT;
@@ -145,7 +147,8 @@ export default function FrontPageHeader() {
     // bar limit has a few more bars due some empty space that happens on mobile
     const MAX_BARS = maxBarsWithEmptySpace + Math.floor(maxBarsWithEmptySpace / 2);
 
-    const RANDOM_STRINGS = ["Scrollable text!!!!", "sample text", "shoutouts"];
+    // const RANDOM_STRINGS = ["Scrollable text!!!!", "sample text", "shoutouts"];
+    const RANDOM_STRINGS = ["test string", "scrollable", "plinko", "wow", "me", "typical string"];
     // const RANDOM_STRINGS = ["sample text"];
     // const RANDOM_STRINGS = ["WWW"];
     const getRandomString = () => {
@@ -157,27 +160,31 @@ export default function FrontPageHeader() {
       x: number;
       y: number;
       backward: boolean;
-      xOrigin: number;
-      yOrigin: number;
       yCounter: number;
 
-      constructor(text: string, x: number, y: number, backward: boolean = false) {
-        let offsetX;
+      constructor(text: string, x: number, y: number, backward: boolean = false, startPos?: number) {
+        console.table({ text, x, y, backward, startPos, calcTextWidth: calcTextWidth(text) });
+        this.text = text;
 
         if (!backward) {
-          offsetX = x - calcTextWidth(text);
+          // x is the start of the bar
+          // subtracting the width of the text starts it outside the start of the bar so it moves in seamlessly
+          this.x = x - calcTextWidth(text);
         } else {
-          offsetX = x + calcTextWidth(text) + BAR_WIDTH;
+          this.x = x + BAR_WIDTH;
         }
 
-        this.text = text;
-        this.x = offsetX;
         this.y = y;
         this.backward = backward;
-        this.xOrigin = offsetX;
-        this.yOrigin = y;
 
         this.yCounter = 0;
+        if (startPos) {
+          if (!backward) {
+            this.yCounter = startPos;
+          } else {
+            this.yCounter = startPos;
+          }
+        }
       }
 
       draw(ctx: CanvasRenderingContext2D) {
@@ -210,8 +217,15 @@ export default function FrontPageHeader() {
       }
 
       destroyable() {
-        if (this.yCounter > BAR_WIDTH + calcTextWidth(this.text) * 2) {
-          return true;
+        if (!this.backward) {
+          // text width is added so it gets destroyed after it leaves the bar
+          if (this.yCounter > BAR_WIDTH + calcTextWidth(this.text)) {
+            return true;
+          }
+        } else {
+          if (this.yCounter > BAR_WIDTH + calcTextWidth(this.text)) {
+            return true;
+          }
         }
       }
     }
@@ -232,7 +246,7 @@ export default function FrontPageHeader() {
       drawBar(ctx: CanvasRenderingContext2D) {
         ctx.save();
 
-        ctx.fillStyle = this.number % 2 === 0 ? "#ff3e3e" : "#ffd300";
+        ctx.fillStyle = this.number % 2 === 0 ? "#ff3e3e" : "#aa0000";
         // ctx.fillStyle = number % 2 === 0 ? "#0a0a0a" : "#050505";
 
         // set anchor point to bottom left
@@ -251,6 +265,8 @@ export default function FrontPageHeader() {
           const backward = this.number % 2 === 0 ? true : false;
           // create new text instances for empty arrays
           this.textInstances.push(new BarTextInstance(getRandomString(), this.x, this.y, backward));
+          // reload page
+          // window.location.reload();
         }
       }
 
@@ -260,6 +276,9 @@ export default function FrontPageHeader() {
 
           if (textInstance.destroyable()) {
             this.textInstances.splice(index, 1);
+            // push new text instance
+            // const backward = this.number % 2 === 0 ? true : false;
+            // this.textInstances.push(new BarTextInstance(getRandomString(), this.x, this.y, backward, this.x, this.y));
           }
         });
       }
@@ -274,12 +293,114 @@ export default function FrontPageHeader() {
     // DEV_BARINSTANCES.push(new BarTextCombo(0, 0, HEIGHT));
     // DEV_BARINSTANCES[0].textInstances.push(new BarTextInstance("wowow", 0, HEIGHT));
 
+    const DEV_BAR_ID = 16;
     for (let i = 0; i < MAX_BARS; i++) {
+      // if (i !== DEV_BAR_ID) continue;
+      const isBackward = i % 2 === 0 ? true : false;
+      console.log("isBackward", isBackward, "i", i);
       // y has some extra offset to make up for the empty space at the bottom
       const devXBar = X_ORIGIN + BAR_OFFSET * i;
       const devYBar = Math.floor(BAR_HEIGHT * 2) + X_ORIGIN + HEIGHT + BAR_OFFSET * i;
       // console.log("devXBar", devXBar, "devYBar", devYBar);
-      DEV_BARINSTANCES.push(new BarTextCombo(i, devXBar, devYBar));
+
+      const newBar = new BarTextCombo(i, devXBar, devYBar);
+      // const DEV_WORDS = ["0|wow", "1|reallylongword", "2|plinko"];
+      const DEV_WORDS = ["0|wow", "1|plinko", "2|reallylongword"];
+
+      // newBar.textInstances.push(new BarTextInstance(DEV_WORDS[0], devXBar, devYBar, isBackward));
+      // const DEV_SELECTED_WORD = DEV_WORDS[1];
+      // const DEV_SELECTED_WORD_WIDTH = calcTextWidth(DEV_SELECTED_WORD);
+      // newBar.textInstances.push(new BarTextInstance(DEV_SELECTED_WORD, devXBar + DEV_SELECTED_WORD_WIDTH, devYBar, isBackward, DEV_SELECTED_WORD_WIDTH));
+
+      let currentWidthTaken = 0;
+      let DEV_MAX_COUNTER = 0;
+      let currentString = DEV_MAX_COUNTER + "|" + getRandomString() + SPACER_CHAR;
+      let BAR_WIDTH_EXTRA_SPACE = calcTextWidth(currentString);
+      while (currentWidthTaken < BAR_WIDTH + BAR_WIDTH_EXTRA_SPACE) {
+        DEV_MAX_COUNTER++;
+        newBar.textInstances.push(
+          new BarTextInstance(currentString, isBackward ? devXBar - currentWidthTaken : devXBar + currentWidthTaken, devYBar, isBackward, currentWidthTaken)
+        );
+
+        // then a new string is selected and the offset is from the new string
+        currentString = DEV_MAX_COUNTER + "|" + getRandomString() + SPACER_CHAR;
+        const textWidth = calcTextWidth(currentString);
+        currentWidthTaken += textWidth;
+        BAR_WIDTH_EXTRA_SPACE = textWidth;
+      }
+
+      // create first text instances
+      // if (!isBackward) {
+      //   // ===== DEV WORKING MANUAL
+      //   // let currentWidthTaken = 0;
+      //   // newBar.textInstances.push(new BarTextInstance(DEV_WORDS[0], devXBar + currentWidthTaken, devYBar, isBackward, currentWidthTaken));
+      //   // currentWidthTaken += calcTextWidth(DEV_WORDS[1]);
+      //   // newBar.textInstances.push(new BarTextInstance(DEV_WORDS[1], devXBar + currentWidthTaken, devYBar, isBackward, currentWidthTaken));
+      //   // currentWidthTaken += calcTextWidth(DEV_WORDS[2]);
+      //   // newBar.textInstances.push(new BarTextInstance(DEV_WORDS[2], devXBar + currentWidthTaken, devYBar, isBackward, currentWidthTaken));
+      //   // ===== WORKING LOOP EVEN BARS
+      //   // a string has to be added first
+      //   let currentWidthTaken = 0;
+      //   let DEV_MAX_COUNTER = 0;
+      //   let currentString = DEV_MAX_COUNTER + "|" + getRandomString() + SPACER_CHAR;
+      //   let BAR_WIDTH_EXTRA_SPACE = calcTextWidth(currentString);
+      //   while (currentWidthTaken < BAR_WIDTH + BAR_WIDTH_EXTRA_SPACE) {
+      //     DEV_MAX_COUNTER++;
+      //     newBar.textInstances.push(new BarTextInstance(currentString, devXBar + currentWidthTaken, devYBar, isBackward, currentWidthTaken));
+
+      //     // then a new string is selected and the offset is from the new string
+      //     currentString = DEV_MAX_COUNTER + "|" + getRandomString() + SPACER_CHAR;
+      //     const textWidth = calcTextWidth(currentString);
+      //     currentWidthTaken += textWidth;
+      //     BAR_WIDTH_EXTRA_SPACE = textWidth;
+      //   }
+      // } else {
+      //   // ===== DEV WOKRING MANUAL
+      //   // let currentWidthTaken = 0;
+      //   // newBar.textInstances.push(new BarTextInstance(DEV_WORDS[0], devXBar - currentWidthTaken, devYBar, isBackward, currentWidthTaken));
+      //   // currentWidthTaken += calcTextWidth(DEV_WORDS[1]);
+      //   // newBar.textInstances.push(new BarTextInstance(DEV_WORDS[1], devXBar - currentWidthTaken, devYBar, isBackward, currentWidthTaken));
+      //   // currentWidthTaken += calcTextWidth(DEV_WORDS[2]);
+      //   // newBar.textInstances.push(new BarTextInstance(DEV_WORDS[2], devXBar - currentWidthTaken, devYBar, isBackward, currentWidthTaken));
+      //   // =====
+      //   let currentWidthTaken = 0;
+      //   let DEV_MAX_COUNTER = 0;
+      //   let currentString = DEV_MAX_COUNTER + "|" + getRandomString() + SPACER_CHAR;
+      //   let BAR_WIDTH_EXTRA_SPACE = calcTextWidth(currentString);
+      //   while (currentWidthTaken < BAR_WIDTH + BAR_WIDTH_EXTRA_SPACE) {
+      //     DEV_MAX_COUNTER++;
+      //     newBar.textInstances.push(new BarTextInstance(currentString, devXBar - currentWidthTaken, devYBar, isBackward, currentWidthTaken));
+
+      //     // then a new string is selected and the offset is from the new string
+      //     currentString = DEV_MAX_COUNTER + "|" + getRandomString() + SPACER_CHAR;
+      //     const textWidth = calcTextWidth(currentString);
+      //     currentWidthTaken += textWidth;
+      //     BAR_WIDTH_EXTRA_SPACE = textWidth;
+      //   }
+      //   // =====
+      //   // currentWidthTaken += calcTextWidth("1|chunger - ");
+      //   // let currentWidthTaken = 0;
+      //   // let DEV_MAX_COUNTER = 0;
+      //   // while (currentWidthTaken < BAR_WIDTH && DEV_MAX_COUNTER < 2) {
+      //   //   const randomString = DEV_MAX_COUNTER + "|" + getRandomString() + SPACER_CHAR;
+      //   //   const textWidth = calcTextWidth(randomString);
+      //   //   currentWidthTaken += textWidth;
+      //   //   DEV_MAX_COUNTER++;
+      //   //   newBar.textInstances.push(new BarTextInstance(randomString, devXBar + currentWidthTaken, devYBar, isBackward, currentWidthTaken - textWidth));
+      //   // }
+      //   // =====
+      //   // let currentWidthTaken = 0;
+      //   // let DEV_MAX_COUNTER = 0;
+      //   // while (currentWidthTaken < BAR_WIDTH) {
+      //   //   const randomString = DEV_MAX_COUNTER + "|" + getRandomString() + SPACER_CHAR;
+      //   //   const textWidth = calcTextWidth(randomString);
+      //   //   currentWidthTaken += textWidth;
+      //   //   DEV_MAX_COUNTER++;
+      //   //   newBar.textInstances.push(new BarTextInstance(randomString, devXBar + currentWidthTaken, devYBar, true, currentWidthTaken - textWidth));
+      //   // }
+      // }
+
+      DEV_BARINSTANCES.push(newBar);
     }
 
     const drawDev = (frameCount: number) => {
@@ -297,8 +418,15 @@ export default function FrontPageHeader() {
         devBar.draw(ctx);
       });
 
+      const devBar = DEV_BARINSTANCES[0];
+      const devBarInstance = devBar.textInstances[devBar.textInstances.length - 1];
+
       // ctx.fillText(`X ${DEV_XSTART} | Y ${DEV_YSTART}`, WIDTH / 2, HEIGHT / 2);
-      // ctx.fillText(`insts ${devBar.textInstances.length} | X ${devBar.textInstances[0]?.x} | Y ${devBar.textInstances[0]?.yCounter}`, WIDTH / 2, HEIGHT / 2);
+      ctx.fillText(
+        `insts ${devBar.textInstances.length} | LOOKING AT [${devBarInstance.text}] | X ${devBarInstance?.x} | YCOUNTER ${devBarInstance?.yCounter}`,
+        10,
+        HEIGHT / 2
+      );
     };
 
     type TextMap = ScrollingText[][];
@@ -422,13 +550,14 @@ export default function FrontPageHeader() {
       window.cancelAnimationFrame(animationFrameId);
       window.removeEventListener("resize", resizeCanvas);
     };
-  }, []);
+  }, [DEV_CHANGER_SPEED]);
 
   return (
     <>
       <header className={styles.wrapper}>
         <canvas className={styles.canvas} ref={canvasRef}></canvas>
       </header>
+      <input type="range" min="0" max="4" value={DEV_CHANGER_SPEED} onChange={(e) => SET_DEV_CHANGER_SPEED(parseInt(e.target.value))} />
     </>
   );
 }
