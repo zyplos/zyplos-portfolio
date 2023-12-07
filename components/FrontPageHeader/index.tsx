@@ -23,7 +23,7 @@ export default function FrontPageHeader() {
     let HEIGHT = canvas.height;
 
     const BAR_HEIGHT = 75;
-    const FONT_SIZE = Math.floor(BAR_HEIGHT * 0.5);
+    const FONT_SIZE = Math.floor(BAR_HEIGHT * 0.45);
     const MOVE_STEP = 0.5;
 
     const TEXT_COLOR = "#1e1e1e";
@@ -95,7 +95,19 @@ export default function FrontPageHeader() {
     const MAX_BARS = maxBarsWithEmptySpace + Math.floor(maxBarsWithEmptySpace / 2);
 
     // const RANDOM_STRINGS = ["Scrollable text!!!!", "sample text", "shoutouts"];
-    const RANDOM_STRINGS = ["test string", "scrollable", "plinko", "wow", "me", "particularly long string"];
+    // const RANDOM_STRINGS = ["test string", "scrollable", "plinko", "wow", "me", "particularly long string"];
+    const RANDOM_STRINGS = [
+      "Casually professional",
+      "Naturally technical",
+      "Constantly dynamic",
+      "Hopelessly optimistic",
+      "Imaginatively realistic", // ?
+      "Rarely common",
+      "Bluntly sharp", //
+      "Sarcasticly sincere", //
+      "Thoughtfully impulsive", //
+      //
+    ];
     // const RANDOM_STRINGS = ["plinko"];
 
     const getRandomString = () => {
