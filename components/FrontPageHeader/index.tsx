@@ -4,6 +4,7 @@ import { text } from "stream/consumers";
 
 export default function FrontPageHeader() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const speedRef = useRef<HTMLInputElement>(null);
   const [DEV_CHANGER_SPEED, SET_DEV_CHANGER_SPEED] = useState(1);
 
   useEffect(() => {
@@ -23,8 +24,15 @@ export default function FrontPageHeader() {
 
     const BAR_HEIGHT = 75;
     const FONT_SIZE = Math.floor(BAR_HEIGHT * 0.5);
-    // const MOVE_STEP = 2;
-    const MOVE_STEP = DEV_CHANGER_SPEED;
+    const MOVE_STEP = 0.5;
+    // const DEV_SPEEDREF = speedRef.current;
+    // let MOVE_STEP = DEV_SPEEDREF ? parseInt(DEV_SPEEDREF.value) : 2;
+    // // on input change
+    // if (DEV_SPEEDREF) {
+    //   DEV_SPEEDREF.addEventListener("input", (e: any) => {
+    //     MOVE_STEP = parseInt(e?.target?.value ?? 2);
+    //   });
+    // }
 
     /*
       couple of quirks with this function:
@@ -148,7 +156,8 @@ export default function FrontPageHeader() {
     const MAX_BARS = maxBarsWithEmptySpace + Math.floor(maxBarsWithEmptySpace / 2);
 
     // const RANDOM_STRINGS = ["Scrollable text!!!!", "sample text", "shoutouts"];
-    const RANDOM_STRINGS = ["test string", "scrollable", "plinko", "wow", "me", "typical string"];
+    // const RANDOM_STRINGS = ["test string", "scrollable", "plinko", "wow", "me", "typical string"];
+    const RANDOM_STRINGS = ["plinko"];
     // const RANDOM_STRINGS = ["sample text"];
     // const RANDOM_STRINGS = ["WWW"];
     const getRandomString = () => {
@@ -163,7 +172,7 @@ export default function FrontPageHeader() {
       yCounter: number;
 
       constructor(text: string, x: number, y: number, backward: boolean = false, startPos?: number) {
-        console.table({ text, x, y, backward, startPos, calcTextWidth: calcTextWidth(text) });
+        // console.table({ text, x, y, backward, startPos, calcTextWidth: calcTextWidth(text) });
         this.text = text;
 
         if (!backward) {
@@ -217,15 +226,10 @@ export default function FrontPageHeader() {
       }
 
       destroyable() {
-        if (!this.backward) {
-          // text width is added so it gets destroyed after it leaves the bar
-          if (this.yCounter > BAR_WIDTH + calcTextWidth(this.text)) {
-            return true;
-          }
-        } else {
-          if (this.yCounter > BAR_WIDTH + calcTextWidth(this.text)) {
-            return true;
-          }
+        // text width is added so it gets destroyed after it leaves the bar
+        // this is multipled by two to hide a bug where the last item flashes and shifts a bit after something gets deleted
+        if (this.yCounter > BAR_WIDTH + calcTextWidth(this.text) * 2) {
+          return true;
         }
       }
     }
@@ -276,6 +280,13 @@ export default function FrontPageHeader() {
 
           if (textInstance.destroyable()) {
             this.textInstances.splice(index, 1);
+            // weird bug where new last item is shifted a few pixels
+            // add a few pixels to compensate
+
+            // const newLastItem = this.textInstances[0];
+            // if (!newLastItem) return;
+            // newLastItem.yCounter += 2;
+            // newLastItem.x += 2;
           }
 
           // the last text instance is the first one in line
@@ -300,7 +311,7 @@ export default function FrontPageHeader() {
     // DEV_BARINSTANCES.push(new BarTextCombo(0, 0, HEIGHT));
     // DEV_BARINSTANCES[0].textInstances.push(new BarTextInstance("wowow", 0, HEIGHT));
 
-    const DEV_BAR_ID = 6;
+    const DEV_BAR_ID = 7;
     for (let i = 0; i < MAX_BARS; i++) {
       // if (i !== DEV_BAR_ID) continue;
       const isBackward = i % 2 === 0 ? true : false;
@@ -321,7 +332,8 @@ export default function FrontPageHeader() {
 
       let currentWidthTaken = 0;
       let DEV_MAX_COUNTER = 0;
-      let currentString = DEV_MAX_COUNTER + "|" + getRandomString();
+      // let currentString = DEV_MAX_COUNTER + "|" + getRandomString();
+      let currentString = getRandomString();
       let BAR_WIDTH_EXTRA_SPACE = calcTextWidth(currentString);
       while (currentWidthTaken < BAR_WIDTH + BAR_WIDTH_EXTRA_SPACE) {
         DEV_MAX_COUNTER++;
@@ -330,7 +342,8 @@ export default function FrontPageHeader() {
         );
 
         // then a new string is selected and the offset is from the new string
-        currentString = DEV_MAX_COUNTER + "|" + getRandomString();
+        // currentString = DEV_MAX_COUNTER + "|" + getRandomString();
+        currentString = getRandomString();
         const textWidth = calcTextWidth(currentString);
         currentWidthTaken += textWidth;
         BAR_WIDTH_EXTRA_SPACE = textWidth;
@@ -341,80 +354,10 @@ export default function FrontPageHeader() {
       // so reverse the array so its ready for the text manager
       newBar.textInstances.reverse();
 
-      // create first text instances
-      // if (!isBackward) {
-      //   // ===== DEV WORKING MANUAL
-      //   // let currentWidthTaken = 0;
-      //   // newBar.textInstances.push(new BarTextInstance(DEV_WORDS[0], devXBar + currentWidthTaken, devYBar, isBackward, currentWidthTaken));
-      //   // currentWidthTaken += calcTextWidth(DEV_WORDS[1]);
-      //   // newBar.textInstances.push(new BarTextInstance(DEV_WORDS[1], devXBar + currentWidthTaken, devYBar, isBackward, currentWidthTaken));
-      //   // currentWidthTaken += calcTextWidth(DEV_WORDS[2]);
-      //   // newBar.textInstances.push(new BarTextInstance(DEV_WORDS[2], devXBar + currentWidthTaken, devYBar, isBackward, currentWidthTaken));
-      //   // ===== WORKING LOOP EVEN BARS
-      //   // a string has to be added first
-      //   let currentWidthTaken = 0;
-      //   let DEV_MAX_COUNTER = 0;
-      //   let currentString = DEV_MAX_COUNTER + "|" + getRandomString() + SPACER_CHAR;
-      //   let BAR_WIDTH_EXTRA_SPACE = calcTextWidth(currentString);
-      //   while (currentWidthTaken < BAR_WIDTH + BAR_WIDTH_EXTRA_SPACE) {
-      //     DEV_MAX_COUNTER++;
-      //     newBar.textInstances.push(new BarTextInstance(currentString, devXBar + currentWidthTaken, devYBar, isBackward, currentWidthTaken));
-
-      //     // then a new string is selected and the offset is from the new string
-      //     currentString = DEV_MAX_COUNTER + "|" + getRandomString() + SPACER_CHAR;
-      //     const textWidth = calcTextWidth(currentString);
-      //     currentWidthTaken += textWidth;
-      //     BAR_WIDTH_EXTRA_SPACE = textWidth;
-      //   }
-      // } else {
-      //   // ===== DEV WOKRING MANUAL
-      //   // let currentWidthTaken = 0;
-      //   // newBar.textInstances.push(new BarTextInstance(DEV_WORDS[0], devXBar - currentWidthTaken, devYBar, isBackward, currentWidthTaken));
-      //   // currentWidthTaken += calcTextWidth(DEV_WORDS[1]);
-      //   // newBar.textInstances.push(new BarTextInstance(DEV_WORDS[1], devXBar - currentWidthTaken, devYBar, isBackward, currentWidthTaken));
-      //   // currentWidthTaken += calcTextWidth(DEV_WORDS[2]);
-      //   // newBar.textInstances.push(new BarTextInstance(DEV_WORDS[2], devXBar - currentWidthTaken, devYBar, isBackward, currentWidthTaken));
-      //   // =====
-      //   let currentWidthTaken = 0;
-      //   let DEV_MAX_COUNTER = 0;
-      //   let currentString = DEV_MAX_COUNTER + "|" + getRandomString() + SPACER_CHAR;
-      //   let BAR_WIDTH_EXTRA_SPACE = calcTextWidth(currentString);
-      //   while (currentWidthTaken < BAR_WIDTH + BAR_WIDTH_EXTRA_SPACE) {
-      //     DEV_MAX_COUNTER++;
-      //     newBar.textInstances.push(new BarTextInstance(currentString, devXBar - currentWidthTaken, devYBar, isBackward, currentWidthTaken));
-
-      //     // then a new string is selected and the offset is from the new string
-      //     currentString = DEV_MAX_COUNTER + "|" + getRandomString() + SPACER_CHAR;
-      //     const textWidth = calcTextWidth(currentString);
-      //     currentWidthTaken += textWidth;
-      //     BAR_WIDTH_EXTRA_SPACE = textWidth;
-      //   }
-      //   // =====
-      //   // currentWidthTaken += calcTextWidth("1|chunger - ");
-      //   // let currentWidthTaken = 0;
-      //   // let DEV_MAX_COUNTER = 0;
-      //   // while (currentWidthTaken < BAR_WIDTH && DEV_MAX_COUNTER < 2) {
-      //   //   const randomString = DEV_MAX_COUNTER + "|" + getRandomString() + SPACER_CHAR;
-      //   //   const textWidth = calcTextWidth(randomString);
-      //   //   currentWidthTaken += textWidth;
-      //   //   DEV_MAX_COUNTER++;
-      //   //   newBar.textInstances.push(new BarTextInstance(randomString, devXBar + currentWidthTaken, devYBar, isBackward, currentWidthTaken - textWidth));
-      //   // }
-      //   // =====
-      //   // let currentWidthTaken = 0;
-      //   // let DEV_MAX_COUNTER = 0;
-      //   // while (currentWidthTaken < BAR_WIDTH) {
-      //   //   const randomString = DEV_MAX_COUNTER + "|" + getRandomString() + SPACER_CHAR;
-      //   //   const textWidth = calcTextWidth(randomString);
-      //   //   currentWidthTaken += textWidth;
-      //   //   DEV_MAX_COUNTER++;
-      //   //   newBar.textInstances.push(new BarTextInstance(randomString, devXBar + currentWidthTaken, devYBar, true, currentWidthTaken - textWidth));
-      //   // }
-      // }
-
       DEV_BARINSTANCES.push(newBar);
     }
 
+    let DEV_LASTFRAME = 0;
     const drawDev = (frameCount: number) => {
       const i = 20;
       // const devXBar = X_ORIGIN + BAR_OFFSET * i;
@@ -431,14 +374,34 @@ export default function FrontPageHeader() {
       });
 
       const devBar = DEV_BARINSTANCES[0];
-      const devBarInstance = devBar.textInstances[devBar.textInstances.length - 1];
+      let devBarInstance = devBar.textInstances[1];
+      const WEIRD_FRAME_HAPPENING = devBarInstance?.yCounter - DEV_LASTFRAME !== 2;
+      if (WEIRD_FRAME_HAPPENING) {
+        devBarInstance = devBar.textInstances[2];
+      } else {
+        devBarInstance = devBar.textInstances[1];
+      }
+      // TODO WEIRD FLASHING PROBLEM WHERE LAST ITEM SHIFTS
+      if (DEV_LASTFRAME !== devBarInstance?.yCounter + 1) {
+        // console.log(
+        //   "!!!!!!!!!!!!!FRAMEDIFF | ",
+        //   "DEV_LASTFRAME",
+        //   DEV_LASTFRAME,
+        //   " | yCounter",
+        //   devBarInstance?.yCounter,
+        //   " | DIFF ",
+        //   devBarInstance?.yCounter - DEV_LASTFRAME
+        // );
+      }
 
       // ctx.fillText(`X ${DEV_XSTART} | Y ${DEV_YSTART}`, WIDTH / 2, HEIGHT / 2);
-      ctx.fillText(
-        `insts ${devBar.textInstances.length} | LOOKING AT [${devBarInstance.text}] | X ${devBarInstance?.x} | YCOUNTER ${devBarInstance?.yCounter}`,
-        10,
-        HEIGHT / 2
-      );
+      // ctx.fillText(
+      //   `insts ${devBar.textInstances.length} | LOOKING AT [${devBarInstance.text}] | X ${devBarInstance?.x} | YCOUNTER ${devBarInstance?.yCounter}`,
+      //   10,
+      //   HEIGHT / 2
+      // );
+
+      DEV_LASTFRAME = devBarInstance?.yCounter;
     };
 
     type TextMap = ScrollingText[][];
@@ -561,6 +524,9 @@ export default function FrontPageHeader() {
     return () => {
       window.cancelAnimationFrame(animationFrameId);
       window.removeEventListener("resize", resizeCanvas);
+      // DEV_SPEEDREF?.removeEventListener("input", (e: any) => {
+      //   MOVE_STEP = parseInt(e?.target?.value ?? 2);
+      // });
     };
   }, [DEV_CHANGER_SPEED]);
 
@@ -569,7 +535,8 @@ export default function FrontPageHeader() {
       <header className={styles.wrapper}>
         <canvas className={styles.canvas} ref={canvasRef}></canvas>
       </header>
-      <input type="range" min="0" max="4" value={DEV_CHANGER_SPEED} onChange={(e) => SET_DEV_CHANGER_SPEED(parseInt(e.target.value))} />
+      {/* <input type="range" min="0" max="4" ref={speedRef} value={DEV_CHANGER_SPEED} onChange={(e) => SET_DEV_CHANGER_SPEED(parseInt(e.target.value))} /> */}
+      <input type="range" min="0" max="4" ref={speedRef} />
     </>
   );
 }
