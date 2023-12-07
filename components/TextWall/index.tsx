@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./styles.module.scss";
-import { text } from "stream/consumers";
 
-export default function FrontPageHeader() {
+export default function TextWall() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const speedRef = useRef<HTMLInputElement>(null);
   const [DEV_CHANGER_SPEED, SET_DEV_CHANGER_SPEED] = useState(1);
@@ -292,9 +291,9 @@ export default function FrontPageHeader() {
 
   return (
     <>
-      <header className={styles.wrapper}>
+      <div className={styles.wrapper}>
         <canvas className={styles.canvas} ref={canvasRef}></canvas>
-      </header>
+      </div>
     </>
   );
 }
