@@ -1,10 +1,30 @@
 import Head from "next/head";
 // import Image from "next/image";
 // import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
+import styles from "@/styles/Home.module.scss";
 import TextWall from "@/components/TextWall";
+import { useEffect, useState } from "react";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
+
+import textWallStyles from "@/components/TextWall/styles.module.scss";
+import Image from "next/image";
+import emblemImg from "@/assets/emblem.png";
+import StatusText from "@/components/StatusText";
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
+  const { scrollYProgress, scrollY } = useScroll();
+  const [navExpanded, setNavExpanded] = useState(false);
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    console.log("scrollY changed to", latest);
+    if (latest > parseInt(textWallStyles.textWallHeight) - parseInt(styles.navHeight)) {
+      setNavExpanded(true);
+    } else {
+      setNavExpanded(false);
+    }
+  });
+
   return (
     <>
       <Head>
@@ -13,10 +33,25 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <TextWall />
+
+      <section className={styles["front-header"]}>
+        <div>
+          <TextWall />
+        </div>
+        <header>
+          <div>
+            <p>hey! i&apos;m</p>
+            <h1>zyplos</h1>
+          </div>
+          <aside className={"glass"}>
+            <StatusText />
+          </aside>
+        </header>
+      </section>
+      <Navbar expanded={navExpanded} />
       <main>
         <h1>Welcome!</h1>
-        <p>This is some placeholder text.</p>
+        <p style={{ paddingBottom: "3000px" }}>This is some placeholder text.</p>
       </main>
     </>
   );

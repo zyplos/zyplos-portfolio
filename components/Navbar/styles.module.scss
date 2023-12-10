@@ -1,0 +1,77 @@
+@use "@/styles/_common.scss" as *;
+
+$nav-height: 100;
+
+:export {
+  navHeight: $nav-height;
+}
+
+.nav,
+.nav * {
+  transition: all 0.2s ease-in-out, border 0.01s ease-out, padding 0.1s ease-out;
+}
+
+.nav {
+  position: fixed;
+  top: 2rem;
+  left: 50%;
+  @include responsiveMaxWidth;
+  transform: translateX(-50%);
+  height: $nav-height + px;
+
+  border-radius: var(--radius);
+  border: var(--borderGlass);
+  border-width: 0;
+  z-index: 100;
+  padding-top: 2rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav > section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  > div {
+    border-radius: var(--radiusSm);
+  }
+}
+
+.nav svg {
+  display: block;
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+.nav a,
+.nav span {
+  padding: 1rem;
+  border-radius: var(--radiusSm);
+}
+
+.nav a:hover {
+  background: var(--c-primary-acrylic);
+  // color: black;
+}
+
+.nav[data-expanded="true"] {
+  padding: 2rem;
+  border-width: 1px;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.online {
+  color: var(--c-green);
+}
+
+section.nogap {
+  gap: 0;
+}

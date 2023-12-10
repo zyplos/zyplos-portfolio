@@ -1,0 +1,12 @@
+:root {
+  --radius: 2rem;
+  --radiusLg: 3rem;
+  --radiusSm: 1rem;
+  --borderGlass: 1px solid rgba(51, 51, 51, 0.5);
+
+  --maxWidth: 1600px;
+
+  --c-primary: #ff3e3e;
+  --c-primary-acrylic: rgba(255, 255, 255, 0.199);
+  --c-green: #00ffcd;
+}

@@ -1,0 +1,4 @@
+@mixin responsiveMaxWidth {
+  width: 90%;
+  max-width: var(--maxWidth);
+}

@@ -1,8 +1,15 @@
+$text-wall-height: 600;
+
+:export {
+  textWallHeight: $text-wall-height;
+}
+
 .wrapper,
 .canvas {
   width: 100%;
+  height: $text-wall-height + px;
 }
 
 .canvas {
-  height: 600px;
+  height: $text-wall-height + px;
 }

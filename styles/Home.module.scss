@@ -1,0 +1,53 @@
+@use "@/components/TextWall/styles.module.scss" as textWall;
+@use "@/components/Navbar/styles.module.scss" as navBar;
+@use "@/styles/_common.scss" as *;
+
+.front-header {
+  position: relative;
+  height: textWall.$text-wall-height + px;
+  width: 100%;
+}
+
+.front-header > div {
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+.front-header > header {
+  @include responsiveMaxWidth;
+
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // align-items: ;
+  height: 100%;
+
+  margin: 0 auto;
+  padding-top: navBar.$nav-height + px;
+
+  gap: 3rem;
+
+  > div > p {
+    font-size: 2rem;
+  }
+  > div > h1 {
+    font-size: 4rem;
+    line-height: 1;
+  }
+}
+
+.front-header > aside {
+  position: absolute;
+  z-index: 3;
+  bottom: 3rem;
+  left: 3rem;
+}
+
+.front-header > header > aside {
+  font-size: 1rem;
+  padding: 2rem;
+  display: inline-block;
+  max-width: 20rem;
+}
