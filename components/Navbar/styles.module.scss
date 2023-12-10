@@ -23,7 +23,12 @@ $nav-height: 100;
   border: var(--borderGlass);
   border-width: 0;
   z-index: 100;
+
   padding-top: 2rem;
+
+  @include tiny-screen-styles {
+    padding: 2rem;
+  }
 
   display: flex;
   justify-content: space-between;
@@ -53,8 +58,7 @@ $nav-height: 100;
 }
 
 .nav a:hover {
-  background: var(--c-primary-acrylic);
-  // color: black;
+  background: var(--c-hover-acrylic);
 }
 
 .nav[data-expanded="true"] {

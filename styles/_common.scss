@@ -2,3 +2,9 @@
   width: 90%;
   max-width: var(--maxWidth);
 }
+
+@mixin tiny-screen-styles {
+  @media (max-width: 800px) {
+    @content;
+  }
+}

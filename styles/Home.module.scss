@@ -29,6 +29,11 @@
 
   gap: 3rem;
 
+  @include tiny-screen-styles {
+    padding: 2rem;
+    padding-top: calc(navBar.$nav-height + 30) + px;
+  }
+
   > div > p {
     font-size: 2rem;
   }
