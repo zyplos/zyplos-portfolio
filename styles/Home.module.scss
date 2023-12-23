@@ -56,3 +56,13 @@
   display: inline-block;
   max-width: 20rem;
 }
+
+.main {
+  @include responsiveMaxWidth;
+  margin: 0 auto;
+  padding: 3rem;
+
+  @include tiny-screen-styles {
+    padding: 1.4rem;
+  }
+}

@@ -1,0 +1,154 @@
+.loungeHubCard {
+  background-color: #7bd1ff;
+  background-image: url("../../assets/mcsky.png"), linear-gradient(to bottom, #1c6dff, rgba(255, 255, 255, 0));
+  background-blend-mode: soft-light, normal;
+  background-size: auto, auto;
+  // background-position: 30% 30%, center;
+  background-position: 23% 23%, center;
+  transition: all 20s ease-out;
+  padding-right: 10rem;
+
+  &:hover {
+    // animation: backgroundPosition 30s infinite alternate;
+    background-position: 70% 70%, center;
+
+    .loungeHubCardBlock {
+      rotate: 10deg;
+      transform: scale(1.3);
+      // right: 0rem;
+      // bottom: 0rem;
+    }
+
+    .loungeHubCardEmblem {
+      rotate: -10deg;
+      // transform: scale(1.5);
+      right: 5rem;
+      bottom: 5rem;
+    }
+  }
+}
+
+// background position move diagonally down right animation
+@keyframes backgroundPosition {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+@keyframes floatingItem {
+  0% {
+    transform: translateY(4px);
+  }
+  100% {
+    transform: translateY(-4px);
+  }
+}
+
+.loungeHubCardBlock {
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  right: -2rem;
+  bottom: -2rem;
+  rotate: 0deg;
+  transition: all 0.2s ease-in-out;
+  z-index: 2;
+}
+
+.loungeHubCardEmblem {
+  position: absolute;
+  width: 7rem;
+  height: auto;
+  right: 0rem;
+  bottom: 0rem;
+  rotate: 0deg;
+  transition: all 0.2s ease-out;
+  z-index: 1;
+}
+
+.discordREADMEBadgeCard {
+  background-color: #5865f2;
+  padding-right: 15rem;
+  background-image: url("../../assets/readme-card.png");
+  background-size: auto 130%;
+  background-position: 130% 1rem;
+  background-repeat: no-repeat;
+
+  &:hover {
+    background-position: 105% -1rem;
+  }
+
+  &:hover .discordREADMESparkleMain {
+    opacity: 100;
+  }
+
+  &:hover .discordREADMESparkleLeft {
+    opacity: 100;
+  }
+
+  &:hover .discordREADMESparkleRight {
+    opacity: 100;
+  }
+
+  &:hover .discordREADMESparkleMain {
+    transition: all 1s ease-out;
+    animation: floatingItem 1.2s infinite alternate ease-in-out;
+  }
+
+  &:hover .discordREADMESparkleLeft {
+    transition: all 1s ease-out;
+    animation: floatingItem 1.6s infinite alternate ease-in-out;
+  }
+
+  &:hover .discordREADMESparkleRight {
+    transition: all 1s ease-out;
+    animation: floatingItem 1.4s infinite alternate ease-in-out;
+  }
+}
+
+.discordREADMESparkleMain {
+  position: absolute;
+  width: auto;
+  height: 4rem;
+  opacity: 0;
+  left: 45%;
+  top: calc(50% - 2rem);
+  rotate: 0deg;
+  transition: all 0.2s ease-out;
+  z-index: 1;
+}
+
+.discordREADMESparkleLeft,
+.discordREADMESparkleRight {
+  position: absolute;
+  opacity: 0;
+  width: auto;
+  height: 1.4rem;
+  rotate: 0deg;
+  transition: all 0.2s ease-out;
+  z-index: 2;
+}
+
+.discordREADMESparkleLeft {
+  left: 43%;
+  bottom: calc(30% - 1.4rem);
+}
+
+.discordREADMESparkleRight {
+  left: 50%;
+  top: calc(30% - 1.4rem);
+}
+
+.readmeCardRender {
+  position: absolute;
+  width: 15rem;
+  height: auto;
+  right: -2rem;
+  bottom: -2rem;
+  rotate: 0deg;
+  transition: all 0.2s ease-in-out;
+  z-index: 2;
+}
