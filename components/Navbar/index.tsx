@@ -1,4 +1,5 @@
 import styles from "./styles.module.scss";
+import homeStyles from "@/styles/Home.module.scss";
 import Image from "next/image";
 import emblemImg from "@/assets/emblem.png";
 import Link from "next/link";
@@ -40,8 +41,8 @@ export default function Navbar({ expanded }: { expanded: boolean }) {
         })}
       >
         <div
-          className={classnames(styles.links, styles.systemStatus, {
-            glass: !expanded,
+          className={classnames(styles.links, "glass", styles.systemStatus, homeStyles.statusCard, {
+            // glass: !expanded,
             [styles.online]: true,
           })}
         >
