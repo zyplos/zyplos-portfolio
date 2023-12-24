@@ -142,13 +142,37 @@
   top: calc(30% - 1.4rem);
 }
 
-.readmeCardRender {
+// ==============================
+
+.githubProjectTrackerCard {
+  background-color: #e7e7e7;
+  color: #444;
+  background-image: url("../../assets/timeline.png");
+  background-size: 100.5%;
+  background-position: center 100%;
+  background-repeat: no-repeat;
+
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    background-position: center 110%;
+  }
+
+  &:hover .githubProjectIcon {
+    top: 0rem;
+    right: 0rem;
+    transform: rotate(-30deg);
+  }
+}
+
+.githubProjectIcon {
   position: absolute;
-  width: 15rem;
+  width: 4rem;
   height: auto;
-  right: -2rem;
-  bottom: -2rem;
+  top: -4rem;
+  right: -4rem;
   rotate: 0deg;
-  transition: all 0.2s ease-in-out;
-  z-index: 2;
+  transition: all 0.2s ease-out;
+  z-index: 1;
 }

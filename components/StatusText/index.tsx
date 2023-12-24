@@ -5,7 +5,7 @@ import testTileImg from "@/assets/tile.png";
 export default function StatusText() {
   return (
     <>
-      <p className={`${styles.statusText} ${styles.green}`}>⬤ Currently Online</p>
+      <p className={`${styles.statusText} ${styles.online}`}>⬤ Currently Online</p>
       <div className={styles.richPresence}>
         <Image src={testTileImg} alt=">>>" priority />
         <div>

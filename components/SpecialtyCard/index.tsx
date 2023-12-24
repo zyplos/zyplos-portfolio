@@ -5,10 +5,12 @@ import { CardProps } from "../Card";
 import Image from "next/image";
 import commandBlockImg from "@/assets/command-block.png";
 import emblemMCImg from "@/assets/emblemmc.png";
-import readmeCardImg from "@/assets/readme-card.png";
+//
 import sparkleMainImg from "@/assets/sparklemain.png";
 import sparkleLeftImg from "@/assets/sparkleleft.png";
 import sparkleRightImg from "@/assets/sparkleright.png";
+//
+import projectsIcon from "@/assets/projects-icon.png";
 
 import styles from "./styles.module.scss";
 
@@ -20,7 +22,7 @@ export function LoungeCard({ style }: CardProps) {
         ...style,
       }}
     >
-      <p className={cardStyles.cardTitle}>lounge-hub</p>
+      <p className={cardStyles.cardTitle}>lounge hub</p>
       <p>community site for my minecraft stuff</p>
 
       <Image src={commandBlockImg} alt="command block" quality={100} className={styles.loungeHubCardBlock} />
@@ -41,11 +43,25 @@ export function DiscordREADMECard({ style }: CardProps) {
       <p>community site</p>
       <p>discord stuff</p>
 
-      {/* <Image src={readmeCardImg} alt="readme card" quality={100} className={styles.readmeCardRender} /> */}
-      {/* <Image src={emblemMCImg} alt="emblem" quality={100} className={styles.loungeHubCardEmblem} /> */}
       <Image src={sparkleMainImg} alt="spark" quality={100} className={styles.discordREADMESparkleMain} />
       <Image src={sparkleLeftImg} alt="spark" quality={100} className={styles.discordREADMESparkleLeft} />
       <Image src={sparkleRightImg} alt="spark" quality={100} className={styles.discordREADMESparkleRight} />
+    </div>
+  );
+}
+
+export function GitHubProjectTracker({ style }: CardProps) {
+  return (
+    <div
+      className={classNames(cardStyles.card, styles.githubProjectTrackerCard)}
+      style={{
+        ...style,
+      }}
+    >
+      <p className={cardStyles.cardTitle}>github project tracker</p>
+      <p>community site</p>
+      <p>discord stuff</p>
+      <Image src={projectsIcon} alt="spark" quality={100} className={styles.githubProjectIcon} />
     </div>
   );
 }

@@ -14,7 +14,8 @@ import commandBlockImg from "@/assets/command-block.png";
 import StatusText from "@/components/StatusText";
 import Navbar from "@/components/Navbar";
 import Card from "@/components/Card";
-import { DiscordREADMECard, LoungeCard } from "@/components/SpecialtyCard";
+import { DiscordREADMECard, GitHubProjectTracker, LoungeCard } from "@/components/SpecialtyCard";
+import classNames from "classnames";
 
 export default function Home() {
   const { scrollYProgress, scrollY } = useScroll();
@@ -49,8 +50,10 @@ export default function Home() {
             <p>hey! i&apos;m</p>
             <h1>zyplos</h1>
           </div>
-          <aside className={"glass"}>
+          <aside className={classNames("glass", styles.statusCard)}>
             <StatusText />
+            <div className={styles["crt-screen"]}></div>
+            <div className={styles["crt-reflection"]}></div>
           </aside>
         </header>
       </section>
@@ -65,6 +68,9 @@ export default function Home() {
           </a>
           <a href="https://github.com/Zyplos/discord-readme-badge" target="_blank">
             <DiscordREADMECard />
+          </a>
+          <a href="https://github.com/Zyplos/discord-readme-badge" target="_blank">
+            <GitHubProjectTracker />
           </a>
         </div>
       </main>

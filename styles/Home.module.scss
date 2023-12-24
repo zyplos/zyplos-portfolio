@@ -66,3 +66,77 @@
     padding: 1.4rem;
   }
 }
+
+.statusCard {
+  position: relative;
+  --cutoutColor: rgba(14, 14, 14, 0.384);
+  border-radius: var(--radius);
+}
+
+.statusCard::before {
+  // stripped background gradient
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    0deg,
+    var(--cutoutColor) 25%,
+    transparent 25%,
+    transparent 50%,
+    var(--cutoutColor) 50%,
+    var(--cutoutColor) 75%,
+    transparent 75%,
+    transparent
+  );
+  backdrop-filter: blur(5px);
+  background-size: 1rem 0.3rem;
+  animation: blindsScroll 1s linear infinite, flicker 2s linear 3s infinite alternate;
+  left: 0;
+  top: 0;
+  border-radius: var(--radius);
+  // z-index: -1;
+}
+
+// animation that infinitely moves the background gradient up
+@keyframes blindsScroll {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 2px;
+  }
+}
+
+// flickering animation
+@keyframes flicker {
+  0% {
+    opacity: 0.9; //
+  }
+  5% {
+    opacity: 0.65;
+  }
+  10% {
+    opacity: 0.9; //
+  }
+  15% {
+    opacity: 0.65;
+  }
+  69% {
+    opacity: 0.65;
+  }
+  //
+  70% {
+    opacity: 0.9; //
+  }
+  79% {
+    opacity: 0.65;
+  }
+  83% {
+    opacity: 0.9; //
+  }
+  //
+  100% {
+    opacity: 0.9; //
+  }
+}
