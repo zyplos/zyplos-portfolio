@@ -29,7 +29,7 @@ a {
 .glass {
   background: linear-gradient(180deg, rgba(36, 36, 36, 0) 0%, rgba(26, 26, 26, 0.5) 100%);
   backdrop-filter: blur(8px);
-  border-radius: var(--radius);
+  // border-radius: var(--radius);
   border: var(--borderGlass);
   border-width: 1px;
   box-shadow: 0px 7px 20px 0px rgba(100, 102, 121, 0.075);

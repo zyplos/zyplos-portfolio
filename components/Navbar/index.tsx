@@ -41,7 +41,7 @@ export default function Navbar({ expanded }: { expanded: boolean }) {
         })}
       >
         <div
-          className={classnames(styles.links, "glass", styles.systemStatus, homeStyles.statusCard, {
+          className={classnames(styles.links, "glass", homeStyles.statusChip, {
             // glass: !expanded,
             [styles.online]: true,
           })}

@@ -14,8 +14,9 @@ import commandBlockImg from "@/assets/command-block.png";
 import StatusText from "@/components/StatusText";
 import Navbar from "@/components/Navbar";
 import Card from "@/components/Card";
-import { DiscordREADMECard, GitHubProjectTracker, LoungeCard } from "@/components/SpecialtyCard";
+import { DiscordREADMECard, GitHubProjectTracker, LoungeCard, SeeMoreProjectsCard } from "@/components/SpecialtyCard";
 import classNames from "classnames";
+import Link from "next/link";
 
 export default function Home() {
   const { scrollYProgress, scrollY } = useScroll();
@@ -59,9 +60,16 @@ export default function Home() {
       </section>
 
       <main className={styles.main}>
-        <h2>stuff about me</h2>
-        <p>i&apos;m a developer! i&apos;ve worked with the web and various other things for many years now </p>
-        <p>i like building things!</p>
+        <div>
+          <h2>stuff about me</h2>
+          <p>i&apos;m a developer who&apos;s worked with the web and various other things for many years now</p>
+          <p>i like learning new stuff and love building things</p>
+        </div>
+
+        <div>
+          <h2>some stuff i&apos;ve made</h2>
+          <p>these are some of my favorite things i&apos;ve made so far</p>
+        </div>
         <div style={{ display: "flex", gap: "5rem", flexDirection: "column", marginTop: "2rem" }}>
           <a href="https://lounge.haus/" target="_blank">
             <LoungeCard />
@@ -72,6 +80,9 @@ export default function Home() {
           <a href="https://github.com/Zyplos/discord-readme-badge" target="_blank">
             <GitHubProjectTracker />
           </a>
+          <Link href="/projects">
+            <SeeMoreProjectsCard />
+          </Link>
         </div>
       </main>
     </>
