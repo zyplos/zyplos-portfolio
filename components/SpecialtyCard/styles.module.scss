@@ -252,3 +252,100 @@
 .seeMoreCheckmarkIcon {
   animation: floatingItem 1.8s infinite alternate ease-in-out;
 }
+
+.twitterCard {
+  background-color: #1d9bf0;
+  background-image: url("../../assets/twitter-render.png");
+  background-size: auto 140%;
+  background-position: 95% -50%;
+  background-repeat: no-repeat;
+
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    background-position: 95% -20%;
+  }
+}
+
+.myimagesCard {
+  padding-bottom: 3rem;
+  background-color: #f0f0f0;
+  color: #000;
+  background-image: url("../../assets/myimages-screenshot.png");
+  background-size: auto 10rem;
+  background-position: center calc(100% + 9rem);
+  background-repeat: no-repeat;
+
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    background-position: center bottom;
+    padding-bottom: 12rem;
+  }
+}
+
+.systemStatusCard {
+  position: relative;
+  overflow: hidden;
+}
+
+.systemStatusCard::before {
+  background-image: url("../../assets/status-render.png");
+  background-size: contain;
+  background-position: right;
+  background-repeat: no-repeat;
+
+  filter: contrast(130%) brightness(10%); // NOLIGHT
+  // filter: contrast(110%) brightness(90%); // INDEV
+  transition: all 0.2s ease-out;
+
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.systemStatusCardContent {
+  position: relative;
+}
+
+.systemStatusCard:hover::before {
+  animation: flickerFilter 2s linear infinite alternate;
+}
+
+// flickering animation
+@keyframes flickerFilter {
+  0% {
+    filter: contrast(100%) brightness(100%); //
+  }
+  5% {
+    filter: contrast(100%) brightness(40%);
+  }
+  10% {
+    filter: contrast(100%) brightness(100%); //
+  }
+  15% {
+    filter: contrast(100%) brightness(40%);
+  }
+  69% {
+    filter: contrast(100%) brightness(40%);
+  }
+  //
+  70% {
+    filter: contrast(100%) brightness(100%); //
+  }
+  79% {
+    filter: contrast(100%) brightness(40%);
+  }
+  83% {
+    filter: contrast(100%) brightness(100%); //
+  }
+  //
+  100% {
+    filter: contrast(100%) brightness(100%); //
+  }
+}

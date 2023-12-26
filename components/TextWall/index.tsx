@@ -26,7 +26,7 @@ export default function TextWall() {
     const MOVE_STEP = 0.5;
 
     const TEXT_COLOR = "#1e1e1e";
-    const FONT_STYLE = "bold " + FONT_SIZE + "px sans-serif";
+    const FONT_STYLE = "bold " + FONT_SIZE + "px 'minecraft enchantment'";
 
     const EVEN_BAR_COLOR = "#050505";
     const ODD_BAR_COLOR = "#090909";
@@ -122,6 +122,7 @@ export default function TextWall() {
 
       constructor(text: string, x: number, y: number, backward: boolean = false, startPos?: number) {
         this.text = text;
+        y -= 6; // NOTE TEMP FOR MINECRAFT FONT
 
         if (!backward) {
           // x is the start of the bar

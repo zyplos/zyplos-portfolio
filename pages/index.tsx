@@ -14,9 +14,10 @@ import commandBlockImg from "@/assets/command-block.png";
 import StatusText from "@/components/StatusText";
 import Navbar from "@/components/Navbar";
 import Card from "@/components/Card";
-import { DiscordREADMECard, GitHubProjectTracker, LoungeCard, SeeMoreProjectsCard } from "@/components/SpecialtyCard";
+import { DiscordREADMECard, GitHubProjectTracker, LoungeCard, MyImagesCard, SeeMoreProjectsCard, SystemStatusCard, TwitterCard } from "@/components/SpecialtyCard";
 import classNames from "classnames";
 import Link from "next/link";
+import SystemStatus from "@/components/SystemStatus";
 
 export default function Home() {
   const { scrollYProgress, scrollY } = useScroll();
@@ -82,6 +83,35 @@ export default function Home() {
           </a>
           <Link href="/projects">
             <SeeMoreProjectsCard />
+          </Link>
+        </div>
+
+        <div>
+          <h2>design stuff</h2>
+          <p>i do a bit of design whenever a project needs it</p>
+          <p>sometimes i do 3D stuff</p>
+          <p>you can find design stuff i make on twitter and on one of my other projects</p>
+        </div>
+        <div style={{ display: "flex", gap: "5rem", flexDirection: "column", marginTop: "2rem" }}>
+          <a href="https://twitter.com/zyplos/media" target="_blank">
+            <TwitterCard />
+          </a>
+          <a href="https://myimages.zip/" target="_blank">
+            <MyImagesCard />
+          </a>
+        </div>
+
+        <div>
+          <h2>get in touch</h2>
+          <p>you can reach out on twitter for quick stuff</p>
+          <p>
+            alternatively if it&apos;s something more formal you can email me at <span style={{ fontFamily: "monospace" }}>me@zyplos.dev</span>
+          </p>
+        </div>
+
+        <div>
+          <Link href="/status">
+            <SystemStatusCard />
           </Link>
         </div>
       </main>

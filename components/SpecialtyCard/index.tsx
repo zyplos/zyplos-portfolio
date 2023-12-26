@@ -88,3 +88,47 @@ export function SeeMoreProjectsCard({ style }: CardProps) {
     </div>
   );
 }
+
+export function TwitterCard({ style }: CardProps) {
+  return (
+    <div
+      className={classNames(cardStyles.card, styles.twitterCard)}
+      style={{
+        ...style,
+      }}
+    >
+      <p className={cardStyles.cardTitle}>@zyplos/media</p>
+      <p>design and occasional photography</p>
+    </div>
+  );
+}
+
+export function MyImagesCard({ style }: CardProps) {
+  return (
+    <div
+      className={classNames(cardStyles.card, styles.myimagesCard)}
+      style={{
+        ...style,
+      }}
+    >
+      <p className={cardStyles.cardTitle}>myimages.zip</p>
+      <p>full resolution renders of my design stuff</p>
+    </div>
+  );
+}
+
+export function SystemStatusCard({ style }: CardProps) {
+  return (
+    <div
+      className={classNames(cardStyles.card, styles.systemStatusCard)}
+      style={{
+        ...style,
+      }}
+    >
+      <div className={styles.systemStatusCardContent}>
+        <p className={cardStyles.cardTitle}>system status</p>
+        <p>check here incase something&apos;s offline</p>
+      </div>
+    </div>
+  );
+}

@@ -64,10 +64,6 @@ $nav-height: 100;
 .nav[data-expanded="true"] {
   padding: 2rem;
   border-width: 1px;
-
-  .systemStatus {
-    margin-right: 1rem;
-  }
 }
 
 .links {
@@ -152,4 +148,11 @@ section.nogap {
   100% {
     opacity: 0.9; //
   }
+}
+
+.statusChipExpanded {
+  margin-right: 1rem;
+
+  --cutoutColor: rgba(66, 66, 66, 0.38);
+  background: none;
 }
