@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
 import homeStyles from "@/styles/Home.module.scss";
 import Image from "next/image";
@@ -5,10 +6,45 @@ import emblemImg from "@/assets/emblem.png";
 import Link from "next/link";
 import classnames from "classnames";
 
-export default function Navbar({ expanded }: { expanded: boolean }) {
+export default function Navbar({ expanded = true }: { expanded?: boolean }) {
+  const [isFooterVisible, setIsFooterVisible] = useState(false);
+
+  // Function to handle footer visibility change
+  const handleFooterVisibilityChange = (isVisible: boolean) => {
+    setIsFooterVisible(isVisible);
+  };
+
+  // Add event listener to detect footer visibility change
+  useEffect(() => {
+    const handleScroll = () => {
+      const footerElement = document.querySelector("footer");
+      if (footerElement) {
+        const footerRect = footerElement.getBoundingClientRect();
+        const isFooterVisible = footerRect.top < window.innerHeight;
+        handleFooterVisibilityChange(isFooterVisible);
+      }
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <nav className={`${styles.nav} ${expanded ? "glass" : ""}`} data-expanded={expanded}>
-      <Image src={emblemImg} alt=">>>" priority className={classnames({})} />
+      <Link href="/" className={styles.emblemLink}>
+        <Image
+          src={emblemImg}
+          alt=">>>"
+          priority
+          style={{
+            ...(isFooterVisible && { opacity: 0 }),
+          }}
+        />
+      </Link>
       <section
         className={classnames({
           [styles.nogap]: expanded,
@@ -29,24 +65,9 @@ export default function Navbar({ expanded }: { expanded: boolean }) {
           })}
         >
           <Link href="/">Home</Link>
-          <Link href="/">Projects</Link>
-          <Link href="/">Updates</Link>
+          <Link href="/projects">Projects</Link>
+          <Link href="/updates">Updates</Link>
         </div>
-        {/* <div
-          className={classnames(styles.links, {
-            glass: !expanded,
-          })}
-        >
-          <a href="https://twitter.com/zyplos" target="_blank">
-            <TwitterIcon />
-          </a>
-          <a href="https://github.com/zyplos" target="_blank">
-            <GitHubIcon />
-          </a>
-          <a href="https://bsky.app/profile/zyplos.dev" target="_blank">
-            <BlueskyIcon />
-          </a>
-        </div> */}
       </section>
     </nav>
   );

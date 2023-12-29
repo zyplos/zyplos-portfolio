@@ -1,0 +1,17 @@
+@use "@/styles/_common.scss" as *;
+@use "@/components/Navbar/styles.module.scss" as navBar;
+
+$main-top-margin: navBar.$nav-height + px;
+
+.main {
+  @include responsiveMaxWidth;
+  margin: 0 auto;
+  padding: 3rem;
+
+  margin-top: calc($main-top-margin + 2rem);
+  // margin-top: $main-top-margin;
+
+  @include tiny-screen-styles {
+    padding: 1.4rem;
+  }
+}

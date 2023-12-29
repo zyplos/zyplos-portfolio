@@ -1,0 +1,51 @@
+@use "@/styles/_common.scss" as *;
+
+.footer {
+  background-color: #1b1b1b;
+  color: #fff;
+  padding: 1rem 3rem;
+
+  @include tiny-screen-styles {
+    padding: 2rem;
+  }
+}
+
+.content {
+  @include responsiveMaxWidth;
+  margin: 0 auto;
+}
+
+.emblem {
+  opacity: 1;
+  transform: scale(1);
+  transform: translate(0, 0);
+}
+
+.images {
+  display: flex;
+  justify-content: space-between;
+  // align-items: top;
+  margin-top: 2rem;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  gap: 1rem;
+}
+
+.socials svg {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+  fill: #fff;
+}
+
+// add multiple drop shadows to svgs to make it look 3d
+.images svg {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+  fill: #fff;
+}

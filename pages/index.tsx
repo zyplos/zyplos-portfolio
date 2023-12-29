@@ -18,6 +18,7 @@ import { DiscordREADMECard, GitHubProjectTracker, LoungeCard, MyImagesCard, SeeM
 import classNames from "classnames";
 import Link from "next/link";
 import AnchorLink from "@/components/AnchorLink";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const { scrollYProgress, scrollY } = useScroll();
@@ -121,6 +122,7 @@ export default function Home() {
           </Link>
         </div>
       </main>
+      <Footer />
     </>
   );
 }
