@@ -1,11 +1,11 @@
 import styles from "./styles.module.scss";
 import Image from "next/image";
-import testTileImg from "@/assets/tile.png";
+import testTileImg from "@/assets/tile3.png";
 
 export default function StatusText() {
   return (
     <>
-      <p className={`${styles.statusText} ${styles.online}`}>⬤ Currently Online</p>
+      <p className={`${styles.statusText} ${styles.online}`}>⬤ Currently working</p>
       <div className={styles.richPresence}>
         <Image src={testTileImg} alt=">>>" priority />
         <div>

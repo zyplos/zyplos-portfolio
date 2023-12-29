@@ -17,7 +17,7 @@ import Card from "@/components/Card";
 import { DiscordREADMECard, GitHubProjectTracker, LoungeCard, MyImagesCard, SeeMoreProjectsCard, SystemStatusCard, TwitterCard } from "@/components/SpecialtyCard";
 import classNames from "classnames";
 import Link from "next/link";
-import SystemStatus from "@/components/SystemStatus";
+import AnchorLink from "@/components/AnchorLink";
 
 export default function Home() {
   const { scrollYProgress, scrollY } = useScroll();
@@ -103,7 +103,13 @@ export default function Home() {
 
         <div>
           <h2>get in touch</h2>
-          <p>you can reach out on twitter for quick stuff</p>
+          <p>
+            you can reach out on{" "}
+            <AnchorLink href="https://twitter.com/zyplos" target="_blank">
+              twitter
+            </AnchorLink>{" "}
+            for quick stuff
+          </p>
           <p>
             alternatively if it&apos;s something more formal you can email me at <span style={{ fontFamily: "monospace" }}>me@zyplos.dev</span>
           </p>

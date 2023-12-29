@@ -96,7 +96,7 @@
     transparent 75%,
     transparent
   );
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(4px);
   background-size: 1rem 0.3rem;
   animation: blindsScroll 1s linear infinite, flicker 2s linear infinite alternate;
   left: 0;
