@@ -23,7 +23,11 @@ export default function TextWall() {
 
     const BAR_HEIGHT = 75;
     const FONT_SIZE = Math.floor(BAR_HEIGHT * 0.45);
-    const MOVE_STEP = 0.5;
+
+    // check if user prefers reduced motion
+    const prefersReducedMotion = typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const MOVE_STEP = prefersReducedMotion ? 0 : 0.5;
 
     const TEXT_COLOR = "#1e1e1e";
     const FONT_STYLE = "bold " + FONT_SIZE + "px sans-serif";

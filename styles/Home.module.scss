@@ -105,6 +105,13 @@
   // z-index: -1;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .statusCard::before {
+    animation: none;
+    opacity: 0.65;
+  }
+}
+
 // animation that infinitely moves the background gradient up
 @keyframes blindsScroll {
   to {

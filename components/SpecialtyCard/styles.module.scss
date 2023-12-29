@@ -1,3 +1,4 @@
+// ===== lounge hub
 .loungeHubCard {
   background-color: #7bd1ff;
   background-image: url("../../assets/mcsky.png"), linear-gradient(to bottom, #1c6dff, rgba(255, 255, 255, 0));
@@ -69,16 +70,39 @@
   z-index: 1;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .loungeHubCard,
+  .loungeHubCard:hover {
+    background-position: 70% 70%, center;
+
+    .loungeHubCardBlock {
+      rotate: 10deg;
+      transform: scale(1);
+      // right: 0rem;
+      // bottom: 0rem;
+    }
+
+    .loungeHubCardEmblem {
+      rotate: -10deg;
+      // transform: scale(1.5);
+      right: 4rem;
+      bottom: 4rem;
+    }
+  }
+}
+
+// ===== discord
+
 .discordREADMEBadgeCard {
   background-color: #5865f2;
   padding-right: 15rem;
   background-image: url("../../assets/readme-card.png");
-  background-size: auto 130%;
-  background-position: 130% 1rem;
+  background-size: auto 10rem;
+  background-position: calc(100% + 7rem) 3.2rem;
   background-repeat: no-repeat;
 
   &:hover {
-    background-position: 105% -1rem;
+    background-position: calc(100% + 7rem - 20%) 2rem;
   }
 
   &:hover .discordREADMESparkleMain {
@@ -109,13 +133,41 @@
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .discordREADMEBadgeCard:hover {
+    background-position: calc(100% + 7rem) 3.2rem;
+  }
+  .discordREADMEBadgeCard .discordREADMESparkleMain {
+    opacity: 1;
+  }
+
+  .discordREADMEBadgeCard .discordREADMESparkleLeft {
+    opacity: 1;
+  }
+
+  .discordREADMEBadgeCard .discordREADMESparkleRight {
+    opacity: 1;
+  }
+  .discordREADMEBadgeCard:hover .discordREADMESparkleMain {
+    animation: none;
+  }
+
+  .discordREADMEBadgeCard:hover .discordREADMESparkleLeft {
+    animation: none;
+  }
+
+  .discordREADMEBadgeCard:hover .discordREADMESparkleRight {
+    animation: none;
+  }
+}
+
 .discordREADMESparkleMain {
   position: absolute;
   width: auto;
   height: 4rem;
   opacity: 0;
-  left: 45%;
-  top: calc(50% - 2rem);
+  left: -1rem;
+  top: -1rem;
   rotate: 0deg;
   transition: all 0.2s ease-out;
   z-index: 1;
@@ -133,16 +185,16 @@
 }
 
 .discordREADMESparkleLeft {
-  left: 43%;
-  bottom: calc(30% - 1.4rem);
+  left: -1.3rem;
+  top: 2rem;
 }
 
 .discordREADMESparkleRight {
-  left: 50%;
-  top: calc(30% - 1.4rem);
+  left: 1.5rem;
+  top: -2rem;
 }
 
-// ==============================
+// ===== github
 
 .githubProjectTrackerCard {
   background-color: #e7e7e7;
@@ -177,6 +229,19 @@
   z-index: 1;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .githubProjectTrackerCard:hover {
+    background-position: center 100%;
+  }
+  .githubProjectIcon {
+    top: 0rem;
+    right: 0rem;
+    transform: rotate(-30deg);
+  }
+}
+
+// ===== see more projects
+
 .seeMoreProjectsCard {
   background-color: #242424;
 
@@ -189,6 +254,12 @@
   overflow: hidden;
 
   &:hover {
+    background-position: 105% 10%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .seeMoreProjectsCard {
     background-position: 105% 10%;
   }
 }
@@ -253,6 +324,26 @@
   animation: floatingItem 1.8s infinite alternate ease-in-out;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .seeMoreProjectIcon {
+    animation: none;
+  }
+
+  .seeMoreDayShapeImg {
+    animation: none;
+  }
+
+  .seeMoreProjectspaceIcon {
+    animation: none;
+  }
+
+  .seeMoreCheckmarkIcon {
+    animation: none;
+  }
+}
+
+// ===== twitter
+
 .twitterCard {
   background-color: #1d9bf0;
   background-image: url("../../assets/twitter-render.png");
@@ -267,6 +358,14 @@
     background-position: 95% -20%;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .twitterCard:hover {
+    background-position: 95% -50%;
+  }
+}
+
+// ===== myimages
 
 .myimagesCard {
   padding-bottom: 3rem;
@@ -285,6 +384,15 @@
     padding-bottom: 12rem;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .myimagesCard:hover {
+    padding-bottom: 3rem;
+    background-position: center calc(100% + 9rem);
+  }
+}
+
+// ===== system status
 
 .systemStatusCard {
   position: relative;
@@ -315,6 +423,16 @@
 
 .systemStatusCard:hover::before {
   animation: flickerFilter 2s linear infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .systemStatusCard::before {
+    filter: contrast(100%) brightness(100%);
+  }
+
+  .systemStatusCard:hover::before {
+    animation: none;
+  }
 }
 
 // flickering animation

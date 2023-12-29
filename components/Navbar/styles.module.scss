@@ -123,6 +123,13 @@ section.nogap {
   // z-index: -1;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .statusChip::before {
+    animation: none;
+    opacity: 0.65;
+  }
+}
+
 @keyframes blindsScroll {
   to {
     background-position: 0 0.3rem;
