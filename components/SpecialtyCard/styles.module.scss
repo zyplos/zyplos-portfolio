@@ -113,6 +113,15 @@
       right: 4rem;
       bottom: 4rem;
     }
+
+    @include tiny-screen-styles {
+      .loungeHubCardEmblem {
+        rotate: -10deg;
+        // transform: scale(1.5);
+        right: 6rem;
+        bottom: 4rem;
+      }
+    }
   }
 }
 
@@ -155,34 +164,6 @@
   &:hover .discordREADMESparkleRight {
     transition: all 1s ease-out;
     animation: floatingItem 1.4s infinite alternate ease-in-out;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .discordREADMEBadgeCard:hover {
-    background-position: calc(100% + 7rem) 3.2rem;
-  }
-  .discordREADMEBadgeCard .discordREADMESparkleMain {
-    opacity: 1;
-  }
-
-  .discordREADMEBadgeCard .discordREADMESparkleLeft {
-    opacity: 1;
-  }
-
-  .discordREADMEBadgeCard .discordREADMESparkleRight {
-    opacity: 1;
-  }
-  .discordREADMEBadgeCard:hover .discordREADMESparkleMain {
-    animation: none;
-  }
-
-  .discordREADMEBadgeCard:hover .discordREADMESparkleLeft {
-    animation: none;
-  }
-
-  .discordREADMEBadgeCard:hover .discordREADMESparkleRight {
-    animation: none;
   }
 }
 
@@ -246,6 +227,39 @@
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .discordREADMEBadgeCard,
+  .discordREADMEBadgeCard:hover {
+    background-position: calc(100% + 7rem) 3.2rem !important;
+  }
+
+  @include tiny-screen-styles {
+    .discordREADMEBadgeCard,
+    .discordREADMEBadgeCard:hover {
+      background-position: calc(100% + 8rem) calc(100% + 1rem) !important;
+    }
+  }
+
+  .discordREADMEBadgeCard .discordREADMESparkleMain {
+    opacity: 1;
+  }
+
+  .discordREADMEBadgeCard .discordREADMESparkleLeft {
+    opacity: 1;
+  }
+
+  .discordREADMEBadgeCard .discordREADMESparkleRight {
+    opacity: 1;
+  }
+  .discordREADMEBadgeCard,
+  .discordREADMEBadgeCard:hover {
+    .discordREADMESparkleMain,
+    .discordREADMESparkleLeft,
+    .discordREADMESparkleRight {
+      animation: none;
+    }
+  }
+}
 // ===== github
 
 .githubProjectTrackerCard {
@@ -542,6 +556,7 @@
 @media (prefers-reduced-motion: reduce) {
   .systemStatusCard::before {
     filter: contrast(100%) brightness(100%);
+    animation: none;
   }
 
   .systemStatusCard:hover::before {

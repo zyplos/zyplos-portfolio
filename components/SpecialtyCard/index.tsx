@@ -45,8 +45,7 @@ export function DiscordREADMECard({ style }: CardProps) {
       }}
     >
       <p className={cardStyles.cardTitle}>Discord README Badge</p>
-      <p>community site</p>
-      <p>discord stuff</p>
+      <p>show what you&apos;re working on in your github readme</p>
 
       <Image src={sparkleMainImg} alt="" quality={100} className={styles.discordREADMESparkleMain} />
       <Image src={sparkleLeftImg} alt="" quality={100} className={styles.discordREADMESparkleLeft} />
@@ -64,8 +63,7 @@ export function GitHubProjectTracker({ style }: CardProps) {
       }}
     >
       <p className={cardStyles.cardTitle}>github project tracker</p>
-      <p>community site</p>
-      <p>discord stuff</p>
+      <p>get a quick overview of your team&apos;s github project on discord</p>
       <Image src={projectsIcon} alt="" quality={100} className={styles.githubProjectIcon} />
     </div>
   );
