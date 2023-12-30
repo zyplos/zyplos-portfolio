@@ -20,6 +20,9 @@ export default function ProjectsPage() {
   const projectsArray = projectDataToArray(projects);
   const archivedProjectsArray = projectDataToArray(archivedProjects);
 
+  console.log(projects);
+  console.log(projectsArray);
+
   return (
     <MainLayout>
       <h1 style={{ marginBottom: "2rem" }}>Projects</h1>

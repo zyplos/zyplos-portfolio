@@ -8,9 +8,14 @@ export const projects: ProjectData = {
   },
   "github-projectspace-tracker": {
     title: "github-projectspace-tracker",
-    description: "A small tool for tracking GitHub project space usage",
+    description: "Get a quick overview of your team's GitHub project on Discord",
     githubLink: "https://github.com/Zyplos/github-projectspace-tracker",
     featured: true,
+    content: (
+      <>
+        <p>what the hell</p>
+      </>
+    ),
   },
   "discord-readme-badge": {
     title: "discord-readme-badge",
@@ -83,9 +88,10 @@ export const archivedProjects: ArchivedProjectData = {
 export type Project = {
   title: string;
   description: string;
-  githubLink: string;
+  githubLink?: string;
   liveLink?: string;
   featured?: boolean;
+  content?: React.ReactNode;
 };
 
 export type ProjectData = {
