@@ -97,8 +97,8 @@ export function TwitterCard({ style }: CardProps) {
         ...style,
       }}
     >
-      <p className={cardStyles.cardTitle}>@zyplos/media</p>
-      <p>design and occasional photography</p>
+      <p className={cardStyles.cardTitle}>@zyplos</p>
+      <p>doodles and photography</p>
     </div>
   );
 }

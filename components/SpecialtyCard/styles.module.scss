@@ -1,3 +1,5 @@
+@use "@/styles/_common.scss" as *;
+
 // ===== lounge hub
 .loungeHubCard {
   background-color: #7bd1ff;
@@ -6,7 +8,7 @@
   background-size: auto, auto;
   // background-position: 30% 30%, center;
   background-position: 23% 23%, center;
-  transition: all 20s ease-out;
+  transition: all 20s ease-out, padding 0.2s ease-out;
   padding-right: 10rem;
 
   &:hover {
@@ -68,6 +70,29 @@
   rotate: 0deg;
   transition: all 0.2s ease-out;
   z-index: 1;
+}
+
+@include tiny-screen-styles {
+  .loungeHubCard,
+  .loungeHubCard:hover {
+    background-position: 70% 70%, center;
+    padding-bottom: 10rem;
+    padding-right: 2rem;
+
+    .loungeHubCardBlock {
+      rotate: 10deg;
+      transform: scale(1);
+      right: 0rem;
+      // bottom: 0rem;
+    }
+
+    .loungeHubCardEmblem {
+      rotate: -10deg;
+      // transform: scale(1.5);
+      right: 6rem;
+      bottom: 4rem;
+    }
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -194,6 +219,33 @@
   top: -2rem;
 }
 
+@include tiny-screen-styles {
+  .discordREADMEBadgeCard,
+  .discordREADMEBadgeCard:hover {
+    padding-right: 2rem;
+    background-position: calc(100% + 8rem) calc(100% + 1rem);
+    padding-bottom: 10rem;
+  }
+
+  .discordREADMESparkleMain {
+    animation: floatingItem 1.2s infinite alternate ease-in-out;
+  }
+
+  .discordREADMESparkleLeft {
+    animation: floatingItem 1.6s infinite alternate ease-in-out;
+  }
+
+  .discordREADMESparkleRight {
+    animation: floatingItem 1.4s infinite alternate ease-in-out;
+  }
+
+  .discordREADMESparkleMain,
+  .discordREADMESparkleLeft,
+  .discordREADMESparkleRight {
+    opacity: 1;
+  }
+}
+
 // ===== github
 
 .githubProjectTrackerCard {
@@ -208,7 +260,7 @@
   overflow: hidden;
 
   &:hover {
-    background-position: center 110%;
+    background-position: center calc(100% + 0.5rem);
   }
 
   &:hover .githubProjectIcon {
@@ -227,6 +279,19 @@
   rotate: 0deg;
   transition: all 0.2s ease-out;
   z-index: 1;
+}
+
+@include tiny-screen-styles {
+  .githubProjectTrackerCard,
+  .githubProjectTrackerCard:hover {
+    background-position: center 100%;
+  }
+  .githubProjectIcon {
+    top: 0rem;
+    right: 0rem;
+    width: 2.7rem;
+    transform: rotate(-30deg);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -308,6 +373,32 @@
   z-index: 1;
 }
 
+@include tiny-screen-styles {
+  .seeMoreProjectsCard {
+    background-position: 105% 10%;
+    overflow: initial;
+  }
+
+  .seeMoreProjectIcon {
+    top: 0rem;
+    left: 0rem;
+  }
+
+  .seeMoreDayShapeImg {
+    top: 0rem;
+    left: 2.5rem;
+  }
+
+  .seeMoreProjectspaceIcon {
+    top: calc(100% - 2rem);
+    right: 0rem;
+  }
+
+  .seeMoreCheckmarkIcon {
+    display: none;
+  }
+}
+
 .seeMoreProjectIcon {
   animation: floatingItem 1.2s infinite alternate ease-in-out;
 }
@@ -365,6 +456,14 @@
   }
 }
 
+@include tiny-screen-styles {
+  .twitterCard,
+  .twitterCard:hover {
+    background-size: auto 2rem;
+    background-position: 93% 20%;
+  }
+}
+
 // ===== myimages
 
 .myimagesCard {
@@ -392,6 +491,14 @@
   }
 }
 
+@include tiny-screen-styles {
+  .myimagesCard,
+  .myimagesCard:hover {
+    padding-bottom: 3rem;
+    background-position: left calc(100% + 9rem);
+  }
+}
+
 // ===== system status
 
 .systemStatusCard {
@@ -402,7 +509,7 @@
 .systemStatusCard::before {
   background-image: url("../../assets/status-render.png");
   background-size: contain;
-  background-position: right;
+  background-position: right bottom;
   background-repeat: no-repeat;
 
   filter: contrast(130%) brightness(10%); // NOLIGHT
@@ -423,6 +530,13 @@
 
 .systemStatusCard:hover::before {
   animation: flickerFilter 2s linear infinite alternate;
+}
+
+@include tiny-screen-styles {
+  .systemStatusCard::before {
+    filter: contrast(100%) brightness(100%);
+    animation: flickerFilter 2s linear infinite alternate;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
