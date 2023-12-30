@@ -1,4 +1,4 @@
-export const projectData: ProjectData = {
+export const projects: ProjectData = {
   "lounge-hub": {
     title: "lounge-hub",
     description: "community site for my minecraft stuff",
@@ -80,7 +80,7 @@ export const archivedProjects: ArchivedProjectData = {
   },
 };
 
-type Project = {
+export type Project = {
   title: string;
   description: string;
   githubLink: string;
@@ -92,7 +92,7 @@ export type ProjectData = {
   [key: string]: Project;
 };
 
-type ArchivedProject = Project & {
+export type ArchivedProject = Project & {
   date: string;
 };
 
