@@ -6,6 +6,11 @@
   // clip mask
   transition: all 0.2s ease-in-out;
   background-color: #221c1c;
+  border: 2px solid #221c1c;
+}
+
+.card:hover {
+  border: 2px solid #ff3e3e;
 }
 
 .cardTitle {
