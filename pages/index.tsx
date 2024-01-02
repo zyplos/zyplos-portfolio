@@ -4,16 +4,10 @@ import Head from "next/head";
 import styles from "@/styles/Home.module.scss";
 import TextWall from "@/components/TextWall";
 import { useEffect, useState } from "react";
-import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 
 import textWallStyles from "@/components/TextWall/styles.module.scss";
-import Image from "next/image";
-import emblemImg from "@/assets/emblem.png";
-import skyImg from "@/assets/mcsky.png";
-import commandBlockImg from "@/assets/command-block.png";
 import StatusText from "@/components/StatusText";
 import Navbar from "@/components/Navbar";
-import Card from "@/components/Card";
 import { DiscordREADMECard, GitHubProjectTracker, LoungeCard, MyImagesCard, SeeMoreProjectsCard, SystemStatusCard, TwitterCard } from "@/components/SpecialtyCard";
 import classNames from "classnames";
 import Link from "next/link";
@@ -21,17 +15,21 @@ import AnchorLink from "@/components/AnchorLink";
 import Footer from "@/components/Footer";
 
 export default function Home() {
-  const { scrollYProgress, scrollY } = useScroll();
   const [navExpanded, setNavExpanded] = useState(false);
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    console.log("scrollY changed to", latest);
-    if (latest > parseInt(textWallStyles.textWallHeight) - parseInt(styles.navHeight)) {
-      setNavExpanded(true);
-    } else {
-      setNavExpanded(false);
-    }
-  });
+  useEffect(() => {
+    const navThreshhold = parseInt(textWallStyles.textWallHeight) - parseInt(styles.navHeight);
+    const handleScroll = () => {
+      if (window.scrollY > navThreshhold) {
+        setNavExpanded(true);
+      } else {
+        setNavExpanded(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
