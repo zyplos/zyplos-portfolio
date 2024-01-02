@@ -4,10 +4,11 @@ import homeStyles from "@/styles/Home.module.scss";
 import Image from "next/image";
 import emblemImg from "@/assets/emblem.png";
 import Link from "next/link";
-import classnames from "classnames";
+import classNames from "classnames";
 
 export default function Navbar({ expanded = true }: { expanded?: boolean }) {
   const [isFooterVisible, setIsFooterVisible] = useState(false);
+  const [isMobileNavExpanded, setIsMobileNavExpanded] = useState(false);
 
   // Function to handle footer visibility change
   const handleFooterVisibilityChange = (isVisible: boolean) => {
@@ -34,7 +35,13 @@ export default function Navbar({ expanded = true }: { expanded?: boolean }) {
   }, []);
 
   return (
-    <nav className={`${styles.nav} ${expanded ? "glass" : ""}`} data-expanded={expanded}>
+    <nav
+      className={classNames(styles.nav, {
+        glass: expanded,
+        [styles.navWrapperMobile]: isMobileNavExpanded,
+      })}
+      data-expanded={expanded}
+    >
       <Link href="/" className={styles.emblemLink}>
         <Image
           src={emblemImg}
@@ -43,15 +50,28 @@ export default function Navbar({ expanded = true }: { expanded?: boolean }) {
           style={{
             ...(isFooterVisible && { opacity: 0 }),
           }}
+          className={classNames({
+            [styles.lightEmblem]: isMobileNavExpanded,
+          })}
         />
       </Link>
-      <section
-        className={classnames({
+      <div
+        className={classNames("glass", styles.hamburger)}
+        onClick={() => {
+          setIsMobileNavExpanded(!isMobileNavExpanded);
+        }}
+      >
+        ☰
+      </div>
+      <div
+        className={classNames(styles.linksSection, styles.mobileNav, {
           [styles.nogap]: expanded,
+          [styles.mobileExpanded]: isMobileNavExpanded,
+          [styles.opacity1]: isMobileNavExpanded,
         })}
       >
         <div
-          className={classnames(styles.links, "glass", homeStyles.statusChip, {
+          className={classNames(styles.links, "glass", homeStyles.statusChip, {
             // glass: !expanded,
             [styles.online]: true,
             [styles.statusChipExpanded]: expanded,
@@ -60,7 +80,7 @@ export default function Navbar({ expanded = true }: { expanded?: boolean }) {
           <span>⬤ Working</span>
         </div>
         <div
-          className={classnames(styles.links, {
+          className={classNames(styles.links, {
             glass: !expanded,
           })}
         >
@@ -68,7 +88,7 @@ export default function Navbar({ expanded = true }: { expanded?: boolean }) {
           <Link href="/projects">Projects</Link>
           <Link href="/status">Status</Link>
         </div>
-      </section>
+      </div>
     </nav>
   );
 }

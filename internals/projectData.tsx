@@ -36,12 +36,12 @@ export const projects: ProjectData = {
     githubLink: "https://github.com/Zyplos/maestro-discord",
   },
   loungecommuna: {
-    title: "LoungeCommuna",
+    title: "Lounge Communa",
     description: "Minecraft plugin for simple land claims",
     githubLink: "https://github.com/Zyplos/LoungeCommuna",
   },
   "lounge-new-world": {
-    title: "LoungeNewWorld",
+    title: "Lounge New World",
     description: "Simple Minecraft plugin for new playthroughs on the same world",
     githubLink: "https://github.com/Zyplos/LoungeNewWorld",
   },
@@ -61,7 +61,7 @@ export const projects: ProjectData = {
 
 export const archivedProjects: ArchivedProjectData = {
   terrariadiscord: {
-    title: "TerrariaDiscord",
+    title: "Terraria Discord",
     description: "Simple TShock plugin that listens to Terraria player chat and posts it to a Discord webhook.",
     githubLink: "https://github.com/Zyplos/TerrariaDiscord",
     date: "Fall 2019",

@@ -1,3 +1,4 @@
+@use "@/styles/_common.scss" as *;
 .statusText {
   font-size: 1.2rem;
   font-weight: bold;
@@ -16,5 +17,9 @@
     border-radius: var(--radiusXSm);
     width: 4rem;
     height: 4rem;
+
+    @include tiny-screen-styles {
+      display: none;
+    }
   }
 }
