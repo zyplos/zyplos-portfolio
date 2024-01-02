@@ -11,11 +11,6 @@ export const projects: ProjectData = {
     description: "Get a quick overview of your team's GitHub project on Discord",
     githubLink: "https://github.com/Zyplos/github-projectspace-tracker",
     featured: true,
-    content: (
-      <>
-        <p>what the hell</p>
-      </>
-    ),
   },
   "discord-readme-badge": {
     title: "discord-readme-badge",
@@ -67,7 +62,7 @@ export const projects: ProjectData = {
 export const archivedProjects: ArchivedProjectData = {
   terrariadiscord: {
     title: "TerrariaDiscord",
-    description: "Simple TShock plugin that listens to Terraria player chat and posts it to a discord webhook.",
+    description: "Simple TShock plugin that listens to Terraria player chat and posts it to a Discord webhook.",
     githubLink: "https://github.com/Zyplos/TerrariaDiscord",
     date: "Fall 2019",
   },
@@ -88,10 +83,9 @@ export const archivedProjects: ArchivedProjectData = {
 export type Project = {
   title: string;
   description: string;
-  githubLink?: string;
+  githubLink: string;
   liveLink?: string;
   featured?: boolean;
-  content?: React.ReactNode;
 };
 
 export type ProjectData = {

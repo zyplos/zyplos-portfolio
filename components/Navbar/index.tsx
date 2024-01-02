@@ -66,7 +66,7 @@ export default function Navbar({ expanded = true }: { expanded?: boolean }) {
         >
           <Link href="/">Home</Link>
           <Link href="/projects">Projects</Link>
-          <Link href="/updates">Updates</Link>
+          <Link href="/status">Status</Link>
         </div>
       </section>
     </nav>

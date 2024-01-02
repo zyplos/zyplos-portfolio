@@ -1,10 +1,11 @@
 import styles from "@/styles/SystemStatus.module.scss";
+import classNames from "classnames";
 import Link from "next/link";
 
 const friendlyStatusText = {
   online: "⬤ Online",
   offline: "🞮 Offline",
-  degraded: "▼ Check",
+  degraded: "▼ Degraded performance",
   dev: "⬢ indev",
 };
 
@@ -23,6 +24,10 @@ const services: Service[] = [
     status: "online",
   },
   {
+    name: "maestro-discord",
+    status: "dev",
+  },
+  {
     name: "mb-year-tracker",
     status: "online",
   },
@@ -33,6 +38,14 @@ const services: Service[] = [
   {
     name: "minecraft-modded",
     status: "online",
+  },
+  {
+    name: "terraria-mp",
+    status: "offline",
+  },
+  {
+    name: "gmod-playground",
+    status: "offline",
   },
   {
     name: "lounge-assets",
@@ -47,24 +60,27 @@ const services: Service[] = [
 export default function SystemStatusPage() {
   return (
     <>
+      <div className={styles.ccOverlay}></div>
       <main className={styles.main}>
         <section>
           <h1>system status</h1>
-          {/* <div className={styles.grid}>
-            {services.map((service, index) => (
-              <div key={index}>
-                <p>
-                  {service.name} <span className={styles[service.status]}>{friendlyStatusText[service.status]}</span>
-                </p>
-              </div>
-            ))}
-          </div> */}
-          <p>indev</p>
+          <p>still working on this</p>
+          <p>- zy</p>
+          <Link href="/" className={styles.homeLink}>
+            &lt;- back home
+          </Link>
+          <div className={styles.preview}>
+            <p>&#47;&#47; preview</p>
+            <div className={classNames(styles.grid)}>
+              {services.map((service, index) => (
+                <div className={styles.serviceRow} key={index}>
+                  <span>{service.name}</span>
+                  <span className={styles[service.status]}>{friendlyStatusText[service.status]}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
-
-        <Link href="/" className={styles.homeLink}>
-          &lt;- home
-        </Link>
       </main>
     </>
   );

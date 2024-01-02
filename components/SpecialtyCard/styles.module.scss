@@ -597,3 +597,21 @@
     filter: contrast(100%) brightness(100%); //
   }
 }
+
+// remove border on hover for all cards
+.loungeHubCard,
+.discordREADMEBadgeCard,
+.githubProjectTrackerCard,
+.seeMoreProjectsCard,
+.twitterCard,
+.myimagesCard,
+.systemStatusCard,
+.loungeHubCard:hover,
+.discordREADMEBadgeCard:hover,
+.githubProjectTrackerCard:hover,
+.seeMoreProjectsCard:hover,
+.twitterCard:hover,
+.myimagesCard:hover,
+.systemStatusCard:hover {
+  border: none;
+}

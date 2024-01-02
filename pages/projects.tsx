@@ -5,67 +5,55 @@ import { DiscordREADMECard, GitHubProjectTracker, LoungeCard, MyImagesCard } fro
 import { projects, archivedProjects, ProjectData, ArchivedProject, Project } from "@/internals/projectData";
 import Card from "@/components/Card";
 
-// turn projects into an array of values with the keys attached to them as a slug
-function projectDataToArray(projectData: ProjectData | ArchivedProject) {
-  const slugs = Object.keys(projectData);
-  const projectArray = Object.values(projectData).map((project, index) => ({
-    ...project,
-    slug: slugs[index],
-  }));
-
-  return projectArray;
-}
+import styles from "@/styles/Projects.module.scss";
+import classNames from "classnames";
 
 export default function ProjectsPage() {
-  const projectsArray = projectDataToArray(projects);
-  const archivedProjectsArray = projectDataToArray(archivedProjects);
-
-  console.log(projects);
-  console.log(projectsArray);
-
   return (
     <MainLayout>
       <h1 style={{ marginBottom: "2rem" }}>Projects</h1>
 
-      <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", marginBottom: "2rem", gap: "4rem" }}>
-        <Link href="/projects/lounge-hub">
+      <section className={styles.section}>
+        <a href="https://github.com/Zyplos/lounge-hub" target="_blank">
           <LoungeCard />
-        </Link>
+        </a>
 
-        <Link href="/projects/discord-readme-badge">
+        <a href="https://github.com/Zyplos/discord-readme-badge" target="_blank">
           <DiscordREADMECard />
-        </Link>
-        <Link href="/projects/github-project-tracker">
+        </a>
+        <a href="https://github.com/Zyplos/github-projectspace-tracker" target="_blank">
           <GitHubProjectTracker />
-        </Link>
-        <Link href="/projects/myimages">
+        </a>
+        <a href="https://github.com/Zyplos/myimages.zip" target="_blank">
           <MyImagesCard />
-        </Link>
+        </a>
 
-        {projectsArray.map((project, index) => {
-          if (project.featured) return;
+        <div className={styles.projectGrid}>
+          {Object.values(projects).map((project, index) => {
+            if (project.featured) return;
 
-          return (
-            <Link href={`/projects/${project.slug}`} key={index}>
-              <Card title={project.title}>
-                <p>{project.description}</p>
-              </Card>
-            </Link>
-          );
-        })}
-      </div>
+            return (
+              <a href={project.githubLink} target="_blank" key={index}>
+                <Card title={project.title}>
+                  <p>{project.description}</p>
+                </Card>
+              </a>
+            );
+          })}
+        </div>
+      </section>
 
       <h2 style={{ marginBottom: "2rem" }}>archived projects</h2>
-      <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", marginBottom: "2rem", gap: "4rem" }}>
-        {archivedProjectsArray.map((project, index) => (
-          <Link href={`/projects/${project.slug}`} key={index}>
+      <section className={classNames(styles.section)}>
+        {Object.values(archivedProjects).map((project, index) => (
+          <a href={project.githubLink} target="_blank" key={index}>
             <Card title={project.title}>
               <p>{project.date}</p>
               <p>{project.description}</p>
             </Card>
-          </Link>
+          </a>
         ))}
-      </div>
+      </section>
     </MainLayout>
   );
 }

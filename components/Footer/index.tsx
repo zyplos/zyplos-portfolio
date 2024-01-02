@@ -38,7 +38,7 @@ export default function Footer() {
       <div className={styles.content}>
         <div className={styles.images}>
           <Link href="/">
-            <Image src={emblemRender} alt="" quality={100} width={150} className={styles.emblem} />
+            <Image src={emblemRender} alt="" quality={100} width={150} className={styles.emblem} id="footer-emblem" />
           </Link>
           <div className={styles.socials}>
             <a href="https://twitter.com/zyplos" target="_blank">

@@ -1,0 +1,23 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 2rem;
+  gap: 4rem;
+}
+
+.projectGrid {
+  display: grid;
+  // 2 columns that wrap
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 4rem;
+  margin: 1rem 0;
+  // all cards have the same height
+  grid-auto-rows: 1fr;
+
+  > a,
+  > a > div {
+    width: 100%;
+    height: 100%;
+  }
+}
