@@ -4,6 +4,7 @@ import Head from "next/head";
 import styles from "@/styles/Home.module.scss";
 import TextWall from "@/components/TextWall";
 import { useEffect, useState } from "react";
+import type { InferGetServerSidePropsType, GetServerSideProps } from "next";
 
 import textWallStyles from "@/components/TextWall/styles.module.scss";
 import StatusText from "@/components/StatusText";
@@ -13,23 +14,21 @@ import classNames from "classnames";
 import Link from "next/link";
 import AnchorLink from "@/components/AnchorLink";
 import Footer from "@/components/Footer";
+import { DiscordStatusData } from "@/internals/getDiscordPresence";
 
-export default function Home() {
-  const [navExpanded, setNavExpanded] = useState(false);
+export const getServerSideProps = (async ({ req, res }) => {
+  res.setHeader("Cache-Control", "public, s-maxage=10, stale-while-revalidate=59");
 
-  useEffect(() => {
-    const navThreshhold = parseInt(textWallStyles.textWallHeight) - parseInt(styles.navHeight);
-    const handleScroll = () => {
-      if (window.scrollY > navThreshhold) {
-        setNavExpanded(true);
-      } else {
-        setNavExpanded(false);
-      }
-    };
+  return {
+    props: {
+      message: "what",
+    },
+  };
+}) satisfies GetServerSideProps<DiscordStatusData>;
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+export default function Home({ message }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  // console.log red text
+  console.log("%c%s", "color: #ff3e3e", "hey!!");
 
   return (
     <>
@@ -40,7 +39,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Navbar expanded={navExpanded} />
+      <Navbar homeMode={true} />
 
       <section className={styles["front-header"]}>
         <div>
@@ -52,9 +51,8 @@ export default function Home() {
             <h1>zyplos</h1>
           </div>
           <aside className={classNames("glass", styles.statusCard)}>
-            <StatusText />
-            <div className={styles["crt-screen"]}></div>
-            <div className={styles["crt-reflection"]}></div>
+            {/* <StatusText /> */}
+            {message}
           </aside>
         </header>
       </section>

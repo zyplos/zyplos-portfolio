@@ -1,14 +1,33 @@
 import { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
-import homeStyles from "@/styles/Home.module.scss";
 import Image from "next/image";
 import emblemImg from "@/assets/emblem.png";
 import Link from "next/link";
 import classNames from "classnames";
 
-export default function Navbar({ expanded = true }: { expanded?: boolean }) {
+import homeStyles from "@/styles/Home.module.scss";
+import textWallStyles from "@/components/TextWall/styles.module.scss";
+
+export default function Navbar({ homeMode = false }: { homeMode?: boolean }) {
   const [isFooterVisible, setIsFooterVisible] = useState(false);
   const [isMobileNavExpanded, setIsMobileNavExpanded] = useState(false);
+  const [expanded, setIsExpanded] = useState(!homeMode);
+
+  useEffect(() => {
+    const navThreshhold = parseInt(textWallStyles.textWallHeight) - parseInt(homeStyles.navHeight);
+    const handleScroll = () => {
+      if (window.scrollY > navThreshhold) {
+        setIsExpanded(true);
+      } else {
+        setIsExpanded(false);
+      }
+    };
+
+    if (homeMode) {
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    }
+  }, [homeMode]);
 
   // Function to handle footer visibility change
   const handleFooterVisibilityChange = (isVisible: boolean) => {
