@@ -14,7 +14,7 @@ import getDiscordPresence, { UserStatusData } from "@/internals/getDiscordPresen
 
 export const getServerSideProps = (async ({ req, res }) => {
   // cache for 5 minutes, revalidate every 6 minutes
-  res.setHeader("Cache-Control", "public, s-maxage=300, stale-while-revalidate=60");
+  res.setHeader("Cache-Control", "public, s-maxage=60, stale-while-revalidate=90");
 
   const userStatusData = await getDiscordPresence();
 

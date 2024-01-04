@@ -10,11 +10,20 @@ import textWallStyles from "@/components/TextWall/styles.module.scss";
 import { UserStatusData } from "@/internals/getDiscordPresence";
 
 const friendlyStatusText = {
-  online: "⬤ Working",
+  online: "⬤ Online",
+  onlineWorking: "⬤ Working",
   offline: "🞮 Offline",
   idle: "🞴 Chillin'",
   dnd: "🞓 Busy",
 };
+
+function getFriendlyStatusText(statusData: UserStatusData) {
+  let statusText = friendlyStatusText[statusData.status];
+  if (statusData.status === "online" && statusData.presence) {
+    statusText = friendlyStatusText.onlineWorking;
+  }
+  return statusText;
+}
 
 export default function Navbar({ homeMode = false }: { homeMode?: boolean }) {
   const [isFooterVisible, setIsFooterVisible] = useState(false);
@@ -112,7 +121,7 @@ export default function Navbar({ homeMode = false }: { homeMode?: boolean }) {
               [styles.statusChipMobile]: isMobileNavExpanded,
             })}
           >
-            <span>{friendlyStatusText[cachedUserStatusData.status]}</span>
+            <span>{getFriendlyStatusText(cachedUserStatusData)}</span>
           </div>
         )}
 

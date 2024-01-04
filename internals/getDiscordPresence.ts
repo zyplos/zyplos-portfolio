@@ -122,8 +122,8 @@ export default async function getDiscordPresence(): Promise<UserStatusData> {
 
     if (!mainActivityText) {
       return {
-        message: "nope",
-        status: "offline",
+        message: "hi!",
+        status: userStatus,
         presence: null,
       };
     }
@@ -136,7 +136,7 @@ export default async function getDiscordPresence(): Promise<UserStatusData> {
   } catch (error) {
     console.error(error);
     return {
-      message: "nope",
+      message: "oops",
       status: "offline",
       presence: null,
     };
