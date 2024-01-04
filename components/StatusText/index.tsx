@@ -1,6 +1,5 @@
 import styles from "./styles.module.scss";
 import Image from "next/image";
-import testTileImg from "@/assets/tile3.png";
 import { UserStatusData } from "@/internals/getDiscordPresence";
 import classNames from "classnames";
 

@@ -1,4 +1,4 @@
-import { Activity, ActivityType, Client, ClientPresenceStatus, GatewayIntentBits, GuildMember, Presence } from "discord.js";
+import { Activity, Client, ClientPresenceStatus, GatewayIntentBits, Presence } from "discord.js";
 
 const allowedGames = [
   "visual studio code",

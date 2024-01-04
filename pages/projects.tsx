@@ -1,8 +1,7 @@
-import Link from "next/link";
 import MainLayout from "@/components/MainLayout";
 import { DiscordREADMECard, GitHubProjectTracker, LoungeCard, MyImagesCard } from "@/components/SpecialtyCard";
 
-import { projects, archivedProjects, ProjectData, ArchivedProject, Project } from "@/internals/projectData";
+import { projects, archivedProjects } from "@/internals/projectData";
 import Card from "@/components/Card";
 
 import styles from "@/styles/Projects.module.scss";

@@ -7,7 +7,7 @@ import classNames from "classnames";
 
 import homeStyles from "@/styles/Home.module.scss";
 import textWallStyles from "@/components/TextWall/styles.module.scss";
-import { RefinedPresenceData, UserStatusData } from "@/internals/getDiscordPresence";
+import { UserStatusData } from "@/internals/getDiscordPresence";
 
 const friendlyStatusText = {
   online: "⬤ Working",
