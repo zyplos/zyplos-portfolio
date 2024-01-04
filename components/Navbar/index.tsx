@@ -7,11 +7,25 @@ import classNames from "classnames";
 
 import homeStyles from "@/styles/Home.module.scss";
 import textWallStyles from "@/components/TextWall/styles.module.scss";
+import { RefinedPresenceData, UserStatusData } from "@/internals/getDiscordPresence";
+
+const friendlyStatusText = {
+  online: "⬤ Working",
+  offline: "🞮 Offline",
+  idle: "🞴 Chillin'",
+  dnd: "🞓 Busy",
+};
 
 export default function Navbar({ homeMode = false }: { homeMode?: boolean }) {
   const [isFooterVisible, setIsFooterVisible] = useState(false);
   const [isMobileNavExpanded, setIsMobileNavExpanded] = useState(false);
   const [expanded, setIsExpanded] = useState(!homeMode);
+  const [cachedUserStatusData, setCachedUserStatusData] = useState<UserStatusData | null>(null);
+
+  useEffect(() => {
+    const statusLocalString = localStorage.getItem("status");
+    setCachedUserStatusData(statusLocalString ? JSON.parse(statusLocalString) : null);
+  }, []);
 
   useEffect(() => {
     const navThreshhold = parseInt(textWallStyles.textWallHeight) - parseInt(homeStyles.navHeight);
@@ -24,6 +38,7 @@ export default function Navbar({ homeMode = false }: { homeMode?: boolean }) {
     };
 
     if (homeMode) {
+      handleScroll();
       window.addEventListener("scroll", handleScroll);
       return () => window.removeEventListener("scroll", handleScroll);
     }
@@ -89,15 +104,18 @@ export default function Navbar({ homeMode = false }: { homeMode?: boolean }) {
           [styles.opacity1]: isMobileNavExpanded,
         })}
       >
-        <div
-          className={classNames(styles.links, "glass", homeStyles.statusChip, {
-            // glass: !expanded,
-            [styles.online]: true,
-            [styles.statusChipExpanded]: expanded,
-          })}
-        >
-          <span>⬤ Working</span>
-        </div>
+        {cachedUserStatusData && cachedUserStatusData.status !== "offline" && (
+          <div
+            className={classNames(styles.links, "glass", homeStyles.statusChip, styles[cachedUserStatusData.status], {
+              // glass: !expanded,
+              [styles.statusChipExpanded]: expanded,
+              [styles.statusChipMobile]: isMobileNavExpanded,
+            })}
+          >
+            <span>{friendlyStatusText[cachedUserStatusData.status]}</span>
+          </div>
+        )}
+
         <div
           className={classNames(styles.links, {
             glass: !expanded,

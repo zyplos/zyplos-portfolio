@@ -1,12 +1,8 @@
 import Head from "next/head";
-// import Image from "next/image";
-// import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.scss";
 import TextWall from "@/components/TextWall";
-import { useEffect, useState } from "react";
 import type { InferGetServerSidePropsType, GetServerSideProps } from "next";
 
-import textWallStyles from "@/components/TextWall/styles.module.scss";
 import StatusText from "@/components/StatusText";
 import Navbar from "@/components/Navbar";
 import { DiscordREADMECard, GitHubProjectTracker, LoungeCard, MyImagesCard, SeeMoreProjectsCard, SystemStatusCard, TwitterCard } from "@/components/SpecialtyCard";
@@ -14,27 +10,39 @@ import classNames from "classnames";
 import Link from "next/link";
 import AnchorLink from "@/components/AnchorLink";
 import Footer from "@/components/Footer";
-import { DiscordStatusData } from "@/internals/getDiscordPresence";
+import getDiscordPresence, { UserStatusData } from "@/internals/getDiscordPresence";
 
 export const getServerSideProps = (async ({ req, res }) => {
-  res.setHeader("Cache-Control", "public, s-maxage=10, stale-while-revalidate=59");
+  // cache for 5 minutes, revalidate every 6 minutes
+  res.setHeader("Cache-Control", "public, s-maxage=300, stale-while-revalidate=60");
+
+  const userStatusData = await getDiscordPresence();
 
   return {
     props: {
-      message: "what",
+      userStatusData,
     },
   };
-}) satisfies GetServerSideProps<DiscordStatusData>;
+}) satisfies GetServerSideProps<{ userStatusData: UserStatusData }>;
 
-export default function Home({ message }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+export default function Home({ userStatusData }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   // console.log red text
-  console.log("%c%s", "color: #ff3e3e", "hey!!");
+  console.log("%c%s", "color: #ffffff; font-family: monospace;", "--------------------");
+  console.log("%c%s", "color: #ff3e3e; font-family: sans-serif;", "snooping as usual i see");
+  console.log("%c%s", "color: #ffffff; font-family: sans-serif;", "you should hire me probably :)");
+  console.log("%c%s", "color: #ffd300; font-family: monospace;", "me@zyplos.dev");
+  console.log("%c%s", "color: #ffffff; font-family: monospace;", "--------------------");
+
+  // if on client, set local storage
+  if (typeof window !== "undefined") {
+    localStorage.setItem("status", JSON.stringify(userStatusData));
+  }
 
   return (
     <>
       <Head>
         <title>zyplos&apos;s stuff</title>
-        <meta name="description" content="come take a look" />
+        <meta name="description" content="come take a look at my programming stuff" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -51,8 +59,7 @@ export default function Home({ message }: InferGetServerSidePropsType<typeof get
             <h1>zyplos</h1>
           </div>
           <aside className={classNames("glass", styles.statusCard)}>
-            {/* <StatusText /> */}
-            {message}
+            <StatusText data={userStatusData} />
           </aside>
         </header>
       </section>

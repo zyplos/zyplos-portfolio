@@ -54,7 +54,14 @@
   font-size: 1rem;
   padding: 2rem;
   display: inline-block;
-  max-width: 20rem;
+  max-width: 23rem;
+  overflow: hidden;
+
+  p {
+    max-width: 14rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
 }
 
 .main {
@@ -102,7 +109,8 @@
   left: 0;
   top: 0;
   border-radius: var(--radius);
-  // z-index: -1;
+  z-index: 3;
+  pointer-events: none;
 }
 
 @media (prefers-reduced-motion: reduce) {

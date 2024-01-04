@@ -45,8 +45,10 @@ $nav-height: 100;
   }
 }
 
-.lightEmblem {
-  filter: brightness(10);
+@include tiny-screen-styles {
+  .lightEmblem {
+    filter: brightness(10);
+  }
 }
 
 @include tiny-screen-styles {
@@ -95,7 +97,7 @@ $nav-height: 100;
   }
 
   .statusChip {
-    background-color: #9a3b3b !important;
+    background-color: rgba(17, 17, 17, 0.62) !important;
   }
   .statusChip::before {
     backdrop-filter: blur(1px) !important;
@@ -166,6 +168,15 @@ a.emblemLink:hover {
 
 .online {
   color: var(--c-green);
+}
+.idle {
+  color: #feff43;
+}
+.dnd {
+  color: #ff6e5b;
+}
+.offline {
+  color: #a58888;
 }
 
 section.nogap {

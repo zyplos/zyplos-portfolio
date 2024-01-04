@@ -2,24 +2,75 @@
 .statusText {
   font-size: 1.2rem;
   font-weight: bold;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.4rem;
+}
+
+.gameText {
+  margin-bottom: 0.4rem;
 }
 
 .online {
   color: var(--c-green);
 }
+.idle {
+  color: #feff43;
+}
+.dnd {
+  color: #ff6e5b;
+}
+.offline {
+  color: #a58888;
+}
 
 .richPresence {
   display: flex;
   gap: 1rem;
+}
 
-  img {
-    border-radius: var(--radiusXSm);
-    width: 4rem;
-    height: 4rem;
+@include tiny-screen-styles {
+  .richPresence p {
+    display: none;
+  }
+}
 
-    @include tiny-screen-styles {
-      display: none;
-    }
+.wrapper {
+  position: relative;
+}
+
+.images {
+  position: relative;
+}
+
+.largeImage {
+  border-radius: var(--radiusXSm);
+  width: 4rem;
+  height: 4rem;
+}
+
+.smallImage {
+  position: absolute;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 100%;
+  bottom: 0;
+  right: -0.5rem;
+}
+
+@include tiny-screen-styles {
+  .images {
+    position: absolute;
+    top: -2rem;
+    left: -2rem;
+  }
+
+  .largeImage {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .smallImage {
+    width: 1rem;
+    height: 1rem;
+    right: -0.2rem;
   }
 }

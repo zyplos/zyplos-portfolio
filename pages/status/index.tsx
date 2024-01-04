@@ -1,6 +1,7 @@
 import styles from "@/styles/SystemStatus.module.scss";
 import classNames from "classnames";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const friendlyStatusText = {
   online: "⬤ Online",
@@ -58,6 +59,8 @@ const services: Service[] = [
 ];
 
 export default function SystemStatusPage() {
+  const router = useRouter();
+
   return (
     <>
       <div className={styles.ccOverlay}></div>
@@ -66,9 +69,10 @@ export default function SystemStatusPage() {
           <h1>system status</h1>
           <p>still working on this</p>
           <p>- zy</p>
-          <Link href="/" className={styles.homeLink}>
-            &lt;- back home
-          </Link>
+
+          <button type="button" onClick={() => router.back()} className={styles.homeLink}>
+            &lt;- back
+          </button>
           <div className={styles.preview}>
             <p>&#47;&#47; preview</p>
             <div className={classNames(styles.grid)}>
