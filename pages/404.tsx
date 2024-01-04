@@ -1,13 +1,14 @@
 import Image from "next/image";
-import degImage from "@/assets/_deg.jpg";
 import Head from "next/head";
 import Fullscreen from "@/components/Fullscreen";
+import Link from "next/link";
+import unitCubeImg from "@/assets/unitcube.png";
 
 export default function RamEXEPage() {
   return (
     <>
       <Head>
-        <title>ram.exe</title>
+        <title>404 not found • zyplos&apos;s stuff</title>
         <meta name="description" content="download free RAM" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -30,12 +31,13 @@ export default function RamEXEPage() {
         <meta name="theme-color" content="#111111" />
       </Head>
 
-      <Fullscreen
-        style={{
-          backgroundColor: "#f6c670",
-        }}
-      >
-        <Image src={degImage} alt="_deg.jpg" style={{ maxWidth: "100%", height: "auto" }} />
+      <Fullscreen>
+        <h1>404</h1>
+        <p>not found</p>
+        <Link href="/" style={{ color: "#ff3e3e" }}>
+          home page
+        </Link>
+        <Image src={unitCubeImg} quality={100} width={300} alt="_deg.jpg" style={{ maxWidth: "100%", height: "auto" }} />
       </Fullscreen>
     </>
   );
