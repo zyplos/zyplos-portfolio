@@ -12,4 +12,10 @@ $text-wall-height: 600;
 
 .canvas {
   height: $text-wall-height + px;
+  // opacity: 0;
 }
+
+// .fadeIn {
+//   opacity: 1;
+//   transition: opacity 1s ease-out;
+// }

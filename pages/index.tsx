@@ -18,17 +18,18 @@ export const getServerSideProps = (async ({ req, res }) => {
 
   const userStatusData = await getDiscordPresence();
 
-  // const userStatusData = {
+  // const userStatusData: UserStatusData = {
   //   message: "wow",
   //   status: "dnd",
   //   presence: {
-  //     name: "lounge.haus",
-  //     details: "working on the lounge",
-  //     state: "making it better",
-  //     largeImageUrl: "https://cdn.discordapp.com/app-assets/793788372964030494/793788373521510922.png",
-  //     largeImageAlt: "lounge.haus logo",
-  //     smallImageUrl: "https://cdn.discordapp.com/app-assets/793788372964030494/793788373521510922.png",
-  //     smallImageAlt: "lounge.haus logo",
+  //     type: "rich",
+  //     name: "Visual Studio Code",
+  //     details: "Editing .env",
+  //     state: "Workspace: zyplos-portfolio",
+  //     largeImageUrl: "https://cdn.discordapp.com/app-assets/383226320970055681/565944478549016577.png",
+  //     largeImageAlt: "Editing a ENV file",
+  //     smallImageUrl: "https://cdn.discordapp.com/app-assets/383226320970055681/565949878820405299.png",
+  //     smallImageAlt: "Visual Studio Code - Insiders",
   //   },
   // };
 

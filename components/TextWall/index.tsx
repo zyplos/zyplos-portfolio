@@ -3,8 +3,6 @@ import styles from "./styles.module.scss";
 
 export default function TextWall() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const speedRef = useRef<HTMLInputElement>(null);
-  const [DEV_CHANGER_SPEED, SET_DEV_CHANGER_SPEED] = useState(1);
 
   useEffect(() => {
     // console.log("CANVASSTART======================================");
@@ -21,6 +19,19 @@ export default function TextWall() {
     let WIDTH = canvas.width;
     let HEIGHT = canvas.height;
 
+    // THIS RUNS UP HERE SINCE THE CALCULATIONS BELOW
+    // DEPEND ON THE WIDTH AND HEIGHT OF THE CANVAS BEING CORRECT
+    const resizeCanvas = () => {
+      canvas.width = canvas.clientWidth;
+      canvas.height = canvas.clientHeight;
+
+      // console.log("canvas resized to", canvas.width, canvas.height);
+
+      WIDTH = canvas.width;
+      HEIGHT = canvas.height;
+    };
+    resizeCanvas();
+
     const BAR_HEIGHT = 75;
     const FONT_SIZE = Math.floor(BAR_HEIGHT * 0.45);
 
@@ -35,9 +46,19 @@ export default function TextWall() {
     const EVEN_BAR_COLOR = "#050505";
     const ODD_BAR_COLOR = "#090909";
 
+    // CANVAS SETUP
+    // THIS ALSO NEEDS TO BE DONE UP HERE SINCE
+    // EVERYTHING BELOW DEPENDS ON THE CANVAS SETUP BEING DONE ALREADY
+    const setCanvasContext = () => {
+      ctx.fillStyle = TEXT_COLOR;
+      ctx.font = FONT_STYLE;
+      ctx.textBaseline = "middle";
+    };
+    setCanvasContext();
+
     const drawBg = () => {
       ctx.save();
-      ctx.fillStyle = "#111";
+      ctx.fillStyle = "#5b1919";
       ctx.fillRect(0, 0, WIDTH, HEIGHT);
       ctx.restore();
     };
@@ -216,12 +237,12 @@ export default function TextWall() {
         const newBar = new BarTextCombo(i, devXBar, devYBar);
 
         let currentWidthTaken = 0;
-        let DEV_MAX_COUNTER = 0;
+        // let DEV_MAX_COUNTER = 0;
         // let currentString = DEV_MAX_COUNTER + "|" + getRandomString();
         let currentString = getRandomString();
         let BAR_WIDTH_EXTRA_SPACE = calcTextWidth(currentString);
         while (currentWidthTaken < BAR_WIDTH + BAR_WIDTH_EXTRA_SPACE) {
-          DEV_MAX_COUNTER++;
+          // DEV_MAX_COUNTER++;
           newBar.textInstances.push(
             new BarTextInstance(currentString, isBackward ? devXBar - currentWidthTaken : devXBar + currentWidthTaken, devYBar, isBackward, currentWidthTaken)
           );
@@ -252,18 +273,8 @@ export default function TextWall() {
       });
     };
 
-    /*
-      couple of quirks with this function:
-      - calling it right before the render makes calcTextWidth not work on first iterations
-      - calling it before calling resizeCanvas() makes it not work at all
-
-      so it gets called right at the beginning of all the drawing code
-    */
-    const setupCanvas = () => {
-      ctx.fillStyle = TEXT_COLOR;
-      ctx.font = FONT_STYLE;
-      ctx.textBaseline = "middle";
-
+    const addMissingBars = () => {
+      // console.log("RECALCING BARS");
       // recalc max bars when resizing
       widthMaxBars = Math.ceil(WIDTH / BAR_HEIGHT) + 1;
       maxBarsWithEmptySpace = widthMaxBars + Math.floor(widthMaxBars / 2);
@@ -277,25 +288,18 @@ export default function TextWall() {
         createBarInstances(OLD_MAX_BARS);
       }
     };
+    addMissingBars();
 
-    const resizeCanvas = () => {
-      canvas.width = canvas.clientWidth;
-      canvas.height = canvas.clientHeight;
-
-      WIDTH = canvas.width;
-      HEIGHT = canvas.height;
-
-      // resizing the canvas resets the fillStyle and font
-      // so we need to set them again
-      setupCanvas();
-
-      // console.log("resized canvas to", WIDTH, HEIGHT);
+    const resizeHandler = () => {
+      // RESIZE FIRST SO THE CALCULATIONS BELOW ARE CORRECT
+      resizeCanvas();
+      // THEN SET THE CANVAS CONTEXT AGAIN AFTER RESIZING
+      // SINCE RESIZING CLEARS THE CONTEXT
+      setCanvasContext();
+      // FINALLY -- ADD MISSING BARS WITH CORRECT CALCULATIONS AND CONTEXT
+      addMissingBars();
     };
-    resizeCanvas();
-    window.addEventListener("resize", resizeCanvas);
-
-    // ===== ACTUAL DRAWING STUFF
-    setupCanvas();
+    window.addEventListener("resize", resizeHandler);
 
     // ===== RENDER LOOP
     const render = () => {
@@ -310,7 +314,7 @@ export default function TextWall() {
       window.cancelAnimationFrame(animationFrameId);
       window.removeEventListener("resize", resizeCanvas);
     };
-  }, [DEV_CHANGER_SPEED]);
+  }, []);
 
   return (
     <>
