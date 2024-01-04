@@ -35,41 +35,9 @@ export default function TextWall() {
     const EVEN_BAR_COLOR = "#050505";
     const ODD_BAR_COLOR = "#090909";
 
-    /*
-      couple of quirks with this function:
-      - calling it right before the render makes calcTextWidth not work on first iterations
-      - calling it before calling resizeCanvas() makes it not work at all
-
-      so it gets called right at the beginning of all the drawing code
-    */
-    const setupCanvas = () => {
-      ctx.fillStyle = TEXT_COLOR;
-      ctx.font = FONT_STYLE;
-      ctx.textBaseline = "middle";
-    };
-
-    const resizeCanvas = () => {
-      canvas.width = canvas.clientWidth;
-      canvas.height = canvas.clientHeight;
-
-      WIDTH = canvas.width;
-      HEIGHT = canvas.height;
-
-      // resizing the canvas resets the fillStyle and font
-      // so we need to set them again
-      setupCanvas();
-
-      // console.log("resized canvas to", WIDTH, HEIGHT);
-    };
-    resizeCanvas();
-    window.addEventListener("resize", resizeCanvas);
-
-    // ===== ACTUAL DRAWING STUFF
-    setupCanvas();
-
     const drawBg = () => {
       ctx.save();
-      ctx.fillStyle = "#444";
+      ctx.fillStyle = "#111";
       ctx.fillRect(0, 0, WIDTH, HEIGHT);
       ctx.restore();
     };
@@ -91,24 +59,29 @@ export default function TextWall() {
     // bars start at this offset to make up for the empty space at the beginning due to the rotation
     const X_ORIGIN = -BAR_HEIGHT * 7;
 
-    const widthMaxBars = Math.ceil(WIDTH / BAR_HEIGHT) + 1;
-    const maxBarsWithEmptySpace = widthMaxBars + Math.floor(widthMaxBars / 2);
+    // these three variables are dependent on the width of the canvas
+    // recalculate on resize
+    let widthMaxBars = Math.ceil(WIDTH / BAR_HEIGHT) + 1;
+    let maxBarsWithEmptySpace = widthMaxBars + Math.floor(widthMaxBars / 2);
 
     // bar limit has a few more bars due some empty space that happens on mobile
-    const MAX_BARS = maxBarsWithEmptySpace + Math.floor(maxBarsWithEmptySpace / 2);
+    let MAX_BARS = maxBarsWithEmptySpace + Math.floor(maxBarsWithEmptySpace / 2);
+
+    const BAR_INSTANCES: BarTextCombo[] = [];
 
     // const RANDOM_STRINGS = ["Scrollable text!!!!", "sample text", "shoutouts"];
     // const RANDOM_STRINGS = ["test string", "scrollable", "plinko", "wow", "me", "particularly long string"];
     const RANDOM_STRINGS = [
-      "Casually professional",
-      "Naturally technical",
-      "Constantly dynamic",
-      "Hopelessly optimistic",
-      "Imaginatively realistic", // ?
-      "Rarely common",
-      "Bluntly sharp", //
-      "Sarcasticly sincere", //
-      "Thoughtfully impulsive", //
+      "casually professional",
+      "naturally technical",
+      "constantly dynamic",
+      "hopelessly optimistic",
+      "rarely common",
+      "sarcasticly sincere", //
+      "thoughtfully impulsive", //
+      "playfully serious",
+      "randomly structured",
+      "intricately simple",
       //
     ];
     // const RANDOM_STRINGS = ["plinko"];
@@ -230,45 +203,46 @@ export default function TextWall() {
       }
     }
 
-    const BAR_INSTANCES: BarTextCombo[] = [];
+    const createBarInstances = (startFrom: number = 0) => {
+      // const DEV_BAR_ID = 7;
+      for (let i = startFrom; i < MAX_BARS; i++) {
+        // if (i !== DEV_BAR_ID) continue;
+        const isBackward = i % 2 === 0 ? true : false;
 
-    // const DEV_BAR_ID = 7;
-    for (let i = 0; i < MAX_BARS; i++) {
-      // if (i !== DEV_BAR_ID) continue;
-      const isBackward = i % 2 === 0 ? true : false;
+        // y has some extra offset to make up for the empty space at the bottom
+        const devXBar = X_ORIGIN + BAR_OFFSET * i;
+        const devYBar = Math.floor(BAR_HEIGHT * 2) + X_ORIGIN + HEIGHT + BAR_OFFSET * i;
 
-      // y has some extra offset to make up for the empty space at the bottom
-      const devXBar = X_ORIGIN + BAR_OFFSET * i;
-      const devYBar = Math.floor(BAR_HEIGHT * 2) + X_ORIGIN + HEIGHT + BAR_OFFSET * i;
+        const newBar = new BarTextCombo(i, devXBar, devYBar);
 
-      const newBar = new BarTextCombo(i, devXBar, devYBar);
+        let currentWidthTaken = 0;
+        let DEV_MAX_COUNTER = 0;
+        // let currentString = DEV_MAX_COUNTER + "|" + getRandomString();
+        let currentString = getRandomString();
+        let BAR_WIDTH_EXTRA_SPACE = calcTextWidth(currentString);
+        while (currentWidthTaken < BAR_WIDTH + BAR_WIDTH_EXTRA_SPACE) {
+          DEV_MAX_COUNTER++;
+          newBar.textInstances.push(
+            new BarTextInstance(currentString, isBackward ? devXBar - currentWidthTaken : devXBar + currentWidthTaken, devYBar, isBackward, currentWidthTaken)
+          );
 
-      let currentWidthTaken = 0;
-      let DEV_MAX_COUNTER = 0;
-      // let currentString = DEV_MAX_COUNTER + "|" + getRandomString();
-      let currentString = getRandomString();
-      let BAR_WIDTH_EXTRA_SPACE = calcTextWidth(currentString);
-      while (currentWidthTaken < BAR_WIDTH + BAR_WIDTH_EXTRA_SPACE) {
-        DEV_MAX_COUNTER++;
-        newBar.textInstances.push(
-          new BarTextInstance(currentString, isBackward ? devXBar - currentWidthTaken : devXBar + currentWidthTaken, devYBar, isBackward, currentWidthTaken)
-        );
+          // then a new string is selected and the offset is from the new string
+          // currentString = DEV_MAX_COUNTER + "|" + getRandomString();
+          currentString = getRandomString();
+          const textWidth = calcTextWidth(currentString);
+          currentWidthTaken += textWidth;
+          BAR_WIDTH_EXTRA_SPACE = textWidth;
+        }
 
-        // then a new string is selected and the offset is from the new string
-        // currentString = DEV_MAX_COUNTER + "|" + getRandomString();
-        currentString = getRandomString();
-        const textWidth = calcTextWidth(currentString);
-        currentWidthTaken += textWidth;
-        BAR_WIDTH_EXTRA_SPACE = textWidth;
+        // the first text instance is the first one in the bar
+        // but the text manager sees the last one as the first one
+        // so reverse the array so its ready for the text manager
+        newBar.textInstances.reverse();
+
+        BAR_INSTANCES.push(newBar);
       }
-
-      // the first text instance is the first one in the bar
-      // but the text manager sees the last one as the first one
-      // so reverse the array so its ready for the text manager
-      newBar.textInstances.reverse();
-
-      BAR_INSTANCES.push(newBar);
-    }
+    };
+    createBarInstances();
 
     const drawDev = () => {
       BAR_INSTANCES.forEach((devBar, index) => {
@@ -277,6 +251,52 @@ export default function TextWall() {
         devBar.draw(ctx);
       });
     };
+
+    /*
+      couple of quirks with this function:
+      - calling it right before the render makes calcTextWidth not work on first iterations
+      - calling it before calling resizeCanvas() makes it not work at all
+
+      so it gets called right at the beginning of all the drawing code
+    */
+    const setupCanvas = () => {
+      ctx.fillStyle = TEXT_COLOR;
+      ctx.font = FONT_STYLE;
+      ctx.textBaseline = "middle";
+
+      // recalc max bars when resizing
+      widthMaxBars = Math.ceil(WIDTH / BAR_HEIGHT) + 1;
+      maxBarsWithEmptySpace = widthMaxBars + Math.floor(widthMaxBars / 2);
+
+      // bar limit has a few more bars due some empty space that happens on mobile
+      const NEW_MAX_BARS = maxBarsWithEmptySpace + Math.floor(maxBarsWithEmptySpace / 2);
+      const OLD_MAX_BARS = MAX_BARS;
+      MAX_BARS = NEW_MAX_BARS;
+      if (NEW_MAX_BARS > OLD_MAX_BARS) {
+        // add more bars when needed
+        createBarInstances(OLD_MAX_BARS);
+      }
+      console.log("TEXT WALL MAXBARS NEEDED", MAX_BARS);
+    };
+
+    const resizeCanvas = () => {
+      canvas.width = canvas.clientWidth;
+      canvas.height = canvas.clientHeight;
+
+      WIDTH = canvas.width;
+      HEIGHT = canvas.height;
+
+      // resizing the canvas resets the fillStyle and font
+      // so we need to set them again
+      setupCanvas();
+
+      // console.log("resized canvas to", WIDTH, HEIGHT);
+    };
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
+
+    // ===== ACTUAL DRAWING STUFF
+    setupCanvas();
 
     // ===== RENDER LOOP
     const render = () => {

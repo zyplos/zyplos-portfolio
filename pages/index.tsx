@@ -18,6 +18,20 @@ export const getServerSideProps = (async ({ req, res }) => {
 
   const userStatusData = await getDiscordPresence();
 
+  // const userStatusData = {
+  //   message: "wow",
+  //   status: "dnd",
+  //   presence: {
+  //     name: "lounge.haus",
+  //     details: "working on the lounge",
+  //     state: "making it better",
+  //     largeImageUrl: "https://cdn.discordapp.com/app-assets/793788372964030494/793788373521510922.png",
+  //     largeImageAlt: "lounge.haus logo",
+  //     smallImageUrl: "https://cdn.discordapp.com/app-assets/793788372964030494/793788373521510922.png",
+  //     smallImageAlt: "lounge.haus logo",
+  //   },
+  // };
+
   return {
     props: {
       userStatusData,
@@ -73,7 +87,7 @@ export default function Home({ userStatusData }: InferGetServerSidePropsType<typ
 
         <div>
           <h2>some stuff i&apos;ve made</h2>
-          <p>these are some of my favorite things i&apos;ve made so far</p>
+          <p>these are a few public projects you can view and mess around with if you&apos;d like</p>
         </div>
         <div style={{ display: "flex", gap: "5rem", flexDirection: "column", marginTop: "2rem" }}>
           <a href="https://lounge.haus/" target="_blank">
@@ -115,7 +129,7 @@ export default function Home({ userStatusData }: InferGetServerSidePropsType<typ
             for quick stuff
           </p>
           <p>
-            alternatively if it&apos;s something more formal you can email me at <span style={{ fontFamily: "monospace" }}>me@zyplos.dev</span>
+            alternatively if it&apos;s something more formal you can email me at <span style={{ fontFamily: "monospace" }}>zyplos@duck.com</span>
           </p>
         </div>
 
