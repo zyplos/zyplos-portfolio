@@ -44,7 +44,7 @@ export default function Home({ userStatusData }: InferGetServerSidePropsType<typ
   console.log("%c%s", "color: #ffffff; font-family: monospace;", "--------------------");
   console.log("%c%s", "color: #ff3e3e; font-family: sans-serif;", "snooping as usual i see");
   console.log("%c%s", "color: #ffffff; font-family: sans-serif;", "you should hire me probably :)");
-  console.log("%c%s", "color: #ffd300; font-family: monospace;", "me@zyplos.dev");
+  console.log("%c%s", "color: #ffd300; font-family: monospace;", "zyplos@duck.com");
   console.log("%c%s", "color: #ffffff; font-family: monospace;", "--------------------");
 
   // if on client, set local storage
@@ -56,9 +56,26 @@ export default function Home({ userStatusData }: InferGetServerSidePropsType<typ
     <>
       <Head>
         <title>zyplos&apos;s stuff</title>
-        <meta name="description" content="come take a look at my programming stuff" />
+        <meta name="description" content="come feast your eyes" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+
+        <meta property="og:title" content="zyplos's stuff" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://zyplos.dev/" />
+        <meta property="og:description" content="come feast your eyes" />
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@Zyplos" />
+        <meta name="twitter:creator" content="@Zyplos" />
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff3e3e" />
+        <meta name="msapplication-TileColor" content="#ff3e3e" />
+        <meta name="theme-color" content="#111111" />
       </Head>
 
       <Navbar homeMode={true} />
@@ -82,12 +99,12 @@ export default function Home({ userStatusData }: InferGetServerSidePropsType<typ
         <div>
           <h2>stuff about me</h2>
           <p>i&apos;m a developer who&apos;s worked with the web and various other things for many years now</p>
-          <p>i like learning new stuff and love building things</p>
+          <p>always happy to learn something new that i can add to my projects and im always eager to talk to people about it !</p>
         </div>
 
         <div>
           <h2>some stuff i&apos;ve made</h2>
-          <p>these are a few public projects you can view and mess around with if you&apos;d like</p>
+          <p>here&apos;s a few public projects you can view and mess around with</p>
         </div>
         <div style={{ display: "flex", gap: "5rem", flexDirection: "column", marginTop: "2rem" }}>
           <a href="https://lounge.haus/" target="_blank">
@@ -126,7 +143,8 @@ export default function Home({ userStatusData }: InferGetServerSidePropsType<typ
             <AnchorLink href="https://twitter.com/zyplos" target="_blank">
               twitter
             </AnchorLink>{" "}
-            for quick stuff
+            for quick stuff. i also post updates, design stuff, in development stuff, and occasional photography on there if you&apos;re interested in keeping up with
+            what i&apos;m doing
           </p>
           <p>
             alternatively if it&apos;s something more formal you can email me at <span style={{ fontFamily: "monospace" }}>zyplos@duck.com</span>

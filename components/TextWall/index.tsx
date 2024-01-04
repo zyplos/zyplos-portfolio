@@ -276,7 +276,6 @@ export default function TextWall() {
         // add more bars when needed
         createBarInstances(OLD_MAX_BARS);
       }
-      console.log("TEXT WALL MAXBARS NEEDED", MAX_BARS);
     };
 
     const resizeCanvas = () => {
