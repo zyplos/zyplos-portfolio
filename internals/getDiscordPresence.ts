@@ -19,6 +19,8 @@ const allowedGames = [
   "intellij idea community",
   "phpstorm",
   "jetbrains ide",
+  "blender",
+  "unity"
 ];
 
 const DISCORD_ID = "204620732259368960";
