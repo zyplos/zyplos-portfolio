@@ -5,160 +5,248 @@ import type { InferGetServerSidePropsType, GetServerSideProps } from "next";
 
 import StatusText from "@/components/StatusText";
 import Navbar from "@/components/Navbar";
-import { DiscordREADMECard, GitHubProjectTracker, LoungeCard, MyImagesCard, SeeMoreProjectsCard, SystemStatusCard, TwitterCard } from "@/components/SpecialtyCard";
+import {
+	DiscordREADMECard,
+	GitHubProjectTracker,
+	LoungeCard,
+	MyImagesCard,
+	SeeMoreProjectsCard,
+	SystemStatusCard,
+	TwitterCard,
+} from "@/components/SpecialtyCard";
 import classNames from "classnames";
 import Link from "next/link";
 import AnchorLink from "@/components/AnchorLink";
 import Footer from "@/components/Footer";
-import getDiscordPresence, { UserStatusData } from "@/internals/getDiscordPresence";
+import getDiscordPresence, {
+	type UserStatusData,
+} from "@/internals/getDiscordPresence";
 
 export const getServerSideProps = (async ({ req, res }) => {
-  // cache for 5 minutes, revalidate every 6 minutes
-  res.setHeader("Cache-Control", "public, s-maxage=60, stale-while-revalidate=90");
+	// cache for 5 minutes, revalidate every 6 minutes
+	res.setHeader(
+		"Cache-Control",
+		"public, s-maxage=60, stale-while-revalidate=90",
+	);
 
-  const userStatusData = await getDiscordPresence();
+	const userStatusData = await getDiscordPresence();
 
-  // const userStatusData: UserStatusData = {
-  //   message: "wow",
-  //   status: "dnd",
-  //   presence: {
-  //     type: "rich",
-  //     name: "Visual Studio Code",
-  //     details: "Editing .env",
-  //     state: "Workspace: zyplos-portfolio",
-  //     largeImageUrl: "https://cdn.discordapp.com/app-assets/383226320970055681/565944478549016577.png",
-  //     largeImageAlt: "Editing a ENV file",
-  //     smallImageUrl: "https://cdn.discordapp.com/app-assets/383226320970055681/565949878820405299.png",
-  //     smallImageAlt: "Visual Studio Code - Insiders",
-  //   },
-  // };
+	// const userStatusData: UserStatusData = {
+	//   message: "wow",
+	//   status: "dnd",
+	//   presence: {
+	//     type: "rich",
+	//     name: "Visual Studio Code",
+	//     details: "Editing .env",
+	//     state: "Workspace: zyplos-portfolio",
+	//     largeImageUrl: "https://cdn.discordapp.com/app-assets/383226320970055681/565944478549016577.png",
+	//     largeImageAlt: "Editing a ENV file",
+	//     smallImageUrl: "https://cdn.discordapp.com/app-assets/383226320970055681/565949878820405299.png",
+	//     smallImageAlt: "Visual Studio Code - Insiders",
+	//   },
+	// };
 
-  return {
-    props: {
-      userStatusData,
-    },
-  };
+	return {
+		props: {
+			userStatusData,
+		},
+	};
 }) satisfies GetServerSideProps<{ userStatusData: UserStatusData }>;
 
-export default function Home({ userStatusData }: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  // console.log red text
-  console.log("%c%s", "color: #ffffff; font-family: monospace;", "--------------------");
-  console.log("%c%s", "color: #ff3e3e; font-family: sans-serif;", "snooping as usual i see");
-  console.log("%c%s", "color: #ffffff; font-family: sans-serif;", "you should hire me probably :)");
-  console.log("%c%s", "color: #ffd300; font-family: monospace;", "zyplos@duck.com");
-  console.log("%c%s", "color: #ffffff; font-family: monospace;", "--------------------");
+export default function Home({
+	userStatusData,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+	// console.log red text
+	console.log(
+		"%c%s",
+		"color: #ffffff; font-family: monospace;",
+		"--------------------",
+	);
+	console.log(
+		"%c%s",
+		"color: #ff3e3e; font-family: sans-serif;",
+		"snooping as usual i see",
+	);
+	console.log(
+		"%c%s",
+		"color: #ffffff; font-family: sans-serif;",
+		"you should hire me probably :)",
+	);
+	console.log(
+		"%c%s",
+		"color: #ffd300; font-family: monospace;",
+		"zyplos@duck.com",
+	);
+	console.log(
+		"%c%s",
+		"color: #ffffff; font-family: monospace;",
+		"--------------------",
+	);
 
-  // if on client, set local storage
-  if (typeof window !== "undefined") {
-    localStorage.setItem("status", JSON.stringify(userStatusData));
-  }
+	// if on client, set local storage
+	if (typeof window !== "undefined") {
+		localStorage.setItem("status", JSON.stringify(userStatusData));
+	}
 
-  return (
-    <>
-      <Head>
-        <title>zyplos&apos;s stuff</title>
-        <meta name="description" content="come feast your eyes" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+	return (
+		<>
+			<Head>
+				<title>zyplos&apos;s stuff</title>
+				<meta name="description" content="come feast your eyes" />
+				<meta name="viewport" content="width=device-width, initial-scale=1" />
+				<link rel="icon" href="/favicon.ico" />
 
-        <meta property="og:title" content="zyplos's stuff" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://zyplos.dev/" />
-        <meta property="og:description" content="come feast your eyes" />
+				<meta property="og:title" content="zyplos's stuff" />
+				<meta property="og:type" content="website" />
+				<meta property="og:url" content="https://zyplos.dev/" />
+				<meta property="og:description" content="come feast your eyes" />
 
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@Zyplos" />
-        <meta name="twitter:creator" content="@Zyplos" />
+				<meta name="twitter:card" content="summary" />
+				<meta name="twitter:site" content="@Zyplos" />
+				<meta name="twitter:creator" content="@Zyplos" />
 
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="manifest" href="/site.webmanifest" />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff3e3e" />
-        <meta name="msapplication-TileColor" content="#ff3e3e" />
-        <meta name="theme-color" content="#111111" />
-      </Head>
+				<link
+					rel="apple-touch-icon"
+					sizes="180x180"
+					href="/apple-touch-icon.png"
+				/>
+				<link
+					rel="icon"
+					type="image/png"
+					sizes="32x32"
+					href="/favicon-32x32.png"
+				/>
+				<link
+					rel="icon"
+					type="image/png"
+					sizes="16x16"
+					href="/favicon-16x16.png"
+				/>
+				<link rel="manifest" href="/site.webmanifest" />
+				<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff3e3e" />
+				<meta name="msapplication-TileColor" content="#ff3e3e" />
+				<meta name="theme-color" content="#111111" />
+			</Head>
 
-      <Navbar homeMode={true} />
+			<Navbar homeMode={true} />
 
-      <section className={styles["front-header"]}>
-        <div>
-          <TextWall />
-        </div>
-        <header>
-          <div>
-            <p>hey! i&apos;m</p>
-            <h1>zyplos</h1>
-          </div>
-          <aside className={classNames("glass", styles.statusCard)}>
-            <StatusText data={userStatusData} />
-          </aside>
-        </header>
-      </section>
+			<section className={styles["front-header"]}>
+				<div>
+					<TextWall />
+				</div>
+				<header>
+					<div>
+						<p>hey! i&apos;m</p>
+						<h1>zyplos</h1>
+					</div>
+					<aside className={classNames("glass", styles.statusCard)}>
+						<StatusText data={userStatusData} />
+					</aside>
+				</header>
+			</section>
 
-      <main className={styles.main}>
-        <div>
-          <h2>stuff about me</h2>
-          <p>i&apos;m a developer who&apos;s worked with the web and various other things for many years now</p>
-          <p>always happy to learn something new that i can add to my projects and im always eager to talk to people about it !</p>
-        </div>
+			<main className={styles.main}>
+				<div>
+					<h2>stuff about me</h2>
+					<p>
+						i&apos;m a developer who&apos;s worked with the web and various
+						other things for many years now
+					</p>
+					<p>
+						always happy to learn something new that i can add to my projects
+						and im always eager to talk to people about it !
+					</p>
+				</div>
 
-        <div>
-          <h2>some stuff i&apos;ve made</h2>
-          <p>here&apos;s a few public projects you can view and mess around with</p>
-        </div>
-        <div style={{ display: "flex", gap: "5rem", flexDirection: "column", marginTop: "2rem" }}>
-          <a href="https://lounge.haus/" target="_blank">
-            <LoungeCard />
-          </a>
-          <a href="https://github.com/Zyplos/discord-readme-badge" target="_blank">
-            <DiscordREADMECard />
-          </a>
-          <a href="https://github.com/Zyplos/discord-readme-badge" target="_blank">
-            <GitHubProjectTracker />
-          </a>
-          <Link href="/projects">
-            <SeeMoreProjectsCard />
-          </Link>
-        </div>
+				<div>
+					<h2>some stuff i&apos;ve made</h2>
+					<p>
+						here&apos;s a few public projects you can view and mess around with
+					</p>
+				</div>
+				<div
+					style={{
+						display: "flex",
+						gap: "5rem",
+						flexDirection: "column",
+						marginTop: "2rem",
+					}}
+				>
+					<a href="https://lounge.haus/" target="_blank" rel="noreferrer">
+						<LoungeCard />
+					</a>
+					<a
+						href="https://github.com/Zyplos/discord-readme-badge"
+						target="_blank"
+						rel="noreferrer"
+					>
+						<DiscordREADMECard />
+					</a>
+					<a
+						href="https://github.com/Zyplos/discord-readme-badge"
+						target="_blank"
+						rel="noreferrer"
+					>
+						<GitHubProjectTracker />
+					</a>
+					<Link href="/projects">
+						<SeeMoreProjectsCard />
+					</Link>
+				</div>
 
-        <div>
-          <h2>design stuff</h2>
-          <p>i do a bit of design whenever a project needs it</p>
-          <p>sometimes i do 3D stuff</p>
-          <p>you can find design stuff i make on twitter and on one of my other projects</p>
-        </div>
-        <div style={{ display: "flex", gap: "5rem", flexDirection: "column", marginTop: "2rem" }}>
-          <a href="https://twitter.com/zyplos/media" target="_blank">
-            <TwitterCard />
-          </a>
-          <a href="https://myimages.zip/" target="_blank">
-            <MyImagesCard />
-          </a>
-        </div>
+				<div>
+					<h2>design stuff</h2>
+					<p>i do a bit of design whenever a project needs it</p>
+					<p>sometimes i do 3D stuff</p>
+					<p>
+						you can find design stuff i make on twitter and on one of my other
+						projects
+					</p>
+				</div>
+				<div
+					style={{
+						display: "flex",
+						gap: "5rem",
+						flexDirection: "column",
+						marginTop: "2rem",
+					}}
+				>
+					<a
+						href="https://twitter.com/zyplos/media"
+						target="_blank"
+						rel="noreferrer"
+					>
+						<TwitterCard />
+					</a>
+					<a href="https://myimages.zip/" target="_blank" rel="noreferrer">
+						<MyImagesCard />
+					</a>
+				</div>
 
-        <div>
-          <h2>get in touch</h2>
-          <p>
-            you can reach out on{" "}
-            <AnchorLink href="https://twitter.com/zyplos" target="_blank">
-              twitter
-            </AnchorLink>{" "}
-            for quick stuff. i also post updates, design stuff, in development stuff, and occasional photography on there if you&apos;re interested in keeping up with
-            what i&apos;m doing
-          </p>
-          <p>
-            alternatively if it&apos;s something more formal you can email me at <span style={{ fontFamily: "monospace" }}>zyplos@duck.com</span>
-          </p>
-        </div>
+				<div>
+					<h2>get in touch</h2>
+					<p>
+						you can reach out on{" "}
+						<AnchorLink href="https://twitter.com/zyplos" target="_blank">
+							twitter
+						</AnchorLink>{" "}
+						for quick stuff. i also post updates, design stuff, in development
+						stuff, and occasional photography on there if you&apos;re interested
+						in keeping up with what i&apos;m doing
+					</p>
+					<p>
+						alternatively if it&apos;s something more formal you can email me at{" "}
+						<span style={{ fontFamily: "monospace" }}>zyplos@duck.com</span>
+					</p>
+				</div>
 
-        <div>
-          <Link href="/status">
-            <SystemStatusCard />
-          </Link>
-        </div>
-      </main>
-      <Footer />
-    </>
-  );
+				<div>
+					<Link href="/status">
+						<SystemStatusCard />
+					</Link>
+				</div>
+			</main>
+			<Footer />
+		</>
+	);
 }
