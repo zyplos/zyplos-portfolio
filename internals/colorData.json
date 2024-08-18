@@ -1,9 +1,78 @@
 [
   {
+    "name": "Zyplos Red",
+    "hex": "#ff3e3e",
+    "rgb": {
+      "r": 255,
+      "g": 62,
+      "b": 62
+    }
+  },
+  {
+    "name": "Zyplos Yellow",
+    "hex": "#ffd300",
+    "rgb": {
+      "r": 255,
+      "g": 211,
+      "b": 0
+    }
+  },
+  {
+    "name": "Zyplos Gray",
+    "hex": "#dbdbdb",
+    "rgb": {
+      "r": 219,
+      "g": 219,
+      "b": 219
+    }
+  },
+  {
+    "name": "Zyplos Dark Gray",
+    "hex": "#444444",
+    "rgb": {
+      "r": 68,
+      "g": 68,
+      "b": 68
+    }
+  },
+  {
+    "name": "Zyplos Slate",
+    "hex": "#242424",
+    "rgb": {
+      "r": 36,
+      "g": 36,
+      "b": 36
+    }
+  },
+  {
+    "name": "Zyplos Deepslate",
+    "hex": "#111111",
+    "rgb": {
+      "r": 17,
+      "g": 17,
+      "b": 17
+    }
+  },
+  {
+    "name": "Zyplos Bedrock",
+    "hex": "#050505",
+    "rgb": {
+      "r": 5,
+      "g": 5,
+      "b": 5
+    }
+  },
+  {
+    "name": "Zyplos Green",
+    "hex": "#08a850",
+    "rgb": {
+      "r": 8,
+      "g": 168,
+      "b": 80
+    }
+  },
+  {
     "name": "Alfie Teal",
-    "createdDate": 1602470483678,
-    "modifiedDate": 1602470483689,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#00a3a3",
     "rgb": {
       "r": 0,
@@ -13,9 +82,6 @@
   },
   {
     "name": "Buggy Gold",
-    "createdDate": 1625177726020,
-    "modifiedDate": 1625177726023,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#ffc100",
     "rgb": {
       "r": 255,
@@ -25,9 +91,6 @@
   },
   {
     "name": "Buggy Gray",
-    "createdDate": 1598280973611,
-    "modifiedDate": 1598280977651,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#8c8c8c",
     "rgb": {
       "r": 140,
@@ -37,9 +100,6 @@
   },
   {
     "name": "Buggy White",
-    "createdDate": 1598280952406,
-    "modifiedDate": 1598280958551,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#f4f4f4",
     "rgb": {
       "r": 244,
@@ -49,9 +109,6 @@
   },
   {
     "name": "Classic Gradient Gray (Bottom)",
-    "createdDate": 1721246701668,
-    "modifiedDate": 1721246701671,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#b5b5b5",
     "rgb": {
       "r": 181,
@@ -61,9 +118,6 @@
   },
   {
     "name": "Classic Gradient Gray (Top)",
-    "createdDate": 1721246908497,
-    "modifiedDate": 1721246908498,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#ffffff",
     "rgb": {
       "r": 255,
@@ -73,9 +127,6 @@
   },
   {
     "name": "Classic Gradient Red (Bottom)",
-    "createdDate": 1721246857918,
-    "modifiedDate": 1721246857918,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#b70000",
     "rgb": {
       "r": 183,
@@ -85,9 +136,6 @@
   },
   {
     "name": "Classic Gradient Red (Top)",
-    "createdDate": 1721246854600,
-    "modifiedDate": 1721246854600,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#e60000",
     "rgb": {
       "r": 230,
@@ -97,9 +145,6 @@
   },
   {
     "name": "Classic Red",
-    "createdDate": 1598280788037,
-    "modifiedDate": 1598280791512,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#ff0000",
     "rgb": {
       "r": 255,
@@ -108,10 +153,16 @@
     }
   },
   {
+    "name": "Classic Sky Blue",
+    "hex": "#c3fbf7",
+    "rgb": {
+      "r": 195,
+      "g": 251,
+      "b": 247
+    }
+  },
+  {
     "name": "Classic Yellow",
-    "createdDate": 1677299247693,
-    "modifiedDate": 1677299247700,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#ffb000",
     "rgb": {
       "r": 255,
@@ -121,9 +172,6 @@
   },
   {
     "name": "Cycle Series Background",
-    "createdDate": 1652510827122,
-    "modifiedDate": 1652510827125,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#11121a",
     "rgb": {
       "r": 17,
@@ -133,9 +181,6 @@
   },
   {
     "name": "Default Skintone",
-    "createdDate": 1598280926519,
-    "modifiedDate": 1598280932501,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#d5885e",
     "rgb": {
       "r": 213,
@@ -145,9 +190,6 @@
   },
   {
     "name": "devspace Purple Classic",
-    "createdDate": 1677468482076,
-    "modifiedDate": 1677468482090,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#ba17e2",
     "rgb": {
       "r": 186,
@@ -157,9 +199,6 @@
   },
   {
     "name": "Discord Blurple",
-    "createdDate": 1624949016526,
-    "modifiedDate": 1624949016528,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#5865f2",
     "rgb": {
       "r": 88,
@@ -169,9 +208,6 @@
   },
   {
     "name": "Discord Blurple Classic",
-    "createdDate": 1598280911712,
-    "modifiedDate": 1598280915841,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#7289da",
     "rgb": {
       "r": 114,
@@ -180,22 +216,7 @@
     }
   },
   {
-    "name": "Discord Text Background",
-    "createdDate": 1658431308317,
-    "modifiedDate": 1658431308319,
-    "colorProfile": "Untagged RGB",
-    "hex": "#36393f",
-    "rgb": {
-      "r": 54,
-      "g": 57,
-      "b": 63
-    }
-  },
-  {
     "name": "eGray",
-    "createdDate": 1704552324983,
-    "modifiedDate": 1704552324985,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#c8c8c8",
     "rgb": {
       "r": 200,
@@ -205,9 +226,6 @@
   },
   {
     "name": "eGreen",
-    "createdDate": 1704552223303,
-    "modifiedDate": 1704552223304,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#09c600",
     "rgb": {
       "r": 9,
@@ -217,9 +235,6 @@
   },
   {
     "name": "eLime",
-    "createdDate": 1598280589358,
-    "modifiedDate": 1609164885630,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#6ee835",
     "rgb": {
       "r": 110,
@@ -229,9 +244,6 @@
   },
   {
     "name": "eMaroon",
-    "createdDate": 1598280857353,
-    "modifiedDate": 1598280863411,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#800000",
     "rgb": {
       "r": 128,
@@ -241,9 +253,6 @@
   },
   {
     "name": "eOrange",
-    "createdDate": 1704552190188,
-    "modifiedDate": 1704552190188,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#ff9d1d",
     "rgb": {
       "r": 255,
@@ -253,9 +262,6 @@
   },
   {
     "name": "eOrange-Red",
-    "createdDate": 1704552184035,
-    "modifiedDate": 1704552184036,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#ff6010",
     "rgb": {
       "r": 255,
@@ -265,9 +271,6 @@
   },
   {
     "name": "eOrange-Yellow",
-    "createdDate": 1704552200169,
-    "modifiedDate": 1704552200170,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#ffbf1f",
     "rgb": {
       "r": 255,
@@ -277,9 +280,6 @@
   },
   {
     "name": "ePink",
-    "createdDate": 1598280535821,
-    "modifiedDate": 1598280551218,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#ff9df5",
     "rgb": {
       "r": 255,
@@ -289,9 +289,6 @@
   },
   {
     "name": "ePurple",
-    "createdDate": 1704552339121,
-    "modifiedDate": 1704552339122,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#9e2de0",
     "rgb": {
       "r": 158,
@@ -301,9 +298,6 @@
   },
   {
     "name": "eRed",
-    "createdDate": 1704552165892,
-    "modifiedDate": 1704552165893,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#ff1616",
     "rgb": {
       "r": 255,
@@ -313,9 +307,6 @@
   },
   {
     "name": "eYellow",
-    "createdDate": 1704552211899,
-    "modifiedDate": 1704552211901,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#ffd300",
     "rgb": {
       "r": 255,
@@ -324,10 +315,7 @@
     }
   },
   {
-    "name": "GDSC Blue",
-    "createdDate": 1627442085001,
-    "modifiedDate": 1627442085007,
-    "colorProfile": "sRGB IEC61966-2.1",
+    "name": "Google Blue",
     "hex": "#4285f4",
     "rgb": {
       "r": 66,
@@ -336,10 +324,7 @@
     }
   },
   {
-    "name": "GDSC Green",
-    "createdDate": 1627442098350,
-    "modifiedDate": 1627446566873,
-    "colorProfile": "sRGB IEC61966-2.1",
+    "name": "Google Green",
     "hex": "#34a853",
     "rgb": {
       "r": 52,
@@ -348,10 +333,7 @@
     }
   },
   {
-    "name": "GDSC Red",
-    "createdDate": 1627442091676,
-    "modifiedDate": 1627442091677,
-    "colorProfile": "sRGB IEC61966-2.1",
+    "name": "Google Red",
     "hex": "#ea4335",
     "rgb": {
       "r": 234,
@@ -360,10 +342,7 @@
     }
   },
   {
-    "name": "GDSC Yellow",
-    "createdDate": 1627442105897,
-    "modifiedDate": 1627442105898,
-    "colorProfile": "sRGB IEC61966-2.1",
+    "name": "Google Yellow",
     "hex": "#fbbc04",
     "rgb": {
       "r": 251,
@@ -373,9 +352,6 @@
   },
   {
     "name": "Julian Pink",
-    "createdDate": 1704552010462,
-    "modifiedDate": 1704552010463,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#d40b96",
     "rgb": {
       "r": 212,
@@ -385,9 +361,6 @@
   },
   {
     "name": "Lumi Dark Blue",
-    "createdDate": 1647039771403,
-    "modifiedDate": 1647039771404,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#1a254e",
     "rgb": {
       "r": 26,
@@ -397,9 +370,6 @@
   },
   {
     "name": "Lumi Yellow",
-    "createdDate": 1647039746630,
-    "modifiedDate": 1647039746632,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#ffba1a",
     "rgb": {
       "r": 255,
@@ -409,9 +379,6 @@
   },
   {
     "name": "Lumi Yellow Classic",
-    "createdDate": 1602984518040,
-    "modifiedDate": 1602984518047,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#ffd752",
     "rgb": {
       "r": 255,
@@ -421,9 +388,6 @@
   },
   {
     "name": "Marv Light Blue",
-    "createdDate": 1598280879671,
-    "modifiedDate": 1598280884157,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#7bd1ff",
     "rgb": {
       "r": 123,
@@ -433,8 +397,6 @@
   },
   {
     "name": "MC Overlay Highlight",
-    "createdDate": 1685152048448,
-    "modifiedDate": 1685152048450,
     "hex": "#fffbd4",
     "rgb": {
       "r": 255,
@@ -444,8 +406,6 @@
   },
   {
     "name": "MC Overlay Shadow",
-    "createdDate": 1685152022828,
-    "modifiedDate": 1685152022834,
     "hex": "#282828",
     "rgb": {
       "r": 40,
@@ -455,9 +415,6 @@
   },
   {
     "name": "Minecraft Aqua (&b)",
-    "createdDate": 1682068395879,
-    "modifiedDate": 1682068395882,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#55ffff",
     "rgb": {
       "r": 85,
@@ -467,9 +424,6 @@
   },
   {
     "name": "Minecraft Blue (&9)",
-    "createdDate": 1682068351816,
-    "modifiedDate": 1682068351818,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#5555ff",
     "rgb": {
       "r": 85,
@@ -479,9 +433,6 @@
   },
   {
     "name": "Minecraft Dark Aqua (&3)",
-    "createdDate": 1682068129412,
-    "modifiedDate": 1682068129415,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#00aaaa",
     "rgb": {
       "r": 0,
@@ -491,9 +442,6 @@
   },
   {
     "name": "Minecraft Dark Blue (&1)",
-    "createdDate": 1682068062287,
-    "modifiedDate": 1682068062291,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#0000aa",
     "rgb": {
       "r": 0,
@@ -503,9 +451,6 @@
   },
   {
     "name": "Minecraft Dark Gray (&8)",
-    "createdDate": 1682068298249,
-    "modifiedDate": 1682068298252,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#555555",
     "rgb": {
       "r": 85,
@@ -515,9 +460,6 @@
   },
   {
     "name": "Minecraft Dark Green (&2)",
-    "createdDate": 1682068086946,
-    "modifiedDate": 1682068086948,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#00aa00",
     "rgb": {
       "r": 0,
@@ -527,9 +469,6 @@
   },
   {
     "name": "Minecraft Dark Purple (&5)",
-    "createdDate": 1682068200975,
-    "modifiedDate": 1682068200979,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#aa00aa",
     "rgb": {
       "r": 170,
@@ -539,9 +478,6 @@
   },
   {
     "name": "Minecraft Dark Red (&4)",
-    "createdDate": 1682068154759,
-    "modifiedDate": 1682068154765,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#aa0000",
     "rgb": {
       "r": 170,
@@ -551,9 +487,6 @@
   },
   {
     "name": "Minecraft Gold (&6)",
-    "createdDate": 1682068231186,
-    "modifiedDate": 1682068231187,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#ffaa00",
     "rgb": {
       "r": 255,
@@ -563,9 +496,6 @@
   },
   {
     "name": "Minecraft Gray (&7)",
-    "createdDate": 1682068259142,
-    "modifiedDate": 1682068259144,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#aaaaaa",
     "rgb": {
       "r": 170,
@@ -575,9 +505,6 @@
   },
   {
     "name": "Minecraft Green (&a)",
-    "createdDate": 1682068372689,
-    "modifiedDate": 1682068372690,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#55ff55",
     "rgb": {
       "r": 85,
@@ -587,9 +514,6 @@
   },
   {
     "name": "Minecraft Light Purple (&d)",
-    "createdDate": 1682068488613,
-    "modifiedDate": 1682068488615,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#ff55ff",
     "rgb": {
       "r": 255,
@@ -599,9 +523,6 @@
   },
   {
     "name": "Minecraft Red (&c)",
-    "createdDate": 1682068462409,
-    "modifiedDate": 1682068462415,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#ff5555",
     "rgb": {
       "r": 255,
@@ -611,9 +532,6 @@
   },
   {
     "name": "Minecraft Yellow (&e)",
-    "createdDate": 1682068509113,
-    "modifiedDate": 1682068509114,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#ffff55",
     "rgb": {
       "r": 255,
@@ -623,9 +541,6 @@
   },
   {
     "name": "NES Coral",
-    "createdDate": 1682070059064,
-    "modifiedDate": 1682070059070,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#fe7957",
     "rgb": {
       "r": 254,
@@ -635,9 +550,6 @@
   },
   {
     "name": "NES Light Yellow",
-    "createdDate": 1682070050969,
-    "modifiedDate": 1682070050975,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#fcd883",
     "rgb": {
       "r": 252,
@@ -647,9 +559,6 @@
   },
   {
     "name": "NES Wine",
-    "createdDate": 1682070066128,
-    "modifiedDate": 1682070066134,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#ac0027",
     "rgb": {
       "r": 172,
@@ -659,9 +568,6 @@
   },
   {
     "name": "Pegg Blue",
-    "createdDate": 1598280826019,
-    "modifiedDate": 1602765143910,
-    "colorProfile": "Adobe RGB (1998)",
     "hex": "#0094ff",
     "rgb": {
       "r": 0,
@@ -671,9 +577,6 @@
   },
   {
     "name": "Pegg Chartreuse",
-    "createdDate": 1689012892951,
-    "modifiedDate": 1689012892953,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#d8f700",
     "rgb": {
       "r": 216,
@@ -682,22 +585,16 @@
     }
   },
   {
-    "name": "Classic Sky Blue",
-    "createdDate": 1598280763220,
-    "modifiedDate": 1598280772125,
-    "colorProfile": "sRGB IEC61966-2.1",
-    "hex": "#c3fbf7",
+    "name": "scooter Orange",
+    "hex": "#ff5d00",
     "rgb": {
-      "r": 195,
-      "g": 251,
-      "b": 247
+      "r": 255,
+      "g": 93,
+      "b": 0
     }
   },
   {
     "name": "scooter Orange Classic",
-    "createdDate": 1598280720655,
-    "modifiedDate": 1598280727018,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#fbb03b",
     "rgb": {
       "r": 251,
@@ -707,9 +604,6 @@
   },
   {
     "name": "Sine Cyan",
-    "createdDate": 1598280660441,
-    "modifiedDate": 1598280664143,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#00526d",
     "rgb": {
       "r": 0,
@@ -719,122 +613,11 @@
   },
   {
     "name": "Sine Dark Cyan",
-    "createdDate": 1598280644646,
-    "modifiedDate": 1598280648452,
-    "colorProfile": "sRGB IEC61966-2.1",
     "hex": "#044354",
     "rgb": {
       "r": 4,
       "g": 67,
       "b": 84
-    }
-  },
-  {
-    "name": "UIC Red",
-    "createdDate": 1627447398774,
-    "modifiedDate": 1627447398777,
-    "colorProfile": "",
-    "hex": "#d50032",
-    "rgb": {
-      "r": 213,
-      "g": 0,
-      "b": 50
-    }
-  },
-  {
-    "name": "Zyplos Bedrock",
-    "createdDate": 1701919260250,
-    "modifiedDate": 1701919260258,
-    "colorProfile": "sRGB IEC61966-2.1",
-    "hex": "#050505",
-    "rgb": {
-      "r": 5,
-      "g": 5,
-      "b": 5
-    }
-  },
-  {
-    "name": "Zyplos Dark Gray",
-    "createdDate": 1598280404479,
-    "modifiedDate": 1598280431907,
-    "colorProfile": "sRGB IEC61966-2.1",
-    "hex": "#444444",
-    "rgb": {
-      "r": 68,
-      "g": 68,
-      "b": 68
-    }
-  },
-  {
-    "name": "Zyplos Deepslate",
-    "createdDate": 1626854347897,
-    "modifiedDate": 1626854347900,
-    "colorProfile": "sRGB IEC61966-2.1",
-    "hex": "#111111",
-    "rgb": {
-      "r": 17,
-      "g": 17,
-      "b": 17
-    }
-  },
-  {
-    "name": "Zyplos Gray",
-    "createdDate": 1598280617566,
-    "modifiedDate": 1598280621755,
-    "colorProfile": "sRGB IEC61966-2.1",
-    "hex": "#dbdbdb",
-    "rgb": {
-      "r": 219,
-      "g": 219,
-      "b": 219
-    }
-  },
-  {
-    "name": "Zyplos Green",
-    "createdDate": 1654283410715,
-    "modifiedDate": 1654283410720,
-    "colorProfile": "sRGB IEC61966-2.1",
-    "hex": "#08a850",
-    "rgb": {
-      "r": 8,
-      "g": 168,
-      "b": 80
-    }
-  },
-  {
-    "name": "Zyplos Red",
-    "createdDate": 1598279888730,
-    "modifiedDate": 1598279888731,
-    "colorProfile": "sRGB IEC61966-2.1",
-    "hex": "#ff3e3e",
-    "rgb": {
-      "r": 255,
-      "g": 62,
-      "b": 62
-    }
-  },
-  {
-    "name": "Zyplos Slate",
-    "createdDate": 1598280404479,
-    "modifiedDate": 1598280427331,
-    "colorProfile": "sRGB IEC61966-2.1",
-    "hex": "#242424",
-    "rgb": {
-      "r": 36,
-      "g": 36,
-      "b": 36
-    }
-  },
-  {
-    "name": "Zyplos Yellow",
-    "createdDate": 1598280030833,
-    "modifiedDate": 1598280042695,
-    "colorProfile": "sRGB IEC61966-2.1",
-    "hex": "#ffd300",
-    "rgb": {
-      "r": 255,
-      "g": 211,
-      "b": 0
     }
   }
 ]
