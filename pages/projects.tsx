@@ -57,23 +57,33 @@ export default function ProjectsPage() {
 			<h1 style={{ marginBottom: "2rem" }}>Projects</h1>
 
 			<section className={styles.section}>
-				<a href="https://github.com/Zyplos/lounge-hub" target="_blank">
+				<a
+					href="https://github.com/Zyplos/lounge-hub"
+					target="_blank"
+					rel="noreferrer"
+				>
 					<LoungeCard />
 				</a>
 
 				<a
 					href="https://github.com/Zyplos/discord-readme-badge"
 					target="_blank"
+					rel="noreferrer"
 				>
 					<DiscordREADMECard />
 				</a>
 				<a
 					href="https://github.com/Zyplos/github-projectspace-tracker"
 					target="_blank"
+					rel="noreferrer"
 				>
 					<GitHubProjectTracker />
 				</a>
-				<a href="https://github.com/Zyplos/myimages.zip" target="_blank">
+				<a
+					href="https://github.com/Zyplos/myimages.zip"
+					target="_blank"
+					rel="noreferrer"
+				>
 					<MyImagesCard />
 				</a>
 
@@ -82,7 +92,12 @@ export default function ProjectsPage() {
 						if (project.featured) return;
 
 						return (
-							<a href={project.githubLink} target="_blank" key={index}>
+							<a
+								href={project.githubLink}
+								target="_blank"
+								rel="noreferrer"
+								key={project.title}
+							>
 								<Card title={project.title}>
 									<p>{project.description}</p>
 								</Card>
@@ -94,8 +109,13 @@ export default function ProjectsPage() {
 
 			<h2 style={{ marginBottom: "2rem" }}>archived projects</h2>
 			<section className={classNames(styles.section)}>
-				{Object.values(archivedProjects).map((project, index) => (
-					<a href={project.githubLink} target="_blank" key={index}>
+				{Object.values(archivedProjects).map((project) => (
+					<a
+						href={project.githubLink}
+						target="_blank"
+						rel="noreferrer"
+						key={project.title}
+					>
 						<Card title={project.title}>
 							<p>{project.date}</p>
 							<p>{project.description}</p>
