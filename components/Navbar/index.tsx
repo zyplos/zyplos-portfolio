@@ -116,7 +116,7 @@ export default function Navbar({ homeMode = false }: { homeMode?: boolean }) {
 				>
 					<Link href="/">Home</Link>
 					<Link href="/projects">Projects</Link>
-					<Link href="/status">Status</Link>
+					<Link href="/clipboard">Clipboard</Link>
 				</div>
 			</div>
 		</nav>
