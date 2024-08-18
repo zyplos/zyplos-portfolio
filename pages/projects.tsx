@@ -1,5 +1,10 @@
 import MainLayout from "@/components/MainLayout";
-import { DiscordREADMECard, GitHubProjectTracker, LoungeCard, MyImagesCard } from "@/components/SpecialtyCard";
+import {
+	DiscordREADMECard,
+	GitHubProjectTracker,
+	LoungeCard,
+	MyImagesCard,
+} from "@/components/SpecialtyCard";
 
 import { projects, archivedProjects } from "@/internals/projectData";
 import Card from "@/components/Card";
@@ -9,75 +14,95 @@ import classNames from "classnames";
 import Head from "next/head";
 
 export default function ProjectsPage() {
-  return (
-    <MainLayout>
-      <Head>
-        <title>projects • zyplos&apos;s stuff</title>
-        <meta name="description" content="come feast your eyes" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+	return (
+		<MainLayout>
+			<Head>
+				<title>projects • zyplos&apos;s stuff</title>
+				<meta name="description" content="stuff i've made" />
+				<meta name="viewport" content="width=device-width, initial-scale=1" />
+				<link rel="icon" href="/favicon.ico" />
 
-        <meta property="og:title" content="projects • zyplos's stuff" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://zyplos.dev/projects" />
-        <meta property="og:description" content="come feast your eyes" />
+				<meta property="og:title" content="projects • zyplos's stuff" />
+				<meta property="og:type" content="website" />
+				<meta property="og:url" content="https://zyplos.dev/projects" />
+				<meta property="og:description" content="stuff i've made" />
 
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@Zyplos" />
-        <meta name="twitter:creator" content="@Zyplos" />
+				<meta name="twitter:card" content="summary" />
+				<meta name="twitter:site" content="@Zyplos" />
+				<meta name="twitter:creator" content="@Zyplos" />
 
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="manifest" href="/site.webmanifest" />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff3e3e" />
-        <meta name="msapplication-TileColor" content="#ff3e3e" />
-        <meta name="theme-color" content="#111111" />
-      </Head>
+				<link
+					rel="apple-touch-icon"
+					sizes="180x180"
+					href="/apple-touch-icon.png"
+				/>
+				<link
+					rel="icon"
+					type="image/png"
+					sizes="32x32"
+					href="/favicon-32x32.png"
+				/>
+				<link
+					rel="icon"
+					type="image/png"
+					sizes="16x16"
+					href="/favicon-16x16.png"
+				/>
+				<link rel="manifest" href="/site.webmanifest" />
+				<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff3e3e" />
+				<meta name="msapplication-TileColor" content="#ff3e3e" />
+				<meta name="theme-color" content="#111111" />
+			</Head>
 
-      <h1 style={{ marginBottom: "2rem" }}>Projects</h1>
+			<h1 style={{ marginBottom: "2rem" }}>Projects</h1>
 
-      <section className={styles.section}>
-        <a href="https://github.com/Zyplos/lounge-hub" target="_blank">
-          <LoungeCard />
-        </a>
+			<section className={styles.section}>
+				<a href="https://github.com/Zyplos/lounge-hub" target="_blank">
+					<LoungeCard />
+				</a>
 
-        <a href="https://github.com/Zyplos/discord-readme-badge" target="_blank">
-          <DiscordREADMECard />
-        </a>
-        <a href="https://github.com/Zyplos/github-projectspace-tracker" target="_blank">
-          <GitHubProjectTracker />
-        </a>
-        <a href="https://github.com/Zyplos/myimages.zip" target="_blank">
-          <MyImagesCard />
-        </a>
+				<a
+					href="https://github.com/Zyplos/discord-readme-badge"
+					target="_blank"
+				>
+					<DiscordREADMECard />
+				</a>
+				<a
+					href="https://github.com/Zyplos/github-projectspace-tracker"
+					target="_blank"
+				>
+					<GitHubProjectTracker />
+				</a>
+				<a href="https://github.com/Zyplos/myimages.zip" target="_blank">
+					<MyImagesCard />
+				</a>
 
-        <div className={styles.projectGrid}>
-          {Object.values(projects).map((project, index) => {
-            if (project.featured) return;
+				<div className={styles.projectGrid}>
+					{Object.values(projects).map((project, index) => {
+						if (project.featured) return;
 
-            return (
-              <a href={project.githubLink} target="_blank" key={index}>
-                <Card title={project.title}>
-                  <p>{project.description}</p>
-                </Card>
-              </a>
-            );
-          })}
-        </div>
-      </section>
+						return (
+							<a href={project.githubLink} target="_blank" key={index}>
+								<Card title={project.title}>
+									<p>{project.description}</p>
+								</Card>
+							</a>
+						);
+					})}
+				</div>
+			</section>
 
-      <h2 style={{ marginBottom: "2rem" }}>archived projects</h2>
-      <section className={classNames(styles.section)}>
-        {Object.values(archivedProjects).map((project, index) => (
-          <a href={project.githubLink} target="_blank" key={index}>
-            <Card title={project.title}>
-              <p>{project.date}</p>
-              <p>{project.description}</p>
-            </Card>
-          </a>
-        ))}
-      </section>
-    </MainLayout>
-  );
+			<h2 style={{ marginBottom: "2rem" }}>archived projects</h2>
+			<section className={classNames(styles.section)}>
+				{Object.values(archivedProjects).map((project, index) => (
+					<a href={project.githubLink} target="_blank" key={index}>
+						<Card title={project.title}>
+							<p>{project.date}</p>
+							<p>{project.description}</p>
+						</Card>
+					</a>
+				))}
+			</section>
+		</MainLayout>
+	);
 }
