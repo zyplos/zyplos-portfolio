@@ -1,13 +1,13 @@
 :root {
-  --radiusXSm: 10px;
-  --radiusSm: 0.6rem;
-  --radius: 1.1rem;
-  --radiusLg: 3rem;
-  --borderGlass: 1px solid rgba(51, 51, 51, 0.5);
+	--radiusXSm: 10px;
+	--radiusSm: 0.6rem;
+	--radius: 1.1rem;
+	--radiusLg: 3rem;
+	--borderGlass: 1px solid rgba(51, 51, 51, 0.5);
 
-  --maxWidth: 1370px;
+	--maxWidth: 1370px;
 
-  --c-primary: #ff3e3e;
-  --c-hover-acrylic: rgba(255, 255, 255, 0.199);
-  --c-green: #00ffcd;
+	--c-primary: #ff3e3e;
+	--c-hover-acrylic: rgba(255, 255, 255, 0.199);
+	--c-green: #00ffcd;
 }

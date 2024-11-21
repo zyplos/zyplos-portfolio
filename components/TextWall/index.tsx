@@ -43,7 +43,7 @@ export default function TextWall() {
 		const MOVE_STEP = prefersReducedMotion ? 0 : 0.3;
 
 		const TEXT_COLOR = "#1e1e1e";
-		const FONT_STYLE = "bold " + FONT_SIZE + "px sans-serif";
+		const FONT_STYLE = `bold ${FONT_SIZE}px sans-serif`;
 
 		const EVEN_BAR_COLOR = "#050505";
 		const ODD_BAR_COLOR = "#090909";
@@ -101,11 +101,12 @@ export default function TextWall() {
 			"constantly dynamic",
 			"hopelessly optimistic",
 			"rarely common",
-			"sarcasticly sincere", //
+			"sarcastically sincere", //
 			"thoughtfully impulsive", //
 			"playfully serious",
 			"randomly structured",
 			"intricately simple",
+			"unpredictably deterministic",
 			//
 		];
 		// const RANDOM_STRINGS = ["plinko"];
@@ -128,7 +129,7 @@ export default function TextWall() {
 				text: string,
 				x: number,
 				y: number,
-				backward: boolean = false,
+				backward = false,
 				startPos?: number,
 			) {
 				this.text = text;
@@ -228,7 +229,7 @@ export default function TextWall() {
 					if (
 						lastTextInstance.yCounter > calcTextWidth(lastTextInstance.text)
 					) {
-						const backward = this.number % 2 === 0 ? true : false;
+						const backward = this.number % 2 === 0;
 						this.textInstances.push(
 							new BarTextInstance(getRandomString(), this.x, this.y, backward),
 						);
@@ -241,11 +242,11 @@ export default function TextWall() {
 			}
 		}
 
-		const createBarInstances = (startFrom: number = 0) => {
+		const createBarInstances = (startFrom = 0) => {
 			// const DEV_BAR_ID = 7;
 			for (let i = startFrom; i < MAX_BARS; i++) {
 				// if (i !== DEV_BAR_ID) continue;
-				const isBackward = i % 2 === 0 ? true : false;
+				const isBackward = i % 2 === 0;
 
 				// y has some extra offset to make up for the empty space at the bottom
 				const devXBar = X_ORIGIN + BAR_OFFSET * i;
@@ -346,7 +347,7 @@ export default function TextWall() {
 	return (
 		<>
 			<div className={styles.wrapper}>
-				<canvas className={styles.canvas} ref={canvasRef}></canvas>
+				<canvas className={styles.canvas} ref={canvasRef} />
 			</div>
 		</>
 	);

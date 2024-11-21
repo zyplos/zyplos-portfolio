@@ -1,29 +1,30 @@
 {
-  "name": "zyplos-portfolio",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@vercel/analytics": "^1.1.1",
-    "classnames": "^2.3.2",
-    "discord.js": "^14.14.1",
-    "next": "14.0.3",
-    "react": "^18",
-    "react-dom": "^18",
-    "swr": "^2.2.4"
-  },
-  "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-next": "14.0.3",
-    "sass": "^1.69.5",
-    "typescript": "^5"
-  }
+	"name": "zyplos-portfolio",
+	"version": "0.1.1",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"check": "tsc --noEmit",
+		"format": "biome format --write ./",
+		"lint": "biome lint ./"
+	},
+	"dependencies": {
+		"@vercel/analytics": "^1.4.1",
+		"classnames": "^2.5.1",
+		"next": "15.0.3",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
+		"swr": "^2.2.5"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@types/node": "^22.9.1",
+		"@types/react": "^18.3.12",
+		"@types/react-dom": "^18.3.1",
+		"sass": "^1.81.0",
+		"typescript": "^5.6.3"
+	},
+	"trustedDependencies": ["@parcel/watcher", "@biomejs/biome"]
 }

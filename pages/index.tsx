@@ -23,11 +23,30 @@ import getDiscordPresence, {
 } from "@/internals/getDiscordPresence";
 
 export const getServerSideProps = (async ({ req, res }) => {
-	// cache for 5 minutes, revalidate every 6 minutes
-	res.setHeader(
-		"Cache-Control",
-		"public, s-maxage=60, stale-while-revalidate=90",
-	);
+	res.setHeader("Cache-Control", "public, s-maxage=11");
+
+	if (process.env.NODE_ENV === "development") {
+		return {
+			props: {
+				userStatusData: {
+					message: "hey!",
+					status: "online",
+					presence: {
+						type: "rich",
+						name: "Visual Studio Code",
+						details: "Editing DEV_MODE.tsx",
+						state: "Workspace: zyplos-portfolio",
+						largeImageUrl:
+							"https://cdn.discordapp.com/app-assets/383226320970055681/565945769320775680.webp",
+						largeImageAlt: "Editing a TSX file",
+						smallImageUrl:
+							"https://cdn.discordapp.com/app-assets/383226320970055681/565945770067623946.webp",
+						smallImageAlt: "Visual Studio Code",
+					},
+				},
+			},
+		};
+	}
 
 	const userStatusData = await getDiscordPresence();
 
@@ -70,7 +89,7 @@ export default function Home({
 	console.log(
 		"%c%s",
 		"color: #ffffff; font-family: sans-serif;",
-		"you should hire me probably :)",
+		"i'm looking for a software engineer job. consider hiring me:",
 	);
 	console.log(
 		"%c%s",
@@ -155,6 +174,11 @@ export default function Home({
 					<p>
 						always happy to learn something new that i can add to my projects
 						and im always eager to talk to people about it !
+					</p>
+					<p>
+						<b>i'm looking for full time software engineering roles!</b> if you
+						like the stuff i've made please reach out. there's a contact me
+						thing at the bottom of this page
 					</p>
 				</div>
 

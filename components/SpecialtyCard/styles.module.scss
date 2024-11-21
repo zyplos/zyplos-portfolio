@@ -36,6 +36,7 @@
   0% {
     background-position: 0% 0%;
   }
+
   100% {
     background-position: 100% 100%;
   }
@@ -45,6 +46,7 @@
   0% {
     transform: translateY(4px);
   }
+
   100% {
     transform: translateY(-4px);
   }
@@ -73,6 +75,7 @@
 }
 
 @include tiny-screen-styles {
+
   .loungeHubCard,
   .loungeHubCard:hover {
     background-position: 70% 70%, center;
@@ -96,6 +99,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .loungeHubCard,
   .loungeHubCard:hover {
     background-position: 70% 70%, center;
@@ -201,6 +205,7 @@
 }
 
 @include tiny-screen-styles {
+
   .discordREADMEBadgeCard,
   .discordREADMEBadgeCard:hover {
     padding-right: 2rem;
@@ -228,12 +233,14 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .discordREADMEBadgeCard,
   .discordREADMEBadgeCard:hover {
     background-position: calc(100% + 7rem) 3.2rem !important;
   }
 
   @include tiny-screen-styles {
+
     .discordREADMEBadgeCard,
     .discordREADMEBadgeCard:hover {
       background-position: calc(100% + 8rem) calc(100% + 1rem) !important;
@@ -251,8 +258,10 @@
   .discordREADMEBadgeCard .discordREADMESparkleRight {
     opacity: 1;
   }
+
   .discordREADMEBadgeCard,
   .discordREADMEBadgeCard:hover {
+
     .discordREADMESparkleMain,
     .discordREADMESparkleLeft,
     .discordREADMESparkleRight {
@@ -260,6 +269,7 @@
     }
   }
 }
+
 // ===== github
 
 .githubProjectTrackerCard {
@@ -296,10 +306,12 @@
 }
 
 @include tiny-screen-styles {
+
   .githubProjectTrackerCard,
   .githubProjectTrackerCard:hover {
     background-position: center 100%;
   }
+
   .githubProjectIcon {
     top: 0rem;
     right: 0rem;
@@ -312,6 +324,7 @@
   .githubProjectTrackerCard:hover {
     background-position: center 100%;
   }
+
   .githubProjectIcon {
     top: 0rem;
     right: 0rem;
@@ -471,6 +484,7 @@
 }
 
 @include tiny-screen-styles {
+
   .twitterCard,
   .twitterCard:hover {
     background-size: auto 2rem;
@@ -506,6 +520,7 @@
 }
 
 @include tiny-screen-styles {
+
   .myimagesCard,
   .myimagesCard:hover {
     padding-bottom: 3rem;
@@ -570,28 +585,36 @@
   0% {
     filter: contrast(100%) brightness(100%); //
   }
+
   5% {
     filter: contrast(100%) brightness(40%);
   }
+
   10% {
     filter: contrast(100%) brightness(100%); //
   }
+
   15% {
     filter: contrast(100%) brightness(40%);
   }
+
   69% {
     filter: contrast(100%) brightness(40%);
   }
+
   //
   70% {
     filter: contrast(100%) brightness(100%); //
   }
+
   79% {
     filter: contrast(100%) brightness(40%);
   }
+
   83% {
     filter: contrast(100%) brightness(100%); //
   }
+
   //
   100% {
     filter: contrast(100%) brightness(100%); //

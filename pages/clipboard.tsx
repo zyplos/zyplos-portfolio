@@ -7,6 +7,7 @@ import classNames from "classnames";
 import Head from "next/head";
 
 import MAIN_COLOR_DATA_UNTYPED from "@/internals/colorData.json";
+import { useEffect } from "react";
 
 interface ColorData {
 	name: string;
@@ -226,12 +227,13 @@ function changeFooterLinkColors(color: DynamicTextColor) {
 export default function ClipboardPage() {
 	// set the background color of the footer to transparent only on this page
 	// doing it the cheater way
-	if (typeof window !== "undefined") {
+	// useEffect instead of checking window ensures a rerendered footer gets the transparent background too
+	useEffect(() => {
 		const footer = document.querySelector("footer");
-		if (footer) {
-			footer.style.backgroundColor = "transparent";
-		}
-	}
+		if (!footer) return;
+
+		footer.style.backgroundColor = "transparent";
+	}, []);
 
 	return (
 		<MainLayout>
