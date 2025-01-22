@@ -26,6 +26,16 @@ export const projects: ProjectData = {
 		liveLink: "https://myimages.zip",
 		featured: true,
 	},
+	"spotify-mapper": {
+		title: "spotify.zyplos.dev",
+		description: "My lifetime Spotify listening history, visualized.",
+		githubLink: "https://spotify.zyplos.dev/",
+	},
+	scoria: {
+		title: "scoria",
+		description: "An OLED/Pure Black VSCode theme with a bit of red",
+		githubLink: "https://github.com/Zyplos/scoria",
+	},
 	altaria: {
 		title: "altaria",
 		description: "A tiny Bluesky client for ComputerCraft/CC: Tweaked",
