@@ -17,9 +17,15 @@ export type UserStatusData = {
 
 export default async function getDiscordPresence(): Promise<UserStatusData> {
 	try {
+		const controller = new AbortController();
+		const timeoutId = setTimeout(() => controller.abort(), 3000);
+
 		const response = await fetch(
 			"https://mm.zyplos.dev/dcs/api/v1/status/discord/zyplos",
+			{ signal: controller.signal },
 		);
+
+		clearTimeout(timeoutId);
 		const presenceData: UserStatusData = await response.json();
 		return presenceData;
 	} catch (error) {
