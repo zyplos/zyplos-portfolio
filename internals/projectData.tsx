@@ -26,10 +26,28 @@ export const projects: ProjectData = {
 		liveLink: "https://myimages.zip",
 		featured: true,
 	},
+	// normal cards
+	"pixel-base": {
+		title: "Pixel Base",
+		description:
+			"some design work: a product concept with a small static site to showcase it",
+		githubLink: "https://pixelbase.zyplos.dev/",
+	},
+	mcClock: {
+		title: "MCClock",
+		description: "a Wear OS 5 watchface made using Minecraft's Clock sprite",
+		githubLink: "https://github.com/Zyplos/MCClock/",
+	},
 	"spotify-mapper": {
 		title: "spotify.zyplos.dev",
 		description: "My lifetime Spotify listening history, visualized.",
 		githubLink: "https://spotify.zyplos.dev/",
+	},
+	GestureSwitch: {
+		title: "GestureSwitch",
+		description:
+			"exploring gestures for controlling light switches with a watch",
+		githubLink: "https://github.com/Zyplos/GestureSwitch",
 	},
 	scoria: {
 		title: "scoria",
