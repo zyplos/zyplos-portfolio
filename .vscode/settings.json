@@ -1,4 +1,17 @@
 {
 	"typescript.tsdk": "node_modules\\typescript\\lib",
-	"discord.enabled": true
+	"discord.enabled": true,
+	"cSpell.words": [
+		"altaria",
+		"codetyper",
+		"Communa",
+		"loungecommuna",
+		"mcserver",
+		"myimages",
+		"playthroughs",
+		"projectspace",
+		"shadeofred",
+		"terrariadiscord",
+		"watchface"
+	]
 }

@@ -27,6 +27,13 @@ export const projects: ProjectData = {
 		featured: true,
 	},
 	// normal cards
+	dailyRecap: {
+		title: "daily recap",
+		description:
+			"i keep a sort of journal thats designed to be visualized. take a peek",
+		githubLink:
+			"https://twitter.com/search?q=(report%20OR%20recap%20OR%20schema)%20(from%3Azyplos)&src=typed_query&f=media",
+	},
 	"pixel-base": {
 		title: "Pixel Base",
 		description:
@@ -103,7 +110,7 @@ export const archivedProjects: ArchivedProjectData = {
 		githubLink: "https://github.com/Zyplos/discord-mcserver-status",
 		date: "Summer 2018",
 	},
-	shadesofred: {
+	shadeofred: {
 		title: "shadeofred",
 		description: "Generates random shades of red",
 		githubLink: "https://github.com/Zyplos/shadeofred",
