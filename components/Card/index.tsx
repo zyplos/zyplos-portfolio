@@ -1,3 +1,5 @@
+import Image from "next/image";
+import type { StaticImageData } from "next/image";
 import styles from "./styles.module.scss";
 
 export interface CardProps {
@@ -6,6 +8,7 @@ export interface CardProps {
 	colorTo?: string;
 	title?: string;
 	style?: React.CSSProperties;
+	image?: StaticImageData;
 }
 
 export default function Card({
@@ -14,6 +17,7 @@ export default function Card({
 	colorTo,
 	title,
 	style,
+	image,
 }: CardProps) {
 	return (
 		<div
@@ -26,8 +30,12 @@ export default function Card({
 				...style,
 			}}
 		>
-			<p className={styles.cardTitle}>{title}</p>
-			{children}
+			<div className={styles.content}>
+				<p className={styles.cardTitle}>{title}</p>
+				{children}
+			</div>
+
+			{image && <Image src={image} alt="" className={styles.imagePreview} />}
 		</div>
 	);
 }

@@ -98,7 +98,7 @@ export default function ProjectsPage() {
 								rel="noreferrer"
 								key={project.title}
 							>
-								<Card title={project.title}>
+								<Card title={project.title} image={project.imagePreview}>
 									<p>{project.description}</p>
 								</Card>
 							</a>

@@ -2,21 +2,40 @@
   padding: 2rem;
   position: relative;
   border-radius: var(--radius);
+  overflow: hidden;
 
   // clip mask
-  transition: all 0.2s ease-in-out;
+  transition: all 0.15s ease-in-out;
   background-color: #1b1919;
-  border: 2px solid #1b1919;
+
+  position: relative;
+  outline: 2px solid transparent;
 }
 
 .card:hover {
-  border: 2px solid #ff3e3e;
+  outline: 2px solid #ff3e3e;
 }
 
 .cardTitle {
   font-size: 1.7rem;
   font-weight: 700;
   margin-bottom: 1rem;
+}
+
+.content {
+  z-index: 2;
+  position: relative;
+}
+
+.imagePreview {
+  position: absolute;
+  width: auto;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1;
+
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.37) 100%);
 }
 
 // .card:hover {
