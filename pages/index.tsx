@@ -254,6 +254,13 @@ export default function Home({
 						<AnchorLink href="https://twitter.com/zyplos" target="_blank">
 							twitter
 						</AnchorLink>{" "}
+						or{" "}
+						<AnchorLink
+							href="https://bsky.app/profile/zyplos.dev"
+							target="_blank"
+						>
+							bluesky
+						</AnchorLink>{" "}
 						for quick stuff. i also post updates, design stuff, in development
 						stuff, and occasional photography on there if you&apos;re interested
 						in keeping up with what i&apos;m doing
@@ -262,12 +269,6 @@ export default function Home({
 						alternatively if it&apos;s something more formal you can email me at{" "}
 						<span style={{ fontFamily: "monospace" }}>zyplos@duck.com</span>
 					</p>
-				</div>
-
-				<div>
-					<Link href="/status">
-						<SystemStatusCard />
-					</Link>
 				</div>
 			</main>
 			<Footer />

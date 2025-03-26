@@ -4,7 +4,7 @@ import Fullscreen from "@/components/Fullscreen";
 import Link from "next/link";
 import unitCubeImg from "@/assets/unitcube.png";
 
-export default function RamEXEPage() {
+export default function Page404() {
 	return (
 		<>
 			<Head>
@@ -55,7 +55,7 @@ export default function RamEXEPage() {
 					src={unitCubeImg}
 					quality={100}
 					width={300}
-					alt="_deg.jpg"
+					alt=""
 					style={{ maxWidth: "100%", height: "auto" }}
 				/>
 			</Fullscreen>
