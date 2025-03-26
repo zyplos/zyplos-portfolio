@@ -27,6 +27,12 @@ export const projects: ProjectData = {
 		featured: true,
 	},
 	// normal cards
+	gemCase: {
+		title: "essential gem case",
+		description:
+			"i had to custom make a case for a phone that does not exist. made in blender and 3d printed",
+		githubLink: "https://www.printables.com/model/1244300-essential-gem-case",
+	},
 	dailyRecap: {
 		title: "daily recap",
 		description:
