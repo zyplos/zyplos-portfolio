@@ -8,13 +8,13 @@
   width: 100%;
 }
 
-.front-header > div {
+.front-header>div {
   position: absolute;
   width: 100%;
   z-index: -1;
 }
 
-.front-header > header {
+.front-header>header {
   @include responsiveMaxWidth;
 
   z-index: 2;
@@ -34,23 +34,24 @@
     padding-top: calc(navBar.$nav-height + 30) + px;
   }
 
-  > div > p {
+  >div>p {
     font-size: 2rem;
   }
-  > div > h1 {
+
+  >div>h1 {
     font-size: 4rem;
     line-height: 1;
   }
 }
 
-.front-header > aside {
+.front-header>aside {
   position: absolute;
   z-index: 3;
   bottom: 3rem;
   left: 3rem;
 }
 
-.front-header > header > aside {
+.front-header>header>aside {
   font-size: 1rem;
   padding: 2rem;
   display: inline-block;
@@ -70,12 +71,13 @@
   padding: 3rem;
 
   @include tiny-screen-styles {
-    padding: 1.4rem;
+    padding: 1rem;
   }
 
-  > div {
+  >div {
     margin-bottom: 3rem;
-    > p {
+
+    >p {
       margin-top: 0.5rem;
     }
   }
@@ -93,16 +95,14 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(
-    0deg,
-    var(--cutoutColor) 25%,
-    transparent 25%,
-    transparent 50%,
-    var(--cutoutColor) 50%,
-    var(--cutoutColor) 75%,
-    transparent 75%,
-    transparent
-  );
+  background-image: linear-gradient(0deg,
+      var(--cutoutColor) 25%,
+      transparent 25%,
+      transparent 50%,
+      var(--cutoutColor) 50%,
+      var(--cutoutColor) 75%,
+      transparent 75%,
+      transparent);
   backdrop-filter: blur(4px);
   background-size: 1rem 0.3rem;
   animation: blindsScroll 1s linear infinite, flicker 2s linear infinite alternate;
@@ -132,28 +132,36 @@
   0% {
     opacity: 0.9; //
   }
+
   5% {
     opacity: 0.65;
   }
+
   10% {
     opacity: 0.9; //
   }
+
   15% {
     opacity: 0.65;
   }
+
   69% {
     opacity: 0.65;
   }
+
   //
   70% {
     opacity: 0.9; //
   }
+
   79% {
     opacity: 0.65;
   }
+
   83% {
     opacity: 0.9; //
   }
+
   //
   100% {
     opacity: 0.9; //

@@ -88,12 +88,12 @@ export default function ProjectsPage() {
 				</a>
 
 				<div className={styles.projectGrid}>
-					{Object.values(projects).map((project, index) => {
+					{Object.values(projects).map((project) => {
 						if (project.featured) return;
 
 						return (
 							<a
-								href={project.githubLink}
+								href={project.link}
 								target="_blank"
 								rel="noreferrer"
 								key={project.title}
@@ -111,7 +111,7 @@ export default function ProjectsPage() {
 			<section className={classNames(styles.section)}>
 				{Object.values(archivedProjects).map((project) => (
 					<a
-						href={project.githubLink}
+						href={project.link}
 						target="_blank"
 						rel="noreferrer"
 						key={project.title}

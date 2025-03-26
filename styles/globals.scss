@@ -1,3 +1,5 @@
+@use "@/styles/_common.scss" as *;
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -6,6 +8,11 @@
 
 html {
   font-size: 19px;
+
+  @include tiny-screen-styles {
+    font-size: 16px;
+
+  }
 }
 
 html,

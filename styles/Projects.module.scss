@@ -4,15 +4,15 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 2rem;
-  gap: 4rem;
+  margin-bottom: 4rem;
+  gap: 2rem;
 }
 
 .projectGrid {
   display: grid;
   // 2 columns that wrap
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 4rem;
+  gap: 2rem;
   margin: 1rem 0;
   // all cards have the same height
   grid-auto-rows: 1fr;
@@ -35,7 +35,7 @@
   .projectGrid {
     grid-template-columns: 1fr;
     grid-auto-rows: initial;
-    gap: 4rem;
+    gap: 2rem;
 
     // > a,
     // > a > div {
