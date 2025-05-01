@@ -40,6 +40,12 @@ export const projects: ProjectData = {
 		// liveLink: "https://myimages.zip",
 		featured: true,
 	},
+	latentWriter: {
+		title: "Latent Writer",
+		description: 'Think of it as a "power thesaurus."',
+		link: "https://github.com/Zyplos/LatentWriter",
+		featured: true,
+	},
 	// normal cards
 	gemCase: {
 		title: "essential gem case",

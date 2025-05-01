@@ -12,6 +12,7 @@ import {
 	MyImagesCard,
 	SeeMoreProjectsCard,
 	SystemStatusCard,
+	LatentWriterCard,
 	TwitterCard,
 } from "@/components/SpecialtyCard";
 import classNames from "classnames";
@@ -21,6 +22,9 @@ import Footer from "@/components/Footer";
 import getDiscordPresence, {
 	type UserStatusData,
 } from "@/internals/getDiscordPresence";
+
+import Image from "next/image";
+import portfolioImage from "@/assets/portfolio-header-mini.png";
 
 export const getServerSideProps = (async ({ req, res }) => {
 	res.setHeader("Cache-Control", "public, s-maxage=11");
@@ -165,33 +169,42 @@ export default function Home({
 			</section>
 
 			<main className={styles.main}>
-				<div>
+				<div
+					style={{
+						marginTop: 0,
+					}}
+				>
 					<h2>stuff about me</h2>
 					<p>
-						i&apos;m a developer who&apos;s worked with the web and various
-						other things for many years now
+						i'm a developer who's worked with the web and various other things
+						for many years now
 					</p>
 					<p>
-						always happy to learn something new that i can add to my projects
-						and im always eager to talk to people about it !
-					</p>
-					<p>
-						<b>i'm looking for full time software engineering roles!</b> if you
-						like the stuff i've made please reach out. there's a contact me
-						thing at the bottom of this page
+						i like spending my time making stuff and i'm always happy to learn
+						something new
 					</p>
 				</div>
 
-				<div>
-					<h2>some stuff i&apos;ve made</h2>
+				<div className={classNames(styles.aSide, styles.shimmeringCardBorder)}>
 					<p>
-						here&apos;s a few public projects you can view and mess around with
+						<b>I am looking for full time software engineering roles.</b> If you
+						like my work and my experience aligns with a role you're looking to
+						fill, feel free to reach out to me. There's a contact section below.
+					</p>
+					<Image src={portfolioImage} alt="" quality={100} />
+				</div>
+
+				<div>
+					<h2>some stuff i've made</h2>
+					<p>
+						here's some of my favorite projects you can look at and mess around
+						with
 					</p>
 				</div>
 				<div
 					style={{
 						display: "flex",
-						gap: "5rem",
+						gap: "2.5rem",
 						flexDirection: "column",
 						marginTop: "2rem",
 					}}
@@ -207,11 +220,11 @@ export default function Home({
 						<DiscordREADMECard />
 					</a>
 					<a
-						href="https://github.com/Zyplos/discord-readme-badge"
+						href="https://github.com/Zyplos/LatentWriter"
 						target="_blank"
 						rel="noreferrer"
 					>
-						<GitHubProjectTracker />
+						<LatentWriterCard />
 					</a>
 					<Link href="/projects">
 						<SeeMoreProjectsCard />
@@ -220,17 +233,21 @@ export default function Home({
 
 				<div>
 					<h2>design stuff</h2>
-					<p>i do a bit of design whenever a project needs it</p>
-					<p>sometimes i do 3D stuff</p>
 					<p>
-						you can find design stuff i make on twitter and on one of my other
-						projects
+						i like working with design! sometimes i'll do graphic design related
+						stuff, ui stuff, whatever a project needs or would add on to make it
+						look good
+					</p>
+					<p>sometimes i do 3D stuff in blender</p>
+					<p>
+						you can find the design stuff i make on twitter and on myimages.zip,
+						one of the projects i made
 					</p>
 				</div>
 				<div
 					style={{
 						display: "flex",
-						gap: "5rem",
+						gap: "2.5rem",
 						flexDirection: "column",
 						marginTop: "2rem",
 					}}

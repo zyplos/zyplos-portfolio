@@ -73,6 +73,7 @@ export default function Navbar({ homeMode = false }: { homeMode?: boolean }) {
 					className={classNames({
 						[styles.lightEmblem]: isMobileNavExpanded,
 					})}
+					style={{ display: "block" }}
 				/>
 			</Link>
 			{/* biome-ignore lint/a11y/useKeyWithClickEvents: not needed for mobile */}

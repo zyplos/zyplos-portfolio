@@ -532,7 +532,7 @@
 
 .systemStatusCard {
   position: relative;
-  overflow: hidden;
+  overflow: hidden !important;
   background-color: #000;
 }
 
@@ -621,6 +621,48 @@
   }
 }
 
+// ===== latent writer card
+
+.latentWriterCard {
+  background-color: #050505;
+  background-image: url("../../assets/latent-writer-bg.png");
+  background-size: cover;
+  background-position: center;
+  padding-right: 10rem;
+
+  &:hover {
+    outline: none;
+  }
+
+  .latentWriterIcon {
+    position: absolute;
+    width: auto;
+    height: 100%;
+    right: 0.5rem;
+    bottom: 0rem;
+    z-index: 2;
+    animation: floatingItem 2.2s infinite alternate ease-in-out;
+  }
+}
+
+@include tiny-screen-styles {
+  .latentWriterCard {
+    padding-bottom: 10rem;
+    padding-right: 2rem;
+
+    .latentWriterIcon {
+      height: 50%;
+      bottom: 1rem;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .latentWriterCard {
+    animation: none;
+  }
+}
+
 // remove border on hover for all cards
 .loungeHubCard,
 .discordREADMEBadgeCard,
@@ -629,6 +671,7 @@
 .twitterCard,
 .myimagesCard,
 .systemStatusCard,
+.latentWriterCard,
 .loungeHubCard:hover,
 .discordREADMEBadgeCard:hover,
 .githubProjectTrackerCard:hover,

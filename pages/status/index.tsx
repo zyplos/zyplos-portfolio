@@ -107,7 +107,7 @@ export default function SystemStatusPage() {
 				<section>
 					<h1>system status</h1>
 					<p>still working on this</p>
-					<p>- zy</p>
+					<p>- me</p>
 
 					<button
 						type="button"
