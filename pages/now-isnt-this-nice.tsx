@@ -6,7 +6,7 @@ export default function StatuePage() {
 	return (
 		<>
 			<Head>
-				<title>⬤</title>
+				<title>Now isn't this nice?</title>
 			</Head>
 			<Fullscreen
 				style={{
