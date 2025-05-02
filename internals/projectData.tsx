@@ -11,6 +11,7 @@ import maestroImg from "@/assets/projects/maestro.png";
 import loungeCommunaImg from "@/assets/projects/loungecommuna.png";
 import loungeNewWorldImg from "@/assets/projects/lounge-new-world.png";
 import guildExperimentsListerImg from "@/assets/projects/guild-experiments-lister.png";
+import aiPost from "@/assets/projects/ai-post-icon.png";
 
 export const projects: ProjectData = {
 	"lounge-hub": {
@@ -47,6 +48,12 @@ export const projects: ProjectData = {
 		featured: true,
 	},
 	// normal cards
+	postAI: {
+		title: "how i use ai",
+		description: "not a project but its something i thought i'd put out there",
+		localLink: "./ai",
+		imagePreview: aiPost,
+	},
 	gemCase: {
 		title: "essential gem case",
 		description:
@@ -159,6 +166,7 @@ export type Project = {
 	featured?: boolean;
 	description: string;
 	link?: string;
+	localLink?: string;
 	// liveLink?: string;
 	imagePreview?: StaticImageData;
 };

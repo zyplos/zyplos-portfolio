@@ -187,9 +187,10 @@ export default function Home({
 
 				<div className={classNames(styles.aSide, styles.shimmeringCardBorder)}>
 					<p>
-						<b>I am looking for full time software engineering roles.</b> If you
-						like my work and my experience aligns with a role you're looking to
-						fill, feel free to reach out to me. There's a contact section below.
+						<b>I am looking for full time roles in</b> software engineering or
+						design related roles. If you like my work and my experience aligns
+						with a role you're looking to fill, feel free to reach out to me.
+						There's a contact section below.
 					</p>
 					<Image src={portfolioImage} alt="" quality={100} />
 				</div>

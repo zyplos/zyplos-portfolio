@@ -101,6 +101,16 @@ export default function ProjectsPage() {
 					{Object.values(projects).map((project) => {
 						if (project.featured) return;
 
+						if (project.localLink) {
+							return (
+								<Link href={project.localLink}>
+									<Card title={project.title} image={project.imagePreview}>
+										<p>{project.description}</p>
+									</Card>
+								</Link>
+							);
+						}
+
 						return (
 							<a
 								href={project.link}

@@ -1,0 +1,63 @@
+@use "@/styles/_common.scss" as *;
+
+
+.article {
+
+  h3 {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  h4 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  p,
+  ul {
+    margin-bottom: 1rem;
+  }
+
+  .padded {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+
+  .aiCaughtMessage p {
+    color: transparent;
+    margin: 0;
+    font-size: 0px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+.captionedImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    // margin: 0 auto;
+  }
+
+  p {
+    margin-top: 1rem;
+    font-style: italic;
+  }
+
+  &.left {
+    align-items: start;
+  }
+}
