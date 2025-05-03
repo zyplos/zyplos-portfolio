@@ -19,6 +19,7 @@ import synonymsImg from "@/assets/posts/synonyms.png";
 import whiskImg from "@/assets/posts/whisk.jpg";
 import deepResearchImg from "@/assets/posts/deep-research.png";
 import vvImg from "@/assets/posts/vv.png";
+import AnchorLink from "@/components/AnchorLink";
 
 interface CaptionedImageProps {
 	src: StaticImageData;
@@ -395,8 +396,11 @@ export default function AIPolicyPage() {
 
 				<p>
 					i've made most of the profile pictures i use on my main accounts, with
-					some of them being drawn by friends (such as my current one, and very
-					rarely will i have had a profile picture that is some character)
+					some of them being drawn by friends (such as my current one drawn by{" "}
+					<AnchorLink href="https://twitter.com/peggdraws" target="_blank">
+						this guy
+					</AnchorLink>
+					)
 				</p>
 
 				<p>
