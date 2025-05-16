@@ -100,13 +100,13 @@ export default function TextWall() {
 			"naturally technical",
 			"constantly dynamic",
 			"hopelessly optimistic",
-			"rarely common",
-			"sarcastically sincere", //
-			"thoughtfully impulsive", //
 			"playfully serious",
-			"randomly structured",
 			"intricately simple",
-			"unpredictably deterministic",
+			//
+			"calmly energetic",
+			"pragmatically idealistic",
+			"steadily swift",
+			"unwaveringly adaptable",
 			//
 		];
 		// const RANDOM_STRINGS = ["plinko"];
@@ -340,7 +340,7 @@ export default function TextWall() {
 
 		return () => {
 			window.cancelAnimationFrame(animationFrameId);
-			window.removeEventListener("resize", resizeCanvas);
+			window.removeEventListener("resize", resizeHandler);
 		};
 	}, []);
 

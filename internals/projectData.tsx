@@ -57,7 +57,7 @@ export const projects: ProjectData = {
 	gemCase: {
 		title: "essential gem case",
 		description:
-			"i had to custom make a case for a phone that does not exist. made in blender and 3d printed",
+			"i designed and made a case for a phone that does not exist. made in blender and 3d printed",
 		link: "https://www.printables.com/model/1244300-essential-gem-case",
 		imagePreview: gemImg,
 	},

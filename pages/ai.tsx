@@ -529,22 +529,31 @@ export default function AIPolicyPage() {
 				<h4>&#x3E;ai makes better work than you</h4>
 				<p>for now maybe. not by the time i'm done</p>
 				<p>
-					i do expect the work ai does to get better and better, but i think
-					there's a limit it won't break (but i will)
+					i do expect the work ai does to get better and better, but i will too.
+					and at some point i'll have the quality to make something and back it
+					with something ai cannot: nuance and intention
 				</p>
 
-				<h4>&#x3E;ai will replace you</h4>
+				<h4>&#x3E;then you're dismissive of ai and its progress</h4>
 				<p>
-					<b>Nope!</b> can't replace a 1 of 1
+					no, reread the post from the beginning. i consider it one of my most
+					important tools.
+				</p>
+				<p>
+					although i don't use things like media generation or long form
+					summarization, i am eager to see how ai advances and keep my own
+					benchmarks for when i consider using it for something. i'm already
+					warming up to deep research and use it as i do with ai right now: a
+					starting point for my own reference
 				</p>
 
 				<h4>&#x3E;you're ignoring the cutting edge</h4>
 				<p>no, i keep up with the buzz</p>
 
-				<h4>&#x3E;you're not competitive in the modern job market</h4>
+				{/* <h4>&#x3E;you're not competitive in the modern job market</h4>
 				<p>
 					the modern job market is not competitive with <i>me</i>
-				</p>
+				</p> */}
 
 				<h4>&#x3E;you're not future-proofing your career</h4>
 				<p>
