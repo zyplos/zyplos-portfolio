@@ -7,7 +7,7 @@ import classNames from "classnames";
 import Head from "next/head";
 
 import MAIN_COLOR_DATA_UNTYPED from "@/internals/colorData.json";
-import { useEffect } from "react";
+import { type JSX, useEffect } from "react";
 
 interface ColorData {
 	name: string;
