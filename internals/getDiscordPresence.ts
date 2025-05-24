@@ -22,7 +22,10 @@ export default async function getDiscordPresence(): Promise<UserStatusData> {
 
 		const response = await fetch(
 			"https://mm.zyplos.dev/dcs/api/v1/status/discord/zyplos",
-			{ signal: controller.signal },
+			{
+				signal: controller.signal,
+				next: { revalidate: 11 } // Added caching with revalidation
+			},
 		);
 
 		clearTimeout(timeoutId);

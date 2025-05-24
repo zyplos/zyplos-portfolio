@@ -26,7 +26,7 @@ import Image from 'next/image';
 import portfolioImage from '@/assets/portfolio-header-mini.png';
 
 // Client component for localStorage logic
-import StatusSaver from '@/components/StatusSaver';
+// import StatusSaver from '@/components/StatusSaver'; // Removed
 
 
 export const revalidate = 11;
@@ -139,7 +139,7 @@ export default async function HomePage() {
   );
 
   // Client-side logic for localStorage will be handled by StatusSaver component
-  <StatusSaver userStatusData={userStatusData} />
+  // <StatusSaver userStatusData={userStatusData} /> // Removed
 
   return (
     <>
