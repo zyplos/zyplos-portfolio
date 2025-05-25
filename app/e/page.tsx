@@ -1,10 +1,8 @@
-import Fullscreen from "@/components/Fullscreen"; // Assuming Fullscreen is App Router compatible
-import type { Metadata } from 'next';
+import type { Metadata } from "next";
+import Fullscreen from "@/components/Fullscreen";
 
 export const metadata: Metadata = {
   title: "⬤",
-  // No other specific metadata from the original <Head>
-  // Common viewport, icons, theme-color, etc., are handled by the root layout.
 };
 
 export default function StatuePage() {
