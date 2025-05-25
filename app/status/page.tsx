@@ -1,11 +1,19 @@
-"use client"; // This page uses the useRouter hook
+import classNames from "classnames";
+import type { Metadata } from "next";
 
 import styles from "@/styles/SystemStatus.module.scss";
-import classNames from "classnames";
-// Removed: import type { Metadata } from 'next';
-import { useRouter } from "next/navigation"; // Use from next/navigation for App Router
+import Link from "next/link";
 
-// Metadata has been moved to app/status/layout.tsx
+export const metadata: Metadata = {
+  title: "system status • zyplos's stuff",
+  description: "check if anything's offline",
+  openGraph: {
+    title: "system status • zyplos's stuff",
+    description: "check if anything's offline",
+    url: "https://zyplos.dev/status",
+    type: "website",
+  },
+};
 
 const friendlyStatusText = {
   online: "⬤ Online",
@@ -63,25 +71,18 @@ const services: Service[] = [
 ];
 
 export default function SystemStatusPage() {
-  const router = useRouter();
-
   return (
     <>
-      {/* biome-ignore lint/style/useSelfClosingElements: no */}
-      <div className={styles.ccOverlay}></div>
+      <div className={styles.ccOverlay} />
       <main className={styles.main}>
         <section>
           <h1>system status</h1>
           <p>still working on this</p>
           <p>- me</p>
 
-          <button
-            type="button"
-            onClick={() => router.back()}
-            className={styles.homeLink}
-          >
+          <Link type="button" href="/" className={styles.homeLink}>
             &lt;- back
-          </button>
+          </Link>
           <div className={styles.preview}>
             <p>&#47;&#47; preview</p>
             <div className={classNames(styles.grid)}>

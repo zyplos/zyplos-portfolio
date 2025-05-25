@@ -1,4 +1,12 @@
-import MainLayout from "@/components/MainLayout"; // Assuming MainLayout is App Router compatible
+import classNames from "classnames";
+import Link from "next/link";
+import type { Metadata } from "next";
+
+import styles from "@/styles/Projects.module.scss";
+import { projects, archivedProjects } from "@/internals/projectData";
+
+import MainLayout from "@/components/MainLayout";
+import Card from "@/components/Card";
 import {
   DiscordREADMECard,
   GitHubProjectTracker,
@@ -6,18 +14,10 @@ import {
   LoungeCard,
   MyImagesCard,
   SystemStatusCard,
-} from "@/components/SpecialtyCard"; // Assuming SpecialtyCard components are compatible
-
-import { projects, archivedProjects } from "@/internals/projectData";
-import Card from "@/components/Card"; // Assuming Card is App Router compatible
-
-import styles from "@/styles/Projects.module.scss";
-import classNames from "classnames";
-import Link from "next/link";
-import type { Metadata } from "next";
+} from "@/components/SpecialtyCard";
 
 export const metadata: Metadata = {
-  title: "projects",
+  title: "projects • zyplos's stuff",
   description: "stuff i've made",
   openGraph: {
     title: "projects • zyplos's stuff",
@@ -25,12 +25,6 @@ export const metadata: Metadata = {
     url: "https://zyplos.dev/projects",
     type: "website",
   },
-  twitter: {
-    card: "summary",
-    site: "@Zyplos",
-    creator: "@Zyplos",
-  },
-  // Common viewport, icons, theme-color, etc., are handled by the root layout.
 };
 
 export default function ProjectsPage() {
@@ -39,9 +33,8 @@ export default function ProjectsPage() {
       <h1 style={{ marginBottom: "2rem" }}>Projects</h1>
 
       <section className={styles.section}>
-        {/* Featured projects with Specialty Cards */}
         <a
-          href="https://github.com/Zyplos/lounge-hub" // lounge.haus is the actual link, but keeping GH for consistency with original
+          href="https://github.com/Zyplos/lounge-hub"
           target="_blank"
           rel="noreferrer"
         >
@@ -62,7 +55,7 @@ export default function ProjectsPage() {
           <GitHubProjectTracker />
         </a>
         <a
-          href="https://github.com/Zyplos/myimages.zip" // myimages.zip is the actual link
+          href="https://github.com/Zyplos/myimages.zip"
           target="_blank"
           rel="noreferrer"
         >
@@ -76,7 +69,6 @@ export default function ProjectsPage() {
           <LatentWriterCard />
         </a>
 
-        {/* Other projects */}
         <div className={styles.projectGrid}>
           {Object.values(projects).map((project) => {
             // Skip featured projects as they are manually listed above with specialty cards
@@ -113,10 +105,10 @@ export default function ProjectsPage() {
         <div className={styles.projectGrid}>
           {Object.values(archivedProjects).map((project) => (
             <a
+              key={project.title}
               href={project.link}
               target="_blank"
               rel="noreferrer"
-              key={project.title}
             >
               <Card title={project.title}>
                 <p>{project.date}</p>
