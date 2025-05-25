@@ -1,14 +1,14 @@
-import MainLayout from "@/components/MainLayout"; // Assuming MainLayout is App Router compatible
-import Card from "@/components/Card"; // Assuming Card is App Router compatible
-import styles from "@/styles/Post.module.scss";
-import classNames from "classnames";
-import Link from "next/link";
 import Image from "next/image";
+import classNames from "classnames";
 import type { StaticImageData } from "next/image";
-import PostHeader from "@/components/PostHeader"; // Assuming PostHeader is App Router compatible
-import { LatentWriterCard } from "@/components/SpecialtyCard";
+import type { Metadata } from "next";
+
+import styles from "@/styles/Post.module.scss";
+
+import MainLayout from "@/components/MainLayout";
+import PostHeader from "@/components/PostHeader";
 import AnchorLink from "@/components/AnchorLink";
-import type { Metadata } from 'next';
+import { LatentWriterCard } from "@/components/SpecialtyCard";
 
 import screenshotImg from "@/assets/posts/img-screenshot.png";
 import cpuImg from "@/assets/posts/cpu.png";
@@ -21,25 +21,15 @@ import vvImg from "@/assets/posts/vv.png";
 
 export const metadata: Metadata = {
   title: "how i use ai • zyplos's stuff",
-  description: "ai is a tool i use. here's a comprehensive view of how i use it",
+  description:
+    "ai is a tool i use. here's a comprehensive view of how i use it",
   openGraph: {
     title: "how i use ai • zyplos's stuff",
-    description: "ai is a tool i use. here's a comprehensive view of how i use it",
+    description:
+      "ai is a tool i use. here's a comprehensive view of how i use it",
     url: "https://zyplos.dev/ai",
     type: "website",
   },
-  twitter: {
-    card: "summary",
-    site: "@Zyplos",
-    creator: "@Zyplos",
-  },
-  // Viewport, icons, theme-color, etc., are typically handled by the root layout (app/layout.tsx)
-  // If specific overrides are needed per page, they can be added here.
-  // For example, if this page had a unique theme-color:
-  // themeColor: "#customColorForAiPage",
-  // Or specific icons:
-  // icons: { icon: '/ai-favicon.ico' }
-  // For now, we'll rely on the root layout for these common meta tags.
 };
 
 interface CaptionedImageProps {
@@ -543,19 +533,8 @@ export default function AIPolicyPage() {
           target="_blank"
           rel="noreferrer"
         >
-          {/* 
-            The Image component from next/image is preferred for optimized images,
-            but vvImg.src is used directly here as in the original code.
-            If vvImg is a StaticImageData object, it should be used like:
-            <Image src={vvImg} alt="..." />
-            However, the original code uses an <img> tag, so we replicate that.
-            If vvImg is just a string path, this is fine.
-            Assuming vvImg is { src: string; height: number; width: number; blurDataURL?: string; }
-            It should be <Image src={vvImg} ... />
-            For now, keeping it as <img> to match the original structure.
-          */}
           <img
-            src={vvImg.src} // If vvImg is StaticImageData, this would be fine.
+            src={vvImg.src}
             alt={
               'a tweet by @VisualizeValue that says: "The only asset that goes up and to the right forever is your experience.", including an accompanying visual of a straight line graph laid over a chaotic looking one'
             }
