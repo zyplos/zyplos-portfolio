@@ -1,6 +1,6 @@
 import Image from "next/image";
 import degImage from "@/assets/_deg.jpg";
-import Fullscreen from "@/components/Fullscreen"; // Assuming Fullscreen is App Router compatible
+import Fullscreen from "@/components/Fullscreen";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
