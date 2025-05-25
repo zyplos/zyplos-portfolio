@@ -1,623 +1,623 @@
 [
-	{
-		"name": "Zyplos Red",
-		"hex": "#ff3e3e",
-		"rgb": {
-			"r": 255,
-			"g": 62,
-			"b": 62
-		}
-	},
-	{
-		"name": "Zyplos Yellow",
-		"hex": "#ffd300",
-		"rgb": {
-			"r": 255,
-			"g": 211,
-			"b": 0
-		}
-	},
-	{
-		"name": "Zyplos Gray",
-		"hex": "#dbdbdb",
-		"rgb": {
-			"r": 219,
-			"g": 219,
-			"b": 219
-		}
-	},
-	{
-		"name": "Zyplos Dark Gray",
-		"hex": "#444444",
-		"rgb": {
-			"r": 68,
-			"g": 68,
-			"b": 68
-		}
-	},
-	{
-		"name": "Zyplos Slate",
-		"hex": "#242424",
-		"rgb": {
-			"r": 36,
-			"g": 36,
-			"b": 36
-		}
-	},
-	{
-		"name": "Zyplos Deepslate",
-		"hex": "#111111",
-		"rgb": {
-			"r": 17,
-			"g": 17,
-			"b": 17
-		}
-	},
-	{
-		"name": "Zyplos Bedrock",
-		"hex": "#050505",
-		"rgb": {
-			"r": 5,
-			"g": 5,
-			"b": 5
-		}
-	},
-	{
-		"name": "Zyplos Green",
-		"hex": "#08a850",
-		"rgb": {
-			"r": 8,
-			"g": 168,
-			"b": 80
-		}
-	},
-	{
-		"name": "Alfie Teal",
-		"hex": "#00a3a3",
-		"rgb": {
-			"r": 0,
-			"g": 163,
-			"b": 163
-		}
-	},
-	{
-		"name": "Buggy Gold",
-		"hex": "#ffc100",
-		"rgb": {
-			"r": 255,
-			"g": 193,
-			"b": 0
-		}
-	},
-	{
-		"name": "Buggy Gray",
-		"hex": "#8c8c8c",
-		"rgb": {
-			"r": 140,
-			"g": 140,
-			"b": 140
-		}
-	},
-	{
-		"name": "Buggy White",
-		"hex": "#f4f4f4",
-		"rgb": {
-			"r": 244,
-			"g": 244,
-			"b": 244
-		}
-	},
-	{
-		"name": "Classic Gradient Gray (Bottom)",
-		"hex": "#b5b5b5",
-		"rgb": {
-			"r": 181,
-			"g": 181,
-			"b": 181
-		}
-	},
-	{
-		"name": "Classic Gradient Gray (Top)",
-		"hex": "#ffffff",
-		"rgb": {
-			"r": 255,
-			"g": 255,
-			"b": 255
-		}
-	},
-	{
-		"name": "Classic Gradient Red (Bottom)",
-		"hex": "#b70000",
-		"rgb": {
-			"r": 183,
-			"g": 0,
-			"b": 0
-		}
-	},
-	{
-		"name": "Classic Gradient Red (Top)",
-		"hex": "#e60000",
-		"rgb": {
-			"r": 230,
-			"g": 0,
-			"b": 0
-		}
-	},
-	{
-		"name": "Classic Red",
-		"hex": "#ff0000",
-		"rgb": {
-			"r": 255,
-			"g": 0,
-			"b": 0
-		}
-	},
-	{
-		"name": "Classic Sky Blue",
-		"hex": "#c3fbf7",
-		"rgb": {
-			"r": 195,
-			"g": 251,
-			"b": 247
-		}
-	},
-	{
-		"name": "Classic Yellow",
-		"hex": "#ffb000",
-		"rgb": {
-			"r": 255,
-			"g": 176,
-			"b": 0
-		}
-	},
-	{
-		"name": "Cycle Series Background",
-		"hex": "#11121a",
-		"rgb": {
-			"r": 17,
-			"g": 18,
-			"b": 26
-		}
-	},
-	{
-		"name": "Default Skintone",
-		"hex": "#d5885e",
-		"rgb": {
-			"r": 213,
-			"g": 136,
-			"b": 94
-		}
-	},
-	{
-		"name": "devspace Purple Classic",
-		"hex": "#ba17e2",
-		"rgb": {
-			"r": 186,
-			"g": 23,
-			"b": 226
-		}
-	},
-	{
-		"name": "Discord Blurple",
-		"hex": "#5865f2",
-		"rgb": {
-			"r": 88,
-			"g": 101,
-			"b": 242
-		}
-	},
-	{
-		"name": "Discord Blurple Classic",
-		"hex": "#7289da",
-		"rgb": {
-			"r": 114,
-			"g": 137,
-			"b": 218
-		}
-	},
-	{
-		"name": "eGray",
-		"hex": "#c8c8c8",
-		"rgb": {
-			"r": 200,
-			"g": 200,
-			"b": 200
-		}
-	},
-	{
-		"name": "eGreen",
-		"hex": "#09c600",
-		"rgb": {
-			"r": 9,
-			"g": 198,
-			"b": 0
-		}
-	},
-	{
-		"name": "eLime",
-		"hex": "#6ee835",
-		"rgb": {
-			"r": 110,
-			"g": 232,
-			"b": 53
-		}
-	},
-	{
-		"name": "eMaroon",
-		"hex": "#800000",
-		"rgb": {
-			"r": 128,
-			"g": 0,
-			"b": 0
-		}
-	},
-	{
-		"name": "eOrange",
-		"hex": "#ff9d1d",
-		"rgb": {
-			"r": 255,
-			"g": 157,
-			"b": 29
-		}
-	},
-	{
-		"name": "eOrange-Red",
-		"hex": "#ff6010",
-		"rgb": {
-			"r": 255,
-			"g": 96,
-			"b": 16
-		}
-	},
-	{
-		"name": "eOrange-Yellow",
-		"hex": "#ffbf1f",
-		"rgb": {
-			"r": 255,
-			"g": 191,
-			"b": 31
-		}
-	},
-	{
-		"name": "ePink",
-		"hex": "#ff9df5",
-		"rgb": {
-			"r": 255,
-			"g": 157,
-			"b": 245
-		}
-	},
-	{
-		"name": "ePurple",
-		"hex": "#9e2de0",
-		"rgb": {
-			"r": 158,
-			"g": 45,
-			"b": 224
-		}
-	},
-	{
-		"name": "eRed",
-		"hex": "#ff1616",
-		"rgb": {
-			"r": 255,
-			"g": 22,
-			"b": 22
-		}
-	},
-	{
-		"name": "eYellow",
-		"hex": "#ffd300",
-		"rgb": {
-			"r": 255,
-			"g": 211,
-			"b": 0
-		}
-	},
-	{
-		"name": "Google Blue",
-		"hex": "#4285f4",
-		"rgb": {
-			"r": 66,
-			"g": 133,
-			"b": 244
-		}
-	},
-	{
-		"name": "Google Green",
-		"hex": "#34a853",
-		"rgb": {
-			"r": 52,
-			"g": 168,
-			"b": 83
-		}
-	},
-	{
-		"name": "Google Red",
-		"hex": "#ea4335",
-		"rgb": {
-			"r": 234,
-			"g": 67,
-			"b": 53
-		}
-	},
-	{
-		"name": "Google Yellow",
-		"hex": "#fbbc04",
-		"rgb": {
-			"r": 251,
-			"g": 188,
-			"b": 4
-		}
-	},
-	{
-		"name": "Julian Pink",
-		"hex": "#d40b96",
-		"rgb": {
-			"r": 212,
-			"g": 11,
-			"b": 150
-		}
-	},
-	{
-		"name": "Lumi Dark Blue",
-		"hex": "#1a254e",
-		"rgb": {
-			"r": 26,
-			"g": 37,
-			"b": 78
-		}
-	},
-	{
-		"name": "Lumi Yellow",
-		"hex": "#ffba1a",
-		"rgb": {
-			"r": 255,
-			"g": 186,
-			"b": 26
-		}
-	},
-	{
-		"name": "Lumi Yellow Classic",
-		"hex": "#ffd752",
-		"rgb": {
-			"r": 255,
-			"g": 215,
-			"b": 82
-		}
-	},
-	{
-		"name": "Marv Light Blue",
-		"hex": "#7bd1ff",
-		"rgb": {
-			"r": 123,
-			"g": 209,
-			"b": 255
-		}
-	},
-	{
-		"name": "MC Overlay Highlight",
-		"hex": "#fffbd4",
-		"rgb": {
-			"r": 255,
-			"g": 251,
-			"b": 212
-		}
-	},
-	{
-		"name": "MC Overlay Shadow",
-		"hex": "#282828",
-		"rgb": {
-			"r": 40,
-			"g": 40,
-			"b": 40
-		}
-	},
-	{
-		"name": "Minecraft Aqua (&b)",
-		"hex": "#55ffff",
-		"rgb": {
-			"r": 85,
-			"g": 255,
-			"b": 255
-		}
-	},
-	{
-		"name": "Minecraft Blue (&9)",
-		"hex": "#5555ff",
-		"rgb": {
-			"r": 85,
-			"g": 85,
-			"b": 255
-		}
-	},
-	{
-		"name": "Minecraft Dark Aqua (&3)",
-		"hex": "#00aaaa",
-		"rgb": {
-			"r": 0,
-			"g": 170,
-			"b": 170
-		}
-	},
-	{
-		"name": "Minecraft Dark Blue (&1)",
-		"hex": "#0000aa",
-		"rgb": {
-			"r": 0,
-			"g": 0,
-			"b": 170
-		}
-	},
-	{
-		"name": "Minecraft Dark Gray (&8)",
-		"hex": "#555555",
-		"rgb": {
-			"r": 85,
-			"g": 85,
-			"b": 85
-		}
-	},
-	{
-		"name": "Minecraft Dark Green (&2)",
-		"hex": "#00aa00",
-		"rgb": {
-			"r": 0,
-			"g": 170,
-			"b": 0
-		}
-	},
-	{
-		"name": "Minecraft Dark Purple (&5)",
-		"hex": "#aa00aa",
-		"rgb": {
-			"r": 170,
-			"g": 0,
-			"b": 170
-		}
-	},
-	{
-		"name": "Minecraft Dark Red (&4)",
-		"hex": "#aa0000",
-		"rgb": {
-			"r": 170,
-			"g": 0,
-			"b": 0
-		}
-	},
-	{
-		"name": "Minecraft Gold (&6)",
-		"hex": "#ffaa00",
-		"rgb": {
-			"r": 255,
-			"g": 170,
-			"b": 0
-		}
-	},
-	{
-		"name": "Minecraft Gray (&7)",
-		"hex": "#aaaaaa",
-		"rgb": {
-			"r": 170,
-			"g": 170,
-			"b": 170
-		}
-	},
-	{
-		"name": "Minecraft Green (&a)",
-		"hex": "#55ff55",
-		"rgb": {
-			"r": 85,
-			"g": 255,
-			"b": 85
-		}
-	},
-	{
-		"name": "Minecraft Light Purple (&d)",
-		"hex": "#ff55ff",
-		"rgb": {
-			"r": 255,
-			"g": 85,
-			"b": 255
-		}
-	},
-	{
-		"name": "Minecraft Red (&c)",
-		"hex": "#ff5555",
-		"rgb": {
-			"r": 255,
-			"g": 85,
-			"b": 85
-		}
-	},
-	{
-		"name": "Minecraft Yellow (&e)",
-		"hex": "#ffff55",
-		"rgb": {
-			"r": 255,
-			"g": 255,
-			"b": 85
-		}
-	},
-	{
-		"name": "NES Coral",
-		"hex": "#fe7957",
-		"rgb": {
-			"r": 254,
-			"g": 121,
-			"b": 87
-		}
-	},
-	{
-		"name": "NES Light Yellow",
-		"hex": "#fcd883",
-		"rgb": {
-			"r": 252,
-			"g": 216,
-			"b": 131
-		}
-	},
-	{
-		"name": "NES Wine",
-		"hex": "#ac0027",
-		"rgb": {
-			"r": 172,
-			"g": 0,
-			"b": 39
-		}
-	},
-	{
-		"name": "Pegg Blue",
-		"hex": "#0094ff",
-		"rgb": {
-			"r": 0,
-			"g": 148,
-			"b": 255
-		}
-	},
-	{
-		"name": "Pegg Chartreuse",
-		"hex": "#d8f700",
-		"rgb": {
-			"r": 216,
-			"g": 247,
-			"b": 0
-		}
-	},
-	{
-		"name": "scooter Orange",
-		"hex": "#ff5d00",
-		"rgb": {
-			"r": 255,
-			"g": 93,
-			"b": 0
-		}
-	},
-	{
-		"name": "scooter Orange Classic",
-		"hex": "#fbb03b",
-		"rgb": {
-			"r": 251,
-			"g": 176,
-			"b": 59
-		}
-	},
-	{
-		"name": "Sine Cyan",
-		"hex": "#00526d",
-		"rgb": {
-			"r": 0,
-			"g": 82,
-			"b": 109
-		}
-	},
-	{
-		"name": "Sine Dark Cyan",
-		"hex": "#044354",
-		"rgb": {
-			"r": 4,
-			"g": 67,
-			"b": 84
-		}
-	}
+  {
+    "name": "Zyplos Red",
+    "hex": "#ff3e3e",
+    "rgb": {
+      "r": 255,
+      "g": 62,
+      "b": 62
+    }
+  },
+  {
+    "name": "Zyplos Yellow",
+    "hex": "#ffd300",
+    "rgb": {
+      "r": 255,
+      "g": 211,
+      "b": 0
+    }
+  },
+  {
+    "name": "Zyplos Gray",
+    "hex": "#dbdbdb",
+    "rgb": {
+      "r": 219,
+      "g": 219,
+      "b": 219
+    }
+  },
+  {
+    "name": "Zyplos Dark Gray",
+    "hex": "#444444",
+    "rgb": {
+      "r": 68,
+      "g": 68,
+      "b": 68
+    }
+  },
+  {
+    "name": "Zyplos Slate",
+    "hex": "#242424",
+    "rgb": {
+      "r": 36,
+      "g": 36,
+      "b": 36
+    }
+  },
+  {
+    "name": "Zyplos Deepslate",
+    "hex": "#111111",
+    "rgb": {
+      "r": 17,
+      "g": 17,
+      "b": 17
+    }
+  },
+  {
+    "name": "Zyplos Bedrock",
+    "hex": "#050505",
+    "rgb": {
+      "r": 5,
+      "g": 5,
+      "b": 5
+    }
+  },
+  {
+    "name": "Zyplos Green",
+    "hex": "#08a850",
+    "rgb": {
+      "r": 8,
+      "g": 168,
+      "b": 80
+    }
+  },
+  {
+    "name": "Alfie Teal",
+    "hex": "#00a3a3",
+    "rgb": {
+      "r": 0,
+      "g": 163,
+      "b": 163
+    }
+  },
+  {
+    "name": "Buggy Gold",
+    "hex": "#ffc100",
+    "rgb": {
+      "r": 255,
+      "g": 193,
+      "b": 0
+    }
+  },
+  {
+    "name": "Buggy Gray",
+    "hex": "#8c8c8c",
+    "rgb": {
+      "r": 140,
+      "g": 140,
+      "b": 140
+    }
+  },
+  {
+    "name": "Buggy White",
+    "hex": "#f4f4f4",
+    "rgb": {
+      "r": 244,
+      "g": 244,
+      "b": 244
+    }
+  },
+  {
+    "name": "Classic Gradient Gray (Bottom)",
+    "hex": "#b5b5b5",
+    "rgb": {
+      "r": 181,
+      "g": 181,
+      "b": 181
+    }
+  },
+  {
+    "name": "Classic Gradient Gray (Top)",
+    "hex": "#ffffff",
+    "rgb": {
+      "r": 255,
+      "g": 255,
+      "b": 255
+    }
+  },
+  {
+    "name": "Classic Gradient Red (Bottom)",
+    "hex": "#b70000",
+    "rgb": {
+      "r": 183,
+      "g": 0,
+      "b": 0
+    }
+  },
+  {
+    "name": "Classic Gradient Red (Top)",
+    "hex": "#e60000",
+    "rgb": {
+      "r": 230,
+      "g": 0,
+      "b": 0
+    }
+  },
+  {
+    "name": "Classic Red",
+    "hex": "#ff0000",
+    "rgb": {
+      "r": 255,
+      "g": 0,
+      "b": 0
+    }
+  },
+  {
+    "name": "Classic Sky Blue",
+    "hex": "#c3fbf7",
+    "rgb": {
+      "r": 195,
+      "g": 251,
+      "b": 247
+    }
+  },
+  {
+    "name": "Classic Yellow",
+    "hex": "#ffb000",
+    "rgb": {
+      "r": 255,
+      "g": 176,
+      "b": 0
+    }
+  },
+  {
+    "name": "Cycle Series Background",
+    "hex": "#11121a",
+    "rgb": {
+      "r": 17,
+      "g": 18,
+      "b": 26
+    }
+  },
+  {
+    "name": "Default Skintone",
+    "hex": "#d5885e",
+    "rgb": {
+      "r": 213,
+      "g": 136,
+      "b": 94
+    }
+  },
+  {
+    "name": "devspace Purple Classic",
+    "hex": "#ba17e2",
+    "rgb": {
+      "r": 186,
+      "g": 23,
+      "b": 226
+    }
+  },
+  {
+    "name": "Discord Blurple",
+    "hex": "#5865f2",
+    "rgb": {
+      "r": 88,
+      "g": 101,
+      "b": 242
+    }
+  },
+  {
+    "name": "Discord Blurple Classic",
+    "hex": "#7289da",
+    "rgb": {
+      "r": 114,
+      "g": 137,
+      "b": 218
+    }
+  },
+  {
+    "name": "eGray",
+    "hex": "#c8c8c8",
+    "rgb": {
+      "r": 200,
+      "g": 200,
+      "b": 200
+    }
+  },
+  {
+    "name": "eGreen",
+    "hex": "#09c600",
+    "rgb": {
+      "r": 9,
+      "g": 198,
+      "b": 0
+    }
+  },
+  {
+    "name": "eLime",
+    "hex": "#6ee835",
+    "rgb": {
+      "r": 110,
+      "g": 232,
+      "b": 53
+    }
+  },
+  {
+    "name": "eMaroon",
+    "hex": "#800000",
+    "rgb": {
+      "r": 128,
+      "g": 0,
+      "b": 0
+    }
+  },
+  {
+    "name": "eOrange",
+    "hex": "#ff9d1d",
+    "rgb": {
+      "r": 255,
+      "g": 157,
+      "b": 29
+    }
+  },
+  {
+    "name": "eOrange-Red",
+    "hex": "#ff6010",
+    "rgb": {
+      "r": 255,
+      "g": 96,
+      "b": 16
+    }
+  },
+  {
+    "name": "eOrange-Yellow",
+    "hex": "#ffbf1f",
+    "rgb": {
+      "r": 255,
+      "g": 191,
+      "b": 31
+    }
+  },
+  {
+    "name": "ePink",
+    "hex": "#ff9df5",
+    "rgb": {
+      "r": 255,
+      "g": 157,
+      "b": 245
+    }
+  },
+  {
+    "name": "ePurple",
+    "hex": "#9e2de0",
+    "rgb": {
+      "r": 158,
+      "g": 45,
+      "b": 224
+    }
+  },
+  {
+    "name": "eRed",
+    "hex": "#ff1616",
+    "rgb": {
+      "r": 255,
+      "g": 22,
+      "b": 22
+    }
+  },
+  {
+    "name": "eYellow",
+    "hex": "#ffd300",
+    "rgb": {
+      "r": 255,
+      "g": 211,
+      "b": 0
+    }
+  },
+  {
+    "name": "Google Blue",
+    "hex": "#4285f4",
+    "rgb": {
+      "r": 66,
+      "g": 133,
+      "b": 244
+    }
+  },
+  {
+    "name": "Google Green",
+    "hex": "#34a853",
+    "rgb": {
+      "r": 52,
+      "g": 168,
+      "b": 83
+    }
+  },
+  {
+    "name": "Google Red",
+    "hex": "#ea4335",
+    "rgb": {
+      "r": 234,
+      "g": 67,
+      "b": 53
+    }
+  },
+  {
+    "name": "Google Yellow",
+    "hex": "#fbbc04",
+    "rgb": {
+      "r": 251,
+      "g": 188,
+      "b": 4
+    }
+  },
+  {
+    "name": "Julian Pink",
+    "hex": "#d40b96",
+    "rgb": {
+      "r": 212,
+      "g": 11,
+      "b": 150
+    }
+  },
+  {
+    "name": "Lumi Dark Blue",
+    "hex": "#1a254e",
+    "rgb": {
+      "r": 26,
+      "g": 37,
+      "b": 78
+    }
+  },
+  {
+    "name": "Lumi Yellow",
+    "hex": "#ffba1a",
+    "rgb": {
+      "r": 255,
+      "g": 186,
+      "b": 26
+    }
+  },
+  {
+    "name": "Lumi Yellow Classic",
+    "hex": "#ffd752",
+    "rgb": {
+      "r": 255,
+      "g": 215,
+      "b": 82
+    }
+  },
+  {
+    "name": "Marv Light Blue",
+    "hex": "#7bd1ff",
+    "rgb": {
+      "r": 123,
+      "g": 209,
+      "b": 255
+    }
+  },
+  {
+    "name": "MC Overlay Highlight",
+    "hex": "#fffbd4",
+    "rgb": {
+      "r": 255,
+      "g": 251,
+      "b": 212
+    }
+  },
+  {
+    "name": "MC Overlay Shadow",
+    "hex": "#282828",
+    "rgb": {
+      "r": 40,
+      "g": 40,
+      "b": 40
+    }
+  },
+  {
+    "name": "Minecraft Aqua (&b)",
+    "hex": "#55ffff",
+    "rgb": {
+      "r": 85,
+      "g": 255,
+      "b": 255
+    }
+  },
+  {
+    "name": "Minecraft Blue (&9)",
+    "hex": "#5555ff",
+    "rgb": {
+      "r": 85,
+      "g": 85,
+      "b": 255
+    }
+  },
+  {
+    "name": "Minecraft Dark Aqua (&3)",
+    "hex": "#00aaaa",
+    "rgb": {
+      "r": 0,
+      "g": 170,
+      "b": 170
+    }
+  },
+  {
+    "name": "Minecraft Dark Blue (&1)",
+    "hex": "#0000aa",
+    "rgb": {
+      "r": 0,
+      "g": 0,
+      "b": 170
+    }
+  },
+  {
+    "name": "Minecraft Dark Gray (&8)",
+    "hex": "#555555",
+    "rgb": {
+      "r": 85,
+      "g": 85,
+      "b": 85
+    }
+  },
+  {
+    "name": "Minecraft Dark Green (&2)",
+    "hex": "#00aa00",
+    "rgb": {
+      "r": 0,
+      "g": 170,
+      "b": 0
+    }
+  },
+  {
+    "name": "Minecraft Dark Purple (&5)",
+    "hex": "#aa00aa",
+    "rgb": {
+      "r": 170,
+      "g": 0,
+      "b": 170
+    }
+  },
+  {
+    "name": "Minecraft Dark Red (&4)",
+    "hex": "#aa0000",
+    "rgb": {
+      "r": 170,
+      "g": 0,
+      "b": 0
+    }
+  },
+  {
+    "name": "Minecraft Gold (&6)",
+    "hex": "#ffaa00",
+    "rgb": {
+      "r": 255,
+      "g": 170,
+      "b": 0
+    }
+  },
+  {
+    "name": "Minecraft Gray (&7)",
+    "hex": "#aaaaaa",
+    "rgb": {
+      "r": 170,
+      "g": 170,
+      "b": 170
+    }
+  },
+  {
+    "name": "Minecraft Green (&a)",
+    "hex": "#55ff55",
+    "rgb": {
+      "r": 85,
+      "g": 255,
+      "b": 85
+    }
+  },
+  {
+    "name": "Minecraft Light Purple (&d)",
+    "hex": "#ff55ff",
+    "rgb": {
+      "r": 255,
+      "g": 85,
+      "b": 255
+    }
+  },
+  {
+    "name": "Minecraft Red (&c)",
+    "hex": "#ff5555",
+    "rgb": {
+      "r": 255,
+      "g": 85,
+      "b": 85
+    }
+  },
+  {
+    "name": "Minecraft Yellow (&e)",
+    "hex": "#ffff55",
+    "rgb": {
+      "r": 255,
+      "g": 255,
+      "b": 85
+    }
+  },
+  {
+    "name": "NES Coral",
+    "hex": "#fe7957",
+    "rgb": {
+      "r": 254,
+      "g": 121,
+      "b": 87
+    }
+  },
+  {
+    "name": "NES Light Yellow",
+    "hex": "#fcd883",
+    "rgb": {
+      "r": 252,
+      "g": 216,
+      "b": 131
+    }
+  },
+  {
+    "name": "NES Wine",
+    "hex": "#ac0027",
+    "rgb": {
+      "r": 172,
+      "g": 0,
+      "b": 39
+    }
+  },
+  {
+    "name": "Pegg Blue",
+    "hex": "#0094ff",
+    "rgb": {
+      "r": 0,
+      "g": 148,
+      "b": 255
+    }
+  },
+  {
+    "name": "Pegg Chartreuse",
+    "hex": "#d8f700",
+    "rgb": {
+      "r": 216,
+      "g": 247,
+      "b": 0
+    }
+  },
+  {
+    "name": "scooter Orange",
+    "hex": "#ff5d00",
+    "rgb": {
+      "r": 255,
+      "g": 93,
+      "b": 0
+    }
+  },
+  {
+    "name": "scooter Orange Classic",
+    "hex": "#fbb03b",
+    "rgb": {
+      "r": 251,
+      "g": 176,
+      "b": 59
+    }
+  },
+  {
+    "name": "Sine Cyan",
+    "hex": "#00526d",
+    "rgb": {
+      "r": 0,
+      "g": 82,
+      "b": 109
+    }
+  },
+  {
+    "name": "Sine Dark Cyan",
+    "hex": "#044354",
+    "rgb": {
+      "r": 4,
+      "g": 67,
+      "b": 84
+    }
+  }
 ]

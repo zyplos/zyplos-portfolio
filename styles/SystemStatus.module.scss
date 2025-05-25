@@ -8,10 +8,11 @@
   border: none;
   cursor: pointer;
   background-color: #fff;
+  color: #111;
 
   &:hover {
     background-color: #ffde83;
-    color: #111;
+    color: #ff3e3e;
   }
 }
 
@@ -60,6 +61,7 @@
   .ccOverlay {
     border-width: 1rem;
   }
+
   .main {
     padding: 4rem;
   }
@@ -87,16 +89,14 @@
   width: 100%;
   height: 100%;
 
-  background-image: linear-gradient(
-    0deg,
-    var(--c-bg-color) 25%,
-    transparent 25%,
-    transparent 50%,
-    var(--c-bg-color) 50%,
-    var(--c-bg-color) 75%,
-    transparent 75%,
-    transparent
-  );
+  background-image: linear-gradient(0deg,
+      var(--c-bg-color) 25%,
+      transparent 25%,
+      transparent 50%,
+      var(--c-bg-color) 50%,
+      var(--c-bg-color) 75%,
+      transparent 75%,
+      transparent);
   backdrop-filter: blur(4px);
   opacity: 0.6;
   background-size: 1rem 0.3rem;
@@ -119,28 +119,36 @@
   0% {
     opacity: 0.9; //
   }
+
   5% {
     opacity: 0.65;
   }
+
   10% {
     opacity: 0.9; //
   }
+
   15% {
     opacity: 0.65;
   }
+
   69% {
     opacity: 0.65;
   }
+
   //
   70% {
     opacity: 0.9; //
   }
+
   79% {
     opacity: 0.65;
   }
+
   83% {
     opacity: 0.9; //
   }
+
   //
   100% {
     opacity: 0.9; //
@@ -170,16 +178,14 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(
-    0deg,
-    var(--cutoutColor) 25%,
-    transparent 25%,
-    transparent 50%,
-    var(--cutoutColor) 50%,
-    var(--cutoutColor) 75%,
-    transparent 75%,
-    transparent
-  );
+  background-image: linear-gradient(0deg,
+      var(--cutoutColor) 25%,
+      transparent 25%,
+      transparent 50%,
+      var(--cutoutColor) 50%,
+      var(--cutoutColor) 75%,
+      transparent 75%,
+      transparent);
   backdrop-filter: blur(5px);
   background-size: 1rem 0.3rem;
   animation: blindsScroll 1s linear infinite, flicker 2s linear infinite alternate;
@@ -200,28 +206,36 @@
   0% {
     opacity: 0.9; //
   }
+
   5% {
     opacity: 0.65;
   }
+
   10% {
     opacity: 0.9; //
   }
+
   15% {
     opacity: 0.65;
   }
+
   69% {
     opacity: 0.65;
   }
+
   //
   70% {
     opacity: 0.9; //
   }
+
   79% {
     opacity: 0.65;
   }
+
   83% {
     opacity: 0.9; //
   }
+
   //
   100% {
     opacity: 0.9; //
@@ -231,12 +245,15 @@
 .online {
   color: var(--c-green);
 }
+
 .offline {
   color: #a58888;
 }
+
 .degraded {
   color: #ffa600;
 }
+
 .dev {
   color: #c587ff;
 }
