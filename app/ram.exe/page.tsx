@@ -1,7 +1,7 @@
 import Image from "next/image";
 import degImage from "@/assets/_deg.jpg";
 import Fullscreen from "@/components/Fullscreen"; // Assuming Fullscreen is App Router compatible
-import type { Metadata } from 'next';
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "ram.exe",
@@ -9,15 +9,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "ram.exe",
     type: "website",
-    url: "https://zyplos.dev/ram.exe/",
+    url: "https://zyplos.dev/ram.exe",
     description: "download free RAM",
   },
-  twitter: {
-    card: "summary",
-    site: "@Zyplos",
-    creator: "@Zyplos",
-  },
-  // Common viewport, icons, theme-color, etc., are handled by the root layout.
 };
 
 export default function RamEXEPage() {
@@ -25,7 +19,6 @@ export default function RamEXEPage() {
     <Fullscreen
       style={{
         backgroundColor: "#f6c670",
-        // Ensure the Fullscreen component centers its content or handles layout as needed
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -33,9 +26,9 @@ export default function RamEXEPage() {
     >
       <Image
         src={degImage}
-        alt="A humorous image related to 'downloading RAM', likely the _deg.jpg content." // Improved alt text
+        alt="image of a funny dog that gives you free RAM"
         style={{ maxWidth: "100%", height: "auto" }}
-        priority // Good for LCP elements
+        priority
       />
     </Fullscreen>
   );
