@@ -1,5 +1,5 @@
-import type { Metadata } from 'next';
-import React from 'react';
+// This layout only adds metadata, doesn't render any extra structure
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "clipboard • zyplos's stuff",
@@ -10,12 +10,6 @@ export const metadata: Metadata = {
     url: "https://zyplos.dev/clipboard",
     type: "website",
   },
-  twitter: {
-    card: "summary",
-    site: "@Zyplos",
-    creator: "@Zyplos",
-  },
-  // Common viewport, icons, theme-color, etc., are handled by the root layout (app/layout.tsx)
 };
 
 interface ClipboardLayoutProps {
@@ -23,5 +17,5 @@ interface ClipboardLayoutProps {
 }
 
 export default function ClipboardLayout({ children }: ClipboardLayoutProps) {
-  return <>{children}</>; // This layout only adds metadata, doesn't render any extra structure
+  return <>{children}</>;
 }
