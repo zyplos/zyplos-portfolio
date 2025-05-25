@@ -3,13 +3,12 @@ import Image from "next/image";
 import classNames from "classnames";
 
 import styles from "@/styles/Home.module.scss";
-import getDiscordPresence from "@/internals/getDiscordPresence";
 
 import TextWall from "@/components/TextWall";
-import StatusText from "@/components/StatusText";
 import Navbar from "@/components/Navbar";
 import AnchorLink from "@/components/AnchorLink";
 import Footer from "@/components/Footer";
+import { DiscordStatusCard } from "@/components/DiscordStatusUI";
 import {
   DiscordREADMECard,
   LoungeCard,
@@ -24,8 +23,6 @@ import portfolioImage from "@/assets/portfolio-header-mini.png";
 export const revalidate = 15;
 
 export default async function HomePage() {
-  const userStatusData = await getDiscordPresence();
-
   console.log(
     "%c%s",
     "color: #ffffff; font-family: monospace;",
@@ -66,7 +63,7 @@ export default async function HomePage() {
             <h1>zyplos</h1>
           </div>
           <aside className={classNames("glass", styles.statusCard)}>
-            <StatusText data={userStatusData} />
+            <DiscordStatusCard />
           </aside>
         </header>
       </section>

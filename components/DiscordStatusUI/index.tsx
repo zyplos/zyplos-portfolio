@@ -1,9 +1,31 @@
-import styles from "./styles.module.scss";
+"use server";
 import Image from "next/image";
-import type { UserStatusData } from "@/internals/getDiscordPresence";
 import classNames from "classnames";
 
+import styles from "./styles.module.scss";
+
+import getDiscordPresence from "@/internals/getDiscordPresence";
+
 const friendlyStatusText = {
+  online: "⬤ Online",
+  onlineWorking: "⬤ Working",
+  offline: "🞮 Offline",
+  idle: "* Chillin'",
+  dnd: "🞓 Busy",
+};
+
+export async function DiscordStatusSpan() {
+  const data = await getDiscordPresence();
+
+  let statusText = friendlyStatusText[data.status];
+  if (data.status === "online" && data.presence) {
+    statusText = friendlyStatusText.onlineWorking;
+  }
+
+  return <span>{statusText}</span>;
+}
+
+const friendlyStatusTitle = {
   online: "⬤ Currently online",
   onlineWorking: "⬤ Currently working",
   offline: "🞮 Currently offline",
@@ -11,23 +33,25 @@ const friendlyStatusText = {
   dnd: "🞓 Busy working",
 };
 
-export default function StatusText({ data }: { data: UserStatusData }) {
+export async function DiscordStatusCard() {
+  const data = await getDiscordPresence();
+
   if (data.status === "offline") {
     return (
       <>
         <p className={classNames(styles.statusText, styles.offline)}>
-          🞮 Currently offline
+          {friendlyStatusTitle.offline}
         </p>
-        <span>not working on anything right now. check back later !</span>
+        <span>not working online on anything at the moment</span>
       </>
     );
   }
 
   const presence = data.presence;
 
-  let statusText = friendlyStatusText[data.status];
+  let statusText = friendlyStatusTitle[data.status];
   if (data.status === "online" && presence) {
-    statusText = friendlyStatusText.onlineWorking;
+    statusText = friendlyStatusTitle.onlineWorking;
   }
 
   return (
