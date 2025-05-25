@@ -1,14 +1,12 @@
-"use client"; // This page uses client-side hooks and DOM manipulation
+"use client";
 
-import MainLayout from "@/components/MainLayout"; // Assuming MainLayout is App Router compatible
-// import Card from "@/components/Card"; // Card component is not used in clipboard.tsx
-import styles from "@/styles/Clipboard.module.scss";
 import classNames from "classnames";
-// Removed: import type { Metadata } from 'next';
-import MAIN_COLOR_DATA_UNTYPED from "@/internals/colorData.json";
 import { type JSX, useEffect } from "react";
 
-// Metadata has been moved to app/clipboard/layout.tsx
+import styles from "@/styles/Clipboard.module.scss";
+import MAIN_COLOR_DATA_UNTYPED from "@/internals/colorData.json";
+
+import MainLayout from "@/components/MainLayout";
 
 interface ColorData {
   name: string;
@@ -60,7 +58,7 @@ type DynamicTextColor = "#000000" | "#ffffff";
 function getDynamicTextColor(
   red: number,
   green: number,
-  blue: number,
+  blue: number
 ): DynamicTextColor {
   const threshold = 175;
   if (red * 0.299 + green * 0.587 + blue * 0.114 > threshold) {
@@ -89,6 +87,8 @@ function changeNavLinksColor(color: DynamicTextColor) {
   if (!nav) return;
   const links = nav.querySelectorAll("a");
   if (!links) return;
+
+  // biome-ignore lint/complexity/noForEach: fine for DOM elements
   links.forEach((link) => {
     link.style.color = color;
   });
@@ -98,6 +98,8 @@ function changeFooterLinkColors(color: DynamicTextColor) {
   const footer = document.querySelector("footer");
   if (!footer) return;
   const svgs = footer.querySelectorAll("svg");
+
+  // biome-ignore lint/complexity/noForEach: fine for DOM elements
   svgs.forEach((svg) => {
     svg.style.fill = color;
   });
@@ -112,7 +114,7 @@ function DynamicColorCard({ data }: { data: ColorData | ASCIIData }) {
     const DYNAMIC_TEXT_COLOR = getDynamicTextColor(
       data.rgb.r,
       data.rgb.g,
-      data.rgb.b,
+      data.rgb.b
     );
 
     document.body.style.backgroundColor = data.hex;
@@ -154,13 +156,17 @@ function DynamicColorCard({ data }: { data: ColorData | ASCIIData }) {
     navigator.clipboard.writeText(data.hex);
   }
 
-  function copyRGBToClipboard(event: React.MouseEvent<HTMLDivElement>) {
+  function copyRGBToClipboard(
+    event:
+      | React.MouseEvent<HTMLDivElement>
+      | React.KeyboardEvent<HTMLDivElement>
+  ) {
     if ("character" in data) {
       return;
     }
     event.stopPropagation();
     navigator.clipboard.writeText(
-      `${data.rgb.r}, ${data.rgb.g}, ${data.rgb.b}`,
+      `${data.rgb.r}, ${data.rgb.g}, ${data.rgb.b}`
     );
   }
 
@@ -187,9 +193,10 @@ function DynamicColorCard({ data }: { data: ColorData | ASCIIData }) {
         <div
           className={styles.rgb}
           onClick={(event) => copyRGBToClipboard(event)}
-          onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') copyRGBToClipboard(event as any);}} // Added for a11y
-          role="button" // Added for a11y
-          tabIndex={0} // Added for a11y
+          onKeyDown={(event) => {
+            if (event.key === "Enter" || event.key === " ")
+              copyRGBToClipboard(event);
+          }}
         >
           rgb({data.rgb.r}, {data.rgb.g}, {data.rgb.b})
         </div>
@@ -218,18 +225,17 @@ export default function ClipboardPage() {
 
     // Cleanup function to reset footer style when component unmounts or path changes
     return () => {
-        // Only reset if not navigating to another clipboard related page or similar logic
-        // For simplicity, reset it. Could be more specific if needed.
-        const currentFooter = document.querySelector("footer");
-        if (currentFooter) {
-            currentFooter.style.backgroundColor = ""; // Reset to default or previous state
-        }
-        // Reset body background and other styles if they were changed by this page
-        document.body.style.backgroundColor = "";
-        document.body.style.removeProperty("--dynamicTextColor");
-        changeFooterLinkColors("#ffffff"); // Assuming default is white
-        changeEmblemColor("#ff3e3e"); // Assuming default is this color
-        changeNavLinksColor("#ffffff"); // Assuming default is white
+      const currentFooter = document.querySelector("footer");
+      if (currentFooter) {
+        currentFooter.style.backgroundColor = ""; // Reset to default or previous state
+      }
+
+      // Reset body background and other styles if they were changed by this page
+      document.body.style.backgroundColor = "";
+      document.body.style.removeProperty("--dynamicTextColor");
+      changeFooterLinkColors("#ffffff");
+      changeEmblemColor("#ff3e3e");
+      changeNavLinksColor("#ffffff");
     };
   }, []);
 

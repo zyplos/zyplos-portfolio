@@ -14,10 +14,10 @@ import Card from "@/components/Card"; // Assuming Card is App Router compatible
 import styles from "@/styles/Projects.module.scss";
 import classNames from "classnames";
 import Link from "next/link";
-import type { Metadata } from 'next';
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "projects • zyplos's stuff",
+  title: "projects",
   description: "stuff i've made",
   openGraph: {
     title: "projects • zyplos's stuff",
@@ -80,7 +80,7 @@ export default function ProjectsPage() {
         <div className={styles.projectGrid}>
           {Object.values(projects).map((project) => {
             // Skip featured projects as they are manually listed above with specialty cards
-            if (project.featured) return null; 
+            if (project.featured) return null;
 
             if (project.localLink) {
               return (

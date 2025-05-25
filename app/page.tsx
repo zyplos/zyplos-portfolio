@@ -1,145 +1,56 @@
-import styles from '@/styles/Home.module.scss';
-import TextWall from '@/components/TextWall';
-import type { Metadata } from 'next';
+import Link from "next/link";
+import Image from "next/image";
+import classNames from "classnames";
 
-import StatusText from '@/components/StatusText';
-import Navbar from '@/components/Navbar';
+import styles from "@/styles/Home.module.scss";
+import getDiscordPresence from "@/internals/getDiscordPresence";
+
+import TextWall from "@/components/TextWall";
+import StatusText from "@/components/StatusText";
+import Navbar from "@/components/Navbar";
+import AnchorLink from "@/components/AnchorLink";
+import Footer from "@/components/Footer";
 import {
   DiscordREADMECard,
-  GitHubProjectTracker,
   LoungeCard,
   MyImagesCard,
   SeeMoreProjectsCard,
-  SystemStatusCard,
   LatentWriterCard,
   TwitterCard,
-} from '@/components/SpecialtyCard';
-import classNames from 'classnames';
-import Link from 'next/link';
-import AnchorLink from '@/components/AnchorLink';
-import Footer from '@/components/Footer';
-import getDiscordPresence, {
-  type UserStatusData,
-} from '@/internals/getDiscordPresence';
+} from "@/components/SpecialtyCard";
 
-import Image from 'next/image';
-import portfolioImage from '@/assets/portfolio-header-mini.png';
+import portfolioImage from "@/assets/portfolio-header-mini.png";
 
-// Client component for localStorage logic
-// import StatusSaver from '@/components/StatusSaver'; // Removed
-
-
-export const revalidate = 11;
-
-export const metadata: Metadata = {
-  title: "zyplos's stuff",
-  description: "come feast your eyes",
-  // viewport: "width=device-width, initial-scale=1", // Moved to app/layout.tsx
-  icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
-    shortcut: "/safari-pinned-tab.svg", // Or specify as maskIcon
-    other: [
-      {
-        rel: 'icon',
-        type: 'image/png',
-        sizes: '32x32',
-        url: '/favicon-32x32.png',
-      },
-      {
-        rel: 'icon',
-        type: 'image/png',
-        sizes: '16x16',
-        url: '/favicon-16x16.png',
-      },
-      {
-        rel: 'manifest',
-        url: '/site.webmanifest',
-      },
-      {
-        rel: 'mask-icon',
-        url: '/safari-pinned-tab.svg',
-        // color: '#ff3e3e', // color attribute for mask-icon is not directly supported here, handle via manifest or svg itself
-      }
-    ],
-  },
-  // themeColor: "#111111", // Moved to app/layout.tsx
-  // msapplicationTileColor: "#ff3e3e", // Not directly supported in Metadata type, often handled by browserconfig.xml or specific meta tags
-  openGraph: {
-    title: "zyplos's stuff",
-    type: "website",
-    url: "https://zyplos.dev/",
-    description: "come feast your eyes",
-  },
-  twitter: {
-    card: "summary",
-    site: "@Zyplos",
-    creator: "@Zyplos",
-  },
-  // For meta tags not fitting strongly typed fields, use 'other'.
-  // However, 'msapplication-TileColor' might be better handled via a traditional meta tag if needed,
-  // or by ensuring browserconfig.xml is correctly set up. For now, we'll omit it as it's not critical.
-  // manifest: "/site.webmanifest", // This is usually handled via a link tag, covered in icons.other
-};
-
-
-async function getPageData(): Promise<{ userStatusData: UserStatusData }> {
-  if (process.env.NODE_ENV === "development") {
-    return {
-      userStatusData: {
-        message: "hey!",
-        status: "online",
-        presence: {
-          type: "rich",
-          name: "Visual Studio Code",
-          details: "Editing DEV_MODE.tsx",
-          state: "Workspace: zyplos-portfolio",
-          largeImageUrl:
-            "https://cdn.discordapp.com/app-assets/383226320970055681/565945769320775680.webp",
-          largeImageAlt: "Editing a TSX file",
-          smallImageUrl:
-            "https://cdn.discordapp.com/app-assets/383226320970055681/565945770067623946.webp",
-          smallImageAlt: "Visual Studio Code",
-        },
-      },
-    };
-  }
-  return { userStatusData: await getDiscordPresence() };
-}
-
+export const revalidate = 15;
 
 export default async function HomePage() {
-  const { userStatusData } = await getPageData();
+  const userStatusData = await getDiscordPresence();
 
-  // console.log red text
   console.log(
     "%c%s",
     "color: #ffffff; font-family: monospace;",
-    "--------------------",
+    "--------------------"
   );
   console.log(
     "%c%s",
     "color: #ff3e3e; font-family: sans-serif;",
-    "snooping as usual i see",
+    "snooping as usual i see"
   );
   console.log(
     "%c%s",
     "color: #ffffff; font-family: sans-serif;",
-    "i'm looking for a software engineer job. consider hiring me:",
+    "i'm looking for a software engineer job. consider hiring me:"
   );
   console.log(
     "%c%s",
     "color: #ffd300; font-family: monospace;",
-    "zyplos@duck.com",
+    "zyplos@duck.com"
   );
   console.log(
     "%c%s",
     "color: #ffffff; font-family: monospace;",
-    "--------------------",
+    "--------------------"
   );
-
-  // Client-side logic for localStorage will be handled by StatusSaver component
-  // <StatusSaver userStatusData={userStatusData} /> // Removed
 
   return (
     <>
