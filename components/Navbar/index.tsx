@@ -81,7 +81,7 @@ export default function Navbar({ homeMode = false }: { homeMode?: boolean }) {
         </Suspense> */}
 
         <div
-          className={classNames(styles.links, {
+          className={classNames(styles.links, styles.removeShadowMobile, {
             glass: !expanded,
           })}
         >
