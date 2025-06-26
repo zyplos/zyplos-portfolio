@@ -43,11 +43,11 @@ export default function TextWall() {
 
     const MOVE_STEP = prefersReducedMotion ? 0 : 0.3;
 
-    const TEXT_COLOR = "#1e1e1e";
+    const TEXT_COLOR = "#191010";
     const FONT_STYLE = `bold ${FONT_SIZE}px sans-serif`;
 
-    const EVEN_BAR_COLOR = "#050505";
-    const ODD_BAR_COLOR = "#090909";
+    const EVEN_BAR_COLOR = "#070404";
+    const ODD_BAR_COLOR = "#0a0606";
 
     // CANVAS SETUP
     // THIS ALSO NEEDS TO BE DONE UP HERE SINCE
@@ -103,6 +103,7 @@ export default function TextWall() {
       "hopelessly optimistic",
       "playfully serious",
       "intricately simple",
+      "perpendicularly parallel",
       //
       "calmly energetic",
       "pragmatically idealistic",

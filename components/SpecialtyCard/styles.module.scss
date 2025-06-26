@@ -3,6 +3,7 @@
 // ===== lounge hub
 .loungeHubCard {
   background-color: #7bd1ff;
+  color: #fff;
   background-image: url("../../assets/mcsky.png"), linear-gradient(to bottom, #1c6dff, rgba(255, 255, 255, 0));
   background-blend-mode: soft-light, normal;
   background-size: auto, auto;
@@ -133,6 +134,7 @@
 
 .discordREADMEBadgeCard {
   background-color: #5865f2;
+  color: #fff;
   padding-right: 15rem;
   background-image: url("../../assets/readme-card.png");
   background-size: auto 10rem;
@@ -335,7 +337,7 @@
 // ===== see more projects
 
 .seeMoreProjectsCard {
-  background-color: #242424;
+  background-color: #211717;
 
   background-image: url("../../assets/emblem-pop.png");
   background-size: auto 140%;
@@ -625,6 +627,7 @@
 
 .latentWriterCard {
   background-color: #050505;
+  color: #fff;
   background-image: url("../../assets/latent-writer-bg.png");
   background-size: cover;
   background-position: center;
