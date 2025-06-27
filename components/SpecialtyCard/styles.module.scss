@@ -1,5 +1,38 @@
 @use "@/styles/_common.scss" as *;
 
+.videoCard {
+  overflow: hidden !important;
+}
+
+.hasVideoBg p {
+  position: relative;
+  z-index: 2;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(5, 5, 5, 0.6);
+  z-index: 1;
+}
+
+.videoBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.latentWriterCard {
+  background-color: #050505;
+  color: #fff;
+}
+
 // ===== lounge hub
 .loungeHubCard {
   background-color: #7bd1ff;
@@ -625,46 +658,46 @@
 
 // ===== latent writer card
 
-.latentWriterCard {
-  background-color: #050505;
-  color: #fff;
-  background-image: url("../../assets/latent-writer-bg.png");
-  background-size: cover;
-  background-position: center;
-  padding-right: 10rem;
+// .latentWriterCard {
+//   background-color: #050505;
+//   color: #fff;
+//   background-image: url("../../assets/latent-writer-bg.png");
+//   background-size: cover;
+//   background-position: center;
+//   padding-right: 10rem;
 
-  &:hover {
-    outline: none;
-  }
+//   &:hover {
+//     outline: none;
+//   }
 
-  .latentWriterIcon {
-    position: absolute;
-    width: auto;
-    height: 100%;
-    right: 0.5rem;
-    bottom: 0rem;
-    z-index: 2;
-    animation: floatingItem 2.2s infinite alternate ease-in-out;
-  }
-}
+//   .latentWriterIcon {
+//     position: absolute;
+//     width: auto;
+//     height: 100%;
+//     right: 0.5rem;
+//     bottom: 0rem;
+//     z-index: 2;
+//     animation: floatingItem 2.2s infinite alternate ease-in-out;
+//   }
+// }
 
-@include tiny-screen-styles {
-  .latentWriterCard {
-    padding-bottom: 10rem;
-    padding-right: 2rem;
+// @include tiny-screen-styles {
+//   .latentWriterCard {
+//     padding-bottom: 10rem;
+//     padding-right: 2rem;
 
-    .latentWriterIcon {
-      height: 50%;
-      bottom: 1rem;
-    }
-  }
-}
+//     .latentWriterIcon {
+//       height: 50%;
+//       bottom: 1rem;
+//     }
+//   }
+// }
 
-@media (prefers-reduced-motion: reduce) {
-  .latentWriterCard {
-    animation: none;
-  }
-}
+// @media (prefers-reduced-motion: reduce) {
+//   .latentWriterCard {
+//     animation: none;
+//   }
+// }
 
 // remove border on hover for all cards
 .loungeHubCard,
@@ -681,7 +714,9 @@
 .seeMoreProjectsCard:hover,
 .twitterCard:hover,
 .myimagesCard:hover,
-.systemStatusCard:hover {
+.systemStatusCard:hover,
+.videoCard,
+.videoCard:hover {
   border: none;
   outline: none;
   overflow: visible;

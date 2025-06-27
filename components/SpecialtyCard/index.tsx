@@ -17,9 +17,8 @@ import projectspaceIcon from "@/assets/projectspace-icon.png";
 import dayShapeImg from "@/assets/day-shape.png";
 import checkmarkIcon from "@/assets/checkmark.png";
 
-import latentWriterIcon from "@/assets/latent-writer-icon.png";
-
 import styles from "./styles.module.scss";
+import { VideoCard } from "./VideoCard";
 
 export function LoungeCard({ style }: CardProps) {
   return (
@@ -50,25 +49,31 @@ export function LoungeCard({ style }: CardProps) {
 
 export function LatentWriterCard({ style }: CardProps) {
   return (
-    <div
-      className={classNames(cardStyles.card, styles.latentWriterCard)}
-      style={{
-        ...style,
-      }}
-    >
-      <p className={cardStyles.cardTitle}>Latent Writer</p>
+    // <div
+    //   className={classNames(cardStyles.card, styles.latentWriterCard)}
+    //   style={{
+    //     ...style,
+    //   }}
+    // >
+    //   <p className={cardStyles.cardTitle}>Latent Writer</p>
+    //   <p>
+    //     A sort of "power thesaurus" you can summon to help you while you're
+    //     writing.
+    //   </p>
+
+    //   <Image
+    //     src={latentWriterIcon}
+    //     alt=""
+    //     quality={100}
+    //     className={styles.latentWriterIcon}
+    //   />
+    // </div>
+    <VideoCard title="Latent Writer" src="/assets/lw-preview.webm">
       <p>
         A sort of "power thesaurus" you can summon to help you while you're
         writing.
       </p>
-
-      <Image
-        src={latentWriterIcon}
-        alt=""
-        quality={100}
-        className={styles.latentWriterIcon}
-      />
-    </div>
+    </VideoCard>
   );
 }
 
