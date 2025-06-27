@@ -1,7 +1,7 @@
 const adobeData = require("./adobeData.json");
 const newData = [];
 
-const data = adobeData.elements;
+const data = adobeData.children[0].children;
 
 function isFloat(n) {
   return Number(n) === n && n % 1 !== 0;
@@ -27,7 +27,7 @@ const checking = false;
 const zyColors = [];
 
 for (const colorData of data) {
-  const reps = colorData.representations;
+  const reps = colorData.children;
 
   if (checking) {
     if (reps.length > 1 || reps.length === 0) {
@@ -79,6 +79,9 @@ for (const colorData of data) {
   }
 }
 
+// sort colors
+newData.sort((a, b) => a.name.localeCompare(b.name));
+
 const zyColorOrder = [
   "Red",
   "Yellow",
@@ -87,6 +90,8 @@ const zyColorOrder = [
   "Slate",
   "Deepslate",
   "Bedrock",
+  "Scoria",
+  "Sandstone",
   "Green",
 ];
 

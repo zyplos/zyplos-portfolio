@@ -63,6 +63,24 @@
     }
   },
   {
+    "name": "Zyplos Scoria",
+    "hex": "#0a0505",
+    "rgb": {
+      "r": 10,
+      "g": 5,
+      "b": 5
+    }
+  },
+  {
+    "name": "Zyplos Sandstone",
+    "hex": "#fff0df",
+    "rgb": {
+      "r": 255,
+      "g": 240,
+      "b": 223
+    }
+  },
+  {
     "name": "Zyplos Green",
     "hex": "#08a850",
     "rgb": {
