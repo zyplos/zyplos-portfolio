@@ -4,7 +4,7 @@ import "@/styles/globals.scss";
 import { Analytics } from "@vercel/analytics/react";
 
 export const viewport: Viewport = {
-  themeColor: "#111111",
+  themeColor: "#0a0505",
   width: "device-width",
   initialScale: 1,
 };
