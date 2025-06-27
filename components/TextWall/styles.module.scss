@@ -15,7 +15,27 @@ $text-wall-height: 600;
   // opacity: 0;
 }
 
+.wrapper {
+  position: relative;
+}
+
 // .fadeIn {
 //   opacity: 1;
 //   transition: opacity 1s ease-out;
 // }
+
+.loadingCover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: #0a0505;
+  transition: opacity 0.5s ease;
+  opacity: 1;
+
+  &.show {
+    opacity: 0;
+  }
+}

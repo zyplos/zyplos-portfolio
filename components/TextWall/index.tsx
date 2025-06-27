@@ -4,9 +4,10 @@ import styles from "./styles.module.scss";
 
 export default function TextWall() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const coverRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // console.log("CANVASSTART======================================");
+    // console.log("CANVAS START======================================");
     // ===== CANVAS SETUP
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -346,9 +347,18 @@ export default function TextWall() {
     };
   }, []);
 
+  useEffect(() => {
+    if (coverRef.current) {
+      coverRef.current.classList.add(styles.show);
+    }
+  }, []);
+
   return (
     <>
       <div className={styles.wrapper}>
+        {/* biome-ignore lint/style/useSelfClosingElements: not needed */}
+        <div className={styles.loadingCover} ref={coverRef}></div>
+
         <canvas className={styles.canvas} ref={canvasRef} />
       </div>
     </>
