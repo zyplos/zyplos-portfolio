@@ -58,7 +58,7 @@ for (const colorData of data) {
   console.log(colorData.name.padEnd(30, " "), hex);
 
   // check if name starts with "Zyplos"
-  if (colorData.name.startsWith("Zyplos")) {
+  if (colorData.name.startsWith("_")) {
     zyColors.push({
       name: colorData.name,
       // createdDate: colorData.created_date,
@@ -102,6 +102,7 @@ for (const orderColor of zyColorOrder) {
   console.log("orderColor", orderColor);
   // find the color in the zyColors array and remove it
   const foundColor = zyColors.find((color) => color.name.includes(orderColor));
+  foundColor.name = foundColor.name.slice(1);
   if (foundColor) {
     newData.unshift(foundColor);
     zyColors.splice(zyColors.indexOf(foundColor), 1);
