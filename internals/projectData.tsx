@@ -12,6 +12,7 @@ import loungeCommunaImg from "@/assets/projects/loungecommuna.png";
 import loungeNewWorldImg from "@/assets/projects/lounge-new-world.png";
 import guildExperimentsListerImg from "@/assets/projects/guild-experiments-lister.png";
 import aiPost from "@/assets/projects/ai-post-icon.png";
+import blueSkyHandlesImg from "@/assets/projects/bluesky-handles.png";
 
 export const projects: ProjectData = {
   "lounge-hub": {
@@ -48,6 +49,13 @@ export const projects: ProjectData = {
     featured: true,
   },
   // normal cards
+  blueskyHandles: {
+    title: "bluesky handles kiosk",
+    description:
+      "let people claim bluesky handles under any domains you have lying around",
+    link: "https://github.com/zyplos/bluesky-handles-kiosk",
+    imagePreview: blueSkyHandlesImg,
+  },
   postAI: {
     title: "how i use ai",
     description: "not a project but its something i thought i'd put out there",
