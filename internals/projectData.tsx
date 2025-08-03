@@ -13,6 +13,8 @@ import loungeNewWorldImg from "@/assets/projects/lounge-new-world.png";
 import guildExperimentsListerImg from "@/assets/projects/guild-experiments-lister.png";
 import aiPost from "@/assets/projects/ai-post-icon.png";
 import blueSkyHandlesImg from "@/assets/projects/bluesky-handles.png";
+import wayPastCoolImg from "@/assets/projects/way-past-cool.png";
+import postmarkImg from "@/assets/projects/postmark.png";
 
 export const projects: ProjectData = {
   "lounge-hub": {
@@ -49,6 +51,18 @@ export const projects: ProjectData = {
     featured: true,
   },
   // normal cards
+  postmark: {
+    title: "Postmark",
+    description: "(indev!) my license plate collection in 3d in your browser",
+    link: "https://postmark.zyplos.dev",
+    imagePreview: postmarkImg,
+  },
+  wayPastCool: {
+    title: "waypast.cool",
+    description: "claim a bluesky handle under this domain",
+    link: "https://waypast.cool",
+    imagePreview: wayPastCoolImg,
+  },
   blueskyHandles: {
     title: "bluesky handles kiosk",
     description:
