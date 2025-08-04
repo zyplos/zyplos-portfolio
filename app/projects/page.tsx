@@ -34,35 +34,35 @@ export default function ProjectsPage() {
 
       <section className={styles.section}>
         <a
-          href="https://github.com/Zyplos/lounge-hub"
+          href="https://github.com/zyplos/lounge-hub"
           target="_blank"
           rel="noreferrer"
         >
           <LoungeCard />
         </a>
         <a
-          href="https://github.com/Zyplos/discord-readme-badge"
+          href="https://github.com/zyplos/discord-readme-badge"
           target="_blank"
           rel="noreferrer"
         >
           <DiscordREADMECard />
         </a>
         <a
-          href="https://github.com/Zyplos/github-projectspace-tracker"
+          href="https://github.com/zyplos/github-projectspace-tracker"
           target="_blank"
           rel="noreferrer"
         >
           <GitHubProjectTracker />
         </a>
         <a
-          href="https://github.com/Zyplos/myimages.zip"
+          href="https://github.com/zyplos/myimages.zip"
           target="_blank"
           rel="noreferrer"
         >
           <MyImagesCard />
         </a>
         <a
-          href="https://github.com/Zyplos/LatentWriter"
+          href="https://github.com/zyplos/LatentWriter"
           target="_blank"
           rel="noreferrer"
         >

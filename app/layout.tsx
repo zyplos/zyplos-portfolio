@@ -50,8 +50,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    site: "@Zyplos",
-    creator: "@Zyplos",
+    site: "@zyplos",
+    creator: "@zyplos",
   },
 };
 

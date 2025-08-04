@@ -115,14 +115,14 @@ export default async function HomePage() {
             <LoungeCard />
           </a>
           <a
-            href="https://github.com/Zyplos/discord-readme-badge"
+            href="https://github.com/zyplos/discord-readme-badge"
             target="_blank"
             rel="noreferrer"
           >
             <DiscordREADMECard />
           </a>
           <a
-            href="https://github.com/Zyplos/LatentWriter"
+            href="https://github.com/zyplos/LatentWriter"
             target="_blank"
             rel="noreferrer"
           >
@@ -172,13 +172,6 @@ export default async function HomePage() {
             you can reach out on{" "}
             <AnchorLink href="https://twitter.com/zyplos" target="_blank">
               twitter
-            </AnchorLink>{" "}
-            or{" "}
-            <AnchorLink
-              href="https://bsky.app/profile/zyplos.dev"
-              target="_blank"
-            >
-              bluesky
             </AnchorLink>{" "}
             for quick stuff. i also post updates, design stuff, in development
             stuff, and occasional photography on there if you&apos;re interested

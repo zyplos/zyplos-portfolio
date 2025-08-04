@@ -93,7 +93,7 @@ export default function AIPolicyPage() {
 
         <div className={styles.padded}>
           <a
-            href="https://github.com/Zyplos/LatentWriter"
+            href="https://github.com/zyplos/LatentWriter"
             target="_blank"
             rel="noreferrer"
           >
@@ -454,22 +454,22 @@ export default function AIPolicyPage() {
 
         <p>
           as i hope i've made clear, i think understanding is a crucial part of
-          your work. obviously, right? but as i said previously, ai has opened a
-          cheap shortcut for <i>a lot</i> of things, and people tend to take
-          them in the laziest way possible
+          your work. i would hope that is obvious, but as i said previously, ai
+          has opened a cheap shortcut for <i>a lot</i> of things, and people
+          tend to take them in the laziest way possible
         </p>
 
         <p>
-          i will never hand off a long report made entirely by ai with my name
-          on it. i might write a long report myself with bits and pieces that ai
-          helped me with. some short phrases might be synonyms that i take
-          straight from an ai's suggestion.{" "}
+          i will never hand off a long report made entirely by ai as if it were
+          just my own. i might write a long report myself with bits and pieces
+          that ai helped me with. some short phrases might be synonyms that i
+          take straight from an ai's suggestion.{" "}
           <b>
             but handing off significant pieces of content without me having no
             part in it other than a prompt is not something i will ever do.
           </b>{" "}
-          should ai get so good that it becomes a good option, as with deep
-          research, the ai will entirely be credited, without my name on it.
+          should ai get so good that it becomes a good option (for example: deep
+          research), the ai will be properly credited
         </p>
 
         <CaptionedImage
@@ -485,33 +485,8 @@ export default function AIPolicyPage() {
 
         <h4>&#x3E;ai doing your work makes you faster</h4>
         <p>
-          i put instant ramen in the microwave. ding! i am not happy with my
-          meal.
-        </p>
-        <p>
-          yes, ai does make me faster, but i use it in the same way using a can
-          opener is faster than using a knife or something
-        </p>
-
-        <h4>&#x3E;ai makes better work than you</h4>
-        <p>for now maybe. not by the time i'm done</p>
-        <p>
-          i do expect the work ai does to get better and better, but i will too.
-          and at some point i'll have the quality to make something and back it
-          with something ai cannot: nuance and intention
-        </p>
-
-        <h4>&#x3E;then you're dismissive of ai and its progress</h4>
-        <p>
-          no, reread the post from the beginning. i consider it one of my most
-          important tools.
-        </p>
-        <p>
-          although i don't use things like media generation or long form
-          summarization, i am eager to see how ai advances and keep my own
-          benchmarks for when i consider using it for something. i'm already
-          warming up to deep research and use it as i do with ai right now: a
-          starting point for my own reference
+          ai completes work faster, but there can be quality tradeoffs. i keep
+          these tradeoffs in mind rather than blindly complete work
         </p>
 
         <h4>&#x3E;you're ignoring the cutting edge</h4>
@@ -521,6 +496,24 @@ export default function AIPolicyPage() {
         <p>
           the modern job market is not competitive with <i>me</i>
         </p> */}
+
+        {/* <h4>&#x3E;ai makes better work than you</h4>
+        <p>for now maybe. not by the time i'm done</p>
+        <p>
+          i do expect the work ai does to get better and better, but i will too.
+          and at some point i'll have the quality to make something and back it
+          with something ai cannot: nuance and intention
+        </p> */}
+
+        <h4>&#x3E;then you're dismissive of ai and its progress</h4>
+        <p>no, i consider it one of my most important tools.</p>
+        <p>
+          although i don't use things like media generation or long form
+          summarization, i am eager to see how ai advances and keep my own
+          benchmarks for when i consider using it for something. i'm already
+          warming up to deep research and use it as i do with ai right now: a
+          starting point for my own reference
+        </p>
 
         <h4>&#x3E;you're not future-proofing your career</h4>
         <p>

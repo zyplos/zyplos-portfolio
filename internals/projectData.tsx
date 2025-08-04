@@ -20,7 +20,7 @@ export const projects: ProjectData = {
   "lounge-hub": {
     title: "lounge-hub",
     description: "community site for my minecraft stuff",
-    link: "https://github.com/Zyplos/lounge-hub",
+    link: "https://github.com/zyplos/lounge-hub",
     // liveLink: "https://lounge.haus",
     featured: true,
   },
@@ -28,26 +28,26 @@ export const projects: ProjectData = {
     title: "github-projectspace-tracker",
     description:
       "Get a quick overview of your team's GitHub project on Discord",
-    link: "https://github.com/Zyplos/github-projectspace-tracker",
+    link: "https://github.com/zyplos/github-projectspace-tracker",
     featured: true,
   },
   "discord-readme-badge": {
     title: "discord-readme-badge",
     description: "Show whatever you're working on through your GitHub readme",
-    link: "https://github.com/Zyplos/discord-readme-badge",
+    link: "https://github.com/zyplos/discord-readme-badge",
     featured: true,
   },
   myimages: {
     title: "myimages.zip",
     description: "some of my images that i really like",
-    link: "https://github.com/Zyplos/myimages.zip",
+    link: "https://github.com/zyplos/myimages.zip",
     // liveLink: "https://myimages.zip",
     featured: true,
   },
   latentWriter: {
     title: "Latent Writer",
     description: 'Think of it as a "power thesaurus."',
-    link: "https://github.com/Zyplos/LatentWriter",
+    link: "https://github.com/zyplos/LatentWriter",
     featured: true,
   },
   // normal cards
@@ -100,7 +100,7 @@ export const projects: ProjectData = {
   mcClock: {
     title: "MCClock",
     description: "a Wear OS 5 watchface made using Minecraft's Clock sprite",
-    link: "https://github.com/Zyplos/MCClock/",
+    link: "https://github.com/zyplos/MCClock/",
     imagePreview: clockImg,
   },
   "spotify-mapper": {
@@ -113,44 +113,44 @@ export const projects: ProjectData = {
     title: "GestureSwitch",
     description:
       "exploring gestures for controlling light switches with a watch",
-    link: "https://github.com/Zyplos/GestureSwitch",
+    link: "https://github.com/zyplos/GestureSwitch",
     imagePreview: gestureSwitchImg,
   },
   scoria: {
     title: "scoria",
     description: "An OLED/Pure Black VSCode theme with a bit of red",
-    link: "https://github.com/Zyplos/scoria",
+    link: "https://github.com/zyplos/scoria",
     imagePreview: scoriaImg,
   },
   altaria: {
     title: "altaria",
     description: "A tiny Bluesky client for ComputerCraft/CC: Tweaked",
-    link: "https://github.com/Zyplos/altaria",
+    link: "https://github.com/zyplos/altaria",
     imagePreview: altariaImg,
   },
   "maestro-discord": {
     title: "maestro-discord",
     description: "No nonsense moderation Discord bot",
-    link: "https://github.com/Zyplos/maestro-discord",
+    link: "https://github.com/zyplos/maestro-discord",
     imagePreview: maestroImg,
   },
   loungecommuna: {
     title: "LoungeCommuna",
     description: "Minecraft plugin for simple land claims",
-    link: "https://github.com/Zyplos/LoungeCommuna",
+    link: "https://github.com/zyplos/LoungeCommuna",
     imagePreview: loungeCommunaImg,
   },
   "lounge-new-world": {
     title: "LoungeNewWorld",
     description:
       "Simple Minecraft plugin for new playthroughs on the same world",
-    link: "https://github.com/Zyplos/LoungeNewWorld",
+    link: "https://github.com/zyplos/LoungeNewWorld",
     imagePreview: loungeNewWorldImg,
   },
   "guild-experiments-lister": {
     title: "guild-experiments-lister",
     description: "Small tool for listing Discord guild experiments you're in",
-    link: "https://github.com/Zyplos/guild-experiments-lister",
+    link: "https://github.com/zyplos/guild-experiments-lister",
     imagePreview: guildExperimentsListerImg,
   },
 };
@@ -160,25 +160,25 @@ export const archivedProjects: ArchivedProjectData = {
     title: "TerrariaDiscord",
     description:
       "Simple TShock plugin that listens to Terraria player chat and posts it to a Discord webhook.",
-    link: "https://github.com/Zyplos/TerrariaDiscord",
+    link: "https://github.com/zyplos/TerrariaDiscord",
     date: "Fall 2019",
   },
   "discord-mcserver-status": {
     title: "discord-mcserver-status",
     description: "A simple Discord bot that shows your Minecraft server info.",
-    link: "https://github.com/Zyplos/discord-mcserver-status",
+    link: "https://github.com/zyplos/discord-mcserver-status",
     date: "Summer 2018",
   },
   shadeofred: {
     title: "shadeofred",
     description: "Generates random shades of red",
-    link: "https://github.com/Zyplos/shadeofred",
+    link: "https://github.com/zyplos/shadeofred",
     date: "Summer 2018",
   },
   codetyper: {
     title: "codetyper",
     description: "nice looking screensaver that outputs random code",
-    link: "https://github.com/Zyplos/codetyper",
+    link: "https://github.com/zyplos/codetyper",
     date: "Summer 2017",
   },
 };
