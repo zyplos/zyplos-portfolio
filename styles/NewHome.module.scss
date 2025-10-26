@@ -1,0 +1,248 @@
+/* Base Layout */
+.portfolioPage {
+  min-height: 100vh;
+  background-color: #000;
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .portfolioPage {
+    padding: 1.5rem;
+  }
+}
+
+.portfolioContainer {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+/* Card Base Styles */
+.card {
+  background-color: #e8ddd0;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  color: #000;
+}
+
+/* Top Grid */
+.topGrid {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .topGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Image Area Card */
+.imageAreaCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e8ddd0;
+  border-radius: 1.5rem;
+  padding: 4rem;
+}
+
+@media (min-width: 768px) {
+  .imageAreaCard {
+    padding: 6rem;
+  }
+}
+
+.imageArea {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #dc2626;
+  border-radius: 0.5rem;
+  height: 25rem;
+  width: 100%;
+  max-width: 28rem;
+}
+
+.imageAreaText {
+  font-size: 2.25rem;
+  font-weight: 300;
+  color: #fff;
+}
+
+/* Right Column */
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Bio Card */
+.bioTitle {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.bioText {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.bioText:last-child {
+  margin-bottom: 0;
+}
+
+/* Info Cards Grid */
+.infoCardsGrid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .infoCardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.vscodeCard,
+.commitCard {
+  padding: 1.5rem;
+}
+
+.cardTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+/* VS Code Card */
+.vscodeContent {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.vscodeIconWrapper {
+  position: relative;
+}
+
+.vscodeIcon {
+  width: 3rem;
+  height: 3rem;
+  background-color: #dc2626;
+  border-radius: 0.5rem;
+}
+
+.vscodeStatusDot {
+  position: absolute;
+  bottom: -0.25rem;
+  right: -0.25rem;
+  width: 1rem;
+  height: 1rem;
+  background-color: #dc2626;
+  border: 0.125rem solid #e8ddd0;
+  border-radius: 50%;
+}
+
+.vscodeInfo {
+  flex: 1;
+}
+
+.vscodeDetail {
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+/* Commit Card */
+.commitBranches {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.commitDot {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #dc2626;
+  border-radius: 50%;
+}
+
+.commitBranch {
+  font-size: 0.875rem;
+}
+
+.commitMessage {
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+}
+
+.commitTime {
+  font-size: 0.75rem;
+  opacity: 0.7;
+  margin: 0;
+}
+
+/* Bottom Grid */
+.bottomGrid {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .bottomGrid {
+    grid-template-columns: auto 1fr;
+  }
+}
+
+.redImageCard {
+  height: 13.75rem;
+  width: 100%;
+  background-color: #dc2626;
+  border-radius: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .redImageCard {
+    width: 12.5rem;
+  }
+}
+
+.workCard {
+  padding: 2rem;
+}
+
+.workTitle {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* Companies Section */
+.companiesSection {
+  background-color: #e8ddd0;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.companiesTitle {
+  text-align: center;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 1.5rem;
+}
+
+.carouselWrapper {
+  position: relative;
+}

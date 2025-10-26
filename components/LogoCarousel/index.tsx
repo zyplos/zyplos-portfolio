@@ -1,6 +1,7 @@
 // adapted from https://github.com/kreudev/react-infinite-logo-slider
 import React from "react";
 import styles from "./styles.module.scss";
+import classNames from "classnames";
 
 export interface LogoCarouselProps {
   children: React.ReactElement[];
@@ -68,11 +69,12 @@ const LogoCarousel: React.FC<LogoCarouselProps> & {
       {blurBorders && (
         <>
           <div
-            className={`${styles.blurBorders} ${styles.left}`}
+            className={classNames(styles.carouselFade, styles.left)}
             style={blurStyle}
           />
+
           <div
-            className={`${styles.blurBorders} ${styles.right}`}
+            className={classNames(styles.carouselFade, styles.right)}
             style={blurStyle}
           />
         </>

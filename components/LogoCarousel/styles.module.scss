@@ -53,24 +53,29 @@
   flex-shrink: 0;
 }
 
-.blurBorders {
+.carouselFade {
   position: absolute;
   top: 0;
-  height: 105%;
-  width: 180px;
+  bottom: 0;
+  width: 6rem;
   z-index: 10;
-  background: linear-gradient(
-    90deg,
-    var(--blur-border-color, #fff) 10%,
-    rgba(255, 255, 255, 0) 80%
-  );
+  pointer-events: none;
 
   &.left {
     left: 0;
+    background: linear-gradient(
+      to right,
+      var(--blur-border-color, lime),
+      transparent
+    );
   }
 
   &.right {
     right: 0;
-    transform: rotate(180deg);
+    background: linear-gradient(
+      to left,
+      var(--blur-border-color, lime),
+      transparent
+    );
   }
 }
