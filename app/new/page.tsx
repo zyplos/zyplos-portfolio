@@ -1,12 +1,41 @@
-import PostgreSQLLogo from "@/components/Icons/PostgreSQLLogo";
-import BunLogo from "@/components/Logos/BunLogo";
-import TwitterLogo from "@/components/Icons/TwitterLogo";
-import GoogleLogo from "@/components/Icons/GoogleLogo";
-import Twitter from "@/components/Icons/TwitterIcon";
 import LogoCarousel from "@/components/LogoCarousel";
 import styles from "@/styles/NewHome.module.scss";
 
+import ApertureLaboratories from "@/components/Logos/ApertureLaboratories";
+import BlackMesa from "@/components/Logos/BlackMesa";
+import Bluesky from "@/components/Logos/Bluesky";
+import Bun from "@/components/Logos/Bun";
+import Cursor from "@/components/Logos/Cursor";
+import Discord from "@/components/Logos/Discord";
+import GitHub from "@/components/Logos/GitHub";
+import Google from "@/components/Logos/Google";
+import Microsoft from "@/components/Logos/Microsoft";
+import PostgreSQL from "@/components/Logos/PostgreSQL";
+import Shopify from "@/components/Logos/Shopify";
+import Spotify from "@/components/Logos/Spotify";
+import Stripe from "@/components/Logos/Stripe";
+import Twitter from "@/components/Logos/Twitter";
+import Zed from "@/components/Logos/Zed";
+
 export default function PortfolioPage() {
+  const logos = [
+    Google,
+    Bun,
+    Discord,
+    Spotify,
+    GitHub,
+    ApertureLaboratories,
+    Microsoft,
+    PostgreSQL,
+    Zed,
+    Bluesky,
+    Shopify,
+    Cursor,
+    BlackMesa,
+    Stripe,
+    Twitter,
+  ];
+
   return (
     <div className={styles.portfolioPage}>
       <div className={styles.portfolioContainer}>
@@ -101,34 +130,23 @@ export default function PortfolioPage() {
           <div className={styles.carouselWrapper}>
             {/* Scrolling carousel */}
             <LogoCarousel
-              width="200px"
-              duration={20}
+              width="250px"
+              duration={40}
               pauseOnHover={false}
               blurBorders={true}
               blurBorderColor={"#e8ddd0"}
               className={styles.logoCarousel}
             >
-              <LogoCarousel.Slide>
-                <GoogleLogo />
-              </LogoCarousel.Slide>
-              <LogoCarousel.Slide>
-                <TwitterLogo />
-              </LogoCarousel.Slide>
-              <LogoCarousel.Slide>
-                <BunLogo />
-              </LogoCarousel.Slide>
-              <LogoCarousel.Slide>
-                <PostgreSQLLogo />
-              </LogoCarousel.Slide>
-              <LogoCarousel.Slide>
-                <DiscordLogo />
-              </LogoCarousel.Slide>
-              <LogoCarousel.Slide>
-                <SpotifyLogo />
-              </LogoCarousel.Slide>
-              <LogoCarousel.Slide>
-                <ZedLogo />
-              </LogoCarousel.Slide>
+              {logos.map((LogoComponent, index) => (
+                <LogoCarousel.Slide
+                  key={`logo-${
+                    // biome-ignore lint/suspicious/noArrayIndexKey: is ok
+                    index
+                  }`}
+                >
+                  <LogoComponent />
+                </LogoCarousel.Slide>
+              ))}
             </LogoCarousel>
           </div>
         </div>

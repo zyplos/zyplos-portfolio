@@ -247,15 +247,20 @@
   position: relative;
 }
 
-/* .logoCarousel {
+.logoCarousel {
   svg {
-    filter: invert(47%) sepia(96%) saturate(1283%) hue-rotate(157deg)
-      brightness(88%) contrast(108%);
-
-    transition: filter 150ms ease-in-out;
+    width: auto;
+    height: 5rem;
+    padding: 1.25rem;
   }
 
-  svg:hover {
-    filter: initial;
+  svg,
+  svg [fill] {
+    transition: fill 120ms ease-out;
   }
-} */
+
+  svg:not(:hover),
+  svg:not(:hover) [fill] {
+    fill: #a99987 !important;
+  }
+}
