@@ -3,7 +3,8 @@ import React from "react";
 import styles from "./styles.module.scss";
 import classNames from "classnames";
 
-export interface LogoCarouselProps {
+export interface LogoCarouselProps
+  extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactElement[];
   width?: string;
   duration?: number;
@@ -28,6 +29,7 @@ const LogoCarousel: React.FC<LogoCarouselProps> & {
   pauseOnHover = false,
   blurBorders = false,
   blurBorderColor = "#fff",
+  className,
 }) => {
   const sliderStyle = {
     "--slide-width": width,
@@ -40,7 +42,7 @@ const LogoCarousel: React.FC<LogoCarouselProps> & {
   } as React.CSSProperties;
 
   return (
-    <div className={styles.logoCarousel}>
+    <div className={`${styles.logoCarousel} ${className || ""}`}>
       <div
         className={`${styles.wrapper} ${pauseOnHover ? styles.pauseOnHover : ""}`}
       >

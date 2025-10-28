@@ -1,8 +1,9 @@
 import styles from "./styles.module.scss";
 import emblemRender from "@/assets/emblem-render.png";
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import { BlueskyIcon, GitHubIcon, TwitterIcon } from "../Icons";
+import BlueskyIcon from "../Icons/Bluesky";
+import GitHub from "../Icons/GitHub";
+import Twitter from "../Icons/Twitter";
 import Link from "next/link";
 
 export default function Footer() {
@@ -26,14 +27,14 @@ export default function Footer() {
               target="_blank"
               rel="noreferrer"
             >
-              <TwitterIcon />
+              <Twitter />
             </a>
             <a
               href="https://github.com/zyplos"
               target="_blank"
               rel="noreferrer"
             >
-              <GitHubIcon />
+              <GitHub />
             </a>
             <a
               href="https://bsky.app/profile/zyplos.dev"
