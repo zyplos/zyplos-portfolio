@@ -1,0 +1,26 @@
+.card {
+  background-color: #e8ddd0;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  color: #000;
+}
+
+.workCard {
+  padding: 2rem;
+}
+
+.workTitle {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.bioText {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.bioText:last-child {
+  margin-bottom: 0;
+}

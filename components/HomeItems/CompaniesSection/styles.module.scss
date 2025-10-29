@@ -1,0 +1,38 @@
+.companiesSection {
+  background-color: #e8ddd0;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.companiesTitle {
+  text-align: center;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 1.5rem;
+}
+
+.carouselWrapper {
+  position: relative;
+}
+
+.logoCarousel {
+  svg {
+    width: auto;
+    height: 5rem;
+    padding: 1.25rem;
+  }
+
+  svg,
+  svg [fill] {
+    transition: fill 120ms ease-out;
+  }
+
+  svg:not(:hover),
+  svg:not(:hover) [fill] {
+    fill: #a99987 !important;
+  }
+}

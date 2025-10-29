@@ -1,0 +1,57 @@
+.card {
+  background-color: #e8ddd0;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  color: #000;
+}
+
+.vscodeCard {
+  padding: 1.5rem;
+}
+
+.cardTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.vscodeContent {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.vscodeIconWrapper {
+  position: relative;
+}
+
+.vscodeIcon {
+  width: 3rem;
+  height: 3rem;
+  background-color: #dc2626;
+  border-radius: 0.5rem;
+}
+
+.vscodeStatusDot {
+  position: absolute;
+  bottom: -0.25rem;
+  right: -0.25rem;
+  width: 1rem;
+  height: 1rem;
+  background-color: #dc2626;
+  border: 0.125rem solid #e8ddd0;
+  border-radius: 50%;
+}
+
+.vscodeInfo {
+  flex: 1;
+}
+
+.vscodeDetail {
+  font-size: 0.875rem;
+  margin: 0;
+}
