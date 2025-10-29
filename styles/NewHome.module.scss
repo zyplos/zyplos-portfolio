@@ -11,10 +11,10 @@
   }
 }
 
-.portfolioContainer {
+/* .portfolioContainer {
   max-width: 80rem;
   margin: 0 auto;
-}
+} */
 
 /* Card Base Styles */
 .card {
@@ -193,7 +193,6 @@
 .bottomGrid {
   display: grid;
   gap: 1rem;
-  margin-bottom: 1rem;
 }
 
 @media (min-width: 768px) {
@@ -212,6 +211,7 @@
 @media (min-width: 768px) {
   .redImageCard {
     width: 12.5rem;
+    height: 100%;
   }
 }
 
