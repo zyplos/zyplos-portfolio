@@ -1,6 +1,6 @@
 @mixin responsiveMaxWidth {
-  width: 90%;
-  max-width: var(--maxWidth);
+  width: var(--max-width-percent);
+  max-width: var(--max-width-pixel);
 }
 
 @mixin tiny-screen-styles {
