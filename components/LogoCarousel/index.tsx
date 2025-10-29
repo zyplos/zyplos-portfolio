@@ -52,17 +52,17 @@ const LogoCarousel: React.FC<LogoCarouselProps> & {
         >
           {children.map((child, i) => (
             <React.Fragment key={`one-${i}`}>
-              {React.cloneElement(child, { width })}
+              {React.cloneElement(child)}
             </React.Fragment>
           ))}
           {children.map((child, i) => (
             <React.Fragment key={`two-${i}`}>
-              {React.cloneElement(child, { width })}
+              {React.cloneElement(child)}
             </React.Fragment>
           ))}
           {children.map((child, i) => (
             <React.Fragment key={`three-${i}`}>
-              {React.cloneElement(child, { width })}
+              {React.cloneElement(child)}
             </React.Fragment>
           ))}
         </div>
