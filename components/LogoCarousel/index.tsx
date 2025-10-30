@@ -1,4 +1,5 @@
 // adapted from https://github.com/kreudev/react-infinite-logo-slider
+/** biome-ignore-all lint/suspicious/noArrayIndexKey: array won't change */
 import React from "react";
 import styles from "./styles.module.scss";
 import clsx from "clsx";
