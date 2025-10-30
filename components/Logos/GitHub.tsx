@@ -3,6 +3,7 @@ import type { SVGProps } from "@/internals/types";
 export default function GitHub({ ...props }: SVGProps) {
   return (
     <svg viewBox="0 0 1024 1024" fill="none" {...props}>
+      <title>GitHub</title>
       <path
         fillRule="evenodd"
         clipRule="evenodd"
