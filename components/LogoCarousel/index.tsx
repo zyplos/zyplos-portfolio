@@ -16,7 +16,6 @@ export interface LogoCarouselProps
 
 export interface SlideProps {
   children: React.ReactNode;
-  width?: string;
 }
 
 const LogoCarousel: React.FC<LogoCarouselProps> & {
@@ -51,19 +50,13 @@ const LogoCarousel: React.FC<LogoCarouselProps> & {
           style={sliderStyle}
         >
           {children.map((child, i) => (
-            <React.Fragment key={`one-${i}`}>
-              {React.cloneElement(child)}
-            </React.Fragment>
+            <React.Fragment key={`one-${i}`}>{child}</React.Fragment>
           ))}
           {children.map((child, i) => (
-            <React.Fragment key={`two-${i}`}>
-              {React.cloneElement(child)}
-            </React.Fragment>
+            <React.Fragment key={`two-${i}`}>{child}</React.Fragment>
           ))}
           {children.map((child, i) => (
-            <React.Fragment key={`three-${i}`}>
-              {React.cloneElement(child)}
-            </React.Fragment>
+            <React.Fragment key={`three-${i}`}>{child}</React.Fragment>
           ))}
         </div>
       </div>
@@ -85,17 +78,9 @@ const LogoCarousel: React.FC<LogoCarouselProps> & {
   );
 };
 
-const Slide: React.FC<SlideProps> = ({
-  children,
-  width = "200px",
-  ...props
-}) => {
+const Slide: React.FC<SlideProps> = ({ children, ...props }) => {
   return (
-    <div
-      className={styles.slide}
-      style={{ "--slide-width": width } as React.CSSProperties}
-      {...props}
-    >
+    <div className={styles.slide} {...props}>
       {children}
     </div>
   );
