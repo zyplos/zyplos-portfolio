@@ -1,6 +1,6 @@
 "use server";
 import Image from "next/image";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import styles from "./styles.module.scss";
 
@@ -39,7 +39,7 @@ export async function DiscordStatusCard() {
   if (data.status === "offline") {
     return (
       <>
-        <p className={classNames(styles.statusText, styles.offline)}>
+        <p className={clsx(styles.statusText, styles.offline)}>
           {friendlyStatusTitle.offline}
         </p>
         <span>not working online on anything at the moment</span>
@@ -56,7 +56,7 @@ export async function DiscordStatusCard() {
 
   return (
     <div className={styles.wrapper}>
-      <p className={classNames(styles.statusText, styles[data.status])}>
+      <p className={clsx(styles.statusText, styles[data.status])}>
         {statusText}
       </p>
       {presence && (

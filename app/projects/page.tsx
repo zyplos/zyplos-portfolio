@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import clsx from "clsx";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -101,7 +101,7 @@ export default function ProjectsPage() {
       </section>
 
       <h2 style={{ marginBottom: "2rem" }}>archived projects</h2>
-      <section className={classNames(styles.section)}>
+      <section className={clsx(styles.section)}>
         <div className={styles.projectGrid}>
           {Object.values(archivedProjects).map((project) => (
             <a

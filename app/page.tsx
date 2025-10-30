@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import styles from "@/styles/Home.module.scss";
 
@@ -26,27 +26,27 @@ export default async function HomePage() {
   console.log(
     "%c%s",
     "color: #ffffff; font-family: monospace;",
-    "--------------------"
+    "--------------------",
   );
   console.log(
     "%c%s",
     "color: #ff3e3e; font-family: sans-serif;",
-    "snooping as usual i see"
+    "snooping as usual i see",
   );
   console.log(
     "%c%s",
     "color: #ffffff; font-family: sans-serif;",
-    "i'm looking for a software engineer job. consider hiring me:"
+    "i'm looking for a software engineer job. consider hiring me:",
   );
   console.log(
     "%c%s",
     "color: #ffd300; font-family: monospace;",
-    "zyplos@duck.com"
+    "zyplos@duck.com",
   );
   console.log(
     "%c%s",
     "color: #ffffff; font-family: monospace;",
-    "--------------------"
+    "--------------------",
   );
 
   return (
@@ -62,7 +62,7 @@ export default async function HomePage() {
             <p>hey! i&apos;m</p>
             <h1>zyplos</h1>
           </div>
-          <aside className={classNames("glass", styles.statusCard)}>
+          <aside className={clsx("glass", styles.statusCard)}>
             <DiscordStatusCard />
           </aside>
         </header>
@@ -85,7 +85,7 @@ export default async function HomePage() {
           </p>
         </div>
 
-        <div className={classNames(styles.aSide, styles.shimmeringCardBorder)}>
+        <div className={clsx(styles.aSide, styles.shimmeringCardBorder)}>
           <p>
             <b>I am looking for full time roles in</b> software engineering or
             design related roles. If you like my work and my experience aligns

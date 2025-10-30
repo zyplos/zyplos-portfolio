@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@vercel/analytics": "^1.5.0",
-    "classnames": "^2.5.1",
+    "clsx": "^2.1.1",
     "next": "^15.3.4",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
@@ -26,5 +26,9 @@
     "sass": "^1.89.2",
     "typescript": "^5.8.3"
   },
-  "trustedDependencies": ["@biomejs/biome", "@parcel/watcher", "sharp"]
+  "trustedDependencies": [
+    "@biomejs/biome",
+    "@parcel/watcher",
+    "sharp"
+  ]
 }

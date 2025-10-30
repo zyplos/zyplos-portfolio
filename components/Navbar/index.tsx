@@ -2,7 +2,7 @@
 import { Suspense, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import styles from "./styles.module.scss";
 import emblemImg from "@/assets/emblem.png";
@@ -36,7 +36,7 @@ export default function Navbar({ homeMode = false }: { homeMode?: boolean }) {
 
   return (
     <nav
-      className={classNames(styles.nav, {
+      className={clsx(styles.nav, {
         glass: expanded,
         [styles.navWrapperMobile]: isMobileNavExpanded,
       })}
@@ -47,7 +47,7 @@ export default function Navbar({ homeMode = false }: { homeMode?: boolean }) {
           src={emblemImg}
           alt=">>>"
           priority
-          className={classNames({
+          className={clsx({
             [styles.lightEmblem]: isMobileNavExpanded,
           })}
           style={{ display: "block" }}
@@ -55,7 +55,7 @@ export default function Navbar({ homeMode = false }: { homeMode?: boolean }) {
       </Link>
       {/* biome-ignore lint/a11y/useKeyWithClickEvents: not needed for mobile */}
       <div
-        className={classNames("glass", styles.hamburger)}
+        className={clsx("glass", styles.hamburger)}
         onClick={() => {
           setIsMobileNavExpanded(!isMobileNavExpanded);
         }}
@@ -63,7 +63,7 @@ export default function Navbar({ homeMode = false }: { homeMode?: boolean }) {
         ☰
       </div>
       <div
-        className={classNames(styles.linksSection, styles.mobileNav, {
+        className={clsx(styles.linksSection, styles.mobileNav, {
           [styles.nogap]: expanded,
           [styles.mobileExpanded]: isMobileNavExpanded,
           [styles.opacity1]: isMobileNavExpanded,
@@ -71,7 +71,7 @@ export default function Navbar({ homeMode = false }: { homeMode?: boolean }) {
       >
         {/* app router stuff makes this annoying to implement, disabled now <Suspense>
           <div
-            className={classNames(styles.links, "glass", styles.statusChip, {
+            className={clsx(styles.links, "glass", styles.statusChip, {
               [styles.statusChipExpanded]: expanded,
               [styles.statusChipMobile]: isMobileNavExpanded,
             })}
@@ -81,7 +81,7 @@ export default function Navbar({ homeMode = false }: { homeMode?: boolean }) {
         </Suspense> */}
 
         <div
-          className={classNames(styles.links, styles.removeShadowMobile, {
+          className={clsx(styles.links, styles.removeShadowMobile, {
             glass: !expanded,
           })}
         >

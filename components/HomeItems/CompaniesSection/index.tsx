@@ -20,26 +20,29 @@ import Zed from "@/components/Logos/Zed";
 interface CompaniesSectionProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export default function CompaniesSection({ ...props }: CompaniesSectionProps) {
-    const logos = [
-        Google,
-        Bun,
-        Discord,
-        Spotify,
-        GitHub,
-        ApertureLaboratories,
-        Microsoft,
-        PostgreSQL,
-        Zed,
-        Bluesky,
-        Shopify,
-        Cursor,
-        BlackMesa,
-        Stripe,
-        Twitter,
-    ];
+  const logos = [
+    Google,
+    Bun,
+    Discord,
+    Spotify,
+    GitHub,
+    ApertureLaboratories,
+    Microsoft,
+    PostgreSQL,
+    Zed,
+    Bluesky,
+    Shopify,
+    Cursor,
+    BlackMesa,
+    Stripe,
+    Twitter,
+  ];
 
   return (
-    <div {...props} className={`${styles.companiesSection} ${props.className || ''}`}>
+    <div
+      {...props}
+      className={`${styles.companiesSection} ${props.className || ""}`}
+    >
       <h2 className={styles.companiesTitle}>Companies I Like</h2>
       <div className={styles.carouselWrapper}>
         <LogoCarousel

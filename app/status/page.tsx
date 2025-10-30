@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import clsx from "clsx";
 import type { Metadata } from "next";
 
 import styles from "@/styles/SystemStatus.module.scss";
@@ -85,7 +85,7 @@ export default function SystemStatusPage() {
           </Link>
           <div className={styles.preview}>
             <p>&#47;&#47; preview</p>
-            <div className={classNames(styles.grid)}>
+            <div className={clsx(styles.grid)}>
               {services.map((service) => (
                 <div className={styles.serviceRow} key={service.name}>
                   <span>{service.name}</span>

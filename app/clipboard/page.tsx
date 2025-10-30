@@ -1,6 +1,6 @@
 "use client";
 
-import classNames from "classnames";
+import clsx from "clsx";
 import { type JSX, useEffect } from "react";
 
 import styles from "@/styles/Clipboard.module.scss";
@@ -174,7 +174,7 @@ function DynamicColorCard({ data }: { data: ColorData | ASCIIData }) {
 
   if ("character" in data) {
     InnerJSX = (
-      <div className={classNames(styles.colorCard, styles.defaultCard)}>
+      <div className={clsx(styles.colorCard, styles.defaultCard)}>
         <p className={styles.name}>{data.character}</p>
         <p className={styles.hex}>{data.description}</p>
       </div>
@@ -182,7 +182,7 @@ function DynamicColorCard({ data }: { data: ColorData | ASCIIData }) {
   } else {
     InnerJSX = (
       <div
-        className={classNames(styles.colorCard)}
+        className={clsx(styles.colorCard)}
         style={{
           backgroundColor: data.hex,
           color: getDynamicTextColor(data.rgb.r, data.rgb.g, data.rgb.b),

@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import clsx from "clsx";
 import cardStyles from "../Card/styles.module.scss";
 import type { CardProps } from "../Card";
 
@@ -23,7 +23,7 @@ import { VideoCard } from "./VideoCard";
 export function LoungeCard({ style }: CardProps) {
   return (
     <div
-      className={classNames(cardStyles.card, styles.loungeHubCard)}
+      className={clsx(cardStyles.card, styles.loungeHubCard)}
       style={{
         ...style,
       }}
@@ -50,7 +50,7 @@ export function LoungeCard({ style }: CardProps) {
 export function LatentWriterCard({ style }: CardProps) {
   return (
     // <div
-    //   className={classNames(cardStyles.card, styles.latentWriterCard)}
+    //   className={clsx(cardStyles.card, styles.latentWriterCard)}
     //   style={{
     //     ...style,
     //   }}
@@ -80,7 +80,7 @@ export function LatentWriterCard({ style }: CardProps) {
 export function DiscordREADMECard({ style }: CardProps) {
   return (
     <div
-      className={classNames(cardStyles.card, styles.discordREADMEBadgeCard)}
+      className={clsx(cardStyles.card, styles.discordREADMEBadgeCard)}
       style={{
         ...style,
       }}
@@ -113,7 +113,7 @@ export function DiscordREADMECard({ style }: CardProps) {
 export function GitHubProjectTracker({ style }: CardProps) {
   return (
     <div
-      className={classNames(cardStyles.card, styles.githubProjectTrackerCard)}
+      className={clsx(cardStyles.card, styles.githubProjectTrackerCard)}
       style={{
         ...style,
       }}
@@ -133,7 +133,7 @@ export function GitHubProjectTracker({ style }: CardProps) {
 export function SeeMoreProjectsCard({ style }: CardProps) {
   return (
     <div
-      className={classNames(cardStyles.card, styles.seeMoreProjectsCard)}
+      className={clsx(cardStyles.card, styles.seeMoreProjectsCard)}
       style={{
         ...style,
       }}
@@ -171,7 +171,7 @@ export function SeeMoreProjectsCard({ style }: CardProps) {
 export function TwitterCard({ style }: CardProps) {
   return (
     <div
-      className={classNames(cardStyles.card, styles.twitterCard)}
+      className={clsx(cardStyles.card, styles.twitterCard)}
       style={{
         ...style,
       }}
@@ -185,7 +185,7 @@ export function TwitterCard({ style }: CardProps) {
 export function MyImagesCard({ style }: CardProps) {
   return (
     <div
-      className={classNames(cardStyles.card, styles.myimagesCard)}
+      className={clsx(cardStyles.card, styles.myimagesCard)}
       style={{
         ...style,
       }}
@@ -199,7 +199,7 @@ export function MyImagesCard({ style }: CardProps) {
 export function SystemStatusCard({ style }: CardProps) {
   return (
     <div
-      className={classNames(cardStyles.card, styles.systemStatusCard)}
+      className={clsx(cardStyles.card, styles.systemStatusCard)}
       style={{
         ...style,
       }}

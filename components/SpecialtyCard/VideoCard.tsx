@@ -1,5 +1,5 @@
 "use client";
-import classNames from "classnames";
+import clsx from "clsx";
 import cardStyles from "../Card/styles.module.scss";
 import styles from "./styles.module.scss";
 import { useRef } from "react";
@@ -42,7 +42,7 @@ export function VideoCard({
 
   return (
     <div
-      className={classNames(
+      className={clsx(
         cardStyles.card,
         styles.hasVideoBg,
         styles.videoCard

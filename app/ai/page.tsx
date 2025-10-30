@@ -1,5 +1,5 @@
 import Image from "next/image";
-import classNames from "classnames";
+import clsx from "clsx";
 import type { StaticImageData } from "next/image";
 import type { Metadata } from "next";
 
@@ -49,7 +49,7 @@ function CaptionedImage({
 }: CaptionedImageProps) {
   return (
     <div
-      className={classNames(styles.captionedImage, className, {
+      className={clsx(styles.captionedImage, className, {
         [styles.left]: left,
       })}
     >

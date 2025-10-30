@@ -1,7 +1,7 @@
 // adapted from https://github.com/kreudev/react-infinite-logo-slider
 import React from "react";
 import styles from "./styles.module.scss";
-import classNames from "classnames";
+import clsx from "clsx";
 
 export interface LogoCarouselProps
   extends React.HTMLAttributes<HTMLDivElement> {
@@ -64,12 +64,12 @@ const LogoCarousel: React.FC<LogoCarouselProps> & {
       {blurBorders && (
         <>
           <div
-            className={classNames(styles.carouselFade, styles.left)}
+            className={clsx(styles.carouselFade, styles.left)}
             style={blurStyle}
           />
 
           <div
-            className={classNames(styles.carouselFade, styles.right)}
+            className={clsx(styles.carouselFade, styles.right)}
             style={blurStyle}
           />
         </>
