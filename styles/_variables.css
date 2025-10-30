@@ -52,17 +52,12 @@
 }
 
 /* colors */
-/* ===== dark mode (default) */
 :root {
   color-scheme: dark;
 
-  --color-text: #cfc7c7;
-  --color-background-lighter: #382929;
-  --color-background: #000;
-  --color-background-secondary: #181414;
-  --color-background-tertiary: #080808;
-  --color-container-border: rgb(102 80 80 / 50%);
-  --color-container-border-hover: rgb(218 162 162 / 50%);
+  --color-text: #240d05;
+  --color-surface: #e8ddd0;
+  --color-background: #0a0505;
 
   --color-primary: #ff3e3e;
   --color-secondary: #ffd300;

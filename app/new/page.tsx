@@ -3,7 +3,7 @@ import BioCard from "@/components/HomeItems/BioCard";
 import CompaniesSection from "@/components/HomeItems/CompaniesSection";
 import ImageAreaCard from "@/components/HomeItems/ImageAreaCard";
 import LatestCommitCard from "@/components/HomeItems/LatestCommitCard";
-import RedImageCard from "@/components/HomeItems/RedImageCard";
+import WalkCard from "@/components/HomeItems/WalkCard";
 import VSCodeCard from "@/components/HomeItems/VSCodeCard";
 import WorkCard from "@/components/HomeItems/WorkCard";
 
@@ -27,7 +27,7 @@ export default function PortfolioPage() {
 
             {/* Bottom Grid */}
             <div className={styles.bottomGrid}>
-              <RedImageCard />
+              <WalkCard />
               <WorkCard />
             </div>
           </div>
