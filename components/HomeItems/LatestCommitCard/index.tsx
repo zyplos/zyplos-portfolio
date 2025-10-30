@@ -1,10 +1,14 @@
+import clsx from "clsx";
 import styles from "./styles.module.scss";
 
 interface LatestCommitCardProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export default function LatestCommitCard({ ...props }: LatestCommitCardProps) {
   return (
-    <div {...props} className={`${styles.card} ${styles.commitCard} ${props.className || ''}`}>
+    <div
+      {...props}
+      className={clsx(styles.card, styles.commitCard, props.className)}
+    >
       <h2 className={styles.cardTitle}>Latest commit</h2>
       <div className={styles.commitBranches}>
         <div className={styles.commitDot} />

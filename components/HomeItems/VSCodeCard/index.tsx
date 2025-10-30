@@ -1,10 +1,14 @@
+import clsx from "clsx";
 import styles from "./styles.module.scss";
 
 interface VSCodeCardProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export default function VSCodeCard({ ...props }: VSCodeCardProps) {
   return (
-    <div {...props} className={`${styles.card} ${styles.vscodeCard} ${props.className || ''}`}>
+    <div
+      {...props}
+      className={clsx(styles.card, styles.vscodeCard, props.className)}
+    >
       <h2 className={styles.cardTitle}>
         Working in <span className={styles.bold}>Visual Studio Code</span>
       </h2>

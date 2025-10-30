@@ -1,8 +1,8 @@
 // adapted from https://github.com/kreudev/react-infinite-logo-slider
 /** biome-ignore-all lint/suspicious/noArrayIndexKey: array won't change */
 import React from "react";
-import styles from "./styles.module.scss";
 import clsx from "clsx";
+import styles from "./styles.module.scss";
 
 export interface LogoCarouselProps
   extends React.HTMLAttributes<HTMLDivElement> {
@@ -42,12 +42,12 @@ const LogoCarousel: React.FC<LogoCarouselProps> & {
   } as React.CSSProperties;
 
   return (
-    <div className={`${styles.logoCarousel} ${className || ""}`}>
+    <div className={clsx(styles.logoCarousel, className)}>
       <div
-        className={`${styles.wrapper} ${pauseOnHover ? styles.pauseOnHover : ""}`}
+        className={clsx(styles.wrapper, pauseOnHover && styles.pauseOnHover)}
       >
         <div
-          className={`${styles.slider} ${toRight ? styles.toRight : ""}`}
+          className={clsx(styles.slider, toRight && styles.toRight)}
           style={sliderStyle}
         >
           {children.map((child, i) => (

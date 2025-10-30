@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import LogoCarousel from "@/components/LogoCarousel";
 import styles from "./styles.module.scss";
 
@@ -39,10 +40,7 @@ export default function CompaniesSection({ ...props }: CompaniesSectionProps) {
   ];
 
   return (
-    <div
-      {...props}
-      className={`${styles.companiesSection} ${props.className || ""}`}
-    >
+    <div {...props} className={clsx(styles.companiesSection, props.className)}>
       <h2 className={styles.companiesTitle}>Companies I Like</h2>
       <div className={styles.carouselWrapper}>
         <LogoCarousel
