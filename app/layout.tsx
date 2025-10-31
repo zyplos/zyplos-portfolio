@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "@/styles/_variables.css";
-import "@/styles/globals.scss";
+import "@/styles/_globals.scss";
 import { Analytics } from "@vercel/analytics/react";
 
 export const viewport: Viewport = {
