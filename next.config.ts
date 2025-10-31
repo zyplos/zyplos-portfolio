@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  cacheComponents: true,
   sassOptions: {
     silenceDeprecations: ["legacy-js-api", "mixed-decls"],
   },
