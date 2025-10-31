@@ -1,11 +1,12 @@
 import clsx from "clsx";
 import styles from "./styles.module.scss";
+import HomeCard from "../HomeCard";
 
 interface WalkCardProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-export default function WalkCard({ ...props }: WalkCardProps) {
+export default function WalkCard({ className, ...props }: WalkCardProps) {
   return (
-    <div {...props} className={clsx(styles.walkCard, props.className)}>
+    <HomeCard {...props} className={clsx(styles.walkCard, className)}>
       <video
         loop
         autoPlay
@@ -14,6 +15,6 @@ export default function WalkCard({ ...props }: WalkCardProps) {
         src="/assets/walk.webm"
         className={styles.video}
       />
-    </div>
+    </HomeCard>
   );
 }
