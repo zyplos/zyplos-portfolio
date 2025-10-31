@@ -1,6 +1,6 @@
-/** @type {import('next').NextConfig} */
+import type { NextConfig } from "next";
 
-const nextConfig = {
+const nextConfig: NextConfig = {
   reactStrictMode: true,
   sassOptions: {
     silenceDeprecations: ["legacy-js-api", "mixed-decls"],
@@ -13,8 +13,14 @@ const nextConfig = {
         port: "",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "media.discordapp.net",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig;
