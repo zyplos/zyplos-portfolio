@@ -1,11 +1,8 @@
-.companiesSection {
-  background-color: #e8ddd0;
-  border-radius: 1.5rem;
-  padding: 2rem;
+.companiesCard {
   overflow: hidden;
 }
 
-.companiesTitle {
+.title {
   text-align: center;
   font-size: 1.125rem;
   font-weight: 600;
@@ -19,7 +16,7 @@
   position: relative;
 }
 
-.logoCarousel {
+.svgStyling {
   svg {
     width: auto;
     height: 5rem;

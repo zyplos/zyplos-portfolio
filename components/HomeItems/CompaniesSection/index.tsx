@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import HomeCard from "../HomeCard";
 import LogoCarousel from "@/components/LogoCarousel";
 import styles from "./styles.module.scss";
 
@@ -20,7 +21,10 @@ import Zed from "@/components/Logos/Zed";
 
 interface CompaniesSectionProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-export default function CompaniesSection({ ...props }: CompaniesSectionProps) {
+export default function CompaniesSection({
+  className,
+  ...props
+}: CompaniesSectionProps) {
   const logos = [
     Google,
     Bun,
@@ -40,8 +44,8 @@ export default function CompaniesSection({ ...props }: CompaniesSectionProps) {
   ];
 
   return (
-    <div {...props} className={clsx(styles.companiesSection, props.className)}>
-      <h2 className={styles.companiesTitle}>Companies I Like</h2>
+    <HomeCard {...props} className={clsx(styles.companiesCard, className)}>
+      <h2 className={styles.title}>Companies I Like</h2>
       <div className={styles.carouselWrapper}>
         <LogoCarousel
           width="250px"
@@ -49,7 +53,7 @@ export default function CompaniesSection({ ...props }: CompaniesSectionProps) {
           pauseOnHover={false}
           blurBorders={true}
           blurBorderColor={"#e8ddd0"}
-          className={styles.logoCarousel}
+          className={styles.svgStyling}
         >
           {logos.map((LogoComponent, index) => (
             <LogoCarousel.Slide
@@ -63,6 +67,6 @@ export default function CompaniesSection({ ...props }: CompaniesSectionProps) {
           ))}
         </LogoCarousel>
       </div>
-    </div>
+    </HomeCard>
   );
 }
