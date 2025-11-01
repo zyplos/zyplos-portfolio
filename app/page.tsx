@@ -20,8 +20,6 @@ import {
 
 import portfolioImage from "@/assets/portfolio-header-mini.png";
 
-export const revalidate = 15;
-
 export default async function HomePage() {
   console.log(
     "%c%s",

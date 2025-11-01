@@ -1,3 +1,5 @@
+import { cacheLife } from "next/cache";
+
 type Falsy = null | undefined;
 export type RefinedPresenceData = {
   type: "game" | "rich";
@@ -16,6 +18,13 @@ export type UserStatusData = {
 };
 
 export default async function getDiscordPresence(): Promise<UserStatusData> {
+  "use cache";
+  cacheLife({
+    stale: 60 * 2,
+    revalidate: 60 * 1,
+    expire: 60 * 5,
+  });
+
   if (process.env.NODE_ENV === "development") {
     return {
       message: "hey!",
@@ -43,14 +52,13 @@ export default async function getDiscordPresence(): Promise<UserStatusData> {
       "https://mm.zyplos.dev/dcs/api/v1/status/discord/zyplos",
       {
         signal: controller.signal,
-        next: { revalidate: 15 }, // Added caching with revalidation
-      }
+      },
     );
 
     clearTimeout(timeoutId);
     const presenceData: UserStatusData = await response.json();
     return presenceData;
-  } catch (error) {
+  } catch (_error) {
     return {
       message: "oops",
       status: "offline",
