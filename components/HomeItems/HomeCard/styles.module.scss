@@ -20,8 +20,12 @@
   padding: var(--space-s);
 }
 
-.padding-m {
+.padding-default {
   padding: var(--space);
+}
+
+.padding-m {
+  padding: var(--space-m);
 }
 
 .padding-l {
