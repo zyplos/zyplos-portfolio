@@ -2,9 +2,32 @@
   color: var(--color-text);
   background-color: var(--color-surface);
   border-radius: var(--radius-m);
+}
+
+.padding-none {
+  padding: 0;
+}
+
+.padding-xxs {
+  padding: var(--space-xxs);
+}
+
+.padding-xs {
+  padding: var(--space-xs);
+}
+
+.padding-s {
+  padding: var(--space-s);
+}
+
+.padding-m {
+  padding: var(--space);
+}
+
+.padding-l {
   padding: var(--space-l);
 }
 
-.card.noPadding {
-  padding: 0;
+.padding-xl {
+  padding: var(--space-xl);
 }
