@@ -1,14 +1,15 @@
 import clsx from "clsx";
+import HomeCard from "../HomeCard";
 import styles from "./styles.module.scss";
 
-interface VSCodeCardProps extends React.HTMLAttributes<HTMLDivElement> {}
+interface DiscordStatusCardProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-export default function VSCodeCard({ ...props }: VSCodeCardProps) {
+export default function DiscordStatusCard({
+  className,
+  ...props
+}: DiscordStatusCardProps) {
   return (
-    <div
-      {...props}
-      className={clsx(styles.card, styles.vscodeCard, props.className)}
-    >
+    <HomeCard {...props} className={className}>
       <h2 className={styles.cardTitle}>
         Working in <span className={styles.bold}>Visual Studio Code</span>
       </h2>
@@ -22,6 +23,6 @@ export default function VSCodeCard({ ...props }: VSCodeCardProps) {
           <p className={styles.vscodeDetail}>Workspace: localhost</p>
         </div>
       </div>
-    </div>
+    </HomeCard>
   );
 }
