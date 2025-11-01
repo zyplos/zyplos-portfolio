@@ -7,7 +7,7 @@ interface HomeCardProps extends React.HTMLAttributes<HTMLDivElement> {
   padding?: Padding;
 }
 
-export default function HomeCard({
+export function HomeCard({
   className,
   children,
   padding = "l",
@@ -21,4 +21,12 @@ export default function HomeCard({
       {children}
     </div>
   );
+}
+
+interface SmallHeadingProps extends React.HTMLAttributes<HTMLHeadingElement> {
+  children: React.ReactNode;
+}
+
+export function SmallHeading({ children }: SmallHeadingProps) {
+  return <h2 className={styles.smallHeading}>{children}</h2>;
 }

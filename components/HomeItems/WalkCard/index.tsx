@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import styles from "./styles.module.scss";
-import HomeCard from "../HomeCard";
+import { HomeCard } from "../HomeCard";
 
 interface WalkCardProps extends React.HTMLAttributes<HTMLDivElement> {}
 

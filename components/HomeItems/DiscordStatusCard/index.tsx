@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import HomeCard from "../HomeCard";
+import { HomeCard, SmallHeading } from "../HomeCard";
 import styles from "./styles.module.scss";
 
 interface DiscordStatusCardProps extends React.HTMLAttributes<HTMLDivElement> {}
@@ -9,10 +9,12 @@ export default function DiscordStatusCard({
   ...props
 }: DiscordStatusCardProps) {
   return (
-    <HomeCard {...props} className={className}>
-      <h2 className={styles.cardTitle}>
-        Working in <span className={styles.bold}>Visual Studio Code</span>
-      </h2>
+    <HomeCard
+      {...props}
+      className={clsx(styles.cardWrapper, className)}
+      padding="m"
+    >
+      <SmallHeading>Working in Visual Studio Code</SmallHeading>
       <div className={styles.vscodeContent}>
         <div className={styles.vscodeIconWrapper}>
           <div className={styles.vscodeIcon} />

@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import HomeCard from "../HomeCard";
+import { HomeCard } from "../HomeCard";
 
 interface BioCardProps extends React.HTMLAttributes<HTMLDivElement> {}
 

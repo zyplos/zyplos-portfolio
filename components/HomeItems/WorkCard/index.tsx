@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import HomeCard from "../HomeCard";
+import { HomeCard } from "../HomeCard";
 
 interface WorkCardProps extends React.HTMLAttributes<HTMLDivElement> {}
 

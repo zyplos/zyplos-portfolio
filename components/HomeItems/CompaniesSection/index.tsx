@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import HomeCard from "../HomeCard";
+import { HomeCard } from "../HomeCard";
 import LogoCarousel from "@/components/LogoCarousel";
 import styles from "./styles.module.scss";
 
