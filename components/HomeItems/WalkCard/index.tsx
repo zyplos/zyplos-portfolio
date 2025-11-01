@@ -6,7 +6,11 @@ interface WalkCardProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export default function WalkCard({ className, ...props }: WalkCardProps) {
   return (
-    <HomeCard {...props} className={clsx(styles.walkCard, className)} noPadding>
+    <HomeCard
+      {...props}
+      className={clsx(styles.walkCard, className)}
+      padding="none"
+    >
       <video
         loop
         autoPlay
