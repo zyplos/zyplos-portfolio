@@ -7,18 +7,19 @@ import clsx from "clsx";
 import styles from "./styles.module.scss";
 import emblemImg from "@/assets/emblem.png";
 
-import homeStyles from "@/styles/Home.module.scss";
-import textWallStyles from "@/components/TextWall/styles.module.scss";
 // import { DiscordStatusSpan } from "../DiscordStatusUI";
+
+// from @/styles/Home.module.scss
+const NAV_HEIGHT = 100;
+// from "@/components/TextWall/styles.module.scss
+const TEXT_WALL_HEIGHT = 600;
 
 export default function Navbar({ homeMode = false }: { homeMode?: boolean }) {
   const [isMobileNavExpanded, setIsMobileNavExpanded] = useState(false);
   const [expanded, setIsExpanded] = useState(!homeMode);
 
   useEffect(() => {
-    const navThreshold =
-      Number.parseInt(textWallStyles.textWallHeight) -
-      Number.parseInt(homeStyles.navHeight);
+    const navThreshold = TEXT_WALL_HEIGHT - NAV_HEIGHT;
     const handleScroll = () => {
       if (window.scrollY > navThreshold) {
         setIsExpanded(true);

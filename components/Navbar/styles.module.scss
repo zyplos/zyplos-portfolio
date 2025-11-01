@@ -2,13 +2,13 @@
 
 $nav-height: 100;
 
-:export {
-  navHeight: $nav-height;
-}
-
 .nav,
 .nav * {
-  transition: all 0.2s ease-in-out, color 0.05s linear, border 0.01s ease-out, padding 0.1s ease-out;
+  transition:
+    all 0.2s ease-in-out,
+    color 0.05s linear,
+    border 0.01s ease-out,
+    padding 0.1s ease-out;
 }
 
 .nav {
@@ -40,7 +40,7 @@ $nav-height: 100;
   align-items: center;
   gap: 2rem;
 
-  >div {
+  > div {
     border-radius: var(--radiusSm);
   }
 }
@@ -144,7 +144,7 @@ a.emblemLink {
 a.emblemLink:hover {
   background: none;
 
-  >img {
+  > img {
     opacity: 1 !important;
   }
 }
@@ -206,17 +206,21 @@ section.nogap {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(0deg,
-      var(--cutoutColor) 25%,
-      transparent 25%,
-      transparent 50%,
-      var(--cutoutColor) 50%,
-      var(--cutoutColor) 75%,
-      transparent 75%,
-      transparent);
+  background-image: linear-gradient(
+    0deg,
+    var(--cutoutColor) 25%,
+    transparent 25%,
+    transparent 50%,
+    var(--cutoutColor) 50%,
+    var(--cutoutColor) 75%,
+    transparent 75%,
+    transparent
+  );
   backdrop-filter: blur(5px);
   background-size: 1rem 0.3rem;
-  animation: blindsScroll 1s linear infinite, flicker 2s linear infinite alternate;
+  animation:
+    blindsScroll 1s linear infinite,
+    flicker 2s linear infinite alternate;
   left: 0;
   top: 0;
   border-radius: var(--radiusSm);

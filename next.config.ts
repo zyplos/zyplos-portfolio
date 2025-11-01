@@ -4,7 +4,9 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   cacheComponents: true,
   sassOptions: {
-    silenceDeprecations: ["legacy-js-api", "mixed-decls"],
+    prependData: `
+          @use "@/styles/_common.scss" as common;
+        `,
   },
   images: {
     remotePatterns: [
