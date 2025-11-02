@@ -37,7 +37,7 @@
 }
 
 .smallHeading {
-  font-size: 1.125rem;
+  font-size: var(--font-size-m);
   font-weight: var(--font-weight-bold);
-  margin-bottom: var(--space);
+  margin-bottom: var(--space-s);
 }
