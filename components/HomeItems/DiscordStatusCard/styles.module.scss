@@ -1,36 +1,78 @@
-.vscodeContent {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
+.statusText {
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
-.vscodeIconWrapper {
+.gameText {
+  /* margin-top: 0.4rem; */
+  margin-bottom: var(--space-s);
+}
+
+.online {
+  color: var(--c-green);
+}
+.idle {
+  color: #feff43;
+}
+.dnd {
+  color: #ff6e5b;
+}
+.offline {
+  color: #a58888;
+}
+
+.richPresence {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+@include common.tiny-screen-styles {
+  .richPresence p {
+    display: none;
+  }
+}
+
+.wrapper {
   position: relative;
 }
 
-.vscodeIcon {
-  width: 3rem;
-  height: 3rem;
-  background-color: #dc2626;
-  border-radius: 0.5rem;
+.images {
+  position: relative;
 }
 
-.vscodeStatusDot {
+.largeImage {
+  border-radius: var(--radius-s);
+  width: 4rem;
+  height: 4rem;
+}
+
+.smallImage {
   position: absolute;
-  bottom: -0.25rem;
-  right: -0.25rem;
-  width: 1rem;
-  height: 1rem;
-  background-color: #dc2626;
-  border: 0.125rem solid #e8ddd0;
-  border-radius: 50%;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 100%;
+  bottom: -0.4rem;
+  right: -0.4rem;
+  border: 3px solid var(--color-surface);
 }
 
-.vscodeInfo {
-  flex: 1;
-}
+@include common.tiny-screen-styles {
+  .images {
+    position: absolute;
+    top: -2rem;
+    left: -2rem;
+  }
 
-.vscodeDetail {
-  font-size: 0.875rem;
-  margin: 0;
+  .largeImage {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .smallImage {
+    width: 1rem;
+    height: 1rem;
+    bottom: -0.2rem;
+    right: -0.2rem;
+  }
 }
