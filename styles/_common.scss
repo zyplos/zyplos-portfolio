@@ -8,3 +8,7 @@
     @content;
   }
 }
+
+@mixin DEBUG($color: red) {
+  border: 1px solid $color;
+}
