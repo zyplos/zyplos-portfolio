@@ -1,45 +1,33 @@
-.card {
-  background-color: #e8ddd0;
-  border-radius: 1.5rem;
-  padding: 2rem;
-  color: #000;
-}
-
-.commitCard {
-  padding: 1.5rem;
-}
-
-.cardTitle {
-  font-size: 1.125rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
-.commitBranches {
+.flexRow {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+}
+
+.infoRow {
+  gap: var(--space);
   margin-bottom: 0.5rem;
+  font-size: var(--font-size-s);
 }
 
-.commitDot {
-  width: 0.5rem;
-  height: 0.5rem;
-  background-color: #dc2626;
-  border-radius: 50%;
-}
+.infoCell {
+  gap: var(--space-xs);
 
-.commitBranch {
-  font-size: 0.875rem;
+  svg {
+    width: 1em;
+    height: 1em;
+    display: block;
+  }
 }
 
 .commitMessage {
-  font-size: 0.875rem;
-  margin-bottom: 0.25rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: calc(2 * 1.2em); /* 2 lines * line-height */
+  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  mask-size: 100% 100%;
 }
 
-.commitTime {
-  font-size: 0.75rem;
-  opacity: 0.7;
-  margin: 0;
+.timestamp {
+  font-size: var(--font-size-s);
+  color: var(--color-muted);
 }
