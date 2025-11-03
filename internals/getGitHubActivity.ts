@@ -42,6 +42,17 @@ export default async function getGitHubActivity(): Promise<
   "use cache";
   cacheLife("hours");
 
+  if (process.env.NODE_ENV === "development") {
+    return {
+      repo: "zyplos/devspace",
+      branch: "redesign",
+      timestamp: "2025-11-03T06:08:33Z",
+      url: "https://github.com/zyplos/zyplos-portfolio/commit/cfaf7e8eb3a71b5bea2effe6d3a042eb32e54f20",
+      message:
+        "added really good code to my thingie amongst other things that make this string even longer to test it overflowing its container",
+    };
+  }
+
   try {
     const eventsResponse = await fetch(EVENTS_ENDPOINT, AUTH_HEADERS);
     if (!eventsResponse.ok) {
