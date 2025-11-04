@@ -31,7 +31,6 @@ export default function CompaniesSection({
     Discord,
     Spotify,
     GitHub,
-    ApertureLaboratories,
     Microsoft,
     PostgreSQL,
     Zed,
@@ -39,7 +38,6 @@ export default function CompaniesSection({
     Shopify,
     Cursor,
     BlackMesa,
-    Stripe,
     Twitter,
   ];
 
