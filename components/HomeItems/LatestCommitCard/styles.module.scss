@@ -33,7 +33,8 @@
 
 .commitMessage {
   height: 100%;
-  max-height: calc(2 * 1.3em);
+  max-height: calc(2 * 1.2em);
+  overflow: hidden;
 
   mask-image: linear-gradient(to bottom, black 50%, transparent 98%);
   mask-size: 100% 100%;

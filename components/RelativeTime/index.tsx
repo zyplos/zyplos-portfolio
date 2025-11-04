@@ -38,16 +38,16 @@ export default function RelativeTime({
   timestamp,
   className,
 }: RelativeTimeProps) {
-  const [relativeTime, setRelativeTime] = useState("");
+  const date = new Date(timestamp);
+  const [relativeTime, setRelativeTime] = useState(formatRelativeTime(date));
 
   useEffect(() => {
-    const date = new Date(timestamp);
     const interval = setInterval(() => {
       setRelativeTime(formatRelativeTime(date));
     }, 1000); // Update every second
 
     return () => clearInterval(interval);
-  }, [timestamp]);
+  }, [date]);
 
-  return <p className={className}>{relativeTime}</p>;
+  return <p className={className} suppressHydrationWarning>{relativeTime}</p>;
 }

@@ -7,6 +7,7 @@ import getGitHubActivity from "@/internals/getGitHubActivity";
 import AnchorLink from "@/components/AnchorLink";
 import RelativeTime from "@/components/RelativeTime";
 import BlurIntoExistence from "@/components/BlurIntoExistence";
+import { Suspense } from "react";
 
 interface LatestCommitCardProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -45,15 +46,18 @@ export default async function LatestCommitCard({
           <span>{data.branch}</span>
         </div>
       </div>
-      <div className={clsx("textContent", styles.commitMessageWrapper)}>
-        <div className={styles.commitMessage}>
+      <div className={styles.commitMessageWrapper}>
+        <div className={clsx("textContent", styles.commitMessage)}>
           <AnchorLink href={data.url} target="_blank">
             <p>{data.message}</p>
           </AnchorLink>
         </div>
-        <BlurIntoExistence className={styles.timestamp}>
-          <RelativeTime timestamp={data.timestamp} />
-        </BlurIntoExistence>
+        <Suspense>
+          <RelativeTime
+            timestamp={data.timestamp}
+            className={styles.timestamp}
+          />
+        </Suspense>
       </div>
     </HomeCard>
   );
