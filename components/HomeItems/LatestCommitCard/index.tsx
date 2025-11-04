@@ -1,13 +1,13 @@
 import clsx from "clsx";
+import { Suspense } from "react";
 import { HomeCard, SmallHeading } from "../HomeCard";
-import styles from "./styles.module.scss";
-import Folder from "@/components/Icons/Folder";
-import Branch from "@/components/Icons/Branch";
 import getGitHubActivity from "@/internals/getGitHubActivity";
 import AnchorLink from "@/components/AnchorLink";
 import RelativeTime from "@/components/RelativeTime";
-import BlurIntoExistence from "@/components/BlurIntoExistence";
-import { Suspense } from "react";
+import styles from "./styles.module.scss";
+
+import Folder from "@/components/Icons/Folder";
+import Branch from "@/components/Icons/Branch";
 
 interface LatestCommitCardProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -19,10 +19,16 @@ export default async function LatestCommitCard({
 
   if ("code" in data) {
     return (
-      <HomeCard {...props} className={className} padding="m">
+      <HomeCard
+        {...props}
+        className={clsx(styles.cardWrapper, className)}
+        padding="m"
+      >
         <SmallHeading>Latest commit</SmallHeading>
-        <div className="textContent">
-          <p className={styles.commitMessage}>Could not load commit data.</p>
+
+        <div className={styles.commitMessageWrapper}>
+          <p>TODO render here</p>
+
           <p className={styles.timestamp}>{data.message}</p>
         </div>
       </HomeCard>

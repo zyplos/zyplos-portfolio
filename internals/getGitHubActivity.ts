@@ -51,6 +51,11 @@ export default async function getGitHubActivity(): Promise<
       message:
         "added really good code to my thingie amongst other things that make this string even longer to test it overflowing its container",
     };
+
+    // return {
+    //   message: "no work",
+    //   code: "COMMIT_INFO_FETCH_FAILED",
+    // };
   }
 
   try {
@@ -92,7 +97,7 @@ export default async function getGitHubActivity(): Promise<
   } catch (error) {
     console.error("Unexpected error grabbing Github activity", error);
     return {
-      message: "Unexpected error",
+      message: "Unexpected error getting commit",
       code: "UNKNOWN",
     };
   }
