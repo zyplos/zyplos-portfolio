@@ -4,11 +4,11 @@
 
 .title {
   text-align: center;
-  font-size: 1.125rem;
-  font-weight: 600;
+  font-size: var(--font-size);
+  font-weight: var(--font-weight-bold);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: rgba(0, 0, 0, 0.6);
+  color: var(--color-muted);
   margin-bottom: 1.5rem;
 }
 
@@ -30,6 +30,6 @@
 
   svg:not(:hover),
   svg:not(:hover) [fill] {
-    fill: #a99987 !important;
+    fill: var(--color-muted) !important;
   }
 }

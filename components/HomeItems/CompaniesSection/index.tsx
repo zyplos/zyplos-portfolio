@@ -3,7 +3,6 @@ import { HomeCard } from "../HomeCard";
 import LogoCarousel from "@/components/LogoCarousel";
 import styles from "./styles.module.scss";
 
-import ApertureLaboratories from "@/components/Logos/ApertureLaboratories";
 import BlackMesa from "@/components/Logos/BlackMesa";
 import Bluesky from "@/components/Logos/Bluesky";
 import Bun from "@/components/Logos/Bun";
@@ -15,7 +14,6 @@ import Microsoft from "@/components/Logos/Microsoft";
 import PostgreSQL from "@/components/Logos/PostgreSQL";
 import Shopify from "@/components/Logos/Shopify";
 import Spotify from "@/components/Logos/Spotify";
-import Stripe from "@/components/Logos/Stripe";
 import Twitter from "@/components/Logos/Twitter";
 import Zed from "@/components/Logos/Zed";
 
