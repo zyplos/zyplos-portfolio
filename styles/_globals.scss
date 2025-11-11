@@ -24,18 +24,7 @@ body,
 body {
   color: #eedbdb;
   background: #0a0505;
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    Segoe UI,
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    Fira Sans,
-    Droid Sans,
-    Helvetica Neue,
-    sans-serif;
+  font-family: var(--font-body);
   transition: all 0.3s ease;
 }
 
@@ -45,7 +34,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-heading);
+  font-family: var(--font-outfit);
   font-weight: var(--font-weight-heading);
 }
 

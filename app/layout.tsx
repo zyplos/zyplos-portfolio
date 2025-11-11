@@ -1,7 +1,23 @@
 import type { Metadata, Viewport } from "next";
+import { Analytics } from "@vercel/analytics/react";
+import { Outfit, Nunito_Sans } from "next/font/google";
+import clsx from "clsx";
+
 import "@/styles/_variables.css";
 import "@/styles/_globals.scss";
-import { Analytics } from "@vercel/analytics/react";
+
+const outfit = Outfit({
+  weight: ["600"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-outfit",
+});
+
+const nunitoSans = Nunito_Sans({
+  weight: ["400", "800"],
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const viewport: Viewport = {
   themeColor: "#0a0505",
@@ -55,6 +71,31 @@ export const metadata: Metadata = {
   },
 };
 
+/*
+cabin
+nunitoSans [winner]
+geist
+
+NOPE:
+Outfit
+Cabin
+Noto_Sans
+Sen
+Nunito_Sans
+Rubik
+Jost
+Inter
+Inter_Tight
+Urbanist
+Sora
+Almarai
+Instrument_Sans
+Zalando_Sans
+Didact_Gothic
+Geist
+Rethink_Sans
+*/
+
 interface RootLayoutProps {
   children: React.ReactNode;
 }
@@ -62,7 +103,7 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
   return (
     <html lang="en">
-      <body>
+      <body className={clsx(outfit.variable, nunitoSans.className)}>
         {children}
         <Analytics />
       </body>
