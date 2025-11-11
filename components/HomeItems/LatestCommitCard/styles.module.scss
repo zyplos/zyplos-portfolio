@@ -31,13 +31,15 @@
   flex-grow: 1;
 }
 
-.commitMessage {
-  height: 100%;
-  max-height: calc(2 * 1.2em);
-  overflow: hidden;
+@include common.tabletScreenStyles {
+  .commitMessage {
+    height: 100%;
+    max-height: calc(2 * 1.2em);
+    overflow: hidden;
 
-  mask-image: linear-gradient(to bottom, black 50%, transparent 98%);
-  mask-size: 100% 100%;
+    mask-image: linear-gradient(to bottom, black 50%, transparent 98%);
+    mask-size: 100% 100%;
+  }
 }
 
 .timestamp {
