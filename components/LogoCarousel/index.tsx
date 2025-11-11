@@ -13,6 +13,7 @@ export interface LogoCarouselProps
   pauseOnHover?: boolean;
   blurBorders?: boolean;
   blurBorderColor?: string;
+  sliderClassName?: string;
 }
 
 export interface SlideProps {
@@ -30,6 +31,7 @@ const LogoCarousel: React.FC<LogoCarouselProps> & {
   blurBorders = false,
   blurBorderColor = "#fff",
   className,
+  sliderClassName,
 }) => {
   const sliderStyle = {
     "--slide-width": width,
@@ -47,7 +49,11 @@ const LogoCarousel: React.FC<LogoCarouselProps> & {
         className={clsx(styles.wrapper, pauseOnHover && styles.pauseOnHover)}
       >
         <div
-          className={clsx(styles.slider, toRight && styles.toRight)}
+          className={clsx(
+            styles.slider,
+            toRight && styles.toRight,
+            sliderClassName,
+          )}
           style={sliderStyle}
         >
           {children.map((child, i) => (

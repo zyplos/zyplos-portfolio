@@ -16,6 +16,16 @@
   position: relative;
 }
 
+.responsiveSlideWidth {
+  --slide-width: 100px !important;
+}
+
+@include common.tabletScreenStyles {
+  .responsiveSlideWidth {
+    --slide-width: 250px !important;
+  }
+}
+
 .svgStyling {
   svg {
     width: auto;

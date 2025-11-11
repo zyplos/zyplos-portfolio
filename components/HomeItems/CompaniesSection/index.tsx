@@ -44,12 +44,12 @@ export default function CompaniesSection({
       <h2 className={styles.title}>Companies I Like</h2>
       <div className={styles.carouselWrapper}>
         <LogoCarousel
-          width="250px"
           duration={40}
           pauseOnHover={false}
           blurBorders={true}
           blurBorderColor={"#e8ddd0"}
           className={styles.svgStyling}
+          sliderClassName={styles.responsiveSlideWidth}
         >
           {logos.map((LogoComponent, index) => (
             <LogoCarousel.Slide
