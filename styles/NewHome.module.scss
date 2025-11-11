@@ -12,7 +12,7 @@
   }
 }
 
-// ===== above fold grid
+// ===== ===== above fold grid
 .introGridWrapper {
   display: grid;
   gap: var(--grid-margin);
@@ -44,7 +44,7 @@
   }
 }
 
-// ===== bottom grid with walk card
+// ===== ===== bottom grid with walk card
 .bottomGrid {
   display: grid;
   gap: var(--grid-margin);
@@ -53,5 +53,18 @@
 @include common.tabletScreenStyles {
   .bottomGrid {
     grid-template-columns: auto 1fr;
+  }
+}
+
+// =====
+.walkCard {
+  height: 13.75rem;
+  width: 100%;
+}
+
+@include common.tabletScreenStyles {
+  .walkCard {
+    width: 12.5rem;
+    height: 100%;
   }
 }

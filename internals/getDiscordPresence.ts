@@ -32,8 +32,8 @@ export default async function getDiscordPresence(): Promise<UserStatusData> {
       presence: {
         type: "rich",
         name: "Visual Studio Code",
-        details: "Editing DEV_MODE.tsx",
-        state: "Workspace: zyplos-portfolio",
+        details: "Editing aParticularlyLongFile.tsx",
+        state: "Workspace: a-particularly-long-project",
         largeImageUrl:
           "https://cdn.discordapp.com/app-assets/383226320970055681/1359299426262319284.png",
         largeImageAlt: "Editing a TSX file",
