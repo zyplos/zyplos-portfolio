@@ -45,12 +45,13 @@
 }
 
 // ===== ===== bottom grid with walk card
+$bottomGrid_MinFull: 600px;
 .bottomGrid {
   display: grid;
   gap: var(--grid-margin);
 }
 
-@include common.tabletScreenStyles {
+@media (min-width: $bottomGrid_MinFull) {
   .bottomGrid {
     grid-template-columns: auto 1fr;
   }
@@ -62,7 +63,7 @@
   width: 100%;
 }
 
-@include common.tabletScreenStyles {
+@media (min-width: $bottomGrid_MinFull) {
   .walkCard {
     width: 12.5rem;
     height: 100%;
