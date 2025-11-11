@@ -9,32 +9,30 @@ import WorkCard from "@/components/HomeItems/WorkCard";
 
 export default function PortfolioPage() {
   return (
-    <div className={styles.portfolioPage}>
-      <div className={styles.portfolioContainer}>
-        {/* Top Grid */}
-        <div className={styles.topGrid}>
-          <ImageAreaCard />
+    <div className={styles.wrapper}>
+      {/* Top Grid */}
+      <div className={styles.introGridWrapper}>
+        <ImageAreaCard className={styles.leftColumn} />
 
-          {/* Right: Bio and Info Cards */}
-          <div className={styles.rightColumn}>
-            <BioCard />
+        {/* Right: Bio and Info Cards */}
+        <div className={styles.rightColumn}>
+          <BioCard />
 
-            {/* VS Code and Latest Commit Cards */}
-            <div className={styles.infoCardsGrid}>
-              <DiscordStatusCard />
-              <LatestCommitCard />
-            </div>
+          {/* VS Code and Latest Commit Cards */}
+          <div className={styles.infoCardsGrid}>
+            <DiscordStatusCard />
+            <LatestCommitCard />
+          </div>
 
-            {/* Bottom Grid */}
-            <div className={styles.bottomGrid}>
-              <WalkCard />
-              <WorkCard />
-            </div>
+          {/* Bottom Grid */}
+          <div className={styles.bottomGrid}>
+            <WalkCard />
+            <WorkCard />
           </div>
         </div>
-
-        <CompaniesSection />
       </div>
+
+      <CompaniesSection />
     </div>
   );
 }
