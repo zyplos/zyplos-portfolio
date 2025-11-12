@@ -19,11 +19,16 @@
   margin-bottom: var(--grid-margin);
 }
 
-@include common.tabletScreenStyles {
+@media (min-width: 1300px) {
   .introGridWrapper {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+// ===== left side with image
+/* .leftColumn {
+  height: 100%;
+} */
 
 // ===== right side with text
 .rightColumn {
