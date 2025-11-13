@@ -1,0 +1,176 @@
+.chrome {
+  background-color: #a02d2d;
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: Segoe UI, sans-serif;
+  font-size: 13px;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-top: 4px;
+}
+
+.tabs {
+  display: flex;
+  align-items: flex-end;
+  padding-left: 8px;
+}
+
+.tab,
+.tabActive {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background-color: #8c2727;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  position: relative;
+  margin-right: -1px;
+}
+
+.tabActive {
+  background-color: #b33a3a;
+  z-index: 1;
+}
+
+.tab::before,
+.tabActive::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -7px;
+  width: 7px;
+  height: 7px;
+  background: radial-gradient(
+    circle at 0 0,
+    transparent 7px,
+    #8c2727 7.5px
+  );
+}
+.tab:first-child::before {
+  display: none;
+}
+
+.tabActive::before {
+  background: radial-gradient(
+    circle at 0 0,
+    transparent 7px,
+    #b33a3a 7.5px
+  );
+}
+
+.tab::after,
+.tabActive::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: -7px;
+  width: 7px;
+  height: 7px;
+  background: radial-gradient(
+    circle at 100% 0,
+    transparent 7px,
+    #8c2727 7.5px
+  );
+}
+
+.tabActive::after {
+  background: radial-gradient(
+    circle at 100% 0,
+    transparent 7px,
+    #b33a3a 7.5px
+  );
+}
+
+.newTab {
+  padding: 8px;
+  margin-left: 4px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.windowControls {
+  display: flex;
+  background-color: #b33a3a;
+  border-top-left-radius: 8px;
+}
+
+.control {
+  padding: 8px 16px;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  &:last-child:hover {
+    background-color: #e81123;
+  }
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #b33a3a;
+  padding: 8px;
+}
+
+.navButtons {
+  display: flex;
+  gap: 12px;
+  padding: 0 8px;
+  & > svg {
+    cursor: pointer;
+  }
+}
+
+.addressBar {
+  flex-grow: 1;
+  background-color: #8c2727;
+  border-radius: 16px;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #eee;
+}
+
+.profileArea {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 8px;
+  & > svg {
+    cursor: pointer;
+  }
+}
+
+.profilePic {
+  border-radius: 50%;
+}
+
+.bookmarksBar {
+  background-color: #a02d2d;
+  padding: 6px 12px;
+  display: flex;
+  gap: 16px;
+}
+
+.bookmark {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 12px;
+}
