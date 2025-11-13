@@ -4,6 +4,10 @@
 
   background-color: var(--color-background);
   padding: var(--grid-margin);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--grid-margin);
 }
 
 @include common.tabletScreenStyles {
@@ -16,7 +20,7 @@
 .introGridWrapper {
   display: grid;
   gap: var(--grid-margin);
-  margin-bottom: var(--grid-margin);
+  /* margin-bottom: var(--grid-margin); */
 }
 
 @media (min-width: 1300px) {
