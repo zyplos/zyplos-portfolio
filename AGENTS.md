@@ -11,6 +11,9 @@ Stuff available to you
 - `./styles/_variables.css` contains CSS variables you should for consistent styling
 - `./styles/_globals.scss` contains global classes you can use
 
+Research the codebase
+- Inspect the files relevant to your task before editing. Trace current implementations to understand existing behavior and dependencies.
+
 Plan appropriately
 - For large changes, draft a clear plan and get confirmation from the requester before coding. Use your Write Todos tool to keep track of what needs to be done.
 - For small or straightforward tasks, form a quick mental or written plan and move straight to implementation.
@@ -41,6 +44,7 @@ interface ComponentNameProps extends React.HTMLAttributes<HTMLDivElement> {}
 export default function ComponentName({
   children,
   className,
+  ...props
 }: ComponentNameProps) {
   return (
     <div {...props} className={clsx(className, styles.wrapper)}>
