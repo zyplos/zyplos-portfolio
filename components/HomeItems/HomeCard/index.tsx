@@ -1,21 +1,31 @@
 import clsx from "clsx";
 import styles from "./styles.module.scss";
 
-type Padding = "xxs" | "xs" | "s" | "m" | "l" | "xl" | "none";
+type Sizes = "xxs" | "xs" | "s" | "default" | "m" | "l" | "xl" | "none";
 
 interface HomeCardProps extends React.HTMLAttributes<HTMLDivElement> {
-  padding?: Padding;
+  padding?: Sizes;
+  gap?: Sizes;
+  center?: boolean;
 }
 
 export function HomeCard({
   className,
   children,
   padding = "l",
+  gap = "none",
+  center,
   ...props
 }: HomeCardProps) {
   return (
     <div
-      className={clsx(styles.card, styles[`padding-${padding}`], className)}
+      className={clsx(
+        styles.card,
+        styles[`padding-${padding}`],
+        styles[`gap-${gap}`],
+        center && styles.center,
+        className,
+      )}
       {...props}
     >
       {children}
