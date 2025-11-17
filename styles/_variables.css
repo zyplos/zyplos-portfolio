@@ -58,7 +58,8 @@
 :root {
   color-scheme: dark;
 
-  --color-text: #240d05;
+  --color-text: #55291a;
+  --color-text-header: #240d05;
   --color-surface: #e8ddd0;
   --color-background: #0a0505;
 
