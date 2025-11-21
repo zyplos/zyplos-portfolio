@@ -84,12 +84,32 @@ $bottomGrid_MinFull: 600px;
   display: grid;
   gap: var(--grid-margin);
 
-  grid-template-columns: 1fr 300px 1fr;
-  grid-template-rows: 1fr 1fr;
-
   grid-template-areas:
-    "backend img-backend frontend"
-    "backend img-frontend frontend";
+    "backend backend"
+    "img-backend img-frontend"
+    "frontend frontend";
+}
+
+@media (min-width: 800px) {
+  .languagesRow {
+    grid-template-columns: 300px 1fr 1fr;
+    grid-template-rows: auto auto;
+
+    grid-template-areas:
+      "backend backend img-backend"
+      "frontend frontend img-frontend";
+  }
+}
+
+@media (min-width: 1380px) {
+  .languagesRow {
+    grid-template-columns: 1fr 300px 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    grid-template-areas:
+      "backend img-backend frontend"
+      "backend img-frontend frontend";
+  }
 }
 
 .backendCard {
