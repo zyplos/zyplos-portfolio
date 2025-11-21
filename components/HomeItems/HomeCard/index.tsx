@@ -3,7 +3,7 @@ import styles from "./styles.module.scss";
 
 type Sizes = "xxs" | "xs" | "s" | "default" | "m" | "l" | "xl" | "none";
 
-interface HomeCardProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface HomeCardProps extends React.HTMLAttributes<HTMLDivElement> {
   padding?: Sizes;
   gap?: Sizes;
   center?: boolean;

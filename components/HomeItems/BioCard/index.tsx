@@ -1,11 +1,9 @@
 import clsx from "clsx";
-import { HomeCard } from "../HomeCard";
+import { HomeCard, type HomeCardProps } from "../HomeCard";
 
-interface BioCardProps extends React.HTMLAttributes<HTMLDivElement> {}
-
-export default function BioCard({ ...props }: BioCardProps) {
+export default function BioCard({ className, ...props }: HomeCardProps) {
   return (
-    <HomeCard {...props} className={clsx("textContent", props.className)}>
+    <HomeCard {...props} className={clsx("textContent", className)}>
       <h1>programmer, designer</h1>
       <p>
         i'm a developer who's worked with the web and various other things for
