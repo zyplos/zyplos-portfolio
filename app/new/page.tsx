@@ -45,7 +45,7 @@ export default function PortfolioPage() {
 
       <CompaniesSection />
 
-      <div className={styles.languagesRow}>
+      <div className={styles.stuffIDoGrid}>
         <BackendCard className={styles.backendCard} />
         <FluidImageCard className={styles.backendImg}>
           <Image src={placeholderImg} alt="PLACEHOLDER" />
