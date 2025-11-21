@@ -6,6 +6,15 @@ import LatestCommitCard from "@/components/HomeItems/LatestCommitCard";
 import WalkCard from "@/components/HomeItems/WalkCard";
 import DiscordStatusCard from "@/components/HomeItems/DiscordStatusCard";
 import WorkCard from "@/components/HomeItems/WorkCard";
+import { HomeCard, SmallHeading } from "@/components/HomeItems/HomeCard";
+import {
+  BackendCard,
+  FrontendCard,
+} from "@/components/HomeItems/LanguagesCard";
+import FluidImageCard from "@/components/HomeItems/FluidImageCard";
+import Image from "next/image";
+
+import placeholderImg from "@/assets/placerholder.png";
 
 export default function PortfolioPage() {
   return (
@@ -35,6 +44,17 @@ export default function PortfolioPage() {
       {/* above fold END */}
 
       <CompaniesSection />
+
+      <div className={styles.languagesRow}>
+        <BackendCard className={styles.backendCard} />
+        <FluidImageCard className={styles.backendImg}>
+          <Image src={placeholderImg} alt="PLACEHOLDER" />
+        </FluidImageCard>
+        <FluidImageCard className={styles.frontendImg}>
+          <Image src={placeholderImg} alt="PLACEHOLDER" />
+        </FluidImageCard>
+        <FrontendCard className={styles.frontendCard} />
+      </div>
     </div>
   );
 }

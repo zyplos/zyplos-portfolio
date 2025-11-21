@@ -78,3 +78,32 @@ $bottomGrid_MinFull: 600px;
     height: 100%;
   }
 }
+
+// ===== ===== languages row
+.languagesRow {
+  display: grid;
+  gap: var(--grid-margin);
+
+  grid-template-columns: 1fr 300px 1fr;
+  grid-template-rows: 1fr 1fr;
+
+  grid-template-areas:
+    "backend img-backend frontend"
+    "backend img-frontend frontend";
+}
+
+.backendCard {
+  grid-area: backend;
+}
+
+.frontendCard {
+  grid-area: frontend;
+}
+
+.backendImg {
+  grid-area: img-backend;
+}
+
+.frontendImg {
+  grid-area: img-frontend;
+}
