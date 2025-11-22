@@ -1,0 +1,9 @@
+.flexRow {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space);
+}
+
+.flexGrow {
+  flex-grow: 1;
+}

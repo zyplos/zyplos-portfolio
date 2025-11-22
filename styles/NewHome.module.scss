@@ -80,6 +80,13 @@ $bottomGrid_MinFull: 600px;
 }
 
 // ===== ===== stuff i do
+.ycGagAndSettingsRow {
+  display: flex;
+  flex-direction: row;
+  gap: var(--grid-margin);
+}
+
+// ===== ===== stuff i do
 .stuffIDoGrid {
   display: grid;
   gap: var(--grid-margin);

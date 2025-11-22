@@ -15,6 +15,8 @@ import FluidImageCard from "@/components/HomeItems/FluidImageCard";
 import Image from "next/image";
 
 import placeholderImg from "@/assets/placerholder.png";
+import YCGag from "@/components/HomeItems/YCGag";
+import SettingsBar from "@/components/HomeItems/SettingsBar";
 
 export default function PortfolioPage() {
   return (
@@ -44,6 +46,11 @@ export default function PortfolioPage() {
       {/* above fold END */}
 
       <CompaniesSection />
+
+      <div className={styles.ycGagAndSettingsRow}>
+        <YCGag />
+        <SettingsBar />
+      </div>
 
       <div className={styles.stuffIDoGrid}>
         <BackendCard className={styles.backendCard} />
