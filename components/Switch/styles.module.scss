@@ -24,7 +24,6 @@
     cursor: not-allowed;
     pointer-events: none;
 
-    /* Adjust colors for disabled state if needed, but opacity usually handles it */
     border-color: var(--color-text);
 
     &[data-checked] {
@@ -63,7 +62,6 @@
     width: 24px;
     height: 24px;
     background-color: #fff;
-    /* OnPrimary - using white for contrast against primary red */
     transform: translateX(24px);
   }
 
@@ -98,8 +96,6 @@
 
 .Switch[data-checked]:hover .Thumb::before {
   background-color: var(--color-primary);
-  /* Primary color for state layer when checked? M3 says usually OnSurface or Primary */
-  /* Actually M3 uses Primary opacity for checked state layer usually */
   opacity: 0.08;
 }
 
@@ -124,11 +120,8 @@
   width: 16px;
   height: 16px;
   color: var(--color-primary);
-  /* Icon color matches track/primary */
   opacity: 0;
   transition: opacity 150ms 50ms cubic-bezier(0.4, 0, 0.2, 1);
-
-  /* Ensure icon doesn't shrink */
   flex-shrink: 0;
 }
 
