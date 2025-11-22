@@ -1,0 +1,137 @@
+.Switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 52px;
+  height: 32px;
+  padding: 0;
+  background-color: transparent;
+  border: 2px solid var(--color-muted);
+  border-radius: 100px;
+  cursor: pointer;
+  transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+
+  &[data-checked] {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+
+  &[data-disabled] {
+    opacity: 0.38;
+    cursor: not-allowed;
+    pointer-events: none;
+
+    /* Adjust colors for disabled state if needed, but opacity usually handles it */
+    border-color: var(--color-text);
+
+    &[data-checked] {
+      background-color: var(--color-text);
+      border-color: transparent;
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
+
+.Thumb {
+  position: absolute;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  background-color: var(--color-muted);
+  border-radius: 50%;
+  box-shadow: none;
+  pointer-events: none;
+  /* Let clicks pass to Root */
+  transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1),
+    width 200ms cubic-bezier(0.4, 0, 0.2, 1),
+    height 200ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  transform: translateX(7px);
+
+  &[data-checked] {
+    width: 24px;
+    height: 24px;
+    background-color: #fff;
+    /* OnPrimary - using white for contrast against primary red */
+    transform: translateX(24px);
+  }
+
+  .Switch[data-disabled] & {
+    background-color: var(--color-text);
+  }
+
+  .Switch[data-disabled][data-checked] & {
+    background-color: var(--color-surface);
+  }
+
+  /* State Layer (Hover/Focus/Press visual) */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-text);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 100ms linear;
+  }
+}
+
+/* Hover State */
+.Switch:hover .Thumb::before {
+  opacity: 0.08;
+}
+
+.Switch[data-checked]:hover .Thumb::before {
+  background-color: var(--color-primary);
+  /* Primary color for state layer when checked? M3 says usually OnSurface or Primary */
+  /* Actually M3 uses Primary opacity for checked state layer usually */
+  opacity: 0.08;
+}
+
+/* Active (Pressed) State */
+.Switch:active .Thumb {
+  width: 28px;
+  height: 28px;
+  transform: translateX(1px);
+
+  &::before {
+    opacity: 0.12;
+  }
+}
+
+.Switch[data-checked]:active .Thumb {
+  width: 28px;
+  height: 28px;
+  transform: translateX(22px);
+}
+
+.Icon {
+  width: 16px;
+  height: 16px;
+  color: var(--color-primary);
+  /* Icon color matches track/primary */
+  opacity: 0;
+  transition: opacity 150ms 50ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Ensure icon doesn't shrink */
+  flex-shrink: 0;
+}
+
+.Switch[data-checked] .Icon {
+  opacity: 1;
+}
