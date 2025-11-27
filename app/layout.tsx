@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import { Outfit, Nunito_Sans } from "next/font/google";
 import clsx from "clsx";
+import { SettingsProvider } from "@/context/SettingsContext";
 
 import "@/styles/_variables.css";
 import "@/styles/_globals.scss";
@@ -104,7 +105,7 @@ export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
   return (
     <html lang="en">
       <body className={clsx(outfit.variable, nunitoSans.className)}>
-        {children}
+        <SettingsProvider>{children}</SettingsProvider>
         <Analytics />
       </body>
     </html>

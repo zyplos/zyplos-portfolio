@@ -1,6 +1,5 @@
 // ===== whole page wrapper
 .wrapper {
-  --grid-margin: var(--space-s);
 
   background-color: var(--color-background);
   padding: var(--grid-margin);
@@ -10,11 +9,11 @@
   gap: var(--grid-margin);
 }
 
-@include common.tabletScreenStyles {
-  .wrapper {
-    --grid-margin: var(--space);
-  }
-}
+// @include common.tabletScreenStyles {
+//   .wrapper {
+//     --grid-margin: var(--space);
+//   }
+// }
 
 // ===== ===== above fold grid
 .introGridWrapper {
@@ -55,6 +54,7 @@
 
 // ===== ===== bottom grid with walk card
 $bottomGrid_MinFull: 600px;
+
 .bottomGrid {
   display: grid;
   gap: var(--grid-margin);

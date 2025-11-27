@@ -1,14 +1,32 @@
+"use client";
+
 import clsx from "clsx";
 import styles from "./styles.module.scss";
-import { HomeCard } from "../HomeCard";
+import { HomeCard, type HomeCardProps } from "../HomeCard";
+import Switch from "@/components/Switch";
+import { useSettings } from "@/context/SettingsContext";
 
-interface SettingsBarProps extends React.HTMLAttributes<HTMLDivElement> {}
+interface SettingsBarProps extends HomeCardProps {}
 
 export default function SettingsBar({
   className,
   children,
   ...props
 }: SettingsBarProps) {
+  const {
+    theme,
+    setTheme,
+    //
+    spacing,
+    setSpacing,
+    //
+    formality,
+    setFormality,
+    //
+    roundedCorners,
+    setRoundedCorners,
+  } = useSettings();
+
   return (
     <>
       <HomeCard
@@ -16,9 +34,14 @@ export default function SettingsBar({
         className={clsx(className, styles.flexRow)}
         padding="m"
       >
-        <button type="button">playful</button>
-        <button type="button">switch</button>
-        <button type="button">custom</button>
+        <p>playful</p>
+        <Switch
+          checked={formality === "serious"}
+          onCheckedChange={(checked) =>
+            setFormality(checked ? "serious" : "playful")
+          }
+        />
+        <p>Serious</p>
       </HomeCard>
 
       {/* key: roundedCorners */}
@@ -28,7 +51,11 @@ export default function SettingsBar({
         padding="m"
       >
         <p>Rounded Corners</p>
-        <input type="checkbox" />
+        <input
+          type="checkbox"
+          checked={roundedCorners}
+          onChange={(e) => setRoundedCorners(e.target.checked)}
+        />
       </HomeCard>
 
       {/* key: spacing */}
@@ -38,7 +65,12 @@ export default function SettingsBar({
         padding="m"
       >
         <p>compact</p>
-        <p>(switch)</p>
+        <Switch
+          checked={spacing === "cozy"}
+          onCheckedChange={(checked) =>
+            setSpacing(checked ? "cozy" : "compact")
+          }
+        />
         <p>cozy</p>
       </HomeCard>
 
@@ -48,9 +80,27 @@ export default function SettingsBar({
         className={clsx(className, styles.flexRow)}
         padding="m"
       >
-        <button type="button">sandstone</button>
-        <button type="button">slate</button>
-        <button type="button">classic</button>
+        <button
+          type="button"
+          onClick={() => setTheme("sandstone")}
+          className={theme === "sandstone" ? styles.active : ""}
+        >
+          sandstone
+        </button>
+        <button
+          type="button"
+          onClick={() => setTheme("slate")}
+          className={theme === "slate" ? styles.active : ""}
+        >
+          slate
+        </button>
+        <button
+          type="button"
+          onClick={() => setTheme("classic")}
+          className={theme === "classic" ? styles.active : ""}
+        >
+          classic
+        </button>
       </HomeCard>
 
       <HomeCard className={clsx(className, styles.flexGrow)} padding="m" center>
