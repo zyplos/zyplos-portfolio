@@ -37,6 +37,8 @@
   --space-l: calc(var(--space-m) * var(--spaceIncrement));
   --space-xl: calc(var(--space-l) * var(--spaceIncrement));
 
+  --grid-margin: var(--space);
+
   /* padding */
   --textFrameRatio: 1.8;
   --textFrameY: 0.8em;
@@ -89,4 +91,36 @@
   --color-button-active-background: #e72828;
 
   --color-card-bg: #0c0a0a;
+}
+
+/* Themes */
+:root.theme-slate {
+  --color-text: #e2e8f0;
+  --color-text-header: #f8fafc;
+  --color-surface: #1e293b;
+  --color-background: #0f172a;
+  --color-muted: #94a3b8;
+}
+
+:root.theme-classic {
+  --color-text: #1a202c;
+  --color-text-header: #000000;
+  --color-surface: #ffffff;
+  --color-background: #f7fafc;
+  --color-muted: #718096;
+}
+
+/* Spacing */
+:root.spacing-compact {
+  --grid-margin: var(--space-s);
+}
+
+/* Rounded Corners */
+:root.rounded-off {
+  --radius: 0px;
+  --radius-xs: 0px;
+  --radius-s: 0px;
+  --radius-m: 0px;
+  --radius-l: 0px;
+  --radius-circle: 0px;
 }

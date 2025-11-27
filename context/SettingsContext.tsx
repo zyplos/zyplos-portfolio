@@ -48,50 +48,21 @@ export const SettingsProvider: React.FC<SettingsProviderProps> = ({
     const root = document.documentElement;
 
     // Apply Theme
-    if (theme === "sandstone") {
-      // Default values from _variables.css (already set by CSS, but explicit here for switching back)
-      root.style.setProperty("--color-text", "#55291a");
-      root.style.setProperty("--color-text-header", "#240d05");
-      root.style.setProperty("--color-surface", "#e8ddd0");
-      root.style.setProperty("--color-background", "#0a0505");
-      root.style.setProperty("--color-muted", "#987e74");
-    } else if (theme === "slate") {
-      root.style.setProperty("--color-text", "#e2e8f0");
-      root.style.setProperty("--color-text-header", "#f8fafc");
-      root.style.setProperty("--color-surface", "#1e293b");
-      root.style.setProperty("--color-background", "#0f172a");
-      root.style.setProperty("--color-muted", "#94a3b8");
-    } else if (theme === "classic") {
-      // Light theme placeholder
-      root.style.setProperty("--color-text", "#1a202c");
-      root.style.setProperty("--color-text-header", "#000000");
-      root.style.setProperty("--color-surface", "#ffffff");
-      root.style.setProperty("--color-background", "#f7fafc");
-      root.style.setProperty("--color-muted", "#718096");
-    }
+    root.classList.remove("theme-sandstone", "theme-slate", "theme-classic");
+    root.classList.add(`theme-${theme}`);
 
     // Apply Spacing
     if (spacing === "cozy") {
-      root.style.setProperty("--grid-margin", "var(--space)");
+      root.classList.remove("spacing-compact");
     } else {
-      root.style.setProperty("--grid-margin", "var(--space-s)");
+      root.classList.add("spacing-compact");
     }
 
     // Apply Rounded Corners
     if (roundedCorners) {
-      root.style.setProperty("--radius", "0.5rem");
-      root.style.setProperty("--radius-xs", "10px");
-      root.style.setProperty("--radius-s", "0.2rem");
-      root.style.setProperty("--radius-m", "0.8rem");
-      root.style.setProperty("--radius-l", "1.2rem");
-      root.style.setProperty("--radius-circle", "1000px");
+      root.classList.remove("rounded-off");
     } else {
-      root.style.setProperty("--radius", "0px");
-      root.style.setProperty("--radius-xs", "0px");
-      root.style.setProperty("--radius-s", "0px");
-      root.style.setProperty("--radius-m", "0px");
-      root.style.setProperty("--radius-l", "0px");
-      root.style.setProperty("--radius-circle", "0px");
+      root.classList.add("rounded-off");
     }
   }, [theme, spacing, roundedCorners]);
 
@@ -100,10 +71,13 @@ export const SettingsProvider: React.FC<SettingsProviderProps> = ({
       value={{
         theme,
         setTheme,
+        //
         spacing,
         setSpacing,
+        //
         formality,
         setFormality,
+        //
         roundedCorners,
         setRoundedCorners,
       }}
