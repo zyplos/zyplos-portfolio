@@ -5,6 +5,7 @@ import styles from "./styles.module.scss";
 import { HomeCard, type HomeCardProps } from "../HomeCard";
 import Switch from "@/components/Switch";
 import { useSettings } from "@/context/SettingsContext";
+import Slider from "@/components/Slider";
 
 interface SettingsBarProps extends HomeCardProps {}
 
@@ -33,6 +34,7 @@ export default function SettingsBar({
         {...props}
         className={clsx(className, styles.flexRow)}
         padding="m"
+        center
       >
         <p>playful</p>
         <Switch
@@ -49,6 +51,7 @@ export default function SettingsBar({
         {...props}
         className={clsx(className, styles.flexRow)}
         padding="m"
+        center
       >
         <p>Rounded Corners</p>
         <input
@@ -63,6 +66,7 @@ export default function SettingsBar({
         {...props}
         className={clsx(className, styles.flexRow)}
         padding="m"
+        center
       >
         <p>compact</p>
         <Switch
@@ -79,6 +83,7 @@ export default function SettingsBar({
         {...props}
         className={clsx(className, styles.flexRow)}
         padding="m"
+        center
       >
         <button
           type="button"
@@ -103,8 +108,14 @@ export default function SettingsBar({
         </button>
       </HomeCard>
 
-      <HomeCard className={clsx(className, styles.flexGrow)} padding="m" center>
-        placeholder
+      <HomeCard
+        className={clsx(className, styles.flexGrow)}
+        padding="m"
+        gap="default"
+        center
+      >
+        Bumpscosity
+        <Slider defaultValue={25} />
       </HomeCard>
     </>
   );
