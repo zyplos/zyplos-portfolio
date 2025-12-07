@@ -7,13 +7,13 @@ import {
 
 interface SliderProps extends SliderRootProps {}
 
-export default function Slider({ className, children, ...props }: SliderProps) {
+export default function Slider({ ...props }: SliderProps) {
   return (
     <BaseSlider.Root defaultValue={25} {...props}>
-      <BaseSlider.Control className={styles.Control}>
-        <BaseSlider.Track className={styles.Track}>
-          <BaseSlider.Indicator className={styles.Indicator} />
-          <BaseSlider.Thumb className={styles.Thumb} />
+      <BaseSlider.Control className={styles.control}>
+        <BaseSlider.Track className={styles.track}>
+          <BaseSlider.Indicator className={styles.indicator} />
+          <BaseSlider.Thumb className={styles.thumb} />
         </BaseSlider.Track>
       </BaseSlider.Control>
     </BaseSlider.Root>
