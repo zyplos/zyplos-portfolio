@@ -17,6 +17,7 @@ import Image from "next/image";
 import placeholderImg from "@/assets/placerholder.png";
 import YCGag from "@/components/HomeItems/YCGag";
 import SettingsBar from "@/components/HomeItems/SettingsBar";
+import clsx from "clsx";
 
 export default function PortfolioPage() {
   return (
@@ -47,7 +48,10 @@ export default function PortfolioPage() {
 
       <CompaniesSection />
 
-      <div className={styles.ycGagAndSettingsRow}>
+      <div
+        className={clsx(styles.ycGagAndSettingsRow, styles.scrollMask)}
+        data-style="size"
+      >
         <YCGag />
         <SettingsBar />
       </div>

@@ -1,6 +1,5 @@
 // ===== whole page wrapper
 .wrapper {
-
   background-color: var(--color-background);
   padding: var(--grid-margin);
 
@@ -79,11 +78,75 @@ $bottomGrid_MinFull: 600px;
   }
 }
 
-// ===== ===== stuff i do
+// ===== ===== settings bar
 .ycGagAndSettingsRow {
   display: flex;
   flex-direction: row;
   gap: var(--grid-margin);
+  overflow: auto;
+}
+
+/* scroll mask */
+$size: 4;
+.scrollMask {
+  display: flex;
+  padding: 0 calc($size * 1ch);
+  margin: 0;
+  max-width: 100%;
+  overflow: auto;
+  scrollbar-color: #0000 #0000;
+  scrollbar-width: none;
+  transform: translateZ(0);
+
+  mask-image:
+    linear-gradient(to right, black, transparent),
+    linear-gradient(to right, black 0 100%),
+    linear-gradient(to left, black, transparent);
+
+  mask-size:
+    calc($size * 1ch) 100%,
+    100% 100%,
+    calc($size * 1ch) 100%;
+
+  mask-repeat: no-repeat;
+
+  mask-composite: exclude;
+
+  animation-timing-function: linear;
+
+  animation-timeline: scroll(self inline);
+
+  animation-range:
+    0 calc($size * 1ch),
+    calc(100% - ($size * 1ch)) 100%;
+
+  mask-position:
+    0 0,
+    0 0,
+    100% 0;
+  mask-size:
+    0 100%,
+    100% 100%,
+    calc($size * 1ch) 100%;
+  animation-name: size-up, size-down;
+  animation-fill-mode: both;
+}
+
+@keyframes size-up {
+  to {
+    mask-size:
+      calc($size * 1ch) 100%,
+      100% 100%,
+      calc($size * 1ch) 100%;
+  }
+}
+@keyframes size-down {
+  to {
+    mask-size:
+      calc($size * 1ch) 100%,
+      100% 100%,
+      0 100%;
+  }
 }
 
 // ===== ===== stuff i do
