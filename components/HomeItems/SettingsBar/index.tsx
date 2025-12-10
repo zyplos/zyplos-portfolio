@@ -115,7 +115,10 @@ export default function SettingsBar({
         center
       >
         Bumpscosity
-        <Slider defaultValue={25} className={styles.flexGrow} />
+        <Slider
+          defaultValue={25}
+          className={clsx(styles.flexGrow, styles.sliderMinWidth)}
+        />
       </HomeCard>
     </>
   );
