@@ -145,7 +145,7 @@ a {
 @property --right-mask-width {
   syntax: "<length>";
   inherits: true;
-  initial-value: 64px;
+  initial-value: 32px;
 }
 
 @keyframes show-top-mask {
@@ -206,7 +206,7 @@ a {
 }
 
 .scrollMaskX {
-  --mask-width: 64px;
+  --mask-width: 32px;
   --mask-offset-left: 0px;
   --mask-offset-right: 0px;
   --scroll-buffer: 2rem;
