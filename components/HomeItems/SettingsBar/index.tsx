@@ -53,7 +53,7 @@ export default function SettingsBar({
         padding="m"
         center
       >
-        <p>Rounded Corners</p>
+        <p className="noWrap">Rounded Corners</p>
         <input
           type="checkbox"
           checked={roundedCorners}

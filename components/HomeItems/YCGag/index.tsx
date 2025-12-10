@@ -3,8 +3,8 @@ import YCombinator from "@/components/Logos/YCombinator";
 
 export default function YCGag() {
   return (
-    <HomeCard center gap="xs" padding="m">
-      <p className={"textMuted"}>I did not apply to</p>
+    <HomeCard center gap="s" padding="m">
+      <p className="textMuted noWrap">I did not apply to</p>
       <YCombinator />
     </HomeCard>
   );

@@ -80,6 +80,10 @@ a {
   font-style: italic;
 }
 
+.noWrap {
+  white-space: nowrap;
+}
+
 .bold {
   font-weight: var(--font-weight-bold);
 }
