@@ -49,7 +49,7 @@ export default function PortfolioPage() {
       <CompaniesSection />
 
       <div
-        className={clsx(styles.ycGagAndSettingsRow, styles.scrollMask)}
+        className={clsx(styles.ycGagAndSettingsRow, "scrollMaskX")}
         data-style="size"
       >
         <YCGag />
