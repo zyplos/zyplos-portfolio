@@ -62,8 +62,8 @@
 
   --color-text: #55291a;
   --color-text-header: #240d05;
-  --color-surface: #e8ddd0;
-  --color-background: #0a0505;
+  --color-surface: var(--sandstone-100);
+  --color-background: var(--sandstone-1400);
 
   --color-primary: #ff3e3e;
   --color-secondary: #ffd300;

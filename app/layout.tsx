@@ -4,6 +4,7 @@ import { Outfit, Nunito_Sans } from "next/font/google";
 import clsx from "clsx";
 import { SettingsProvider } from "@/context/SettingsContext";
 
+import "@/styles/_colors.scss";
 import "@/styles/_variables.css";
 import "@/styles/_globals.scss";
 
