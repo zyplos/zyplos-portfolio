@@ -60,8 +60,8 @@
 :root {
   color-scheme: dark;
 
-  --color-text: #55291a;
-  --color-text-header: #240d05;
+  --color-text: var(--sandstone-900);
+  --color-text-header: var(--sandstone-1100);
   --color-surface: var(--sandstone-100);
   --color-background: var(--sandstone-1400);
 
