@@ -65,7 +65,7 @@
   --color-surface: var(--sandstone-100);
   --color-background: var(--sandstone-1200);
 
-  --color-primary: #ff3e3e;
+  --color-primary: var(--primary-400);
   --color-secondary: #ffd300;
   --color-accent: #fff;
   --color-highlight: #ff4000;
