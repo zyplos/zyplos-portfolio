@@ -66,11 +66,9 @@
   --color-background: var(--sandstone-1200);
 
   --color-primary: var(--primary-400);
-  --color-secondary: #ffd300;
-  --color-accent: #fff;
-  --color-highlight: #ff4000;
+  --color-accent: var(--gold-600);
 
-  --color-muted: #987e74;
+  --color-muted: var(--sandstone-400);
   --color-dark-gray: #000;
   --color-dark-gray-accent: #353535;
   --color-link: #ffa5a5;

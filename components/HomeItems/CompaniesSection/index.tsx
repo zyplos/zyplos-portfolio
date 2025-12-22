@@ -47,7 +47,7 @@ export default function CompaniesSection({
           duration={40}
           pauseOnHover={false}
           blurBorders={true}
-          blurBorderColor={"#e8ddd0"}
+          blurBorderColor={"#e9d0cb"}
           className={styles.svgStyling}
           sliderClassName={styles.responsiveSlideWidth}
         >

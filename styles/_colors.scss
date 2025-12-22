@@ -1,5 +1,5 @@
-// https://zyplos.github.io/poline/?anchors=%5B%5B349.98424496266375%2C0.34285714285714297%2C0.931967403139967%5D%2C%5B44.370074960046225%2C0.34285714285714297%2C0.031683016502152106%5D%5D&steps=11&invertedLightness=true&closedLoop=false&fnx=linearPosition&fny=sinusoidalPosition&fnz=linearPosition&model=okhsl&bg=dark
 :root {
+  // https://zyplos.github.io/poline/?anchors=%5B%5B349.98424496266375%2C0.34285714285714297%2C0.931967403139967%5D%2C%5B44.370074960046225%2C0.34285714285714297%2C0.031683016502152106%5D%5D&steps=11&invertedLightness=true&closedLoop=false&fnx=linearPosition&fny=sinusoidalPosition&fnz=linearPosition&model=okhsl&bg=dark
   --sandstone-50: #f4e8ed;
   --sandstone-100: #e9d0cb;
   --sandstone-200: #d8b3a3;
@@ -14,6 +14,7 @@
   --sandstone-1100: #160c08;
   --sandstone-1200: #0a0505;
 
+  // https://zyplos.github.io/poline/?anchors=%5B%5B356.5028991908569%2C1%2C0.9229224892394983%5D%2C%5B0.7895952391640435%2C1%2C0.03368206169047838%5D%5D&steps=11&invertedLightness=true&closedLoop=false&fnx=linearPosition&fny=linearPosition&fnz=linearPosition&model=hsl&bg=%23ff3e3e
   --primary-50: #ffd8da;
   --primary-100: #ffb2b4;
   --primary-200: #ff8c8d;
@@ -27,4 +28,19 @@
   --primary-1000: #5d0100;
   --primary-1100: #370100;
   --primary-1200: #110000;
+
+  // https://zyplos.github.io/poline/?anchors=%5B%5B45.50289919085685%2C1%2C0.9229224892394983%5D%2C%5B49.7895952391641%2C1%2C0.03368206169047838%5D%5D&steps=11&invertedLightness=true&closedLoop=false&fnx=linearPosition&fny=linearPosition&fnz=linearPosition&model=hsl&bg=%23ffd300
+  --gold-50: #fff6d8;
+  --gold-100: #ffefb2;
+  --gold-200: #ffe98c;
+  --gold-300: #ffe366;
+  --gold-400: #ffdd41;
+  --gold-500: #ffd71b;
+  --gold-600: #ffd300;
+  --gold-700: #ceaa00;
+  --gold-800: #a88b00;
+  --gold-900: #836c00;
+  --gold-1000: #5d4d00;
+  --gold-1100: #372e00;
+  --gold-1200: #110e00;
 }
