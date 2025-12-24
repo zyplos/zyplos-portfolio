@@ -1,188 +1,211 @@
-@use "@/components/TextWall/styles.module.scss" as textWall;
-@use "@/components/Navbar/styles.module.scss" as navBar;
-@use "@/styles/_common.scss" as *;
+// ===== whole page wrapper
+.wrapper {
+  background-color: var(--color-background);
+  padding: var(--grid-margin);
 
-.front-header {
-  position: relative;
-  height: textWall.$text-wall-height + px;
-  width: 100%;
-}
-
-.front-header>div {
-  position: absolute;
-  width: 100%;
-  z-index: -1;
-}
-
-.front-header>header {
-  @include responsiveMaxWidth;
-
-  z-index: 2;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  // align-items: ;
+  gap: var(--grid-margin);
+}
+
+// @include common.tabletScreenStyles {
+//   .wrapper {
+//     --grid-margin: var(--space);
+//   }
+// }
+
+// ===== ===== above fold grid
+.introGridWrapper {
+  display: grid;
+  gap: var(--grid-margin);
+  /* margin-bottom: var(--grid-margin); */
+}
+
+@media (min-width: 1300px) {
+  .introGridWrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// ===== left side with image
+/* .leftColumn {
   height: 100%;
+} */
 
-  margin: 0 auto;
-  padding-top: navBar.$nav-height + px;
+// ===== right side with text
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--grid-margin);
+}
 
-  gap: 3rem;
+// ===== middle grid with dynamic info
+.infoCardsGrid {
+  display: grid;
+  gap: var(--grid-margin);
+}
 
-  @include tiny-screen-styles {
-    padding: 2rem;
-    padding-top: calc(navBar.$nav-height + 30) + px;
-  }
-
-  >div>p {
-    font-size: 2rem;
-  }
-
-  >div>h1 {
-    font-size: 4rem;
-    line-height: 1;
+@include common.tabletScreenStyles {
+  .infoCardsGrid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-.front-header>aside {
-  position: absolute;
-  z-index: 3;
-  bottom: 3rem;
-  left: 3rem;
+// ===== ===== bottom grid with walk card
+$bottomGrid_MinFull: 600px;
+
+.bottomGrid {
+  display: grid;
+  gap: var(--grid-margin);
 }
 
-.front-header>header>aside {
-  font-size: 1rem;
-  padding: 2rem;
-  display: inline-block;
-  max-width: 23rem;
-  overflow: hidden;
-
-  p {
-    max-width: 14rem;
-    text-overflow: ellipsis;
-    overflow: hidden;
+@media (min-width: $bottomGrid_MinFull) {
+  .bottomGrid {
+    grid-template-columns: auto 1fr;
   }
 }
 
-.main {
-  @include responsiveMaxWidth;
-  margin: 0 auto;
-  padding: 3rem;
-
-  @include tiny-screen-styles {
-    padding: 1rem;
-  }
-
-  >div {
-    margin-top: 3.5rem;
-    margin-bottom: 1rem;
-
-    >p {
-      margin-top: 0.5rem;
-    }
-  }
-}
-
-.statusCard {
-  position: relative;
-  --cutoutColor: rgba(14, 14, 14, 0.384);
-  border-radius: var(--radius);
-}
-
-.statusCard::before {
-  // stripped background gradient
-  content: "";
-  position: absolute;
+// =====
+.walkCard {
+  height: 13.75rem;
   width: 100%;
-  height: 100%;
-  background-image: linear-gradient(0deg,
-      var(--cutoutColor) 25%,
-      transparent 25%,
-      transparent 50%,
-      var(--cutoutColor) 50%,
-      var(--cutoutColor) 75%,
-      transparent 75%,
-      transparent);
-  backdrop-filter: blur(4px);
-  background-size: 1rem 0.3rem;
-  animation: blindsScroll 1s linear infinite, flicker 2s linear infinite alternate;
-  left: 0;
-  top: 0;
-  border-radius: var(--radius);
-  z-index: 3;
-  pointer-events: none;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .statusCard::before {
-    animation: none;
-    opacity: 0.65;
+@media (min-width: $bottomGrid_MinFull) {
+  .walkCard {
+    width: 12.5rem;
+    height: 100%;
   }
 }
 
-// animation that infinitely moves the background gradient up
-@keyframes blindsScroll {
+// ===== ===== settings bar
+.ycGagAndSettingsRow {
+  display: flex;
+  flex-direction: row;
+  gap: var(--grid-margin);
+  overflow: auto;
+
+  scrollbar-width: thin;
+  scrollbar-color: lime transparent;
+}
+
+@property --left-mask-width {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 0px;
+}
+
+@property --right-mask-width {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 0px;
+}
+
+@keyframes show-top-mask {
   to {
-    background-position: 0 0.3rem;
+    --top-mask-height: var(--mask-height);
   }
 }
 
-// flickering animation
-@keyframes flicker {
-  0% {
-    opacity: 0.9; //
-  }
-
-  5% {
-    opacity: 0.65;
-  }
-
-  10% {
-    opacity: 0.9; //
-  }
-
-  15% {
-    opacity: 0.65;
-  }
-
-  69% {
-    opacity: 0.65;
-  }
-
-  //
-  70% {
-    opacity: 0.9; //
-  }
-
-  79% {
-    opacity: 0.65;
-  }
-
-  83% {
-    opacity: 0.9; //
-  }
-
-  //
-  100% {
-    opacity: 0.9; //
+@keyframes hide-bottom-mask {
+  to {
+    --bottom-mask-height: 0px;
   }
 }
 
-.aSide {
-  background-color: #020101;
-  padding: 2rem;
-  border-radius: 1rem;
-
-  p {
-    margin-top: 0;
-    margin-bottom: 2rem;
+@keyframes show-left-mask {
+  to {
+    --left-mask-width: var(--mask-width);
   }
+}
 
-  img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+@keyframes hide-right-mask {
+  from {
+    --right-mask-width: var(--mask-width);
   }
+  to {
+    --right-mask-width: 0px;
+  }
+}
+
+.mobileScrollMask {
+  --mask-width: 32px;
+  --mask-offset-left: -5px;
+  --mask-offset-right: -5px;
+  --scroll-buffer: 2rem;
+
+  mask-image:
+    linear-gradient(to left, transparent, black 90%),
+    linear-gradient(to right, transparent 0%, black 100%),
+    linear-gradient(black, black);
+
+  mask-size:
+    var(--left-mask-width) 100%,
+    var(--right-mask-width) 100%,
+    100% 100%;
+
+  mask-repeat: no-repeat, no-repeat, no-repeat;
+
+  mask-position:
+    var(--mask-offset-left) 0,
+    calc(100% - var(--mask-offset-right)) 0,
+    0 0;
+
+  mask-composite: exclude;
+
+  animation-name: show-left-mask, hide-right-mask;
+  animation-timeline: scroll(self inline), scroll(self inline);
+  animation-range:
+    0 var(--scroll-buffer),
+    calc(100% - var(--scroll-buffer)) 100%;
+  animation-fill-mode: both;
+}
+
+// ===== ===== stuff i do
+.stuffIDoGrid {
+  display: grid;
+  gap: var(--grid-margin);
+
+  grid-template-areas:
+    "backend backend"
+    "img-backend img-frontend"
+    "frontend frontend";
+}
+
+@media (min-width: 800px) {
+  .stuffIDoGrid {
+    grid-template-columns: 300px 1fr 1fr;
+    grid-template-rows: auto auto;
+
+    grid-template-areas:
+      "backend backend img-backend"
+      "frontend frontend img-frontend";
+  }
+}
+
+@media (min-width: 1380px) {
+  .stuffIDoGrid {
+    grid-template-columns: 1fr 300px 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    grid-template-areas:
+      "backend img-backend frontend"
+      "backend img-frontend frontend";
+  }
+}
+
+.backendCard {
+  grid-area: backend;
+}
+
+.frontendCard {
+  grid-area: frontend;
+}
+
+.backendImg {
+  grid-area: img-backend;
+}
+
+.frontendImg {
+  grid-area: img-frontend;
 }

@@ -1,26 +1,26 @@
-import Link from "next/link";
-import Image from "next/image";
 import clsx from "clsx";
+import Image from "next/image";
+
+import { HomeCard, SmallHeading } from "@/components/HomeItems/HomeCard";
+import FluidImageCard from "@/components/HomeItems/FluidImageCard";
+import ImageAreaCard from "@/components/HomeItems/ImageAreaCard";
+import BioCard from "@/components/HomeItems/BioCard";
+import WalkCard from "@/components/HomeItems/WalkCard";
+import WorkCard from "@/components/HomeItems/WorkCard";
+import LatestCommitCard from "@/components/HomeItems/LatestCommitCard";
+import DiscordStatusCard from "@/components/HomeItems/DiscordStatusCard";
+import CompaniesSection from "@/components/HomeItems/CompaniesSection";
+import {
+  BackendCard,
+  FrontendCard,
+} from "@/components/HomeItems/LanguagesCard";
+import YCGag from "@/components/HomeItems/YCGag";
+import SettingsBar from "@/components/HomeItems/SettingsBar";
 
 import styles from "@/styles/Home.module.scss";
+import placeholderImg from "@/assets/placerholder.png";
 
-import TextWall from "@/components/TextWall";
-import Navbar from "@/components/Navbar";
-import AnchorLink from "@/components/AnchorLink";
-import Footer from "@/components/Footer";
-import { DiscordStatusCard } from "@/components/DiscordStatusUI";
-import {
-  DiscordREADMECard,
-  LoungeCard,
-  MyImagesCard,
-  SeeMoreProjectsCard,
-  LatentWriterCard,
-  TwitterCard,
-} from "@/components/SpecialtyCard";
-
-import portfolioImage from "@/assets/portfolio-header-mini.png";
-
-export default async function HomePage() {
+export default function HomePage() {
   console.log(
     "%c%s",
     "color: #ffffff; font-family: monospace;",
@@ -48,140 +48,50 @@ export default async function HomePage() {
   );
 
   return (
-    <>
-      <Navbar homeMode={true} />
+    <div className={styles.wrapper}>
+      {/* above fold START */}
+      <div className={styles.introGridWrapper}>
+        <ImageAreaCard className={styles.leftColumn} />
 
-      <section className={styles["front-header"]}>
-        <div>
-          <TextWall />
-        </div>
-        <header>
-          <div>
-            <p>hey! i&apos;m</p>
-            <h1>zyplos</h1>
-          </div>
-          <aside className={clsx("glass", styles.statusCard)}>
+        {/* right START */}
+        <div className={styles.rightColumn}>
+          <BioCard />
+
+          {/* middle grid */}
+          <div className={styles.infoCardsGrid}>
             <DiscordStatusCard />
-          </aside>
-        </header>
-      </section>
+            <LatestCommitCard />
+          </div>
 
-      <main className={styles.main}>
-        <div
-          style={{
-            marginTop: 0,
-          }}
-        >
-          <h2>stuff about me</h2>
-          <p>
-            i'm a developer who's worked with the web and various other things
-            for many years now
-          </p>
-          <p>
-            i like spending my time making stuff and i'm always happy to learn
-            something new
-          </p>
+          {/* bottom grid */}
+          <div className={styles.bottomGrid}>
+            <WalkCard className={styles.walkCard} />
+            <WorkCard />
+          </div>
         </div>
+        {/* right END */}
+      </div>
+      {/* above fold END */}
 
-        <div className={clsx(styles.aSide, styles.shimmeringCardBorder)}>
-          <p>
-            <b>I am looking for full time roles in</b> software engineering or
-            design related roles. If you like my work and my experience aligns
-            with a role you're looking to fill, feel free to reach out to me for
-            a resume and a more formal portfolio. There's a contact section
-            below.
-          </p>
-          <Image src={portfolioImage} alt="" quality={100} />
-        </div>
+      <CompaniesSection />
 
-        <div>
-          <h2>some stuff i've made</h2>
-          <p>
-            here's some of my favorite projects you can look at and mess around
-            with
-          </p>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            gap: "2.5rem",
-            flexDirection: "column",
-            marginTop: "2rem",
-          }}
-        >
-          <a href="https://lounge.haus/" target="_blank" rel="noreferrer">
-            <LoungeCard />
-          </a>
-          <a
-            href="https://github.com/zyplos/discord-readme-badge"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <DiscordREADMECard />
-          </a>
-          <a
-            href="https://github.com/zyplos/LatentWriter"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <LatentWriterCard />
-          </a>
-          <Link href="/projects">
-            <SeeMoreProjectsCard />
-          </Link>
-        </div>
+      <div
+        className={clsx(styles.ycGagAndSettingsRow, styles.mobileScrollMask)}
+      >
+        <YCGag />
+        <SettingsBar />
+      </div>
 
-        <div>
-          <h2>design stuff</h2>
-          <p>
-            i like working with design! sometimes i'll do graphic design related
-            stuff, ui stuff, whatever a project needs or would add on to make it
-            look good
-          </p>
-          <p>sometimes i do 3D stuff in blender</p>
-          <p>
-            you can find the design stuff i make on twitter and on myimages.zip,
-            one of the projects i made
-          </p>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            gap: "2.5rem",
-            flexDirection: "column",
-            marginTop: "2rem",
-          }}
-        >
-          <a
-            href="https://twitter.com/zyplos/media"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <TwitterCard />
-          </a>
-          <a href="https://myimages.zip/" target="_blank" rel="noreferrer">
-            <MyImagesCard />
-          </a>
-        </div>
-
-        <div>
-          <h2>get in touch</h2>
-          <p>
-            you can reach out on{" "}
-            <AnchorLink href="https://twitter.com/zyplos" target="_blank">
-              twitter
-            </AnchorLink>{" "}
-            for quick stuff. i also post updates, design stuff, in development
-            stuff, and occasional photography on there if you&apos;re interested
-            in keeping up with what i&apos;m doing
-          </p>
-          <p>
-            alternatively if it&apos;s something more formal you can email me at{" "}
-            <span style={{ fontFamily: "monospace" }}>zyplos@duck.com</span>
-          </p>
-        </div>
-      </main>
-      <Footer />
-    </>
+      <div className={styles.stuffIDoGrid}>
+        <BackendCard className={styles.backendCard} />
+        <FluidImageCard className={styles.backendImg}>
+          <Image src={placeholderImg} alt="PLACEHOLDER" />
+        </FluidImageCard>
+        <FluidImageCard className={styles.frontendImg}>
+          <Image src={placeholderImg} alt="PLACEHOLDER" />
+        </FluidImageCard>
+        <FrontendCard className={styles.frontendCard} />
+      </div>
+    </div>
   );
 }

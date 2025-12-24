@@ -5,7 +5,7 @@ This is a Next.js App Router website. To contribute safely and consistently, fol
 ## General Guidelines
 
 Stuff available to you
-- This project uses the Bun
+- This project uses Bun
 - The clsx package is available to concatenate multiple classNames
 - The motion (previously Framer Motion) package is available to animate elements
 - `./styles/_variables.css` contains CSS variables you should for consistent styling
@@ -57,7 +57,7 @@ export default function ComponentName({
 In this example, notice the naming conventions, how the component props extends HTMLAttributes, spreads the props, and can take a className for the root element.
 
 ## Work related to the Home Page
-The home page's file can be found in `./app/new/page.tsx`. The styles for this page can be found in `./styles/NewHome.module.scss`. You can visit this page by going to `http://localhost:3000/new`.
+The home page's file can be found in `./app/page.tsx`. The styles for this page can be found in `./styles/Home.module.scss`. You can visit this page by going to `http://localhost:3000`.
 
 Components related specifically for the Home Page are located in `./components/HomeItems`. The HomeCard can be used to wrap components and give it common styles each Home component has.
 
