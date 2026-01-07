@@ -65,7 +65,7 @@
   --color-surface: var(--sandstone-100);
   --color-on-surface: var(--sandstone-900);
   /* muted text and subheadings */
-  --color-on-surface-variant: var(--sandstone-700);
+  --color-on-surface-variant: var(--sandstone-500);
 
   /* surface variants for components at various heights */
   /* cards and buttons */

@@ -8,7 +8,7 @@
   font-weight: var(--font-weight-bold);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
   margin-bottom: 1.5rem;
 }
 
@@ -40,6 +40,6 @@
 
   svg:not(:hover),
   svg:not(:hover) [fill] {
-    fill: var(--color-muted) !important;
+    fill: var(--color-on-surface-variant) !important;
   }
 }
