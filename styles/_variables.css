@@ -60,16 +60,79 @@
 :root {
   color-scheme: dark;
 
-  --color-text: var(--sandstone-900);
-  --color-text-header: var(--sandstone-1100);
+  /* ===== Surface roles */
+  /* page background and color */
   --color-surface: var(--sandstone-100);
-  --color-background: var(--sandstone-1200);
+  --color-on-surface: var(--sandstone-900);
+  /* muted text and subheadings */
+  --color-on-surface-variant: var(--sandstone-700);
 
+  /* surface variants for components at various heights */
+  /* cards and buttons */
+  --color-surface-container-low: var(--sandstone-50);
+  /* menus, navbars, other elements that should be slightly elevated */
+  --color-surface-container: var(--sandstone-200);
+  /* for stuff with higher elevations like dialogs */
+  --color-surface-container-high: var(--sandstone-300);
+  /* background for inputs like text fields, switches, etc */
+  --color-surface-container-highest: var(--sandstone-400);
+
+  /* for main surfaces that should be deemphasized
+     like for those multi-site top level skinny navbars */
+  --color-surface-dim: var(--sandstone-200);
+  /* for main surfaces that should be emphasized
+     like in split views where one side is normal color-surface
+     and the other uses this brighter surface for emphasis and focus  */
+  --color-surface-bright: var(--sandstone-50);
+
+  /* for input borders */
+  --color-outline: var(--sandstone-600);
+  /* for dividers or other stuff that should have boundaries but not
+     too much emphasis (like chips that use color-surface) */
+  --color-outline-variant: var(--sandstone-300);
+
+  /* snackbars and tooltips and whatnot */
+  --color-inverse-surface: var(--sandstone-1100);
+  --color-inverse-on-surface: var(--sandstone-50);
+
+  /* ===== Primary roles */
   --color-primary: var(--primary-400);
-  --color-accent: var(--gold-600);
+  --color-on-primary: var(--sandstone-50);
 
-  --color-muted: var(--sandstone-400);
-  --color-link: #0f0;
+  --color-primary-container: var(--primary-100);
+  --color-on-primary-container: var(--primary-1100);
+
+  --color-primary-fixed: var(--primary-100);
+  --color-on-primary-fixed: var(--primary-1100);
+  --color-primary-fixed-dim: var(--primary-300);
+  --color-on-primary-fixed-variant: var(--primary-900);
+
+  /* used with inverse-surface to emphasize actionable elements */
+  --color-inverse-primary: var(--primary-200);
+
+  /* ===== Secondary roles */
+  --color-secondary: var(--sandstone-800);
+  --color-on-secondary: var(--sandstone-50);
+
+  --color-secondary-container: var(--sandstone-300);
+  --color-on-secondary-container: var(--sandstone-1200);
+
+  --color-secondary-fixed: var(--sandstone-300);
+  --color-on-secondary-fixed: var(--sandstone-1200);
+  --color-secondary-fixed-dim: var(--sandstone-400);
+  --color-on-secondary-fixed-variant: var(--sandstone-1000);
+
+  /* --- Tertiary Roles (Gold) --- */
+  --color-tertiary: var(--gold-600);
+  --color-on-tertiary: var(--sandstone-1100);
+
+  --color-tertiary-container: var(--gold-100);
+  --color-on-tertiary-container: var(--gold-1100);
+
+  --color-tertiary-fixed: var(--gold-100);
+  --color-on-tertiary-fixed: var(--gold-1100);
+  --color-tertiary-fixed-dim: var(--gold-300);
+  --color-on-tertiary-fixed-variant: var(--gold-900);
 
   /* components */
   --color-button-background: #ff3e3e;
