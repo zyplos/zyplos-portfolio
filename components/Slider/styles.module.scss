@@ -27,11 +27,16 @@
   height: 1rem;
   border-radius: 100%;
   background-color: var(--color-secondary);
-  outline: 3px solid var(--color-surface);
+  outline: 3px solid transparent;
+  outline-offset: 0;
+  box-shadow: 0 0 0 3px var(--color-surface);
   user-select: none;
   transition:
     scale 120ms ease-in-out,
-    background-color 120ms ease-in-out;
+    background-color 120ms ease-in-out,
+    outline-color 120ms ease-in-out,
+    outline-offset 120ms ease-in-out,
+    box-shadow 120ms ease-in-out;
 
   &:hover {
     scale: 115%;
@@ -43,7 +48,10 @@
 
     transition:
       scale 200ms ease-in-out,
-      background-color 200ms ease-in-out;
+      background-color 200ms ease-in-out,
+      outline-color 200ms ease-in-out,
+      outline-offset 200ms ease-in-out,
+      box-shadow 200ms ease-in-out;
   }
 
   &:active {
@@ -56,15 +64,27 @@
 
     transition:
       scale 120ms ease-in-out,
-      background-color 120ms ease-in-out;
+      background-color 120ms ease-in-out,
+      outline-color 120ms ease-in-out,
+      outline-offset 120ms ease-in-out,
+      box-shadow 120ms ease-in-out;
   }
 
   &:has(:focus-visible) {
     transition:
       scale 1ms ease-in-out,
-      background-color 1ms ease-in-out;
+      background-color 1ms ease-in-out,
+      outline-color 1ms ease-in-out,
+      outline-offset 1ms ease-in-out,
+      box-shadow 1ms ease-in-out;
 
-    background-color: var(--color-surface-container-highest);
-    outline: 3px solid var(--color-primary);
+    background-color: color-mix(
+      in oklab,
+      var(--color-secondary) 100%,
+      var(--color-state-layer-hover) 20%
+    );
+    outline-color: var(--color-primary);
+    outline-offset: 4px;
+    box-shadow: 0 0 0 4px var(--color-surface);
   }
 }
