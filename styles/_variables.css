@@ -66,6 +66,8 @@
   --color-on-surface: var(--sandstone-900);
   /* muted text and subheadings */
   --color-on-surface-variant: var(--sandstone-500);
+  --color-state-layer-hover: #fff;
+  --color-state-layer-pressed: #ff3e3e;
 
   /* surface variants for components at various heights */
   /* cards and buttons */
@@ -122,7 +124,7 @@
   --color-secondary-fixed-dim: var(--sandstone-400);
   --color-on-secondary-fixed-variant: var(--sandstone-1000);
 
-  /* --- Tertiary Roles (Gold) --- */
+  /* ===== Tertiary roles */
   --color-tertiary: var(--gold-600);
   --color-on-tertiary: var(--sandstone-1100);
 
