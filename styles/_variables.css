@@ -68,6 +68,7 @@
   --color-on-surface-variant: var(--sandstone-500);
   --color-state-layer-hover: #fff;
   --color-state-layer-pressed: #ff3e3e;
+  --color-state-layer-disabled: #0a0505;
 
   /* surface variants for components at various heights */
   /* cards and buttons */
