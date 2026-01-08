@@ -65,7 +65,7 @@
     width: 24px;
     height: 24px;
     background-color: var(--color-on-secondary);
-    transform: translateX(24px);
+    transform: translateX(23px);
   }
 
   .Switch[data-disabled] & {
@@ -108,9 +108,9 @@
 
 /* Active (Pressed) State */
 .Switch:active .Thumb {
-  width: 28px;
-  height: 28px;
-  transform: translateX(1px);
+  width: 30px;
+  height: 30px;
+  transform: translateX(-1px);
 
   &::before {
     opacity: 0.12;
@@ -120,7 +120,7 @@
 .Switch[data-checked]:active .Thumb {
   width: 28px;
   height: 28px;
-  transform: translateX(22px);
+  transform: translateX(20px);
 }
 
 .Icon {
