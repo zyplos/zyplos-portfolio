@@ -6,6 +6,11 @@
   padding-block: 0.75rem;
   touch-action: none;
   user-select: none;
+
+  &[data-disabled] {
+    cursor: not-allowed;
+    pointer-events: none;
+  }
 }
 
 .track {
@@ -14,12 +19,28 @@
   background-color: var(--color-secondary-container);
   border-radius: 0.25rem;
   user-select: none;
+
+  .control[data-disabled] & {
+    background-color: color-mix(
+      in srgb,
+      var(--color-on-surface) 12%,
+      transparent
+    );
+  }
 }
 
 .indicator {
   border-radius: 0.25rem;
   background-color: var(--color-secondary);
   user-select: none;
+
+  .control[data-disabled] & {
+    background-color: color-mix(
+      in srgb,
+      var(--color-on-surface) 38%,
+      transparent
+    );
+  }
 }
 
 .thumb {
@@ -37,6 +58,14 @@
     outline-color 120ms ease-in-out,
     outline-offset 120ms ease-in-out,
     box-shadow 120ms ease-in-out;
+
+  .control[data-disabled] & {
+    background-color: color-mix(
+      in srgb,
+      var(--color-on-surface) 38%,
+      var(--color-surface)
+    );
+  }
 
   &:hover {
     scale: 115%;
