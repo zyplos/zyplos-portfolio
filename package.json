@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "biome check",
     "format": "biome format --write",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "terms": "cmd /c \"start cmd /k && start cmd /k bun dev\""
   },
   "dependencies": {
     "@base-ui-components/react": "^1.0.0-beta.6",

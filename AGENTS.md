@@ -22,7 +22,7 @@ Execute the plan
 - Apply the necessary code changes, keeping diffs focused and well-explained with minimal but helpful comments only when needed.
 
 Verify your changes are fine
-- Execute `bun run typecheck`. Address any failures before proceeding.
+- Execute `bun run typecheck` if you made any changes to Typescript files. Address any failures before proceeding.
 
 ## Components
 
