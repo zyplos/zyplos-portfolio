@@ -1,7 +1,4 @@
-import {
-  Slider as BaseSlider,
-  type SliderRootProps,
-} from "@base-ui-components/react";
+import { Slider as BaseSlider, type SliderRootProps } from "@base-ui/react";
 import styles from "./styles.module.scss";
 
 interface SliderProps extends SliderRootProps {}

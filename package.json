@@ -12,7 +12,7 @@
     "terms": "cmd /c \"start cmd /k && start cmd /k bun dev\""
   },
   "dependencies": {
-    "@base-ui-components/react": "^1.0.0-beta.6",
+    "@base-ui/react": "^1.0.0",
     "@vercel/analytics": "^1.5.0",
     "clsx": "^2.1.1",
     "motion": "^12.23.24",
