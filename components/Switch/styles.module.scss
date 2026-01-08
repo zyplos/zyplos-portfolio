@@ -24,17 +24,13 @@
     cursor: not-allowed;
     pointer-events: none;
 
-    border-color: color-mix(
-      in oklab,
-      var(--color-state-layer-disabled) 20%,
-      transparent 100%
-    );
+    border-color: color-mix(in srgb, var(--color-secondary) 12%, transparent);
 
     &[data-checked] {
       background-color: color-mix(
-        in oklab,
-        var(--color-state-layer-disabled) 20%,
-        transparent 100%
+        in srgb,
+        var(--color-secondary) 12%,
+        transparent
       );
       border-color: transparent;
     }
@@ -74,22 +70,17 @@
 
   .Switch[data-disabled] & {
     background-color: color-mix(
-      in oklab,
-      var(--color-state-layer-disabled) 80%,
-      transparent 100%
+      in srgb,
+      var(--color-secondary) 38%,
+      transparent
     );
   }
 
   .Switch[data-disabled][data-checked] & {
-    /* background-color: var(--color-on-secondary); */
-    background-color: color-mix(
-      in oklab,
-      var(--color-on-secondary) 100%,
-      transparent 20%
-    );
+    background-color: var(--color-surface);
   }
 
-  /* State Layer (Hover/Focus/Press visual) */
+  /* Hover/Press ring visual */
   &::before {
     content: "";
     position: absolute;
