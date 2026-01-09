@@ -6,6 +6,7 @@
   padding-block: 0.75rem;
   touch-action: none;
   user-select: none;
+  cursor: pointer;
 
   &[data-disabled] {
     cursor: not-allowed;
@@ -48,10 +49,14 @@
   height: 1rem;
   border-radius: 100%;
   background-color: var(--color-secondary);
+  color: var(--color-on-secondary);
   outline: 3px solid transparent;
   outline-offset: 0;
   box-shadow: 0 0 0 3px var(--color-surface);
   user-select: none;
+  position: relative;
+  isolation: isolate;
+
   transition:
     scale 120ms ease-in-out,
     background-color 120ms ease-in-out,
@@ -59,21 +64,38 @@
     outline-offset 120ms ease-in-out,
     box-shadow 120ms ease-in-out;
 
+  /* State layer */
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background-color: currentColor;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: -1;
+    pointer-events: none;
+  }
+
   .control[data-disabled] & {
     background-color: color-mix(
       in srgb,
       var(--color-on-surface) 38%,
       var(--color-surface)
     );
+    box-shadow: 0 0 0 3px var(--color-surface);
+    /* Ensure state layer is hidden when disabled */
+    &::after {
+      display: none;
+    }
   }
 
   &:hover {
     scale: 115%;
-    background-color: color-mix(
-      in oklab,
-      var(--color-secondary) 100%,
-      var(--color-state-layer-hover) 30%
-    );
+
+    &::after {
+      opacity: 0.08;
+    }
 
     transition:
       scale 200ms ease-in-out,
@@ -85,11 +107,10 @@
 
   &:active {
     scale: 95%;
-    background-color: color-mix(
-      in oklab,
-      var(--color-secondary) 100%,
-      var(--color-state-layer-pressed) 50%
-    );
+
+    &::after {
+      opacity: 0.12;
+    }
 
     transition:
       scale 120ms ease-in-out,
@@ -107,13 +128,12 @@
       outline-offset 1ms ease-in-out,
       box-shadow 1ms ease-in-out;
 
-    background-color: color-mix(
-      in oklab,
-      var(--color-secondary) 100%,
-      var(--color-state-layer-hover) 20%
-    );
     outline-color: var(--color-primary);
     outline-offset: 4px;
     box-shadow: 0 0 0 4px var(--color-surface);
+
+    &::after {
+      opacity: 0.12;
+    }
   }
 }
