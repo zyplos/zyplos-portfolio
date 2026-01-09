@@ -136,12 +136,6 @@
   --color-on-tertiary-fixed: var(--gold-1100);
   --color-tertiary-fixed-dim: var(--gold-300);
   --color-on-tertiary-fixed-variant: var(--gold-900);
-
-  /* components */
-  --color-button-background: #ff3e3e;
-  --color-button-text: #fff;
-  --color-button-hover-background: #ff5555;
-  --color-button-active-background: #e72828;
 }
 
 :root.theme-slate {
