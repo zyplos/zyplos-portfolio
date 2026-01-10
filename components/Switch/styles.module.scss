@@ -1,4 +1,4 @@
-.Switch {
+.switch {
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -7,7 +7,7 @@
   padding: 0;
   background-color: transparent;
   border: 2px solid var(--color-outline);
-  border-radius: 100px;
+  border-radius: var(--radius-circle);
   cursor: pointer;
   transition:
     background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -42,7 +42,7 @@
   }
 }
 
-.Thumb {
+.thumb {
   position: absolute;
   left: 0;
   display: flex;
@@ -68,7 +68,7 @@
     transform: translateX(23px);
   }
 
-  .Switch[data-disabled] & {
+  .switch[data-disabled] & {
     background-color: color-mix(
       in srgb,
       var(--color-secondary) 38%,
@@ -76,7 +76,7 @@
     );
   }
 
-  .Switch[data-disabled][data-checked] & {
+  .switch[data-disabled][data-checked] & {
     background-color: var(--color-surface);
   }
 
@@ -96,18 +96,18 @@
   }
 }
 
-/* Hover State */
-.Switch:hover .Thumb::before {
+/* Hover state */
+.switch:hover .thumb::before {
   opacity: 0.08;
 }
 
-.Switch[data-checked]:hover .Thumb::before {
+.switch[data-checked]:hover .thumb::before {
   background-color: var(--color-secondary);
   opacity: 0.08;
 }
 
-/* Active (Pressed) State */
-.Switch:active .Thumb {
+/* Active (Pressed) state */
+.switch:active .thumb {
   width: 30px;
   height: 30px;
   transform: translateX(-1px);
@@ -117,13 +117,13 @@
   }
 }
 
-.Switch[data-checked]:active .Thumb {
+.switch[data-checked]:active .thumb {
   width: 28px;
   height: 28px;
   transform: translateX(20px);
 }
 
-.Icon {
+.icon {
   width: 16px;
   height: 16px;
   color: var(--color-on-secondary-container);
@@ -132,6 +132,6 @@
   flex-shrink: 0;
 }
 
-.Switch[data-checked] .Icon {
+.switch[data-checked] .icon {
   opacity: 1;
 }

@@ -11,9 +11,9 @@ interface SwitchProps extends SwitchRootProps {}
 
 export default function Switch({ className, ...props }: SwitchProps) {
   return (
-    <BaseSwitch.Root {...props} className={clsx(className, styles.Switch)}>
-      <BaseSwitch.Thumb className={styles.Thumb}>
-        <Check className={styles.Icon} />
+    <BaseSwitch.Root {...props} className={clsx(className, styles.switch)}>
+      <BaseSwitch.Thumb className={styles.thumb}>
+        <Check className={styles.icon} />
       </BaseSwitch.Thumb>
     </BaseSwitch.Root>
   );
