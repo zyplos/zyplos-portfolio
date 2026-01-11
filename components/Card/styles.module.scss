@@ -1,5 +1,5 @@
 .card {
-  padding: 2rem;
+  padding: var(--space-xl);
   position: relative;
   border-radius: var(--radius);
   overflow: hidden;
@@ -9,17 +9,17 @@
   background-color: #211717;
 
   position: relative;
-  outline: 2px solid transparent;
+  outline: var(--outline-size) solid transparent;
 }
 
 .card:hover {
-  outline: 2px solid #ff3e3e;
+  outline: var(--outline-size) solid #ff3e3e;
 }
 
 .cardTitle {
-  font-size: 1.7rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-xl);
 }
 
 .content {
