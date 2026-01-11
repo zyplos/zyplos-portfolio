@@ -1,12 +1,12 @@
 @use "@/styles/_common.scss" as *;
 
 .footer {
-  background-color: #160d0d;
+  background-color: lime;
   color: #fff;
-  padding: 1rem 3rem;
+  padding: var(--space-xl) var(--space-xxl);
 
   @include tiny-screen-styles {
-    padding: 2rem;
+    padding: var(--space-xxl);
   }
 }
 
@@ -26,27 +26,27 @@
   justify-content: space-between;
   // align-items: top;
   flex-wrap: wrap;
-  margin-top: 2rem;
+  margin-top: var(--space-xl);
 }
 
 .socials {
   display: flex;
   justify-content: center;
   align-items: top;
-  gap: 1rem;
+  gap: var(--space-m);
 }
 
 .socials svg {
-  width: 2rem;
-  height: 2rem;
-  margin-right: 1rem;
+  width: var(--font-size-m);
+  height: var(--font-size-m);
+  margin-right: var(--space-m);
   fill: #fff;
 }
 
 // add multiple drop shadows to svgs to make it look 3d
 .images svg {
-  width: 2rem;
-  height: 2rem;
-  margin-right: 1rem;
+  width: var(--font-size-m);
+  height: var(--font-size-m);
+  margin-right: var(--space-m);
   fill: #fff;
 }
