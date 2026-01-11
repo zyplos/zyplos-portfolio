@@ -26,7 +26,7 @@
   --font-weight-bold: 800;
 
   /* spacing */
-  --unit: 1rem;
+  /* --unit is set in globals file */
   --spaceIncrement: 1.65;
 
   --space-xxs: calc(var(--space-xs) / var(--spaceIncrement));
@@ -48,11 +48,13 @@
   --max-width-percent: 85%;
   --max-width-pixel: 1280px;
 
+  --outline-size: 3px;
+
   --radius-xs: 10px;
-  --radius-s: 0.2rem;
-  --radius: 0.5rem;
-  --radius-m: 0.8rem;
-  --radius-l: 1.2rem;
+  --radius-s: 4px;
+  --radius: 8px;
+  --radius-m: 12px;
+  --radius-l: 16px;
   --radius-circle: 1000px;
 }
 

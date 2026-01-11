@@ -7,10 +7,12 @@
 }
 
 html {
-  font-size: 19px;
+  font-size: 118.75%;
+  --unit: 19px;
 
   @include tiny-screen-styles {
-    font-size: 16px;
+    font-size: 100%;
+    --unit: 16px;
   }
 }
 
@@ -180,7 +182,7 @@ a {
   --mask-height: 64px;
   --mask-offset-top: 0px;
   --mask-offset-bottom: 0px;
-  --scroll-buffer: 2rem;
+  --scroll-buffer: 32px;
 
   mask-image:
     linear-gradient(to top, transparent, black 90%),
@@ -213,7 +215,7 @@ a {
   --mask-width: 32px;
   --mask-offset-left: 0px;
   --mask-offset-right: 0px;
-  --scroll-buffer: 2rem;
+  --scroll-buffer: 32px;
 
   mask-image:
     linear-gradient(to left, transparent, black 90%),
