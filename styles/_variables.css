@@ -25,6 +25,10 @@
   --font-weight-heading: 600;
   --font-weight-bold: 800;
 
+  --line-height-small: 1.25;
+  --line-height-body: 1.5;
+  --line-height-heading: 1.5;
+
   /* spacing */
   /* --unit is set in globals file */
   --spaceIncrement: 1.65;
