@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   width: 100%;
-  padding-block: 0.75rem;
+  padding-block: 12px;
   touch-action: none;
   user-select: none;
   cursor: pointer;
@@ -16,43 +16,39 @@
 
 .track {
   width: 100%;
-  height: 0.25rem;
+  height: 4px;
   background-color: var(--color-secondary-container);
-  border-radius: 0.25rem;
+  border-radius: var(--radius-circle);
   user-select: none;
 
   .control[data-disabled] & {
-    background-color: color-mix(
-      in srgb,
-      var(--color-on-surface) 12%,
-      transparent
-    );
+    background-color: color-mix(in srgb,
+        var(--color-on-surface) 12%,
+        transparent);
   }
 }
 
 .indicator {
-  border-radius: 0.25rem;
+  border-radius: var(--radius-circle);
   background-color: var(--color-secondary);
   user-select: none;
 
   .control[data-disabled] & {
-    background-color: color-mix(
-      in srgb,
-      var(--color-on-surface) 38%,
-      transparent
-    );
+    background-color: color-mix(in srgb,
+        var(--color-on-surface) 38%,
+        transparent);
   }
 }
 
 .thumb {
-  width: 1rem;
-  height: 1rem;
-  border-radius: 100%;
+  width: 16px;
+  height: 16px;
+  border-radius: var(--radius-circle);
   background-color: var(--color-secondary);
   color: var(--color-on-secondary);
-  outline: 3px solid transparent;
+  outline: var(--outline-size) solid transparent;
   outline-offset: 0;
-  box-shadow: 0 0 0 3px var(--color-surface);
+  box-shadow: 0 0 0 var(--outline-size) var(--color-surface);
   user-select: none;
   position: relative;
   isolation: isolate;
@@ -78,12 +74,11 @@
   }
 
   .control[data-disabled] & {
-    background-color: color-mix(
-      in srgb,
-      var(--color-on-surface) 38%,
-      var(--color-surface)
-    );
-    box-shadow: 0 0 0 3px var(--color-surface);
+    background-color: color-mix(in srgb,
+        var(--color-on-surface) 38%,
+        var(--color-surface));
+    box-shadow: 0 0 0 var(--outline-size) var(--color-surface);
+
     /* Ensure state layer is hidden when disabled */
     &::after {
       display: none;
@@ -97,12 +92,11 @@
       opacity: 0.08;
     }
 
-    transition:
-      scale 200ms ease-in-out,
-      background-color 200ms ease-in-out,
-      outline-color 200ms ease-in-out,
-      outline-offset 200ms ease-in-out,
-      box-shadow 200ms ease-in-out;
+    transition: scale 200ms ease-in-out,
+    background-color 200ms ease-in-out,
+    outline-color 200ms ease-in-out,
+    outline-offset 200ms ease-in-out,
+    box-shadow 200ms ease-in-out;
   }
 
   &:active {
@@ -112,12 +106,11 @@
       opacity: 0.12;
     }
 
-    transition:
-      scale 120ms ease-in-out,
-      background-color 120ms ease-in-out,
-      outline-color 120ms ease-in-out,
-      outline-offset 120ms ease-in-out,
-      box-shadow 120ms ease-in-out;
+    transition: scale 120ms ease-in-out,
+    background-color 120ms ease-in-out,
+    outline-color 120ms ease-in-out,
+    outline-offset 120ms ease-in-out,
+    box-shadow 120ms ease-in-out;
   }
 
   &:has(:focus-visible) {
@@ -129,8 +122,8 @@
       box-shadow 1ms ease-in-out;
 
     outline-color: var(--color-primary);
-    outline-offset: 4px;
-    box-shadow: 0 0 0 4px var(--color-surface);
+    outline-offset: var(--outline-size);
+    box-shadow: 0 0 0 var(--outline-size) var(--color-surface);
 
     &::after {
       opacity: 0.12;
