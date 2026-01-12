@@ -67,13 +67,13 @@ $bottomGrid_MinFull: 600px;
 
 // =====
 .walkCard {
-  height: 13.75rem;
+  height: 220px;
   width: 100%;
 }
 
 @media (min-width: $bottomGrid_MinFull) {
   .walkCard {
-    width: 12.5rem;
+    width: 200px;
     height: 100%;
   }
 }
@@ -86,7 +86,7 @@ $bottomGrid_MinFull: 600px;
   overflow: auto;
 
   scrollbar-width: thin;
-  scrollbar-color: lime transparent;
+  scrollbar-color: var(--color-surface-container-high) transparent;
 }
 
 @property --left-mask-width {
@@ -123,6 +123,7 @@ $bottomGrid_MinFull: 600px;
   from {
     --right-mask-width: var(--mask-width);
   }
+
   to {
     --right-mask-width: 0px;
   }
@@ -132,7 +133,7 @@ $bottomGrid_MinFull: 600px;
   --mask-width: 32px;
   --mask-offset-left: -5px;
   --mask-offset-right: -5px;
-  --scroll-buffer: 2rem;
+  --scroll-buffer: 32px;
 
   mask-image:
     linear-gradient(to left, transparent, black 90%),
