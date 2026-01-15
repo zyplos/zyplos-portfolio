@@ -1,9 +1,11 @@
+$button-height: 40px;
+
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  min-height: 40px;
+  height: $button-height;
   padding: 0 24px;
   border-radius: var(--radius-circle);
   border: none;
