@@ -5,11 +5,8 @@
 
   min-height: 40px;
   padding: 0 24px;
-  background-color: var(--color-surface-container-low);
-  color: var(--color-on-surface);
-
-  border: 1px solid var(--color-outline-variant);
-  border-radius: var(--radius-m);
+  border-radius: var(--radius-circle);
+  border: none;
 
   font-family: var(--font-body);
   font-size: var(--font-size);
@@ -37,6 +34,7 @@
     transition: opacity 150ms ease;
     z-index: -1;
     pointer-events: none;
+    border-radius: var(--radius-circle);
   }
 
   @media (hover: hover) {
@@ -72,20 +70,38 @@
   }
 }
 
+.default {
+  background-color: var(--color-surface-container-low);
+  color: var(--color-on-surface);
+  border: 1px solid var(--color-outline-variant);
+}
+
 .primary {
   background-color: var(--color-primary);
   color: var(--color-on-primary);
-  border: none;
 }
 
 .secondary {
   background-color: var(--color-secondary);
   color: var(--color-on-secondary);
-  border: none;
 }
 
 .tertiary {
   background-color: var(--color-tertiary);
   color: var(--color-on-tertiary);
-  border: none;
+}
+
+.primary-tonal {
+  background-color: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+}
+
+.secondary-tonal {
+  background-color: var(--color-secondary-container);
+  color: var(--color-on-secondary-container);
+}
+
+.tertiary-tonal {
+  background-color: var(--color-tertiary-container);
+  color: var(--color-on-tertiary-container);
 }

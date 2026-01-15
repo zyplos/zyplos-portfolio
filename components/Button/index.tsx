@@ -3,13 +3,20 @@ import { Button as BaseButton, type ButtonProps } from "@base-ui/react/button";
 import styles from "./styles.module.scss";
 
 type Props = ButtonProps & {
-  variant?: "primary" | "secondary" | "tertiary";
+  variant?:
+    | "default"
+    | "primary"
+    | "secondary"
+    | "tertiary"
+    | "primary-tonal"
+    | "secondary-tonal"
+    | "tertiary-tonal";
 };
 
 export default function Button({
   className,
   children,
-  variant,
+  variant = "default",
   ...props
 }: Props) {
   return (
