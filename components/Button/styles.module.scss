@@ -19,6 +19,7 @@ $button-height: 40px;
   cursor: pointer;
   position: relative;
   isolation: isolate;
+  overflow: hidden;
 
   transition:
     background-color 150ms,
@@ -36,7 +37,6 @@ $button-height: 40px;
     transition: opacity 150ms ease;
     z-index: -1;
     pointer-events: none;
-    border-radius: var(--radius-circle);
   }
 
   @media (hover: hover) {
