@@ -1,0 +1,77 @@
+@use "../Button/styles.module.scss" as button;
+// value needed to make the button fully rounded without affecting other corners
+// needed to manually calculate this since setting it to a value any larger would
+// cause the other non-rounded corners to be flattened out
+$button-radius-fully-rounded: button.$button-height / 2;
+
+// --radius-circle is set to 1000px
+// animating between that and --radius makes a weird animation due to difference
+// min() lets the buttons disable their rounded corners when rounded corners are off
+// and lets them be fully rounded to the specific radius when rounded corners are on
+$button-special-radius: min(var(--radius-circle), #{$button-radius-fully-rounded});
+
+.buttonGroup {
+  display: inline-flex;
+  flex-direction: row;
+  border: none;
+  background: transparent;
+  gap: 2px;
+}
+
+.buttonGroup .item {
+  $pill-radius: 32px;
+  transition: border-radius 200ms ease, background-color 150ms, color 150ms;
+
+  border-radius: var(--radius);
+
+  // rounded left corners for first button
+  &:first-child {
+    border-top-left-radius: $button-special-radius;
+    border-bottom-left-radius: $button-special-radius;
+  }
+
+  // rounded right corners for last button
+  &:last-child {
+    border-top-right-radius: $button-special-radius;
+    border-bottom-right-radius: $button-special-radius;
+  }
+
+  &[data-pressed] {
+    border-radius: $button-special-radius;
+  }
+
+  // lets focus outline not get cut off by siblings
+  &:focus-visible {
+    z-index: 1;
+  }
+}
+
+.primary .item {
+  background-color: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+
+  &[data-pressed] {
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+  }
+}
+
+.secondary .item {
+  background-color: var(--color-secondary-container);
+  color: var(--color-on-secondary-container);
+
+  &[data-pressed] {
+    background-color: var(--color-secondary);
+    color: var(--color-on-secondary);
+  }
+}
+
+.tertiary .item {
+  background-color: var(--color-tertiary-container);
+  color: var(--color-on-tertiary-container);
+
+  &[data-pressed] {
+    background-color: var(--color-tertiary);
+    color: var(--color-on-tertiary);
+  }
+}
