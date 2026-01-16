@@ -29,7 +29,7 @@
     width: 44px;
     height: 44px;
 
-    background-color: var(--color-secondary);
+    background-color: var(--color-primary);
     border-radius: var(--radius-circle);
     transform: translate(-50%, -50%);
 
@@ -52,15 +52,15 @@
   }
 
   &[data-checked] {
-    background-color: var(--color-secondary);
-    border-color: var(--color-secondary);
-    color: var(--color-on-secondary);
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-on-primary);
   }
 
   &[data-indeterminate] {
-    background-color: var(--color-secondary);
-    border-color: var(--color-secondary);
-    color: var(--color-on-secondary);
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-on-primary);
   }
 
   &[data-disabled] {

@@ -6,10 +6,10 @@ type Props = ButtonProps & {
   variant?:
     | "default"
     | "brand"
-    | "secondary"
+    | "primary"
     | "tertiary"
     | "brand-tonal"
-    | "secondary-tonal"
+    | "primary-tonal"
     | "tertiary-tonal";
 };
 

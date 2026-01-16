@@ -68,7 +68,7 @@ export default function SettingsBar({
         <ButtonGroup
           value={theme ? [theme] : []}
           onValueChange={(val) => val[0] && setTheme(val[0] as Theme)}
-          variant="secondary"
+          variant="primary"
         >
           <ButtonGroupItem value="sandstone">sandstone</ButtonGroupItem>
           <ButtonGroupItem value="slate">slate</ButtonGroupItem>

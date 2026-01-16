@@ -66,7 +66,7 @@
 :root {
   color-scheme: dark;
 
-  /* ===== Surface roles */
+  /* ===== surface roles */
   /* page background and color */
   --color-surface: var(--sandstone-100);
   --color-on-surface: var(--sandstone-900);
@@ -119,19 +119,19 @@
   /* used with inverse-surface to emphasize actionable elements */
   --color-inverse-brand: var(--brand-200);
 
-  /* ===== Secondary roles */
-  --color-secondary: var(--sandstone-800);
-  --color-on-secondary: var(--sandstone-50);
+  /* ===== primary roles */
+  --color-primary: var(--sandstone-800);
+  --color-on-primary: var(--sandstone-50);
 
-  --color-secondary-container: var(--sandstone-300);
-  --color-on-secondary-container: var(--sandstone-1200);
+  --color-primary-container: var(--sandstone-300);
+  --color-on-primary-container: var(--sandstone-1200);
 
-  --color-secondary-fixed: var(--sandstone-300);
-  --color-on-secondary-fixed: var(--sandstone-1200);
-  --color-secondary-fixed-dim: var(--sandstone-400);
-  --color-on-secondary-fixed-variant: var(--sandstone-1000);
+  --color-primary-fixed: var(--sandstone-300);
+  --color-on-primary-fixed: var(--sandstone-1200);
+  --color-primary-fixed-dim: var(--sandstone-400);
+  --color-on-primary-fixed-variant: var(--sandstone-1000);
 
-  /* ===== Tertiary roles */
+  /* ===== tertiary roles */
   --color-tertiary: var(--gold-600);
   --color-on-tertiary: var(--sandstone-1100);
 
