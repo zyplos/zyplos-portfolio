@@ -4,26 +4,28 @@
 }
 
 .gameText {
-  /* margin-top: 0.4rem; */
   margin-bottom: var(--space-s);
 }
 
 .online {
   color: var(--c-green);
 }
+
 .idle {
   color: #feff43;
 }
+
 .dnd {
   color: #ff6e5b;
 }
+
 .offline {
   color: #a58888;
 }
 
 .richPresence {
   display: flex;
-  gap: 1rem;
+  gap: var(--space);
   align-items: flex-start;
   flex-wrap: wrap;
 }
@@ -44,16 +46,17 @@
 
 .largeImage {
   border-radius: var(--radius-s);
-  width: 4rem;
-  height: 4rem;
+  width: 64px;
+  height: 64px;
 }
 
 .smallImage {
   position: absolute;
-  width: 1.8rem;
-  height: 1.8rem;
-  border-radius: 100%;
-  bottom: -0.4rem;
-  right: -0.4rem;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-circle);
+
+  bottom: -2px;
+  right: -10px;
   border: 3px solid var(--color-surface);
 }
