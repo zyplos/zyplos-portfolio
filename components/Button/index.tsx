@@ -5,10 +5,10 @@ import styles from "./styles.module.scss";
 type Props = ButtonProps & {
   variant?:
     | "default"
-    | "primary"
+    | "brand"
     | "secondary"
     | "tertiary"
-    | "primary-tonal"
+    | "brand-tonal"
     | "secondary-tonal"
     | "tertiary-tonal";
 };

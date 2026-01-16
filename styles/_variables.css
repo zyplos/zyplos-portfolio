@@ -104,20 +104,20 @@
   --color-inverse-surface: var(--sandstone-1100);
   --color-inverse-on-surface: var(--sandstone-50);
 
-  /* ===== Primary roles */
-  --color-primary: var(--primary-400);
-  --color-on-primary: var(--sandstone-50);
+  /* ===== brand roles */
+  --color-brand: var(--brand-400);
+  --color-on-brand: var(--sandstone-50);
 
-  --color-primary-container: var(--primary-100);
-  --color-on-primary-container: var(--primary-1100);
+  --color-brand-container: var(--brand-100);
+  --color-on-brand-container: var(--brand-1100);
 
-  --color-primary-fixed: var(--primary-100);
-  --color-on-primary-fixed: var(--primary-1100);
-  --color-primary-fixed-dim: var(--primary-300);
-  --color-on-primary-fixed-variant: var(--primary-900);
+  --color-brand-fixed: var(--brand-100);
+  --color-on-brand-fixed: var(--brand-1100);
+  --color-brand-fixed-dim: var(--brand-300);
+  --color-on-brand-fixed-variant: var(--brand-900);
 
   /* used with inverse-surface to emphasize actionable elements */
-  --color-inverse-primary: var(--primary-200);
+  --color-inverse-brand: var(--brand-200);
 
   /* ===== Secondary roles */
   --color-secondary: var(--sandstone-800);

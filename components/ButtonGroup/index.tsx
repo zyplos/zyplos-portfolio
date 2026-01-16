@@ -6,7 +6,7 @@ import styles from "./styles.module.scss";
 
 interface ButtonGroupProps extends React.ComponentProps<typeof ToggleGroup> {
   children: React.ReactNode;
-  variant: "primary" | "secondary" | "tertiary";
+  variant: "brand" | "secondary" | "tertiary";
 }
 
 export default function ButtonGroup({
@@ -25,8 +25,7 @@ export default function ButtonGroup({
   );
 }
 
-interface ButtonGroupItemProps
-  extends React.ComponentProps<typeof Toggle> {
+interface ButtonGroupItemProps extends React.ComponentProps<typeof Toggle> {
   children: React.ReactNode;
   value: string;
 }
