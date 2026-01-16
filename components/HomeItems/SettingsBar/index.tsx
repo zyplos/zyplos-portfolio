@@ -1,12 +1,13 @@
 "use client";
 
 import clsx from "clsx";
-import styles from "./styles.module.scss";
-import { HomeCard, type HomeCardProps } from "../HomeCard";
-import Switch from "@/components/Switch";
 import { type Theme, useSettings } from "@/context/SettingsContext";
-import Slider from "@/components/Slider";
+import { HomeCard, type HomeCardProps } from "../HomeCard";
 import ButtonGroup, { ButtonGroupItem } from "@/components/ButtonGroup";
+import Switch from "@/components/Switch";
+import Checkbox from "@/components/Checkbox";
+import Slider from "@/components/Slider";
+import styles from "./styles.module.scss";
 
 interface SettingsBarProps extends HomeCardProps {}
 
@@ -56,10 +57,9 @@ export default function SettingsBar({
         gap="default"
       >
         <p className="noWrap">Rounded Corners</p>
-        <input
-          type="checkbox"
+        <Checkbox
           checked={roundedCorners}
-          onChange={(e) => setRoundedCorners(e.target.checked)}
+          onCheckedChange={(checked) => setRoundedCorners(!!checked)}
         />
       </HomeCard>
 
