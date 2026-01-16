@@ -2,9 +2,9 @@
 
 import { createContext, useContext, useEffect, useState } from "react";
 
-type Theme = "classic" | "sandstone" | "slate";
-type Spacing = "cozy" | "compact";
-type Formality = "playful" | "serious";
+export type Theme = "classic" | "sandstone" | "slate";
+export type Spacing = "cozy" | "compact";
+export type Formality = "playful" | "serious";
 
 interface SettingsContextType {
   theme: Theme;

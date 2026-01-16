@@ -4,8 +4,9 @@ import clsx from "clsx";
 import styles from "./styles.module.scss";
 import { HomeCard, type HomeCardProps } from "../HomeCard";
 import Switch from "@/components/Switch";
-import { useSettings } from "@/context/SettingsContext";
+import { type Theme, useSettings } from "@/context/SettingsContext";
 import Slider from "@/components/Slider";
+import ButtonGroup, { ButtonGroupItem } from "@/components/ButtonGroup";
 
 interface SettingsBarProps extends HomeCardProps {}
 
@@ -49,9 +50,10 @@ export default function SettingsBar({
       {/* key: roundedCorners */}
       <HomeCard
         {...props}
-        className={clsx(className, styles.flexRow)}
+        className={className}
         padding="m"
         center
+        gap="default"
       >
         <p className="noWrap">Rounded Corners</p>
         <input
@@ -61,12 +63,26 @@ export default function SettingsBar({
         />
       </HomeCard>
 
+      {/* key: theme */}
+      <HomeCard {...props} className={className} padding="m" center gap="xxs">
+        <ButtonGroup
+          value={theme ? [theme] : []}
+          onValueChange={(val) => val[0] && setTheme(val[0] as Theme)}
+          variant="secondary"
+        >
+          <ButtonGroupItem value="sandstone">sandstone</ButtonGroupItem>
+          <ButtonGroupItem value="slate">slate</ButtonGroupItem>
+          <ButtonGroupItem value="classic">classic</ButtonGroupItem>
+        </ButtonGroup>
+      </HomeCard>
+
       {/* key: spacing */}
       <HomeCard
         {...props}
-        className={clsx(className, styles.flexRow)}
+        className={className}
         padding="m"
         center
+        gap="default"
       >
         <p>compact</p>
         <Switch
@@ -78,34 +94,8 @@ export default function SettingsBar({
         <p>cozy</p>
       </HomeCard>
 
-      {/* key: theme */}
-      <HomeCard
-        {...props}
-        className={clsx(className, styles.flexRow)}
-        padding="m"
-        center
-      >
-        <button
-          type="button"
-          onClick={() => setTheme("sandstone")}
-          className={theme === "sandstone" ? styles.active : ""}
-        >
-          sandstone
-        </button>
-        <button
-          type="button"
-          onClick={() => setTheme("slate")}
-          className={theme === "slate" ? styles.active : ""}
-        >
-          slate
-        </button>
-        <button
-          type="button"
-          onClick={() => setTheme("classic")}
-          className={theme === "classic" ? styles.active : ""}
-        >
-          classic
-        </button>
+      <HomeCard {...props} className={className} padding="m" center>
+        placeholder graphic
       </HomeCard>
 
       <HomeCard
@@ -116,7 +106,7 @@ export default function SettingsBar({
       >
         Bumpscosity
         <Slider
-          defaultValue={25}
+          defaultValue={64}
           className={clsx(styles.flexGrow, styles.sliderMinWidth)}
         />
       </HomeCard>
