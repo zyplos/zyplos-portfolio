@@ -54,8 +54,8 @@ $button-height: 40px;
   }
 
   &:focus-visible {
-    outline: 3px solid var(--color-primary);
-    outline-offset: 3px;
+    outline: var(--outline-size) solid var(--color-primary);
+    outline-offset: var(--outline-size);
   }
 
   &[data-disabled] {
