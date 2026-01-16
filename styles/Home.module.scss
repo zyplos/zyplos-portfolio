@@ -79,7 +79,7 @@ $bottomGrid_MinFull: 600px;
 }
 
 // ===== ===== settings bar
-.ycGagAndSettingsRow {
+.settingsRow {
   display: flex;
   flex-direction: row;
   gap: var(--grid-margin);

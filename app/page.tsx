@@ -14,7 +14,6 @@ import {
   BackendCard,
   FrontendCard,
 } from "@/components/HomeItems/LanguagesCard";
-import YCGag from "@/components/HomeItems/YCGag";
 import SettingsBar from "@/components/HomeItems/SettingsBar";
 
 import styles from "@/styles/Home.module.scss";
@@ -75,10 +74,7 @@ export default function HomePage() {
 
       <CompaniesSection />
 
-      <div
-        className={clsx(styles.ycGagAndSettingsRow, styles.mobileScrollMask)}
-      >
-        <YCGag />
+      <div className={clsx(styles.settingsRow, styles.mobileScrollMask)}>
         <SettingsBar />
       </div>
 
