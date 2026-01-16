@@ -1,3 +1,5 @@
+$gap-transition: gap 100ms ease;
+
 // ===== whole page wrapper
 .wrapper {
   background-color: var(--color-background);
@@ -6,6 +8,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--grid-margin);
+  transition: $gap-transition;
 }
 
 // @include common.tabletScreenStyles {
@@ -18,6 +21,7 @@
 .introGridWrapper {
   display: grid;
   gap: var(--grid-margin);
+  transition: $gap-transition;
   /* margin-bottom: var(--grid-margin); */
 }
 
@@ -37,12 +41,14 @@
   display: flex;
   flex-direction: column;
   gap: var(--grid-margin);
+  transition: $gap-transition;
 }
 
 // ===== middle grid with dynamic info
 .infoCardsGrid {
   display: grid;
   gap: var(--grid-margin);
+  transition: $gap-transition;
 }
 
 @include common.tabletScreenStyles {
@@ -57,6 +63,7 @@ $bottomGrid_MinFull: 600px;
 .bottomGrid {
   display: grid;
   gap: var(--grid-margin);
+  transition: $gap-transition;
 }
 
 @media (min-width: $bottomGrid_MinFull) {
@@ -84,6 +91,7 @@ $bottomGrid_MinFull: 600px;
   flex-direction: row;
   gap: var(--grid-margin);
   overflow: auto;
+  transition: $gap-transition;
 
   scrollbar-width: thin;
   scrollbar-color: var(--color-surface-container-high) transparent;
@@ -166,6 +174,7 @@ $bottomGrid_MinFull: 600px;
 .stuffIDoGrid {
   display: grid;
   gap: var(--grid-margin);
+  transition: $gap-transition;
 
   grid-template-areas:
     "backend backend"
