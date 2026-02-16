@@ -120,16 +120,16 @@
   --color-inverse-brand: var(--brand-200);
 
   /* ===== primary roles */
-  --color-primary: var(--sandstone-800);
-  --color-on-primary: var(--sandstone-50);
+  --color-primary: var(--canyon-600);
+  --color-on-primary: var(--canyon-50);
 
-  --color-primary-container: var(--sandstone-300);
-  --color-on-primary-container: var(--sandstone-1200);
+  --color-primary-container: var(--canyon-200);
+  --color-on-primary-container: var(--canyon-1100);
 
-  --color-primary-fixed: var(--sandstone-300);
-  --color-on-primary-fixed: var(--sandstone-1200);
-  --color-primary-fixed-dim: var(--sandstone-400);
-  --color-on-primary-fixed-variant: var(--sandstone-1000);
+  --color-primary-fixed: var(--canyon-200);
+  --color-on-primary-fixed: var(--canyon-1100);
+  --color-primary-fixed-dim: var(--canyon-300);
+  --color-on-primary-fixed-variant: var(--canyon-900);
 
   /* ===== tertiary roles */
   --color-tertiary: var(--gold-600);
